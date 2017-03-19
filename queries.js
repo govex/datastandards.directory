@@ -6,7 +6,7 @@ var options = {
 };
 
 var pgp = require('pg-promise')(options);
-var connectionString = 'postgres://postgres:january2017*@localhost:5432/inventory';
+var connectionString = process.env.DATABASE_URL || 'https://odstandards-directory.herokuapp.com';
 var db = pgp(connectionString);
 
 function post(req, res, next) {
