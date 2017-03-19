@@ -2,7 +2,7 @@
   "name": "open-data-standards-directory",
   "version": "0.0.1",
   "scripts": {
-    "start": "supervisor ./bin/www"
+    "start" : "node server.js"
   },
   "dependencies": {
     "bluebird": "^3.4.7",
