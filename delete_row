@@ -1,0 +1,1 @@
+DELETE FROM standards WHERE id IS NULL;

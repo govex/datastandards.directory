@@ -1,0 +1,174 @@
+@import url(https://fonts.googleapis.com/css?family=Pathway+Gothic+One|Lato);
+html {
+  box-sizing: border-box; }
+
+*, *::after, *::before {
+  box-sizing: inherit; }
+
+html, body {
+  text-align: center;
+  margin: 0 auto;
+  padding: 0px 0px;
+  background-color: #F2F1E4;
+  height: 100%; }
+  html .container, body .container {
+    background: url("/images/background.png");
+    background-size: 100%;
+    min-height: 100%;
+    position: relative; }
+    html .container .header, body .container .header {
+      position: fixed;
+      width: 100%; }
+      html .container .header ul, body .container .header ul {
+        background-color: #5D4157;
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        overflow: hidden; }
+        html .container .header ul li, body .container .header ul li {
+          text-align: center;
+          display: inline-block;
+          top: 0; }
+          html .container .header ul li a, body .container .header ul li a {
+            font-size: 30px;
+            font-family: "Pathway Gothic One", sans-serif;
+            display: inline-block;
+            text-align: center;
+            padding: 14px 20px;
+            text-decoration: none;
+            color: #F2F1E4; }
+            html .container .header ul li a:hover, body .container .header ul li a:hover {
+              background-color: #F2F1E4;
+              color: #5D4157; }
+        html .container .header ul li.selected-page a, body .container .header ul li.selected-page a {
+          background-color: #F2F1E4;
+          color: #5D4157; }
+    html .container .site-content, body .container .site-content {
+      padding-bottom: 60px;
+      padding-top: 60px; }
+      html .container .site-content h1, body .container .site-content h1 {
+        font-family: "Pathway Gothic One", sans-serif;
+        color: #545658;
+        padding: 15px; }
+      html .container .site-content h2, body .container .site-content h2 {
+        font-family: "Lato", sans-serif;
+        color: #545658; }
+      html .container .site-content .tabs .inactive-tab, body .container .site-content .tabs .inactive-tab {
+        text-align: center;
+        color: #F2F1E4;
+        font-family: "Lato", sans-serif;
+        font-size: 20px;
+        border-top-left-radius: 5px;
+        border-top-right-radius: 5px;
+        margin: 0px;
+        border: 1px;
+        width: 448px;
+        padding: 10px;
+        background-color: #5D4157;
+        cursor: pointer; }
+        html .container .site-content .tabs .inactive-tab:hover, body .container .site-content .tabs .inactive-tab:hover {
+          background-color: #7b5673; }
+      html .container .site-content .tabs .active-tab, body .container .site-content .tabs .active-tab {
+        background-color: #A8CABA;
+        color: #545658;
+        cursor: initial; }
+        html .container .site-content .tabs .active-tab:hover, body .container .site-content .tabs .active-tab:hover {
+          background-color: #A8CABA; }
+      html .container .site-content .description-box, body .container .site-content .description-box {
+        margin: 0 auto;
+        background-color: #A8CABA;
+        font-family: "Lato", sans-serif;
+        font-size: 15px;
+        color: #545658;
+        width: 900px;
+        border-bottom-left-radius: 5px;
+        border-bottom-right-radius: 5px;
+        padding: 25px;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); }
+        html .container .site-content .description-box form, body .container .site-content .description-box form {
+          margin: 10px; }
+          html .container .site-content .description-box form p, body .container .site-content .description-box form p {
+            text-align: left;
+            margin-bottom: 20px;
+            border: solid;
+            border: 1px;
+            border-radius: 5px;
+            padding: 10px;
+            background-color: #F2F1E4; }
+            html .container .site-content .description-box form p p label a, body .container .site-content .description-box form p p label a {
+              float: left; }
+            html .container .site-content .description-box form p label, body .container .site-content .description-box form p label {
+              font-weight: bold;
+              width: 20%; }
+            html .container .site-content .description-box form p a, body .container .site-content .description-box form p a {
+              margin-left: 5px;
+              text-align: left; }
+              html .container .site-content .description-box form p a:hover, body .container .site-content .description-box form p a:hover {
+                cursor: pointer; }
+            html .container .site-content .description-box form p input[type="text"], html .container .site-content .description-box form p select, body .container .site-content .description-box form p input[type="text"], body .container .site-content .description-box form p select {
+              float: right;
+              border-bottom: solid #545658;
+              width: 70%;
+              border-radius: 3px;
+              padding: 3px;
+              background-color: #F2F1E4;
+              font-family: "Lato", sans-serif; }
+            html .container .site-content .description-box form p label.checkbox, body .container .site-content .description-box form p label.checkbox {
+              text-align: center;
+              float: right; }
+            html .container .site-content .description-box form p .checkbox input[type="checkbox"], body .container .site-content .description-box form p .checkbox input[type="checkbox"] {
+              margin: 0px 20px;
+              margin-left: -30px;
+              -ms-transform: scale(1.5);
+              -moz-transform: scale(1.5);
+              -webkit-transform: scale(1.5);
+              -o-transform: scale(1.5); }
+              html .container .site-content .description-box form p .checkbox input[type="checkbox"]:hover, body .container .site-content .description-box form p .checkbox input[type="checkbox"]:hover {
+                cursor: pointer; }
+          html .container .site-content .description-box form p.rationale, body .container .site-content .description-box form p.rationale {
+            margin-left: 15px; }
+          html .container .site-content .description-box form p.metadata, body .container .site-content .description-box form p.metadata {
+            display: none; }
+          html .container .site-content .description-box form p.timestamp, body .container .site-content .description-box form p.timestamp {
+            display: none; }
+      html .container .site-content .popup, body .container .site-content .popup {
+        border: 1px solid;
+        border-radius: 5px;
+        padding: 10px;
+        border-color: #545658;
+        background-color: #F2F1E4;
+        margin: 10px; }
+      html .container .site-content .succes, body .container .site-content .succes {
+        display: none; }
+      html .container .site-content .error, body .container .site-content .error {
+        display: none; }
+      html .container .site-content button.submit, body .container .site-content button.submit {
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        margin: 10px;
+        text-align: center;
+        background-color: #A8CABA;
+        font-family: "Lato", sans-serif;
+        font-size: 20px;
+        border-radius: 5px;
+        border: 1px;
+        width: 900px;
+        padding: 10px;
+        cursor: pointer;
+        color: #545658; }
+        html .container .site-content button.submit:hover, body .container .site-content button.submit:hover {
+          background-color: #c8ddd3; }
+    html .container .footer, body .container .footer {
+      background-color: #5D4157;
+      font-family: "Pathway Gothic One", sans-serif;
+      color: #F2F1E4;
+      padding: 20px;
+      position: absolute;
+      bottom: 0;
+      width: 100%; }
+      html .container .footer a, body .container .footer a {
+        text-decoration: none;
+        color: #F2F1E4; }
+        html .container .footer a:hover, body .container .footer a:hover {
+          color: #F2F1E4; }
+
+/*# sourceMappingURL=page-3.css.map */

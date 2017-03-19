@@ -1,0 +1,87 @@
+@import url(https://fonts.googleapis.com/css?family=Pathway+Gothic+One|Lato);
+html {
+  box-sizing: border-box; }
+
+*, *::after, *::before {
+  box-sizing: inherit; }
+
+html, body {
+  text-align: center;
+  margin: 0 auto;
+  padding: 0px 0px;
+  background-color: #F2F1E4;
+  height: 100%; }
+  html .container, body .container {
+    min-height: 100%;
+    position: relative;
+    background: url("/images/background.png");
+    background-repeat: no-repeat;
+    background-size: 100%; }
+    html .container .header, body .container .header {
+      position: fixed;
+      width: 100%; }
+      html .container .header ul, body .container .header ul {
+        background-color: #5D4157;
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        overflow: hidden; }
+        html .container .header ul li, body .container .header ul li {
+          text-align: center;
+          display: inline-block;
+          top: 0; }
+          html .container .header ul li a, body .container .header ul li a {
+            font-size: 30px;
+            font-family: "Pathway Gothic One", sans-serif;
+            display: inline-block;
+            text-align: center;
+            padding: 14px 20px;
+            text-decoration: none;
+            color: #F2F1E4; }
+            html .container .header ul li a:hover, body .container .header ul li a:hover {
+              background-color: #F2F1E4;
+              color: #5D4157;
+              border-color: #F2F1E4; }
+        html .container .header ul li.selected-page a, body .container .header ul li.selected-page a {
+          background-color: #F2F1E4;
+          color: #5D4157; }
+    html .container .site-content, body .container .site-content {
+      padding-bottom: 60px;
+      padding-top: 60px; }
+      html .container .site-content h1, body .container .site-content h1 {
+        padding: 15px;
+        font-family: "Pathway Gothic One", sans-serif;
+        color: #545658;
+        font-size: 50px; }
+      html .container .site-content .description-box, body .container .site-content .description-box {
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        font-size: 20px;
+        margin: 0 auto;
+        background-color: #A8CABA;
+        font-family: "Lato", sans-serif;
+        color: #545658;
+        width: 900px;
+        text-align: center;
+        border-radius: 5px;
+        padding: 25px;
+        text-align: justify; }
+        html .container .site-content .description-box a, body .container .site-content .description-box a {
+          text-decoration: none;
+          color: #F2F1E4; }
+          html .container .site-content .description-box a:hover, body .container .site-content .description-box a:hover {
+            text-decoration: underline; }
+    html .container .footer, body .container .footer {
+      background-color: #5D4157;
+      font-family: "Pathway Gothic One", sans-serif;
+      color: #F2F1E4;
+      padding: 20px;
+      position: absolute;
+      bottom: 0;
+      width: 100%; }
+      html .container .footer a, body .container .footer a {
+        text-decoration: none;
+        color: #F2F1E4; }
+        html .container .footer a:hover, body .container .footer a:hover {
+          color: #F2F1E4; }
+
+/*# sourceMappingURL=page-6.css.map */

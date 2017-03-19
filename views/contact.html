@@ -1,0 +1,78 @@
+<html>
+	<head>
+		<title>Contact</title>
+
+		<!-- jQuery -->
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
+		<!--Page 1 stylesheet-->
+		<link rel="stylesheet" type="text/css" href="/stylesheets/page-4.css">
+
+		<!--Font Awesome Icons-->
+		<script src="https://use.fontawesome.com/5f92b1f541.js"></script>
+
+		<script src="/javascripts/update.js"></script>
+
+	</head>
+	<body>
+		<div class="container">
+			<div class="header">
+				<ul>
+					<li><a href="/index"><i class="fa fa-home" aria-hidden="true"></i></a></li>
+					<li><a href="/directory">DIRECTORY</a></li>
+					<li><a href="/contribute">CONTRIBUTE</a></li>
+					<li class='selected-page'><a href="/contact">CONTACT</a></li>
+					<li><a href="/glossary">ABOUT OPEN DATA STANDARDS</a></li>
+					<li><a href="/about">ABOUT US</a></li>
+				</ul>
+			</div>
+			<div class="site-content">
+				<div><h1>CONTACT</h1></div>
+				<h2>[snippet on ways to reach out to the community, such as through Twitter]</h2>
+				<h2>Otherwise, fill out the form below and we will contact you within 7 days</h2>
+				<div class="description-box">
+					<form class="comment">
+						<p><label>Name </label><input type="text" name="client_name" value=""></input></p>
+						<p><label>E-mail </label><input type="text" name="email" value=""></input></p>
+						<p class="timestamp"><label>Standard <input type="text" name="standard" value="null"></input></p>
+						<p><label>Comment <input type="text" name="comment" value=""></input></p>
+						<p class="timestamp"><input id="timestamp" type="text" name="timestamp" value=""></input></p>
+					</form>
+				</div>
+				<div class="popup success">Thank you for your contribution. We will validate and release your contribution within 7 days.</div>
+				<div class="popup error"></div>
+				<br/>
+				<button class="submit"><a href="#">SUBMIT</a></button>
+			</div>
+			<br/>
+			<div class="footer">
+				(c) 2017 | <a href="">SITE MAP | </a><a href="">SOURCE DATA</a>
+			</div>
+		</div>
+	</body>
+	<script>
+		$('.popup').hide();
+
+		var recorded = document.getElementById("timestamp").value
+		var date = new Date();
+		var month = date.getMonth() + 1;
+		var year = date.getFullYear();
+		var day = date.getDate();
+
+		// Creates current date in the correct format 
+		if (String(day).length < 2){
+			recorded = month + "-0" + day + "-" + year;
+		} else if (String(month).length < 2) {
+			recorded = "0" + month + "-" + day + "-" + year;
+		} else {
+			recorded = month + "-" + day + "-" + year;
+		}
+
+		document.getElementById("timestamp").value = recorded;
+
+		$(".submit").click(function(){
+			var form = $(".comment");
+			postUpdate(form);
+		});
+	</script>
+</html>

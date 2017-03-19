@@ -1,0 +1,195 @@
+@import url(https://fonts.googleapis.com/css?family=Pathway+Gothic+One|Lato)
+@import "neat/neat"
+@import "bourbon/bourbon"
+
+// colors for site
+
+// purple, also for buttons
+$banner-color: #5D4157
+// mint, also for buttons
+$container-color: #A8CABA 
+// light yellow, also for background
+$light-font-color: #F2F1E4
+// dark grey 
+$dark-font-color: #545658
+// dark yellow
+$accent-color: #E8C047
+
+// fonts for site
+$header-font: 'Pathway Gothic One', sans-serif
+$body-font: 'Lato', sans-serif
+
+html, body
+
+	text-align: center
+	margin: 0 auto
+	padding: 0px 0px
+	background-color: $light-font-color
+	height: 100%
+
+	.container
+
+		min-height: 100%
+		position: relative
+		background: url('/images/background.png')
+		background-repeat: no-repeat
+		background-size: 100%
+
+		.header
+
+			position: fixed
+			width: 100%
+
+			ul 
+				background-color: $banner-color
+				list-style-type: none
+				margin: 0
+				padding: 0
+				overflow: hidden
+
+				li
+					text-align: center
+					display: inline-block
+					top: 0
+
+					a
+						font-size: 30px
+						font-family: $header-font
+						display: inline-block
+						text-align: center
+						padding: 14px 20px
+						text-decoration: none
+						color: $light-font-color
+						&:hover
+							background-color: $light-font-color
+							color: $banner-color
+
+				li.selected-page
+					a 
+						background-color: $light-font-color
+						color: $banner-color
+
+		.site-content
+
+			padding-bottom: 60px
+			padding-top: 60px
+
+			h1
+				font-family: $header-font
+				color: $dark-font-color
+				padding: 15px
+
+			h2
+				font-family: $body-font
+				color: $dark-font-color
+
+			.description-box
+				box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)
+				margin: 0 auto
+				background-color: $container-color
+				font-family: $body-font
+				color: $dark-font-color
+				width: 900px
+				text-align: center
+				border-radius: 5px
+				padding: 25px
+
+				.comment
+
+					p
+						text-align: left
+						margin-bottom: 20px
+						border: solid
+						border: 1px
+						border-radius: 5px
+						padding: 10px
+						background-color: $light-font-color
+
+						p label a
+							float: left
+
+						label
+							font-weight: bold
+							width: 20%
+
+						a
+							margin-left: 5px
+							text-align: left
+							&:hover
+								cursor: pointer
+
+						input[type="text"], select
+							float: right
+							border-bottom: solid $dark-font-color
+							width: 80%
+							border-radius: 3px
+							padding: 3px
+							background-color: $light-font-color
+							font-family: $body-font
+
+					.timestamp
+						display: none
+
+			.popup
+				border: 1px solid
+				border-radius: 5px
+				padding: 10px
+				border-color: $dark-font-color
+				background-color: $light-font-color
+				margin: 0 auto
+				margin-top: 10px
+				width: 900px
+				text-align: center
+				font-family: $body-font
+				color: $dark-font-color
+				box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)
+
+			.succes
+				display: none
+
+			.error
+				display: none
+
+			button.submit
+				box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)
+				text-align: center
+				background-color: $container-color
+				color: $dark-font-color
+				font-family: $body-font
+				font-size: 20px
+				border-radius: 5px
+				border: 1px
+				width: 900px
+				padding: 10px
+				cursor: pointer
+				&:hover
+					background-color: lighten($container-color, 10%)
+				a
+					text-decoration: none
+					color: $dark-font-color
+
+		.footer
+
+			background-color: $banner-color
+			font-family: $header-font
+			color: $light-font-color
+			padding: 20px
+			position: absolute
+			bottom: 0
+			width: 100%
+
+			a
+				text-decoration: none
+				color: $light-font-color
+				&:hover
+					color: $light-font-color
+
+
+
+
+
+
+	
+
+
+
