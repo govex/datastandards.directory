@@ -15,7 +15,7 @@ function postUpdate(form){
 	
 	request = $.ajax({
 				type: "POST",
-				url: "http://localhost:3000/contribute/api/post",
+				url: "./contribute/api/post",
 				data: serializedData,
 				success: console.log("success")
 			});
