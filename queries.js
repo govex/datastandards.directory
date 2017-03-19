@@ -6,9 +6,10 @@ var options = {
 };
 
 var pgp = require('pg-promise')(options);
-var connectionString = process.env.DATABASE_URL || 'postgres://postgres:january2017*@localhost:5432/inventory';
+var connectionString = process.env.DATABASE_URL || 'postgres://postgres:january2017*@localhost:5432/inventory'; // Heroku postgres OR local host postgres inventory database
 var db = pgp(connectionString);
 
+// Express middleware: create a function that will post any update or comment requests to postgres database
 function post(req, res, next) {
   var data = {client_name: req.body.client_name, email: req.body.email, standard: req.body.email, comment: req.body.email, timestamp: req.body.timestamp}
   db.none('insert into posts(client_name, email, standard, comment, timestamp) values(${client_name}, ${email}, ${standard}, ${comment}, ${timestamp})', data)
@@ -81,7 +82,7 @@ function getRequest(req, res, next) {
         .json({
           status: 'success',
           data: data,
-          message: 'Retrieved ONE standard'
+          message: 'Retrieved ONE category'
         });
     })
     .catch(function (err) {
@@ -105,7 +106,7 @@ function getRequest(req, res, next) {
         .json({
           status: 'success',
           data: data,
-          message: 'Retrieved ONE standard'
+          message: 'Retrieved ONE id'
         });
     })
     .catch(function (err) {
