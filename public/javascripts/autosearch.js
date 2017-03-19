@@ -1,6 +1,6 @@
 var inventory = []; // inventory of items for autocomplete, currently: name and category... ADD TAGS
 
-$.getJSON( "http://localhost:3000/inventory-search/api/inventory-search", function(standards) {
+$.getJSON("./inventory-search/api/inventory-search", function(standards) {
 	$.each(standards.data, function(i) {
 		inventory.push(standards.data[i].name);
 		inventory.push(standards.data[i].category);
