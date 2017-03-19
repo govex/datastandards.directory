@@ -5,6 +5,7 @@ var logger = require('morgan'); // Express middleware for logging requests and r
 //var cookieParser = require('cookie-parser'); 
 var bodyParser = require('body-parser'); // adds a body object to your request so that you can access POST parameters
 
+// paths to routers
 var index = require('./routes/index');
 var directory = require('./routes/directory');
 var contribute = require('./routes/contribute');
@@ -25,15 +26,16 @@ app.set('view engine', 'html'); // set the view engine to html
 //.use() tells app to use the given parameters
 
 // uncomment after placing your favicon in /public
-//app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
+// app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
 app.use(logger('dev')); // logs the requests to the console
 app.use(bodyParser.json()); // gives app the ability to parse JSON
 app.use(bodyParser.urlencoded({ extended: false })); // allows app to read data from URLs
-//app.use(cookieParser()); // adds cookie object to all requests you get
+// app.use(cookieParser()); // adds cookie object to all requests you get
 app.use(express.static(path.join(__dirname, 'public'))); // tells app to use the /public directory
 
-app.use('/index', index); // creates the route for index
-app.use('/directory', directory); // creates the route for directory
+// create routes from the above paths to the following html pages 
+app.use('/index', index); 
+app.use('/directory', directory);
 app.use('/contribute', contribute);
 app.use('/contact', contact);
 app.use('/glossary', glossary);
