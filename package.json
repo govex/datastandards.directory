@@ -1,7 +1,6 @@
 {
-  "name": "node-postgres-promises",
-  "version": "0.0.0",
-  "private": true,
+  "name": "open-data-standards-directory",
+  "version": "0.0.1",
   "scripts": {
     "start": "supervisor ./bin/www"
   },
