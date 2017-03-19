@@ -18,7 +18,7 @@ function postAdd() {
 	
 	request = $.ajax({
 				type: "POST",
-				url: "http://localhost:3000/contribute/api/create-standard",
+				url: "./contribute/api/create-standard",
 				data: serializedData,
 				success: console.log("success")
 			});
