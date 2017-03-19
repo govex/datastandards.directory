@@ -1,6 +1,7 @@
 {
   "name": "open-data-standards-directory",
   "version": "0.0.1",
+  "description": "open data standards directory",
   "scripts": {
     "start" : "node ./bin/www"
   },
@@ -15,5 +16,10 @@
     "pg": "4.x",
     "pg-promise": "^5.5.8",
     "serve-favicon": "~2.3.2"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Noznoc/open-data-standards-directory"
+  },
+  "author": "Julia Conzon"
 }
