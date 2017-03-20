@@ -7,10 +7,10 @@ function buildDirectory(input) {
 		$.each(standards.data, function(i) {
 			if (standards.data[i].id == input || standards.data[i].category.toUpperCase() == input.toUpperCase() || standards.data[i].name.toUpperCase() == input.toUpperCase()) {
 				if (standards.data[i].id == input) {
-					var url = "http://localhost:3000/directory/api/" + standards.data[i].id
+					var url = "https://odstandards-directory.herokuapp.com/directory/api/" + standards.data[i].id
 				}
 				if (standards.data[i].category.toUpperCase() == input.toUpperCase()){
-					var url = "http://localhost:3000/directory/api/" + standards.data[i].category
+					var url = "https://odstandards-directory.herokuapp.com/directory/api/" + standards.data[i].category
 				}
 				$.getJSON("./directory/api/get-request/" + standards.data[i].id, function(standards) {
 					
