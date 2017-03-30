@@ -1,0 +1,122 @@
+<html>
+	<head>
+		<title>Directory</title>
+
+		<!-- IMPORTS -->
+
+		<!--Page 2 stylesheet-->
+		<link rel="stylesheet" type="text/css" href="/stylesheets/page-2.css">
+
+		<!--Font Awesome Icons-->
+		<script src="https://use.fontawesome.com/5f92b1f541.js"></script>
+
+		<!-- jQuery -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+		<!-- Clipboad -->
+		<script src="dist/clipboard.min.js"></script>
+
+		<script src="/javascripts/search.js"></script>
+		<script src="/javascripts/autosearch.js"></script>
+		<script src="/javascripts/click-to-directory.js"></script>
+		<script src="/javascripts/build-standard.js"></script>
+		<script src="/javascripts/build-metrics.js"></script>
+		<script src="/javascripts/click-on-standard.js"></script>
+		<script src="/javascripts/sort.js"></script>
+		<script src="/javascripts/get-url-data.js"></script>
+		<script src="/javascripts/build-directory.js"></script>
+		<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+		<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+	</head>
+	<body>
+		<div class="container">
+			<div class="header">
+				<ul>
+					<li><a href="/index"><i class="fa fa-home" aria-hidden="true"></i></a></li>
+					<li class='selected-page'><a href="/directory">DIRECTORY</a></li>
+					<li><a href="/contribute">CONTRIBUTE</a></li>
+					<li><a href="/contact">CONTACT</a></li>
+					<li><a href="/glossary">ABOUT OPEN DATA STANDARDS</a></li>
+					<li><a href="/about">ABOUT US</a></li>
+				</ul>
+			</div>
+			<div class="site-content">
+				<div><h1>OPEN DATA STANDARD DIRECTORY</h1></div>
+				<div class='directory'>
+					<div class="search-to-directory">
+						<input type="text" name="search" id="search" placeholder="search a category or open data standard">
+							<button class="search-button"><i class="fa fa-search" aria-hidden="true"></i></button>
+						</input>
+					</div>
+					<br/>
+					<div class="click-to-directory">
+						<h2>Click on any high-valued category to see associated open data standards</h2>
+						<div class="row-1">
+							<div class="square" value="Annual Budget">Annual Budget<img src="/images/annual_budget.png" alt="" height="100" width="110"></div>
+							<div class="square" value="Building Permits">Building Permits<img src="/images/building_permits.png" alt="" height="90" width="90"></div>
+							<div class="square" value="Crime Statistics">Crime Statistics<img src="/images/crime_statistics.png" alt="" height="100" width="115"></div>
+							<div class="square" value="Election Results">Election Results<img src="/images/election_results.png" alt="" height="90" width="90"></div>
+							<div class="square" value="Expenditure">Expenditure<img src="/images/expenditure.png" alt="" height="90" width="100"></div>
+						</div>
+						<div class="row-2">
+							<div class="square" value="Public Facilities">Public Facilities<img src="/images/public_facilities.png" alt="" height="100" width="100"></div>
+							<div class="square" value="Real-Time Transit">Real-Time Transit<img src="/images/transit.png" alt="" height="90" width="90"></div>
+							<div class="square" value="Road Construction">Road Construction<img src="/images/road_construction.png" alt="" height="90" width="90"></div>
+							<div class="square" value="Service Requests">Service Requests<img src="/images/service_requests.png" alt="" height="80" width="80"></div>
+							<div class="square" value="Zoning">Zoning<img src="/images/zoning.png" alt="" height="130" width="110"></div>
+						</div>
+						<br/>
+						<button class="all-standards">VIEW ALL STANDARDS</button>
+					</div>
+					<div class="directory-results">
+						<div class="no-results"></div>
+						<div class="directory-items">
+							<strong class="search-title"></strong>
+							<div class="filters">
+								<strong>Sort</strong>
+								<select class="dropdown" id="sortby">
+									<option selected="selected"></option>
+									<option value="new">Newest</option>
+									<option value="old">Oldest</option>
+									<option value="updated">Last Updated</option>
+								</select>
+							</div>
+						</div>
+						<div id="standards"></div>
+					</div>
+				</div>
+			</div>
+			<br/>
+			<div class="footer">
+				(c) 2017 | <a href="">SITE MAP | </a><a href="">SOURCE DATA</a>
+			</div>
+		</div>
+		<script>
+			$( function() {
+				$( document ).tooltip();
+			} );
+		
+			var url = window.location.href // stores the url the client has entered
+			var id  = getId(url)
+
+			function getId(str) {
+			    return str.split('http://localhost:3000/directory/api/')[1];
+			}
+
+			if (isNaN(id) == true) {
+				if (id.indexOf('%20') >= 0){
+					id = id.replace("%20", " ");
+				}
+			} 
+
+			console.log(id)
+
+			var allStandards = [];
+
+			if (id.length !== 0){
+		        buildDirectory(id);
+			} 
+
+		</script>
+	</body>
+</html>

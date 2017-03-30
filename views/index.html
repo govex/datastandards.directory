@@ -1,0 +1,97 @@
+<html>
+	<head>
+		<title>Home</title>
+
+		<!-- IMPORTS -->
+
+		<!--Page 1 stylesheet-->
+		<link rel="stylesheet" type="text/css" href="/stylesheets/page-1.css">
+
+		<!--Font Awesome Icons-->
+		<script src="https://use.fontawesome.com/5f92b1f541.js"></script>
+
+		<!-- jQuery -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+		<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+		<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+
+		<script src="/javascripts/click-to-directory.js"></script>
+		<script src="/javascripts/autosearch.js"></script>
+		<script src="/javascripts/search.js"></script>
+		<script src="/javascripts/build-directory.js"></script>
+		<script src="/javascripts/hover-for-category.js"></script>
+
+	</head>
+	<body>
+		<div class="container">
+			<div class="header">
+				<ul>
+					<li><a href="/index"><i class="fa fa-home" aria-hidden="true"></i></a></li>
+					<li><a href="/directory">DIRECTORY</a></li>
+					<li><a href="/contribute">CONTRIBUTE</a></li>
+					<li><a href="/contact">CONTACT</a></li>
+					<li><a href="/glossary">ABOUT OPEN DATA STANDARDS</a></li>
+					<li><a href="/about">ABOUT US</a></li>
+				</ul>
+			</div>
+			<div class="site-content">
+				<div><h1>WELCOME TO THE OPEN DATA STANDARDS DIRECTORY</h1></div>
+				<div class="directory">
+					<div class="search-to-directory">
+						<input type="text" name="search" id="search" placeholder="search a category or open data standard">
+							<button class="search-button"><i class="fa fa-search" aria-hidden="true"></i></button>
+						</input>
+					</div>
+
+					<div class="click-to-directory">
+						<h2>Click on any high-valued category to see associated open data standards</h2>
+						<a href="/directory">
+							<div class="row-1">
+								<div class="square" value="Annual Budget">Annual Budget<img src="/images/annual_budget.png" alt="" height="100" width="110"></div>
+								<div class="square" value="Building Permits">Building Permits<img src="/images/building_permits.png" alt="" height="90" width="90"></div>
+								<div class="square" value="Crime Statistics">Crime Statistics<img src="/images/crime_statistics.png" alt="" height="100" width="115"></div>
+								<div class="square" value="Election Results">Election Results<img src="/images/election_results.png" alt="" height="90" width="90"></div>
+								<div class="square" value="Expenditure">Expenditure<img src="/images/expenditure.png" alt="" height="90" width="100"></div>
+							</div>
+							<div class="row-2">
+								<div class="square" value="Public Facilities">Public Facilities<img src="/images/public_facilities.png" alt="" height="100" width="100"></div>
+								<div class="square" value="Real-Time Transit">Real-Time Transit<img src="/images/transit.png" alt="" height="90" width="90"></div>
+								<div class="square" value="Road Construction">Road Construction<img src="/images/road_construction.png" alt="" height="90" width="90"></div>
+								<div class="square" value="Service Requests">Service Requests<img src="/images/service_requests.png" alt="" height="80" width="80"></div>
+								<div class="square" value="Zoning">Zoning<img src="/images/zoning.png" alt="" height="130" width="110"></div>
+							</div>
+						</a>
+						<br/>
+						<a href="/directory"><button>ACCESS DIRECTORY</button></a>
+					</div>
+				</div>
+				<div class="click-to-learn">
+					<div class="to-learn">
+						<h1>WHAT ARE OPEN DATA STANDARDS?</h1>
+						<h2>An open data standard is a set of specifications (or requirements) for how some sets of data should be made publicly available. Generally, open data standards describe data about a particular subject, for example service requests (Open311) or building permits (BLDS). Like the data they describe, open data standards are generally developed “in the open”, meaning that anyone who is interested has a way to contribute.</h2>
+					</div>
+					<div class="to-learn">
+						<h1>WHY OPEN DATA STANDARDS?</h1>
+						<h2>An open data standard is a set of specifications (or requirements) for how some sets of data should be made publicly available. Generally, open data standards describe data about a particular subject, for example service requests (Open311) or building permits (BLDS). Like the data they describe, open data standards are generally developed “in the open”, meaning that anyone who is interested has a way to contribute.</h2>
+					</div>
+					<br/>
+					<a href="/glossary"><div class="left to-learn">LEARN ABOUT OPEN DATA STANDARDS</div></a>
+					<a href="/about#methodology"><div class="right to-learn">LEARN ABOUT OUR METHODOLOGY</div></a>
+				</div>
+			</div>
+			<br/>
+			<div class="footer">
+				(c) 2017 | <a href="">SITE MAP | </a><a href="">SOURCE DATA</a>
+			</div>
+		</div>
+		<script type="text/javascript">
+			var category = "";
+			(function (global) {
+				$(".square").on('click', function(){
+					category = $(this).html()
+				    global.localStorage.setItem("search-category", $(this).attr("value"));
+				});	
+			}(window));
+		</script>
+	</body>
+</html>
