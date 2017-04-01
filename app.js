@@ -13,6 +13,8 @@ var contact = require('./routes/contact');
 var glossary = require('./routes/glossary');
 var about = require('./routes/about');
 var allstandards = require('./routes/all-standards');
+var onestandard = require('./routes/get-standard');
+var renderstandard = require('./routes/render-standard');
 var inventorySearch = require('./routes/inventory-search');
 var create = require('./routes/create-standard');
 var post = require('./routes/post');
@@ -42,7 +44,9 @@ app.use('/contribute', contribute);
 app.use('/contact', contact);
 app.use('/glossary', glossary);
 app.use('/about', about);
-app.use('/inventory', allstandards);
+app.use('/directory', allstandards);
+app.use('/directory', onestandard);
+app.use('/directory', renderstandard);
 app.use('/inventory-search', inventorySearch);
 app.use('/contribute', create);
 app.use('/contribute', post);
@@ -61,7 +65,7 @@ app.use(function(req, res, next) {
   next(err);
 });
 
-//error handler
+/*error handler
 app.use(function(err, req, res, next) {
   // set locals, only providing error in development
   res.locals.message = err.message;
@@ -70,6 +74,6 @@ app.use(function(err, req, res, next) {
   //res.send("Sorry can't find that!")
   // render the error page
   res.status(err.status || 500);
-});
+});*/
 
 module.exports = app;

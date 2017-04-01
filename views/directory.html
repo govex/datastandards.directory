@@ -12,8 +12,6 @@
 
 		<!-- jQuery -->
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-		<!-- Clipboad -->
-		<script src="dist/clipboard.min.js"></script>
 
 		<script src="/javascripts/search.js"></script>
 		<script src="/javascripts/autosearch.js"></script>
@@ -22,7 +20,6 @@
 		<script src="/javascripts/build-metrics.js"></script>
 		<script src="/javascripts/click-on-standard.js"></script>
 		<script src="/javascripts/sort.js"></script>
-		<script src="/javascripts/get-url-data.js"></script>
 		<script src="/javascripts/build-directory.js"></script>
 		<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 		<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
@@ -37,18 +34,17 @@
 					<li><a href="/contribute">CONTRIBUTE</a></li>
 					<li><a href="/contact">CONTACT</a></li>
 					<li><a href="/glossary">ABOUT OPEN DATA STANDARDS</a></li>
-					<li><a href="/about">ABOUT US</a></li>
+					<li><a href="/about">ABOUT</a></li>
 				</ul>
 			</div>
 			<div class="site-content">
-				<div><h1>OPEN DATA STANDARD DIRECTORY</h1></div>
+				<div><h1>Open Data Standards Directory</h1></div>
 				<div class='directory'>
 					<div class="search-to-directory">
 						<input type="text" name="search" id="search" placeholder="search a category or open data standard">
 							<button class="search-button"><i class="fa fa-search" aria-hidden="true"></i></button>
 						</input>
 					</div>
-					<br/>
 					<div class="click-to-directory">
 						<h2>Click on any high-valued category to see associated open data standards</h2>
 						<div class="row-1">
@@ -66,7 +62,7 @@
 							<div class="square" value="Zoning">Zoning<img src="/images/zoning.png" alt="" height="130" width="110"></div>
 						</div>
 						<br/>
-						<button class="all-standards">VIEW ALL STANDARDS</button>
+						<button class="all-standards">View All Standards</button>
 					</div>
 					<div class="directory-results">
 						<div class="no-results"></div>
@@ -88,7 +84,7 @@
 			</div>
 			<br/>
 			<div class="footer">
-				(c) 2017 | <a href="">SITE MAP | </a><a href="">SOURCE DATA</a>
+				© 2017 | <a href="https://odstandards-directory.herokuapp.com/inventory/api/all-standards" target="_blank">SOURCE DATA</a>
 			</div>
 		</div>
 		<script>
@@ -99,8 +95,14 @@
 			var url = window.location.href // stores the url the client has entered
 			var id  = getId(url)
 
+			// obtain the id number of the url
 			function getId(str) {
-			    return str.split('http://localhost:3000/directory/api/')[1];
+			   if (str.indexOf("http://localhost:3000/directory") >= 0){
+			    	return str.split('http://localhost:3000/directory/api/')[1];
+			   }
+			   if (str.indexof("https://odstandards-directory.herokuapp.com/directory") >= 0) {
+			   		return str.split('https://odstandards-directory.herokuapp.com/directory/api/')[1];
+			   }
 			}
 
 			if (isNaN(id) == true) {
@@ -109,11 +111,12 @@
 				}
 			} 
 
-			console.log(id)
+			
 
 			var allStandards = [];
 
 			if (id.length !== 0){
+				console.log(id)
 		        buildDirectory(id);
 			} 
 

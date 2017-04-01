@@ -12,7 +12,4 @@ router.get('/', function(req, res, next) { // router.get() = HTTP method; '/' = 
   res.render('directory');
 });
 
-router.get('/api/get-request/:id', db.getRequest); // outputs the getRequest function
-router.get('/api/:id', db.renderRequest); // outputs the getRequest function
-
 module.exports = router;

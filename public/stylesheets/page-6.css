@@ -1,4 +1,4 @@
-@import url(https://fonts.googleapis.com/css?family=Pathway+Gothic+One|Lato);
+@import url(https://fonts.googleapis.com/css?family=PT+Sans+Narrow|Lato);
 html {
   box-sizing: border-box; }
 
@@ -9,7 +9,7 @@ html, body {
   text-align: center;
   margin: 0 auto;
   padding: 0px 0px;
-  background-color: #F2F1E4;
+  background-color: #FFFeF7;
   height: 100%; }
   html .container, body .container {
     min-height: 100%;
@@ -32,31 +32,35 @@ html, body {
           top: 0; }
           html .container .header ul li a, body .container .header ul li a {
             font-size: 30px;
-            font-family: "Pathway Gothic One", sans-serif;
+            font-family: "PT Sans Narrow", sans-serif;
             display: inline-block;
             text-align: center;
             padding: 14px 20px;
             text-decoration: none;
-            color: #F2F1E4; }
+            color: #FFFeF7; }
             html .container .header ul li a:hover, body .container .header ul li a:hover {
-              background-color: #F2F1E4;
+              background-color: #FFFeF7;
               color: #5D4157;
-              border-color: #F2F1E4; }
+              border-color: #FFFeF7; }
         html .container .header ul li.selected-page a, body .container .header ul li.selected-page a {
-          background-color: #F2F1E4;
+          background-color: #FFFeF7;
           color: #5D4157; }
     html .container .site-content, body .container .site-content {
       padding-bottom: 60px;
       padding-top: 60px; }
       html .container .site-content h1, body .container .site-content h1 {
-        padding: 15px;
-        font-family: "Pathway Gothic One", sans-serif;
+        padding: 30px;
+        background-color: #FFFeF7;
+        margin: 0px;
+        font-family: "Lato", sans-serif;
         color: #545658;
         font-size: 50px; }
       html .container .site-content .description-box, body .container .site-content .description-box {
         box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
         font-size: 20px;
         margin: 0 auto;
+        margin-top: 20px;
+        margin-bottom: 20px;
         background-color: #A8CABA;
         font-family: "Lato", sans-serif;
         color: #545658;
@@ -80,23 +84,28 @@ html, body {
             font-family: "Lato", sans-serif; }
             html .container .site-content .description-box .legend button#metric:hover, body .container .site-content .description-box .legend button#metric:hover {
               cursor: pointer; }
+        html .container .site-content .description-box .legend-metrics, body .container .site-content .description-box .legend-metrics {
+          margin-top: 10px; }
         html .container .site-content .description-box a, body .container .site-content .description-box a {
           text-decoration: none;
-          color: #F2F1E4; }
-          html .container .site-content .description-box a:hover, body .container .site-content .description-box a:hover {
-            text-decoration: underline; }
+          color: #FFFeF7; }
+      html .container .site-content img, body .container .site-content img {
+        text-align: center;
+        display: block;
+        margin: 0 auto;
+        margin-top: 20px; }
     html .container .footer, body .container .footer {
       background-color: #5D4157;
-      font-family: "Pathway Gothic One", sans-serif;
-      color: #F2F1E4;
+      font-family: "PT Sans Narrow", sans-serif;
+      color: #FFFeF7;
       padding: 20px;
       position: absolute;
       bottom: 0;
       width: 100%; }
       html .container .footer a, body .container .footer a {
         text-decoration: none;
-        color: #F2F1E4; }
+        color: #FFFeF7; }
         html .container .footer a:hover, body .container .footer a:hover {
-          color: #F2F1E4; }
+          color: #FFFeF7; }
 
 /*# sourceMappingURL=page-6.css.map */

@@ -38,7 +38,7 @@ $(function(){
 					$(".standard-body").hide(); //hide the standard body full-text, just show the title of each standard and associated description
 				}
 			}(window));
-     		
+     		console.log("test")
 			buildDirectory(parameters)
 		}
 	}

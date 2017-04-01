@@ -11,6 +11,7 @@ var db = pgp(connectionString);
 
 console.log(process.env.DATABASE_URL);
 console.log(connectionString);
+console.log(db)
 
 // Express middleware: create a function that will post any update or comment requests to postgres database
 function post(req, res, next) {
@@ -79,6 +80,7 @@ function inventorySearch(req, res, next) {
 // Express query function that will get a row based on whether the request is a category, name, or id
 function getRequest(req, res, next) {
   var standard = req.params.id; // stores the id parameter (value) into var standard
+
   db.many('select * from standards where category = $1', standard)
     .then(function (data) {
       res.status(200)
@@ -91,6 +93,7 @@ function getRequest(req, res, next) {
     .catch(function (err) {
       return next(err);
     });
+
   db.many('select * from standards where name = $1', standard)
     .then(function (data) {
       res.status(200)
@@ -103,7 +106,8 @@ function getRequest(req, res, next) {
     .catch(function (err) {
       return next(err);
     });
-  db.many('select * from standards where id=$1', standard)
+
+  db.many('select * from standards where id = $1', standard)
     .then(function (data) {
       res.status(200)
         .json({
@@ -122,7 +126,7 @@ function renderRequest(req, res, next){
   var standard = req.params.id;
   db.many('select * from standards where id=$1', standard)
     .then(function (data) {
-      res.render('directory')
+      res.render('directory');
     })
     .catch(function (err) {
       return next(err);

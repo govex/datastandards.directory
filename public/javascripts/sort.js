@@ -50,6 +50,7 @@ function sortby(allStandards){
 				}
 			}
 		}
+		console.log(output)
 		return output;
 	}
 

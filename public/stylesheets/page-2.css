@@ -1,4 +1,4 @@
-@import url(https://fonts.googleapis.com/css?family=Pathway+Gothic+One|Lato);
+@import url(https://fonts.googleapis.com/css?family=PT+Sans+Narrow|Lato);
 html {
   box-sizing: border-box; }
 
@@ -9,7 +9,7 @@ html, body {
   text-align: center;
   margin: 0 auto;
   padding: 0px 0px;
-  background-color: #F2F1E4;
+  background: +radial-gradient(#FFFeF7, #FFFFFF);
   height: 100%; }
   html .container, body .container {
     min-height: 100%;
@@ -29,17 +29,17 @@ html, body {
           top: 0; }
           html .container .header ul li a, body .container .header ul li a {
             font-size: 30px;
-            font-family: "Pathway Gothic One", sans-serif;
+            font-family: "PT Sans Narrow", sans-serif;
             display: inline-block;
             text-align: center;
             padding: 14px 20px;
             text-decoration: none;
-            color: #F2F1E4; }
+            color: #FFFeF7; }
             html .container .header ul li a:hover, body .container .header ul li a:hover {
-              background-color: #F2F1E4;
+              background-color: #FFFeF7;
               color: #5D4157; }
         html .container .header ul li.selected-page a, body .container .header ul li.selected-page a {
-          background-color: #F2F1E4;
+          background-color: #FFFeF7;
           color: #5D4157; }
     html .container .site-content, body .container .site-content {
       padding-bottom: 60px;
@@ -47,40 +47,44 @@ html, body {
       background: url("/images/background.png");
       background-size: 100%; }
       html .container .site-content h1, body .container .site-content h1 {
-        padding: 15px;
-        font-family: "Pathway Gothic One", sans-serif;
-        color: #545658;
-        font-size: 50px; }
-      html .container .site-content .directory .search-to-directory input, body .container .site-content .directory .search-to-directory input {
-        width: 840px;
+        padding: 30px;
         font-family: "Lato", sans-serif;
-        font-size: 22px;
-        padding: 12px 45px;
-        padding-bottom: 19px;
-        border-top-left-radius: 5px;
-        border-bottom-left-radius: 5px;
-        border: 2px;
-        border-style: solid;
-        border-color: #545658;
-        text-align: center;
-        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); }
-      html .container .site-content .directory .search-to-directory button.search-button, body .container .site-content .directory .search-to-directory button.search-button {
-        margin-left: auto 0px;
-        font-size: 22px;
-        width: 60px;
-        background-color: #A8CABA;
-        padding: 15px 10px;
-        padding-bottom: 21px;
-        border-top-right-radius: 5px;
-        border-bottom-right-radius: 5px;
-        border: 2px;
-        border-style: solid;
-        border-color: #545658;
         color: #545658;
-        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); }
-        html .container .site-content .directory .search-to-directory button.search-button:hover, body .container .site-content .directory .search-to-directory button.search-button:hover {
-          background-color: #c8ddd3;
-          cursor: pointer; }
+        font-size: 50px;
+        background-color: #FFFeF7;
+        margin: 0px; }
+      html .container .site-content .directory .search-to-directory, body .container .site-content .directory .search-to-directory {
+        margin-top: 30px; }
+        html .container .site-content .directory .search-to-directory input, body .container .site-content .directory .search-to-directory input {
+          width: 840px;
+          font-family: "Lato", sans-serif;
+          font-size: 22px;
+          padding: 12px 45px;
+          padding-bottom: 19px;
+          border-top-left-radius: 5px;
+          border-bottom-left-radius: 5px;
+          border: 2px;
+          border-style: solid;
+          border-color: #545658;
+          text-align: center;
+          box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); }
+        html .container .site-content .directory .search-to-directory button.search-button, body .container .site-content .directory .search-to-directory button.search-button {
+          margin-left: auto 0px;
+          font-size: 22px;
+          width: 60px;
+          background-color: #A8CABA;
+          padding: 15px 10px;
+          padding-bottom: 21px;
+          border-top-right-radius: 5px;
+          border-bottom-right-radius: 5px;
+          border: 2px;
+          border-style: solid;
+          border-color: #545658;
+          color: #545658;
+          box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); }
+          html .container .site-content .directory .search-to-directory button.search-button:hover, body .container .site-content .directory .search-to-directory button.search-button:hover {
+            background-color: #c8ddd3;
+            cursor: pointer; }
       html .container .site-content .directory .click-to-directory h2, body .container .site-content .directory .click-to-directory h2 {
         font-family: "Lato", sans-serif;
         color: #545658; }
@@ -179,7 +183,7 @@ html, body {
             text-decoration: none; }
           html .container .site-content .directory .directory-results .click-to-learn a button, body .container .site-content .directory .directory-results .click-to-learn a button {
             border: solid;
-            border-color: #F2F1E4; }
+            border-color: #FFFeF7; }
           html .container .site-content .directory .directory-results .click-to-learn button, body .container .site-content .directory .directory-results .click-to-learn button {
             color: #545658;
             text-align: center;
@@ -191,7 +195,7 @@ html, body {
             padding: 20px;
             margin: 0px; }
             html .container .site-content .directory .directory-results .click-to-learn button:hover, body .container .site-content .directory .directory-results .click-to-learn button:hover {
-              background-color: #F2F1E4;
+              background-color: #FFFeF7;
               color: #A8CABA;
               border-color: #A8CABA; }
         html .container .site-content .directory .directory-results .no-results, body .container .site-content .directory .directory-results .no-results {
@@ -208,7 +212,7 @@ html, body {
             float: right;
             padding: 20px 0px; }
             html .container .site-content .directory .directory-results .directory-items .filters .dropdown, body .container .site-content .directory .directory-results .directory-items .filters .dropdown {
-              background-color: #F2F1E4;
+              background-color: #FFFeF7;
               border: solid;
               border-color: #E8C047;
               border-radius: 5px;
@@ -221,7 +225,7 @@ html, body {
           border-color: #E8C047;
           color: #545658;
           font-family: "Lato", sans-serif;
-          background-color: #F2F1E4;
+          background-color: #FFFeF7;
           width: 900px;
           margin-top: 50px;
           padding: 10px; }
@@ -302,7 +306,7 @@ html, body {
           html .container .site-content .directory .directory-results .standard-links button, body .container .site-content .directory .directory-results .standard-links button {
             color: #E8C047;
             text-align: center;
-            background-color: #F2F1E4;
+            background-color: #FFFeF7;
             font-family: "Lato", sans-serif;
             font-size: 15px;
             border: 1px;
@@ -312,11 +316,11 @@ html, body {
             margin: 0px; }
             html .container .site-content .directory .directory-results .standard-links button:hover, body .container .site-content .directory .directory-results .standard-links button:hover {
               background-color: #E8C047;
-              color: #F2F1E4; }
+              color: #FFFeF7; }
     html .container .footer, body .container .footer {
       background-color: #5D4157;
-      font-family: "Pathway Gothic One", sans-serif;
-      color: #F2F1E4;
+      font-family: "PT Sans Narrow", sans-serif;
+      color: #FFFeF7;
       padding: 20px;
       position: absolute;
       bottom: 0;
@@ -324,8 +328,10 @@ html, body {
       margin-top: 0px; }
       html .container .footer a, body .container .footer a {
         text-decoration: none;
-        color: #F2F1E4; }
+        color: #FFFeF7; }
         html .container .footer a:hover, body .container .footer a:hover {
-          color: #F2F1E4; }
+          color: #FFFeF7; }
+    html .container ui-tooltip, body .container ui-tooltip {
+      padding: 30px; }
 
 /*# sourceMappingURL=page-2.css.map */

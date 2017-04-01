@@ -1,4 +1,4 @@
-@import url(https://fonts.googleapis.com/css?family=Pathway+Gothic+One|Lato);
+@import url(https://fonts.googleapis.com/css?family=PT+Sans+Narrow|Lato);
 html {
   box-sizing: border-box; }
 
@@ -9,7 +9,7 @@ html, body {
   text-align: center;
   margin: 0 auto;
   padding: 0px 0px;
-  background-color: #F2F1E4;
+  background-color: #FFFeF7;
   height: 100%; }
   html .container, body .container {
     background: url("/images/background.png");
@@ -31,31 +31,34 @@ html, body {
           top: 0; }
           html .container .header ul li a, body .container .header ul li a {
             font-size: 30px;
-            font-family: "Pathway Gothic One", sans-serif;
+            font-family: "PT Sans Narrow", sans-serif;
             display: inline-block;
             text-align: center;
             padding: 14px 20px;
             text-decoration: none;
-            color: #F2F1E4; }
+            color: #FFFeF7; }
             html .container .header ul li a:hover, body .container .header ul li a:hover {
-              background-color: #F2F1E4;
+              background-color: #FFFeF7;
               color: #5D4157; }
         html .container .header ul li.selected-page a, body .container .header ul li.selected-page a {
-          background-color: #F2F1E4;
+          background-color: #FFFeF7;
           color: #5D4157; }
     html .container .site-content, body .container .site-content {
       padding-bottom: 60px;
       padding-top: 60px; }
       html .container .site-content h1, body .container .site-content h1 {
-        font-family: "Pathway Gothic One", sans-serif;
+        font-family: "Lato", sans-serif;
         color: #545658;
-        padding: 15px; }
+        padding: 30px;
+        background-color: #FFFeF7;
+        margin: 0px;
+        font-size: 50px; }
       html .container .site-content h2, body .container .site-content h2 {
         font-family: "Lato", sans-serif;
         color: #545658; }
       html .container .site-content .tabs .inactive-tab, body .container .site-content .tabs .inactive-tab {
         text-align: center;
-        color: #F2F1E4;
+        color: #FFFeF7;
         font-family: "Lato", sans-serif;
         font-size: 20px;
         border-top-left-radius: 5px;
@@ -96,7 +99,7 @@ html, body {
             border: 1px;
             border-radius: 5px;
             padding: 10px;
-            background-color: #F2F1E4; }
+            background-color: #FFFeF7; }
             html .container .site-content .description-box form p p label a, body .container .site-content .description-box form p p label a {
               float: left; }
             html .container .site-content .description-box form p label, body .container .site-content .description-box form p label {
@@ -111,7 +114,7 @@ html, body {
               float: right;
               width: 70%;
               padding: 3px;
-              background-color: #F2F1E4;
+              background-color: #FFFeF7;
               font-family: "Lato", sans-serif;
               border: 0px; }
               html .container .site-content .description-box form p input[type="text"]:hover, html .container .site-content .description-box form p select:hover, body .container .site-content .description-box form p input[type="text"]:hover, body .container .site-content .description-box form p select:hover {
@@ -141,7 +144,7 @@ html, body {
         border-radius: 5px;
         padding: 10px;
         border-color: #545658;
-        background-color: #F2F1E4;
+        background-color: #FFFeF7;
         box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
         margin: 10px; }
       html .container .site-content .succes, body .container .site-content .succes {
@@ -165,16 +168,16 @@ html, body {
           background-color: #c8ddd3; }
     html .container .footer, body .container .footer {
       background-color: #5D4157;
-      font-family: "Pathway Gothic One", sans-serif;
-      color: #F2F1E4;
+      font-family: "PT Sans Narrow", sans-serif;
+      color: #FFFeF7;
       padding: 20px;
       position: absolute;
       bottom: 0;
       width: 100%; }
       html .container .footer a, body .container .footer a {
         text-decoration: none;
-        color: #F2F1E4; }
+        color: #FFFeF7; }
         html .container .footer a:hover, body .container .footer a:hover {
-          color: #F2F1E4; }
+          color: #FFFeF7; }
 
 /*# sourceMappingURL=page-3.css.map */

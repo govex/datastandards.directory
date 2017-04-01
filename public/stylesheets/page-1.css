@@ -1,4 +1,4 @@
-@import url(https://fonts.googleapis.com/css?family=Pathway+Gothic+One|Lato);
+@import url(https://fonts.googleapis.com/css?family=PT+Sans+Narrow|Lato);
 html {
   box-sizing: border-box; }
 
@@ -10,7 +10,7 @@ html, body {
   margin: 0 auto;
   padding: 0px 0px;
   height: 100%;
-  background-color: #F2F1E4; }
+  background-color: #FFFeF7; }
   html .container, body .container {
     min-height: 100%;
     position: relative; }
@@ -29,56 +29,60 @@ html, body {
           top: 0; }
           html .container .header ul li a, body .container .header ul li a {
             font-size: 30px;
-            font-family: "Pathway Gothic One", sans-serif;
+            font-family: "PT Sans Narrow", sans-serif;
             display: inline-block;
             text-align: center;
             padding: 14px 20px;
             text-decoration: none;
-            color: #F2F1E4; }
+            color: #FFFeF7; }
             html .container .header ul li a:hover, body .container .header ul li a:hover {
-              background-color: #F2F1E4;
+              background-color: #FFFeF7;
               color: #5D4157; }
     html .container .site-content, body .container .site-content {
       padding-bottom: 40px;
       padding-top: 60px;
       background: url("/images/background.png"); }
       html .container .site-content h1, body .container .site-content h1 {
-        padding: 15px;
-        font-family: "Pathway Gothic One", sans-serif;
+        padding: 30px;
+        background-color: #FFFeF7;
+        margin: 0px;
+        font-family: "Lato", sans-serif;
         color: #545658;
-        font-size: 45px; }
+        font-size: 50px; }
       html .container .site-content i, body .container .site-content i {
         color: #545658; }
-      html .container .site-content .directory .search-to-directory input, body .container .site-content .directory .search-to-directory input {
-        width: 840px;
-        font-family: "Lato", sans-serif;
-        font-size: 22px;
-        padding: 12px 45px;
-        padding-bottom: 19px;
-        border-top-left-radius: 5px;
-        border-bottom-left-radius: 5px;
-        border: 2px;
-        border-style: solid;
-        border-color: #545658;
-        text-align: center;
-        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); }
-      html .container .site-content .directory .search-to-directory button.search-button, body .container .site-content .directory .search-to-directory button.search-button {
-        margin-left: auto 0px;
-        font-size: 22px;
-        width: 60px;
-        background-color: #A8CABA;
-        padding: 15px 10px;
-        padding-bottom: 21px;
-        border-top-right-radius: 5px;
-        border-bottom-right-radius: 5px;
-        border: 2px;
-        border-style: solid;
-        border-color: #545658;
-        color: #545658;
-        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); }
-        html .container .site-content .directory .search-to-directory button.search-button:hover, body .container .site-content .directory .search-to-directory button.search-button:hover {
-          background-color: #c8ddd3;
-          cursor: pointer; }
+      html .container .site-content .directory .search-to-directory, body .container .site-content .directory .search-to-directory {
+        margin-top: 30px; }
+        html .container .site-content .directory .search-to-directory input, body .container .site-content .directory .search-to-directory input {
+          width: 840px;
+          font-family: "Lato", sans-serif;
+          font-size: 22px;
+          padding: 12px 45px;
+          padding-bottom: 19px;
+          border-top-left-radius: 5px;
+          border-bottom-left-radius: 5px;
+          border: 2px;
+          border-style: solid;
+          border-color: #545658;
+          text-align: center;
+          box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); }
+        html .container .site-content .directory .search-to-directory button.search-button, body .container .site-content .directory .search-to-directory button.search-button {
+          margin-left: auto 0px;
+          font-size: 22px;
+          width: 60px;
+          background-color: #A8CABA;
+          padding: 15px 10px;
+          padding-bottom: 21px;
+          border-top-right-radius: 5px;
+          border-bottom-right-radius: 5px;
+          border: 2px;
+          border-style: solid;
+          border-color: #545658;
+          color: #545658;
+          box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); }
+          html .container .site-content .directory .search-to-directory button.search-button:hover, body .container .site-content .directory .search-to-directory button.search-button:hover {
+            background-color: #c8ddd3;
+            cursor: pointer; }
       html .container .site-content .directory .click-to-directory h2, body .container .site-content .directory .click-to-directory h2 {
         font-family: "Lato", sans-serif;
         color: #545658; }
@@ -175,7 +179,7 @@ html, body {
           margin-right: 2.35765%;
           width: 48.82117%;
           margin-right: 0;
-          background-color: #F2F1E4;
+          background-color: #FFFeF7;
           width: 50%;
           border-top: 5px white;
           border-top-style: solid;
@@ -184,7 +188,7 @@ html, body {
           html .container .site-content .click-to-learn div.to-learn:last-child, body .container .site-content .click-to-learn div.to-learn:last-child {
             margin-right: 0; }
           html .container .site-content .click-to-learn div.to-learn h1, body .container .site-content .click-to-learn div.to-learn h1 {
-            font-family: "Pathway Gothic One", sans-serif;
+            font-family: "PT Sans Narrow", sans-serif;
             color: #545658; }
           html .container .site-content .click-to-learn div.to-learn h2, body .container .site-content .click-to-learn div.to-learn h2 {
             font-family: "Lato", sans-serif;
@@ -204,17 +208,17 @@ html, body {
           padding: 10px;
           font-family: "Lato", sans-serif;
           color: #E8C047;
-          background-color: #F2F1E4;
+          background-color: #FFFeF7;
           font-size: 20px;
           text-decoration: none;
           cursor: pointer; }
           html .container .site-content .click-to-learn a div.to-learn:hover, body .container .site-content .click-to-learn a div.to-learn:hover {
             background-color: #E8C047;
-            color: #F2F1E4; }
+            color: #FFFeF7; }
     html .container .footer, body .container .footer {
       background-color: #5D4157;
-      font-family: "Pathway Gothic One", sans-serif;
-      color: #F2F1E4;
+      font-family: "PT Sans Narrow", sans-serif;
+      color: #FFFeF7;
       padding: 20px;
       margin-top: 0px;
       position: absolute;
@@ -223,8 +227,8 @@ html, body {
       margin-top: 0px; }
       html .container .footer a, body .container .footer a {
         text-decoration: none;
-        color: #F2F1E4; }
+        color: #FFFeF7; }
         html .container .footer a:hover, body .container .footer a:hover {
-          color: #F2F1E4; }
+          color: #FFFeF7; }
 
 /*# sourceMappingURL=page-1.css.map */

@@ -14,14 +14,16 @@ function clickStandard (){
 
 // function when the user clicks the link on the top-right corner of the standard
 function clickLink(url) {
-	$("#copy-link").on('click', function(){ // when the user clicks the link
-		var link = $(this).siblings('div.copy-link');
-		$(link).html(url);
-		copyToClipboard(url)
+	$('#copy-link').on({
+	  "click": function() {
+	  	var link = $(this).siblings('div.copy-link');
+	  	$(link).attr("title", url);
+	    $(link).tooltip();
+	    $(link).tooltip({
+  			position: { my: "left center", at: "right center", of: "#copy-link"}
+		})
+		$(link).tooltip("open");
+	  }
 	});
-	new Clipboard('#copy-link');
 }
 
-function copyToClipboard(text) {
-    window.prompt("Copy to clipboard: Ctrl+C, Enter", text);
-}
