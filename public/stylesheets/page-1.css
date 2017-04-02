@@ -181,9 +181,11 @@ html, body {
           margin-right: 0;
           background-color: #FFFeF7;
           width: 50%;
-          border-top: 5px white;
-          border-top-style: solid;
+          border: solid;
+          border-color: #E8C047;
+          border-top: solid 5px;
           border-top-color: #E8C047;
+          border-bottom: 0px;
           margin-top: 20px; }
           html .container .site-content .click-to-learn div.to-learn:last-child, body .container .site-content .click-to-learn div.to-learn:last-child {
             margin-right: 0; }
@@ -197,24 +199,29 @@ html, body {
             text-align: justify;
             padding-left: 15px;
             padding-right: 15px; }
+            html .container .site-content .click-to-learn div.to-learn h2 a, body .container .site-content .click-to-learn div.to-learn h2 a {
+              color: #499AA0;
+              text-decoration: none; }
+              html .container .site-content .click-to-learn div.to-learn h2 a:hover, body .container .site-content .click-to-learn div.to-learn h2 a:hover {
+                color: #64b2b8; }
         html .container .site-content .click-to-learn a div.right, body .container .site-content .click-to-learn a div.right {
           border-left-style: solid;
-          border-left-color: #E8C047; }
+          border-left-color: #FFFeF7; }
         html .container .site-content .click-to-learn a div.left, body .container .site-content .click-to-learn a div.left {
-          border-left-style: solid;
-          border-right-color: #E8C047; }
+          border-right-style: solid;
+          border-right-color: #FFFeF7; }
         html .container .site-content .click-to-learn a div.to-learn, body .container .site-content .click-to-learn a div.to-learn {
           margin-top: 0px;
           padding: 10px;
           font-family: "Lato", sans-serif;
-          color: #E8C047;
-          background-color: #FFFeF7;
+          color: #FFFeF7;
+          background-color: #E8C047;
           font-size: 20px;
           text-decoration: none;
           cursor: pointer; }
           html .container .site-content .click-to-learn a div.to-learn:hover, body .container .site-content .click-to-learn a div.to-learn:hover {
-            background-color: #E8C047;
-            color: #FFFeF7; }
+            background-color: #FFFeF7;
+            color: #E8C047; }
     html .container .footer, body .container .footer {
       background-color: #2B1F2A;
       font-family: "PT Sans Narrow", sans-serif;

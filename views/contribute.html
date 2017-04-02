@@ -36,6 +36,7 @@
 					<button id="update" class="inactive-tab">Update</button>
 				</div>
 				<div class="description-box">
+					<p class="form-info"></p>
 					<form class="add-standard">
 						<p class="shortform"><label class="form-label" for="input0">Name </label>
 						<input id="input0" class="form-input" name="name" type="text" placeholder="Input a description of the standard" placeholder="Input the name of the standard" value=""/></p>
@@ -219,6 +220,7 @@
 			$("div.tabs button:first").addClass("active-tab").show();
 			$(".update-standard").hide();
 			$(".popup").hide();
+			$(".form-info").html("Either fill out the short or long form and then submit your contribution");
 
 			$("div.tabs button").click(function() {
 			    // Removing class of Active tab
@@ -232,6 +234,7 @@
 				$(".update-standard").hide();
 				$(".submit").attr("value", "add");
 				$(".popup").hide();
+				$(".form-info").html("Either fill out the short or long form and then submit your contribution");
 			})
 
 			$("#update").click(function(){
@@ -239,6 +242,7 @@
 				$(".update-standard").show();
 				$(".submit").attr("value", "update");
 				$(".popup").hide();;
+				$(".form-info").html("Fill out which standards needs to be updated and what needs to be updated");
 			})
 
 			var inventory = []; // inventory of items for autocomplete, currently: name and category... ADD TAGS
@@ -259,8 +263,6 @@
 				$.each(standard, function(i, el){
 					options.innerHTML += '<option value="' + standard[i] + '">' + standard[i] + '</option>';
 				});
-
-				console.log(options)
 			})	
 
 			$(".hide-show").on('click', function(){
@@ -268,9 +270,6 @@
 				var form = $(".add-standard"); // find the standard that the client has clicked on
 				var shortform = $('.shortform');
 				var test = $(form).children('p');
-				console.log(form)
-				console.log($(form).children('p'))
-				console.log(test[3])
 				$(form).children('p').not('.shortform').not(this).not('.metadata').toggle(); // show the details 
 			})
 
