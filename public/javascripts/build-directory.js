@@ -3,6 +3,8 @@ function buildDirectory(input) {
 	// input will get results if it is a category or standard name
 	$(".click-to-directory").hide();
 	var allStandards = [];
+	
+	console.log(input);
 
 	// get the data from the getAllStandards query on the server side 
 	$.getJSON("https://odstandards-directory.herokuapp.com/directory/api/all-standards", function(standards) {
