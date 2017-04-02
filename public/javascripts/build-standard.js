@@ -1,9 +1,9 @@
-function buildStandard(selectedStandard){
+function buildStandard(selectedStandard, link){
 	var metric = buildMetrics(selectedStandard);
 	standard = "";
 	standard += "<div class='standards-container'><div id='" + selectedStandard.id + "' class='standards'>";
 	standard += "<div class='standard-header'>";
-	standard += "<div class='standard-name'><strong>" + selectedStandard.name + "</strong><i id='copy-link' class='fa fa-link' aria-hidden='true' title='Copy link to share'></i><div class='copy-link'></div></div>";
+	standard += "<div class='standard-name'><strong>" + selectedStandard.name + "</strong><i id='copy-link' class='fa fa-link link' aria-hidden='true' title='Copy link to share'></i><div class='copy-link' title='" + link + "'></div></div>";
 	standard += "<div class='standard-info'>";
 	standard += "<div class='metrics'>" + metric[1] + "  <a href='/about#methodology' target='_blank' data-toggle='tooltip' title='Click to our methodology'><i class='fa fa-question-circle' aria-hidden='true'></i></a></div>"; // add metrics
 	standard += "<div class='standard-items'>Updated: <div id='updated' value='" + createDates(selectedStandard.updated) + "'>" + selectedStandard.updated + "</div> | Added: <div id='added' value='" + createDates(selectedStandard.recorded) + "'>" + selectedStandard.recorded + "</div> | Version: <div id='version'>" + selectedStandard.version + "</div></div>";

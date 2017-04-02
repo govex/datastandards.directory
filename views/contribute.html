@@ -37,9 +37,14 @@
 				</div>
 				<div class="description-box">
 					<form class="add-standard">
-						<p><label class="form-label" for="input0">Name </label>
+						<p class="shortform"><label class="form-label" for="input0">Name </label>
 						<input id="input0" class="form-input" name="name" type="text" placeholder="Input a description of the standard" placeholder="Input the name of the standard" value=""/></p>
 						
+						<p class="shortform"><label for="input8">URL to Website </label>
+						<input id="input8" class="form-input" name="website" type="text" placeholder="Copy a URL link to the standard's website" value=""/></p>
+
+						<p class="hide-show"><i class='fa fa-plus-circle'></i>Complete long form</p>
+
 						<p>
 							<label for="input1" class="form-label"><strong>Category </strong></label>
 							<select id="input1" type="drop-down" class="form-input" name="category"> <!-- Add another domain here -->
@@ -257,6 +262,17 @@
 
 				console.log(options)
 			})	
+
+			$(".hide-show").on('click', function(){
+				$(this).find('i').toggleClass('fa-plus-circle fa-minus-circle') // toggle between the + and - icons
+				var form = $(".add-standard"); // find the standard that the client has clicked on
+				var shortform = $('.shortform');
+				var test = $(form).children('p');
+				console.log(form)
+				console.log($(form).children('p'))
+				console.log(test[3])
+				$(form).children('p').not('.shortform').not(this).not('.metadata').toggle(); // show the details 
+			})
 
 		</script>
 	</body>

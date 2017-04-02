@@ -99,7 +99,8 @@ html, body {
             border: 1px;
             border-radius: 5px;
             padding: 10px;
-            background-color: #FFFeF7; }
+            background-color: #FFFeF7;
+            display: none; }
             html .container .site-content .description-box form p p label a, body .container .site-content .description-box form p p label a {
               float: left; }
             html .container .site-content .description-box form p label, body .container .site-content .description-box form p label {
@@ -124,21 +125,27 @@ html, body {
             html .container .site-content .description-box form p label.checkbox, body .container .site-content .description-box form p label.checkbox {
               text-align: center;
               float: right; }
-            html .container .site-content .description-box form p .checkbox input[type="checkbox"], body .container .site-content .description-box form p .checkbox input[type="checkbox"] {
-              margin: 0px 20px;
-              margin-left: -30px;
-              -ms-transform: scale(1.5);
-              -moz-transform: scale(1.5);
-              -webkit-transform: scale(1.5);
-              -o-transform: scale(1.5); }
-              html .container .site-content .description-box form p .checkbox input[type="checkbox"]:hover, body .container .site-content .description-box form p .checkbox input[type="checkbox"]:hover {
-                cursor: pointer; }
+            html .container .site-content .description-box form p .checkbox input[type="checkbox"]:hover, body .container .site-content .description-box form p .checkbox input[type="checkbox"]:hover {
+              cursor: pointer; }
+          html .container .site-content .description-box form p.hide-show, body .container .site-content .description-box form p.hide-show {
+            text-align: center;
+            display: block; }
+            html .container .site-content .description-box form p.hide-show:hover, body .container .site-content .description-box form p.hide-show:hover {
+              cursor: pointer; }
+            html .container .site-content .description-box form p.hide-show i, body .container .site-content .description-box form p.hide-show i {
+              margin-right: 10px; }
+          html .container .site-content .description-box form p.shortform, body .container .site-content .description-box form p.shortform {
+            display: block; }
           html .container .site-content .description-box form p.rationale, body .container .site-content .description-box form p.rationale {
             margin-left: 15px; }
           html .container .site-content .description-box form p.metadata, body .container .site-content .description-box form p.metadata {
             display: none; }
           html .container .site-content .description-box form p.timestamp, body .container .site-content .description-box form p.timestamp {
             display: none; }
+        html .container .site-content .description-box form.update-standard p, body .container .site-content .description-box form.update-standard p {
+          display: block; }
+        html .container .site-content .description-box form.update-standard p.timestamp, body .container .site-content .description-box form.update-standard p.timestamp {
+          display: none; }
       html .container .site-content .popup, body .container .site-content .popup {
         border: 1px solid;
         border-radius: 5px;

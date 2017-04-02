@@ -1,0 +1,166 @@
+html
+  head
+    title Directory
+    // IMPORTS
+    // Page 2 stylesheet
+    link(rel="stylesheet", type="text/css", href="/stylesheets/page-2.css")
+    // Font Awesome Icons
+    script(src="https://use.fontawesome.com/5f92b1f541.js")
+    // jQuery
+    script(src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js")
+    // Clipboad
+    script(src="dist/clipboard.min.js")
+    | 		
+    script(src="/javascripts/search.js")
+    | 		
+    script(src="/javascripts/autosearch.js")
+    | 		
+    script(src="/javascripts/click-to-directory.js")
+    | 		
+    script(src="/javascripts/build-standard.js")
+    | 		
+    script(src="/javascripts/build-metrics.js")
+    | 		
+    script(src="/javascripts/click-on-standard.js")
+    | 		
+    script(src="/javascripts/sort.js")
+    | 		
+    script(src="/javascripts/get-url-data.js")
+    | 		
+    script(src="/javascripts/build-directory.js")
+    | 		
+    script(src="https://code.jquery.com/ui/1.12.1/jquery-ui.js")
+    | 		
+    link(rel="stylesheet", href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css")
+    | 		
+    meta(name="viewport", content="width=device-width, initial-scale=1")
+  | 	
+  body
+    .container
+      .header
+        ul
+          li
+            a(href="/index")
+              i.fa.fa-home(aria-hidden="true")
+          | 					
+          li.selected-page
+            a(href="/directory") DIRECTORY
+          | 					
+          li
+            a(href="/contribute") CONTRIBUTE
+          | 					
+          li
+            a(href="/contact") CONTACT
+          | 					
+          li
+            a(href="/glossary") ABOUT OPEN DATA STANDARDS
+          | 					
+          li
+            a(href="/about") ABOUT US
+      | 			
+      .site-content
+        div
+          h1 Open Data Standards Directory
+        | 				
+        .directory
+          .search-to-directory
+            input#search(type="text", name="search", placeholder="search a category or open data standard")
+            | 							
+            button.search-button
+              i.fa.fa-search(aria-hidden="true")
+          | 					
+          .click-to-directory
+            h2 Click on any high-valued category to see associated open data standards
+            | 						
+            .row-1
+              .square(value="Annual Budget")
+                | Annual Budget
+                img(src="/images/annual_budget.png", alt="", height="100", width="110")
+              | 							
+              .square(value="Building Permits")
+                | Building Permits
+                img(src="/images/building_permits.png", alt="", height="90", width="90")
+              | 							
+              .square(value="Crime Statistics")
+                | Crime Statistics
+                img(src="/images/crime_statistics.png", alt="", height="100", width="115")
+              | 							
+              .square(value="Election Results")
+                | Election Results
+                img(src="/images/election_results.png", alt="", height="90", width="90")
+              | 							
+              .square(value="Expenditure")
+                | Expenditure
+                img(src="/images/expenditure.png", alt="", height="90", width="100")
+            | 						
+            .row-2
+              .square(value="Public Facilities")
+                | Public Facilities
+                img(src="/images/public_facilities.png", alt="", height="100", width="100")
+              | 							
+              .square(value="Real-Time Transit")
+                | Real-Time Transit
+                img(src="/images/transit.png", alt="", height="90", width="90")
+              | 							
+              .square(value="Road Construction")
+                | Road Construction
+                img(src="/images/road_construction.png", alt="", height="90", width="90")
+              | 							
+              .square(value="Service Requests")
+                | Service Requests
+                img(src="/images/service_requests.png", alt="", height="80", width="80")
+              | 							
+              .square(value="Zoning")
+                | Zoning
+                img(src="/images/zoning.png", alt="", height="130", width="110")
+            | 						
+            br
+            | 						
+            button.all-standards View All Standards
+          | 					
+          .directory-results
+            .no-results
+            | 						
+            .directory-items
+              strong.search-title
+              | 							
+              .filters
+                strong Sort
+                | 								
+                select#sortby.dropdown
+                  option(selected="selected")
+                  | 									
+                  option(value="new") Newest
+                  | 									
+                  option(value="old") Oldest
+                  | 									
+                  option(value="updated") Last Updated
+            | 						
+            #standards
+      | 			
+      br
+      | 			
+      .footer
+        | (c) 2017 | 
+        a(href="") SITE MAP | 
+        a(href="https://odstandards-directory.herokuapp.com/inventory/api/all-standards", target="_blank") SOURCE DATA
+    | 		
+    script.
+      $( function() {
+      $( document ).tooltip();
+      } );
+      var url = window.location.href // stores the url the client has entered
+      var id  = getId(url)
+      function getId(str) {
+      return str.split('http://localhost:3000/directory/api/')[1];
+      }
+      if (isNaN(id) == true) {
+      if (id.indexOf('%20') >= 0){
+      id = id.replace("%20", " ");
+      }
+      }
+      console.log(id)
+      var allStandards = [];
+      if (id.length !== 0){
+      buildDirectory(id);
+      }

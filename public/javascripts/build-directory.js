@@ -5,15 +5,14 @@ function buildDirectory(input) {
 	var allStandards = [];
 
 	// get the data from the getAllStandards query on the server side 
-	$.getJSON("https://odstandards-directory.herokuapp.com/directory/api/all-standards", function(standards) {
+	$.getJSON("http://localhost:3000/directory/api/all-standards", function(standards) {
 		if (input == "all") { // if user selects all standards
 
 			var link;
 
 			$.each(standards.data, function(i){
-				allStandards.push(buildStandard(standards.data[i]));
 				link = "https://odstandards-directory.herokuapp.com/directory/api/" + standards.data[i].id;
-				clickLink(link)
+				allStandards.push(buildStandard(standards.data[i], link));
 			});
 
 			$("#standards").html(allStandards);
@@ -28,9 +27,13 @@ function buildDirectory(input) {
 			$(".directory-results").show();
 			$('.no-results').hide();
 			$(".directory-items").show();
+			$(".search-title").html("<h2>Search results for: " + input + "</strong>") 
 			clickStandard()
+			clickLink(url)
+
 		} else {
 			var match = [];
+
 			$.each(standards.data, function(i) {
 				if (standards.data[i].id == input){
 					match.push(standards.data[i]);
@@ -45,16 +48,10 @@ function buildDirectory(input) {
 
 			if (match.length > 0) {
 				$.each(match, function(i) {	
-					console.log("There was a match with your input")
-					console.log(match[i].id)
-					if (match[i].id == input || match[i].name == input) {
-						var url = "https://odstandards-directory.herokuapp.com/directory/api/" + match[i].id
-					}
-					if (match[i].category.toUpperCase() == input.toUpperCase()){
-						var url = "https://odstandards-directory.herokuapp.com/directory/api/" + match[i].category
-					}
-					$.getJSON("https://odstandards-directory.herokuapp.com/directory/api/get/" + match[i].id, function(standards) {
-						allStandards.push(buildStandard(match[i]));
+					var url = "https://odstandards-directory.herokuapp.com/directory/api/" + match[i].id
+
+					$.getJSON("http://localhost:3000/directory/api/get/" + match[i].id, function(standards) {
+						allStandards.push(buildStandard(match[i], url));
 						$("#standards").html(allStandards);
 						$(".search-title").html("<h2>Search results for: " + input + "</strong>") 
 						$(".standard-body").hide();

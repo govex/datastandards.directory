@@ -15,7 +15,7 @@ html, body {
     min-height: 100%;
     position: relative;
     background: url("/images/background.png");
-    background-repeat: no-repeat;
+    background-repeat: repeat;
     background-size: 100%; }
     html .container .header, body .container .header {
       position: fixed;

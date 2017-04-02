@@ -14,16 +14,21 @@ function clickStandard (){
 
 // function when the user clicks the link on the top-right corner of the standard
 function clickLink(url) {
-	$('#copy-link').on({
-	  "click": function() {
-	  	var link = $(this).siblings('div.copy-link');
-	  	$(link).attr("title", url);
-	    $(link).tooltip();
-	    $(link).tooltip({
-  			position: { my: "left center", at: "right center", of: "#copy-link"}
+	var link;
+
+	$(".link").on('click', function(){
+		link = $(this).siblings('div.copy-link');
+		$(link).tooltip();
+		$(link).tooltip({
+  			position: {my: "left center", at: "right center", of: this}
 		})
 		$(link).tooltip("open");
-	  }
+	});
+
+	$(window).scroll(function() {
+	    if ($(this).scrollTop()>0){
+	    	$(link).tooltip("close");
+	    }
 	});
 }
 
