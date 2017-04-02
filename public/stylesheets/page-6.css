@@ -21,7 +21,7 @@ html, body {
       position: fixed;
       width: 100%; }
       html .container .header ul, body .container .header ul {
-        background-color: #5D4157;
+        background-color: #2B1F2A;
         list-style-type: none;
         margin: 0;
         padding: 0;
@@ -40,11 +40,11 @@ html, body {
             color: #FFFeF7; }
             html .container .header ul li a:hover, body .container .header ul li a:hover {
               background-color: #FFFeF7;
-              color: #5D4157;
+              color: #2B1F2A;
               border-color: #FFFeF7; }
         html .container .header ul li.selected-page a, body .container .header ul li.selected-page a {
           background-color: #FFFeF7;
-          color: #5D4157; }
+          color: #2B1F2A; }
     html .container .site-content, body .container .site-content {
       padding-bottom: 60px;
       padding-top: 60px; }
@@ -53,7 +53,7 @@ html, body {
         background-color: #FFFeF7;
         margin: 0px;
         font-family: "Lato", sans-serif;
-        color: #545658;
+        color: #353638;
         font-size: 50px; }
       html .container .site-content .description-box, body .container .site-content .description-box {
         box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
@@ -61,9 +61,9 @@ html, body {
         margin: 0 auto;
         margin-top: 20px;
         margin-bottom: 20px;
-        background-color: #A8CABA;
+        background-color: #499AA0;
         font-family: "Lato", sans-serif;
-        color: #545658;
+        color: #353638;
         width: 900px;
         text-align: center;
         border-radius: 5px;
@@ -73,7 +73,7 @@ html, body {
           padding: 5px;
           padding-top: 10px; }
           html .container .site-content .description-box .legend a, body .container .site-content .description-box .legend a {
-            border-color: #A8CABA; }
+            border-color: #499AA0; }
           html .container .site-content .description-box .legend button#metric, body .container .site-content .description-box .legend button#metric {
             display: inline-block;
             width: 40px;
@@ -95,7 +95,7 @@ html, body {
         margin: 0 auto;
         margin-top: 20px; }
     html .container .footer, body .container .footer {
-      background-color: #5D4157;
+      background-color: #2B1F2A;
       font-family: "PT Sans Narrow", sans-serif;
       color: #FFFeF7;
       padding: 20px;

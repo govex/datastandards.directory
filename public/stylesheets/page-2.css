@@ -9,7 +9,6 @@ html, body {
   text-align: center;
   margin: 0 auto;
   padding: 0px 0px;
-  background: +radial-gradient(#FFFeF7, #FFFFFF);
   height: 100%; }
   html .container, body .container {
     min-height: 100%;
@@ -18,7 +17,7 @@ html, body {
       position: fixed;
       width: 100%; }
       html .container .header ul, body .container .header ul {
-        background-color: #5D4157;
+        background-color: #2B1F2A;
         list-style-type: none;
         margin: 0;
         padding: 0;
@@ -37,10 +36,10 @@ html, body {
             color: #FFFeF7; }
             html .container .header ul li a:hover, body .container .header ul li a:hover {
               background-color: #FFFeF7;
-              color: #5D4157; }
+              color: #2B1F2A; }
         html .container .header ul li.selected-page a, body .container .header ul li.selected-page a {
           background-color: #FFFeF7;
-          color: #5D4157; }
+          color: #2B1F2A; }
     html .container .site-content, body .container .site-content {
       padding-bottom: 60px;
       padding-top: 60px;
@@ -49,7 +48,7 @@ html, body {
       html .container .site-content h1, body .container .site-content h1 {
         padding: 30px;
         font-family: "Lato", sans-serif;
-        color: #545658;
+        color: #353638;
         font-size: 50px;
         background-color: #FFFeF7;
         margin: 0px; }
@@ -65,29 +64,29 @@ html, body {
           border-bottom-left-radius: 5px;
           border: 2px;
           border-style: solid;
-          border-color: #545658;
+          border-color: #353638;
           text-align: center;
           box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); }
         html .container .site-content .directory .search-to-directory button.search-button, body .container .site-content .directory .search-to-directory button.search-button {
           margin-left: auto 0px;
           font-size: 22px;
           width: 60px;
-          background-color: #A8CABA;
+          background-color: #E8C047;
           padding: 15px 10px;
           padding-bottom: 21px;
           border-top-right-radius: 5px;
           border-bottom-right-radius: 5px;
           border: 2px;
           border-style: solid;
-          border-color: #545658;
-          color: #545658;
+          border-color: #353638;
+          color: #353638;
           box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); }
           html .container .site-content .directory .search-to-directory button.search-button:hover, body .container .site-content .directory .search-to-directory button.search-button:hover {
-            background-color: #c8ddd3;
+            background-color: #eed074;
             cursor: pointer; }
       html .container .site-content .directory .click-to-directory h2, body .container .site-content .directory .click-to-directory h2 {
         font-family: "Lato", sans-serif;
-        color: #545658; }
+        color: #353638; }
       html .container .site-content .directory .click-to-directory .row-1, body .container .site-content .directory .click-to-directory .row-1 {
         max-width: 900px;
         margin-left: auto;
@@ -104,8 +103,8 @@ html, body {
           width: 100%;
           margin-right: 0;
           text-align: center;
-          background-color: #A8CABA;
-          color: #545658;
+          background-color: #499AA0;
+          color: #353638;
           font-family: "Lato", sans-serif;
           font-size: 18px;
           border-radius: 5px;
@@ -116,7 +115,7 @@ html, body {
           html .container .site-content .directory .click-to-directory .row-1 .square:last-child, body .container .site-content .directory .click-to-directory .row-1 .square:last-child {
             margin-right: 0; }
           html .container .site-content .directory .click-to-directory .row-1 .square:hover, body .container .site-content .directory .click-to-directory .row-1 .square:hover {
-            background-color: #c8ddd3;
+            background-color: #64b2b8;
             font-size: 15px;
             cursor: pointer; }
       html .container .site-content .directory .click-to-directory .row-2, body .container .site-content .directory .click-to-directory .row-2 {
@@ -135,8 +134,8 @@ html, body {
           width: 100%;
           margin-right: 0;
           text-align: center;
-          background-color: #A8CABA;
-          color: #545658;
+          background-color: #499AA0;
+          color: #353638;
           font-family: "Lato", sans-serif;
           font-size: 18px;
           border-radius: 5px;
@@ -148,13 +147,13 @@ html, body {
           html .container .site-content .directory .click-to-directory .row-2 .square:last-child, body .container .site-content .directory .click-to-directory .row-2 .square:last-child {
             margin-right: 0; }
           html .container .site-content .directory .click-to-directory .row-2 .square:hover, body .container .site-content .directory .click-to-directory .row-2 .square:hover {
-            background-color: #c8ddd3;
+            background-color: #64b2b8;
             font-size: 15px; }
       html .container .site-content .directory .click-to-directory button, body .container .site-content .directory .click-to-directory button {
         box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
         text-align: center;
-        background-color: #A8CABA;
-        color: #545658;
+        background-color: #499AA0;
+        color: #353638;
         font-family: "Lato", sans-serif;
         font-size: 20px;
         border: 1px;
@@ -163,11 +162,11 @@ html, body {
         padding: 10px;
         cursor: pointer; }
         html .container .site-content .directory .click-to-directory button:hover, body .container .site-content .directory .click-to-directory button:hover {
-          background-color: #c8ddd3; }
+          background-color: #64b2b8; }
       html .container .site-content .directory .directory-results, body .container .site-content .directory .directory-results {
         display: none;
         font-family: "Lato", sans-serif;
-        color: #545658;
+        color: #353638;
         max-width: 900px;
         margin-left: auto;
         margin-right: auto; }
@@ -185,9 +184,9 @@ html, body {
             border: solid;
             border-color: #FFFeF7; }
           html .container .site-content .directory .directory-results .click-to-learn button, body .container .site-content .directory .directory-results .click-to-learn button {
-            color: #545658;
+            color: #353638;
             text-align: center;
-            background-color: #A8CABA;
+            background-color: #499AA0;
             font-family: "Lato", sans-serif;
             font-size: 15px;
             width: 448px;
@@ -196,11 +195,11 @@ html, body {
             margin: 0px; }
             html .container .site-content .directory .directory-results .click-to-learn button:hover, body .container .site-content .directory .directory-results .click-to-learn button:hover {
               background-color: #FFFeF7;
-              color: #A8CABA;
-              border-color: #A8CABA; }
+              color: #499AA0;
+              border-color: #499AA0; }
         html .container .site-content .directory .directory-results .no-results, body .container .site-content .directory .directory-results .no-results {
           display: none;
-          color: #545658;
+          color: #353638;
           font-family: "Lato", sans-serif; }
         html .container .site-content .directory .directory-results .directory-items, body .container .site-content .directory .directory-results .directory-items {
           padding: 5px;
@@ -216,14 +215,14 @@ html, body {
               border: solid;
               border-color: #E8C047;
               border-radius: 5px;
-              color: #545658;
+              color: #353638;
               padding: 5px;
               cursor: pointer; }
         html .container .site-content .directory .directory-results .standards, body .container .site-content .directory .directory-results .standards {
           box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
           border: solid;
           border-color: #E8C047;
-          color: #545658;
+          color: #353638;
           font-family: "Lato", sans-serif;
           background-color: #FFFeF7;
           width: 900px;
@@ -241,7 +240,7 @@ html, body {
                 float: right;
                 cursor: pointer; }
                 html .container .site-content .directory .directory-results .standards .standard-header .standard-name i#copy-link:hover, body .container .site-content .directory .directory-results .standards .standard-header .standard-name i#copy-link:hover {
-                  color: #6d7072; }
+                  color: #4e4f52; }
               html .container .site-content .directory .directory-results .standards .standard-header .standard-name div.copy-link, body .container .site-content .directory .directory-results .standards .standard-header .standard-name div.copy-link {
                 display: none;
                 background-color: #fff;
@@ -257,9 +256,9 @@ html, body {
                 display: inline;
                 float: left; }
                 html .container .site-content .directory .directory-results .standards .standard-header .standard-info .metrics a, body .container .site-content .directory .directory-results .standards .standard-header .standard-info .metrics a {
-                  border-color: #A8CABA;
+                  border-color: #499AA0;
                   text-decoration: none;
-                  color: #545658; }
+                  color: #353638; }
                 html .container .site-content .directory .directory-results .standards .standard-header .standard-info .metrics button#metric, body .container .site-content .directory .directory-results .standards .standard-header .standard-info .metrics button#metric {
                   width: 30px;
                   height: 30px;
@@ -283,9 +282,9 @@ html, body {
               padding-right: 10px;
               padding-bottom: 7px; }
               html .container .site-content .directory .directory-results .standards .standard-body li a, body .container .site-content .directory .directory-results .standards .standard-body li a {
-                border-color: #A8CABA;
+                border-color: #499AA0;
                 text-decoration: none;
-                color: #545658; }
+                color: #353638; }
               html .container .site-content .directory .directory-results .standards .standard-body li button#metric, body .container .site-content .directory .directory-results .standards .standard-body li button#metric {
                 width: 30px;
                 height: 30px;
@@ -318,7 +317,7 @@ html, body {
               background-color: #E8C047;
               color: #FFFeF7; }
     html .container .footer, body .container .footer {
-      background-color: #5D4157;
+      background-color: #2B1F2A;
       font-family: "PT Sans Narrow", sans-serif;
       color: #FFFeF7;
       padding: 20px;
@@ -331,7 +330,5 @@ html, body {
         color: #FFFeF7; }
         html .container .footer a:hover, body .container .footer a:hover {
           color: #FFFeF7; }
-    html .container ui-tooltip, body .container ui-tooltip {
-      padding: 30px; }
 
 /*# sourceMappingURL=page-2.css.map */

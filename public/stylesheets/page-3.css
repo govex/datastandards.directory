@@ -20,7 +20,7 @@ html, body {
       position: fixed;
       width: 100%; }
       html .container .header ul, body .container .header ul {
-        background-color: #5D4157;
+        background-color: #2B1F2A;
         list-style-type: none;
         margin: 0;
         padding: 0;
@@ -39,26 +39,26 @@ html, body {
             color: #FFFeF7; }
             html .container .header ul li a:hover, body .container .header ul li a:hover {
               background-color: #FFFeF7;
-              color: #5D4157; }
+              color: #2B1F2A; }
         html .container .header ul li.selected-page a, body .container .header ul li.selected-page a {
           background-color: #FFFeF7;
-          color: #5D4157; }
+          color: #2B1F2A; }
     html .container .site-content, body .container .site-content {
       padding-bottom: 60px;
       padding-top: 60px; }
       html .container .site-content h1, body .container .site-content h1 {
         font-family: "Lato", sans-serif;
-        color: #545658;
+        color: #353638;
         padding: 30px;
         background-color: #FFFeF7;
         margin: 0px;
         font-size: 50px; }
       html .container .site-content h2, body .container .site-content h2 {
         font-family: "Lato", sans-serif;
-        color: #545658; }
+        color: #353638; }
       html .container .site-content .tabs .inactive-tab, body .container .site-content .tabs .inactive-tab {
         text-align: center;
-        color: #FFFeF7;
+        color: #353638;
         font-family: "Lato", sans-serif;
         font-size: 20px;
         border-top-left-radius: 5px;
@@ -67,22 +67,22 @@ html, body {
         border: 1px;
         width: 448px;
         padding: 10px;
-        background-color: #5D4157;
+        background-color: #E8C047;
         cursor: pointer; }
         html .container .site-content .tabs .inactive-tab:hover, body .container .site-content .tabs .inactive-tab:hover {
-          background-color: #7b5673; }
+          background-color: #eed074; }
       html .container .site-content .tabs .active-tab, body .container .site-content .tabs .active-tab {
-        background-color: #A8CABA;
-        color: #545658;
+        background-color: #499AA0;
+        color: #353638;
         cursor: initial; }
         html .container .site-content .tabs .active-tab:hover, body .container .site-content .tabs .active-tab:hover {
-          background-color: #A8CABA; }
+          background-color: #499AA0; }
       html .container .site-content .description-box, body .container .site-content .description-box {
         margin: 0 auto;
-        background-color: #A8CABA;
+        background-color: #499AA0;
         font-family: "Lato", sans-serif;
         font-size: 15px;
-        color: #545658;
+        color: #353638;
         width: 900px;
         border-bottom-left-radius: 5px;
         border-bottom-right-radius: 5px;
@@ -143,7 +143,7 @@ html, body {
         border: 1px solid;
         border-radius: 5px;
         padding: 10px;
-        border-color: #545658;
+        border-color: #353638;
         background-color: #FFFeF7;
         box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
         margin: 10px; }
@@ -155,7 +155,7 @@ html, body {
         box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
         margin: 10px;
         text-align: center;
-        background-color: #A8CABA;
+        background-color: #E8C047;
         font-family: "Lato", sans-serif;
         font-size: 20px;
         border-radius: 5px;
@@ -163,11 +163,11 @@ html, body {
         width: 900px;
         padding: 10px;
         cursor: pointer;
-        color: #545658; }
+        color: #353638; }
         html .container .site-content button.submit:hover, body .container .site-content button.submit:hover {
-          background-color: #c8ddd3; }
+          background-color: #eed074; }
     html .container .footer, body .container .footer {
-      background-color: #5D4157;
+      background-color: #2B1F2A;
       font-family: "PT Sans Narrow", sans-serif;
       color: #FFFeF7;
       padding: 20px;

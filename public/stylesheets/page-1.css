@@ -18,7 +18,7 @@ html, body {
       position: fixed;
       width: 100%; }
       html .container .header ul, body .container .header ul {
-        background-color: #5D4157;
+        background-color: #2B1F2A;
         list-style-type: none;
         margin: 0;
         padding: 0;
@@ -37,7 +37,7 @@ html, body {
             color: #FFFeF7; }
             html .container .header ul li a:hover, body .container .header ul li a:hover {
               background-color: #FFFeF7;
-              color: #5D4157; }
+              color: #2B1F2A; }
     html .container .site-content, body .container .site-content {
       padding-bottom: 40px;
       padding-top: 60px;
@@ -47,10 +47,10 @@ html, body {
         background-color: #FFFeF7;
         margin: 0px;
         font-family: "Lato", sans-serif;
-        color: #545658;
+        color: #353638;
         font-size: 50px; }
       html .container .site-content i, body .container .site-content i {
-        color: #545658; }
+        color: #353638; }
       html .container .site-content .directory .search-to-directory, body .container .site-content .directory .search-to-directory {
         margin-top: 30px; }
         html .container .site-content .directory .search-to-directory input, body .container .site-content .directory .search-to-directory input {
@@ -63,29 +63,29 @@ html, body {
           border-bottom-left-radius: 5px;
           border: 2px;
           border-style: solid;
-          border-color: #545658;
+          border-color: #353638;
           text-align: center;
           box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); }
         html .container .site-content .directory .search-to-directory button.search-button, body .container .site-content .directory .search-to-directory button.search-button {
           margin-left: auto 0px;
           font-size: 22px;
           width: 60px;
-          background-color: #A8CABA;
+          background-color: #E8C047;
           padding: 15px 10px;
           padding-bottom: 21px;
           border-top-right-radius: 5px;
           border-bottom-right-radius: 5px;
           border: 2px;
           border-style: solid;
-          border-color: #545658;
-          color: #545658;
+          border-color: #353638;
+          color: #353638;
           box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); }
           html .container .site-content .directory .search-to-directory button.search-button:hover, body .container .site-content .directory .search-to-directory button.search-button:hover {
-            background-color: #c8ddd3;
+            background-color: #eed074;
             cursor: pointer; }
       html .container .site-content .directory .click-to-directory h2, body .container .site-content .directory .click-to-directory h2 {
         font-family: "Lato", sans-serif;
-        color: #545658; }
+        color: #353638; }
       html .container .site-content .directory .click-to-directory .row-1, body .container .site-content .directory .click-to-directory .row-1 {
         max-width: 900px;
         margin-left: auto;
@@ -102,8 +102,8 @@ html, body {
           width: 100%;
           margin-right: 0;
           text-align: center;
-          background-color: #A8CABA;
-          color: #545658;
+          background-color: #499AA0;
+          color: #353638;
           font-family: "Lato", sans-serif;
           border-radius: 5px;
           font-size: 18px;
@@ -115,7 +115,7 @@ html, body {
             margin-right: 0; }
           html .container .site-content .directory .click-to-directory .row-1 .square:hover, body .container .site-content .directory .click-to-directory .row-1 .square:hover {
             cursor: pointer;
-            background-color: #c8ddd3;
+            background-color: #64b2b8;
             font-size: 15px; }
       html .container .site-content .directory .click-to-directory .row-2, body .container .site-content .directory .click-to-directory .row-2 {
         max-width: 900px;
@@ -134,8 +134,8 @@ html, body {
           width: 100%;
           margin-right: 0;
           text-align: center;
-          background-color: #A8CABA;
-          color: #545658;
+          background-color: #499AA0;
+          color: #353638;
           font-family: "Lato", sans-serif;
           border-radius: 5px;
           font-size: 18px;
@@ -147,15 +147,15 @@ html, body {
             margin-right: 0; }
           html .container .site-content .directory .click-to-directory .row-2 .square:hover, body .container .site-content .directory .click-to-directory .row-2 .square:hover {
             cursor: pointer;
-            background-color: #c8ddd3;
+            background-color: #64b2b8;
             font-size: 15px; }
       html .container .site-content .directory .click-to-directory a, body .container .site-content .directory .click-to-directory a {
         text-decoration: none; }
         html .container .site-content .directory .click-to-directory a button, body .container .site-content .directory .click-to-directory a button {
           box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
           text-align: center;
-          background-color: #A8CABA;
-          color: #545658;
+          background-color: #499AA0;
+          color: #353638;
           font-family: "Lato", sans-serif;
           font-size: 20px;
           border: 1px;
@@ -164,7 +164,7 @@ html, body {
           padding: 10px;
           cursor: pointer; }
           html .container .site-content .directory .click-to-directory a button:hover, body .container .site-content .directory .click-to-directory a button:hover {
-            background-color: #c8ddd3; }
+            background-color: #64b2b8; }
       html .container .site-content .click-to-learn, body .container .site-content .click-to-learn {
         max-width: 100%;
         margin-left: auto;
@@ -189,10 +189,10 @@ html, body {
             margin-right: 0; }
           html .container .site-content .click-to-learn div.to-learn h1, body .container .site-content .click-to-learn div.to-learn h1 {
             font-family: "PT Sans Narrow", sans-serif;
-            color: #545658; }
+            color: #353638; }
           html .container .site-content .click-to-learn div.to-learn h2, body .container .site-content .click-to-learn div.to-learn h2 {
             font-family: "Lato", sans-serif;
-            color: #545658;
+            color: #353638;
             font-size: 20px;
             text-align: justify;
             padding-left: 15px;
@@ -216,7 +216,7 @@ html, body {
             background-color: #E8C047;
             color: #FFFeF7; }
     html .container .footer, body .container .footer {
-      background-color: #5D4157;
+      background-color: #2B1F2A;
       font-family: "PT Sans Narrow", sans-serif;
       color: #FFFeF7;
       padding: 20px;
