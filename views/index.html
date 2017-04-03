@@ -1,26 +1,23 @@
 <html>
 	<head>
 		<title>Home</title>
-
-		<!-- IMPORTS -->
-
-		<!--Page 1 stylesheet-->
+		<!--stylesheet-->
 		<link rel="stylesheet" type="text/css" href="/stylesheets/page-1.css">
 
 		<!--Font Awesome Icons-->
 		<script src="https://use.fontawesome.com/5f92b1f541.js"></script>
 
-		<!-- jQuery -->
+		<!--jQuery-->
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 		<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 		<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 
+		<!--custom JS functions-->
 		<script src="/javascripts/click-to-directory.js"></script>
 		<script src="/javascripts/autosearch.js"></script>
 		<script src="/javascripts/search.js"></script>
 		<script src="/javascripts/build-directory.js"></script>
 		<script src="/javascripts/hover-for-category.js"></script>
-
 	</head>
 	<body>
 		<div class="container">
@@ -85,11 +82,13 @@
 			</div>
 		</div>
 		<script type="text/javascript">
-			var category = "";
+			var category = ""; // variable that will store the category the client has selected from .square class
+
+			// create a global function that will be stored on the browser if the user clicks on the .square class
 			(function (global) {
 				$(".square").on('click', function(){
-					category = $(this).html()
-				    global.localStorage.setItem("search-category", $(this).attr("value"));
+					category = $(this).html() // store the selected category 
+				    global.localStorage.setItem("search-category", $(this).attr("value")); // create a global function that is the value of the category (i.e., the category name). This value will then be picked up in directory.html
 				});	
 			}(window));
 		</script>

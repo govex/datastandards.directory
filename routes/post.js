@@ -3,7 +3,6 @@ var router = express.Router(); // defining the router, which define an app behav
 
 db = require('../queries');
 
-// Function getAllStandards is called to get all standards from postgres inventory db's 'standards' table
 router.post('/api/post', db.post); 
  
 module.exports = router;

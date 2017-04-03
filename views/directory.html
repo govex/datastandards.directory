@@ -2,17 +2,19 @@
 	<head>
 		<title>Directory</title>
 
-		<!-- IMPORTS -->
-
-		<!--Page 2 stylesheet-->
+		<!--stylesheet-->
 		<link rel="stylesheet" type="text/css" href="/stylesheets/page-2.css">
 
 		<!--Font Awesome Icons-->
 		<script src="https://use.fontawesome.com/5f92b1f541.js"></script>
 
-		<!-- jQuery -->
+		<!--jQuery-->
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+		<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+		<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
 
+		<!--custom JS functions-->
 		<script src="/javascripts/search.js"></script>
 		<script src="/javascripts/autosearch.js"></script>
 		<script src="/javascripts/click-to-directory.js"></script>
@@ -21,9 +23,6 @@
 		<script src="/javascripts/click-on-standard.js"></script>
 		<script src="/javascripts/sort.js"></script>
 		<script src="/javascripts/build-directory.js"></script>
-		<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-		<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-		<meta name="viewport" content="width=device-width, initial-scale=1">
 	</head>
 	<body>
 		<div class="container">
@@ -88,38 +87,34 @@
 			</div>
 		</div>
 		<script>
+			// create jQuery tooltip
 			$( function() {
 				$( document ).tooltip();
 			} );
 		
 			var url = window.location.href // stores the url the client has entered
-			var id  = getId(url)
+
+			console.log(url)
+
+			if (url !== 'http://localhost:3000/directory' && url !== 'https://odstandards-directory.herokuapp.com/directory') {
+				var id  = getId(url) // get the id of the url
+
+				// if there is an id, then output the standard to the directory 
+				if (id !== 0){
+			        buildDirectory(id);
+				}  
+			}
 
 			// obtain the id number of the url
 			function getId(str) {
 			   if (str.indexOf("http://localhost:3000/directory") >= 0){
 			    	return str.split('http://localhost:3000/directory/api/')[1];
-			   }
-			   if (str.indexOf("https://odstandards-directory.herokuapp.com/directory") >= 0) {
+			   } else if (str.indexOf("https://odstandards-directory.herokuapp.com/directory") >= 0) {
 			   		return str.split('https://odstandards-directory.herokuapp.com/directory/api/')[1];
+			   } else {
+			   		return 0;
 			   }
 			}
-
-			if (isNaN(id) == true) {
-				if (id.indexOf('%20') >= 0){
-					id = id.replace("%20", " ");
-				}
-			} 
-
-			console.log('id');
-
-			var allStandards = [];
-
-			if (id.length !== 0){
-				console.log(id)
-		        buildDirectory(id);
-			} 
-
 		</script>
 	</body>
 </html>

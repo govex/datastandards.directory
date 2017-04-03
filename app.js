@@ -19,15 +19,13 @@ var inventorySearch = require('./routes/inventory-search');
 var create = require('./routes/create-standard');
 var post = require('./routes/post');
 
-var app = express();
+var app = express(); // initate app
 app.use(express.static(path.join(__dirname, 'public'))); // tells app to use the /public directory
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views')); // path.join() normalises all the arguments into a path string. _dirname = global and 'views' = file/folder name
 app.engine('html', require('ejs').renderFile);
 app.set('view engine', 'html'); // set the view engine to html
-
-//.use() tells app to use the given parameters
 
 // uncomment after placing your favicon in /public
 // app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
@@ -65,6 +63,7 @@ app.use(function(req, res, next) {
   next(err);
 });
 
+// this currently crashes the app
 /*error handler
 app.use(function(err, req, res, next) {
   // set locals, only providing error in development

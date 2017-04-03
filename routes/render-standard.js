@@ -3,6 +3,6 @@ var router = express.Router(); // defining the router, which define an app behav
 
 db = require('../queries');
 
-router.get('/api/:id', db.renderRequest); // outputs the getRequest function
+router.get('/api/:id', db.renderRequest); // outputs the renderRequest function
 
 module.exports = router;

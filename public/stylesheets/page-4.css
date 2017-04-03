@@ -128,7 +128,7 @@ html, body {
         padding: 10px;
         cursor: pointer; }
         html .container .site-content button.submit:hover, body .container .site-content button.submit:hover {
-          background-color: #eed074; }
+          background-color: #FFF15E; }
         html .container .site-content button.submit a, body .container .site-content button.submit a {
           text-decoration: none;
           color: #353638; }

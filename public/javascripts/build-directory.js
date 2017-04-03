@@ -1,18 +1,18 @@
 // this function builds the output content after a user either clicks on a category (.square) or searches 
 function buildDirectory(input) {
-	// input will get results if it is a category or standard name
-	$(".click-to-directory").hide();
-	var allStandards = [];
-	
-	console.log(input);
 
-	// get the data from the getAllStandards query on the server side 
+	$(".click-to-directory").hide(); // hide the .square classes 
+
+	var allStandards = []; 
+
+	// get the data from the directory route on the server side 
 	$.getJSON("https://odstandards-directory.herokuapp.com/directory/api/all-standards", function(standards) {
 		if (input == "all") { // if user selects all standards
 
 			var link;
 
-			$.each(standards.data, function(i){
+			// run through each standard and create a link fr it and build a visualization for the standard
+			$.each(standards.data, function(i){ 
 				link = "https://odstandards-directory.herokuapp.com/directory/api/" + standards.data[i].id;
 				allStandards.push(buildStandard(standards.data[i], link));
 			});

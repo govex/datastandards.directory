@@ -82,7 +82,7 @@ html, body {
           color: #353638;
           box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); }
           html .container .site-content .directory .search-to-directory button.search-button:hover, body .container .site-content .directory .search-to-directory button.search-button:hover {
-            background-color: #eed074;
+            background-color: #FFF15E;
             cursor: pointer; }
       html .container .site-content .directory .click-to-directory h2, body .container .site-content .directory .click-to-directory h2 {
         font-family: "Lato", sans-serif;
