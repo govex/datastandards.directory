@@ -14,7 +14,6 @@ $(function(){
 
 	function search(parameters){
 		var selectedStandard = []; // array to store all the standards associated with the search result
-		//document.getElementById("sortby").value = "";
 
 		if (window.location.href.indexOf('/index') >= 0){ // if the page is on index.html
 			(function (global) {
@@ -35,10 +34,10 @@ $(function(){
 					$(".click-to-directory").hide(); // hide the click-to-directory
 					$(".directory-results").show(); // show the standards that are associated with the category selected 
 					localStorage.clear(); // clear local storage
-					$(".standard-body").hide(); //hide the standard body full-text, just show the title of each standard and associated description
+					$(".standard-body").hide(); // hide the standard body full-text, just show the title of each standard and associated description
 				}
 			}(window));
-     		console.log("test")
+
 			buildDirectory(parameters)
 		}
 	}

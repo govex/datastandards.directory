@@ -1,6 +1,7 @@
+// this function will do the following: if metric value == Yes, then output this icon, else if metric == No, then output this other icon, etc... 
 function buildMetrics (metric) { 
-	var metrics = []; // This empty array will store all the metric icons
-	if (metric.open == "Yes") { // Generally-speaking: if metric === Yes, then output this icon, else if metric === No, then output this other icon, etc... 
+	var metrics = []; // this empty array will store all the metric icons
+	if (metric.open == "Yes") { 
 		var open = '<a title="Open License" ><button type="button" id="metric" style="color:white; background-color: #619e81;"><i id="metricIcon" class="fa fa-unlock" aria-hidden="true"></i></button></a>';
 		metrics.push(open); // This pushes/stores this metric icon into the metrics array
 	} else if (metric.open == "No"){
@@ -90,11 +91,12 @@ function buildMetrics (metric) {
 		var meta = '<a title="Takes into Account Associated Metadata for the Dataset: ' + metric.metadata_rationale + '"><button type="button" id="metric"  style="color:white; background-color: #353638"><i id="metricIcon" class="fa fa-file" aria-hidden="true"></i></button></a>';
 		metrics.push(meta);
 	}
-	// IF ADDED NEW METRIC: add a new if/else if/else statement. Follow the same structure, but make sure to change the title, the metric icon, and the metric's rationale 
-	var metricsJoined = metrics.join("  "); // Combines the metrics together by removing the commas from the array the icons are stored in
-	return [metrics, metricsJoined]; // What will be returned when the function is called
+	// to add a new metric, add a new if/else if/else statement. Follow the same structure, but make sure to change the title, the metric icon, and the metric's rationale 
+	var metricsJoined = metrics.join("  "); // combines the metrics together by removing the commas from the array the icons are stored in
+	return [metrics, metricsJoined]; // what will be returned when the function is called
 };
 
+// this function builds the metrics that appear in about.html (glossary section)
 function buildMetricsLegend () {
 	var legendMetrics = [
 		'<strong class="legend-title"></strong>',

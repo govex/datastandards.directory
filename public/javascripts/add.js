@@ -1,4 +1,4 @@
-// this function runs after a user submits/posts an unverified new standard to the standards table in the postgres db
+// this function runs after a client submits/posts an unverified new standard to the standards table in the postgres database
 function postAdd() {
 	var standard = document.getElementById("input0").value; // get the standard's name
 	var website = document.getElementById("input8").value; // get the standard's website
@@ -10,12 +10,9 @@ function postAdd() {
 		$("#input8").parent("p").addClass("highlight"); // highlight the input that should be entered
 	} else {
 		var $form = $(".add-standard"); // create variable for the add form
-		
 		// find all the inputs			
 		var $inputs = $form.find("name, category, description, license, updated, version, stage_in_development, documentation, website, contact, example, publisher, publisher_reputation, number_of_consumers, consumers, number_of_apps, apps, open, transferability, transferability_rationale, stakeholder_participation, stakeholder_participation_rationale, consensus_government, consensus_government_rationale, extensions, extensions_indicators, machine_readable, machine_readable_rationale, human_readable, human_readable_rationale, requires_realtime, requires_realtime_rationale, metadata, metadata_rationale, recorded, verified");
-
 		var serializedData = $form.serialize(); // serialize the data in the form
-				
 		$inputs.prop("disabled", true); // disable the inputs for the duration of the Ajax request
 
 		// create ajax call to post the serialized data to the route (url)
@@ -36,7 +33,6 @@ function postAdd() {
 		request.fail(function (jqXHR, textStatus, errorThrown){
 			$(".error").show();
 			$(".error").html("We apologize, our server is currently not working. Please try again.");
-			
 			// log the error to the console
 			console.error(
 				"The following error occurred: "+
@@ -46,11 +42,9 @@ function postAdd() {
 
 		// callback handler that will be called regardless if the request failed or succeeded
 		request.always(function () {
-			// reenable the inputs
-			$inputs.prop("disabled", false);
+			$inputs.prop("disabled", false); // reenable the inputs
 		});
-
-		// prevent default posting of form
-		event.preventDefault();	
+		
+		event.preventDefault();	// prevent default posting of form
 	}
 }

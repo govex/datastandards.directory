@@ -11,61 +11,60 @@ function buildDirectory(input) {
 
 			var link;
 
-			// run through each standard and create a link fr it and build a visualization for the standard
+			// run through each standard and create a link for it and build a visualization for the standard
 			$.each(standards.data, function(i){ 
 				link = "https://odstandards-directory.herokuapp.com/directory/api/" + standards.data[i].id;
 				allStandards.push(buildStandard(standards.data[i], link));
 			});
 
-			$("#standards").html(allStandards);
-			$("#sortby").change(function() {
-				$("#standards").html("");
-				$("#standards").html(sortby(allStandards));
-				$(".standard-body").hide();
-				clickStandard()
-			});
-			
-			$(".standard-body").hide();
-			$(".directory-results").show();
-			$('.no-results').hide();
-			$(".directory-items").show();
-			$(".search-title").html("<h2>Search results for: " + input + "</strong>") 
-			clickStandard()
-			clickLink(url)
-
-		} else {
+		} else { // if user clicks on a .square or if a user searches a standard / category 
 			var match = [];
 
+			// run through all the inventory and store standards that match the client's input 
 			$.each(standards.data, function(i) {
-				if (standards.data[i].id == input){
+				// if the input has the same id as a standard
+				if (standards.data[i].id == input){  
 					match.push(standards.data[i]);
 				}
+				// if the input has the same category as a standard
 				if (standards.data[i].category.toUpperCase() == input.toUpperCase()){
 					match.push(standards.data[i]);
 				}
+				// if the input has the same name as a standard
 				if (standards.data[i].name.toUpperCase() == input.toUpperCase()){
 					match.push(standards.data[i]);
 				}
+
+				// run through each match and store it into an array
+				$.each(match, function(i) {	
+					var link = "https://odstandards-directory.herokuapp.com/directory/api/" + match[i].id; // create a link for the standard 
+					allStandards.push(buildStandard(match[i], link));
+				});
 			})
 
-			if (match.length > 0) {
-				$.each(match, function(i) {	
-					var url = "https://odstandards-directory.herokuapp.com/directory/api/" + match[i].id
-
-					$.getJSON("https://odstandards-directory.herokuapp.com/directory/api/get/" + match[i].id, function(standards) {
-						allStandards.push(buildStandard(match[i], url));
-						$("#standards").html(allStandards);
-						$(".search-title").html("<h2>Search results for: " + input + "</strong>") 
-						$(".standard-body").hide();
-						$(".directory-results").show();
-						$('.no-results').hide();
-						$(".directory-items").show();
-						clickStandard()
-						clickLink(url)
-					});
+			// if there there are standards that match the input
+			if (allStandards.length > 0) {
+				// run the sort function when a user changes the sort option value
+				$("#sortby").change(function() {
+					$("#standards").html("");
+					$("#standards").html(sortby(allStandards));
+					$(".standard-body").hide();
+					clickStandard();
+					clickLink(url);
 				});
+
+				$("#standards").html(allStandards); // add all the standards to the div#standards
+				
+				// hide / show / add text to certain classes
+				$(".standard-body").hide();
+				$(".directory-results").show();
+				$('.no-results').hide();
+				$(".directory-items").show();
+				$(".search-title").html("<h2>Search results for: " + input + "</strong>");
+
+				clickStandard(); // run this function when a user clicks the '+ Details' icon
+				clickLink(link); // run this function when a user clicks the link icon 
 			} else {
-				console.log("NO")
 				$('.directory-items').hide();
 				$('.no-results').show();
 				$(".no-results").html("<h2>No search results for " + input + "</h2>");
@@ -73,15 +72,6 @@ function buildDirectory(input) {
 				$(".directory-results").show();	
 				$(".standards-container").hide();
 			}
-
-			$("#sortby").change(function() {
-				$("#standards").html("");
-				console.log(sortby(allStandards));
-				$("#standards").html(sortby(allStandards));
-				$(".standard-body").hide();
-				clickStandard()
-				clickLink(url)
-			});
 		}
 	});
 }

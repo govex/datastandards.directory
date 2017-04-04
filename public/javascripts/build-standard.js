@@ -1,5 +1,6 @@
+// this function builds the content that appears in each .standards-container in directory.html
 function buildStandard(selectedStandard, link){
-	var metric = buildMetrics(selectedStandard);
+	var metric = buildMetrics(selectedStandard); // create the metrics for the standard 
 	standard = "";
 	standard += "<div class='standards-container'><div id='" + selectedStandard.id + "' class='standards'>";
 	standard += "<div class='standard-header'>";
@@ -31,6 +32,7 @@ function buildStandard(selectedStandard, link){
 	return standard;
 }
 
+// this function reorders the date into the correct format for the sortby() function
 function createDates(date){
 	var parts = [];
 	parts = date.split("-");
