@@ -73,7 +73,10 @@ html, body {
           text-align: center;
           display: block;
           margin: 0 auto;
-          margin-top: 20px; }
+          margin-top: 20px;
+          border: solid;
+          border-color: #353638;
+          border-radius: 5px; }
         html .container .site-content .description-box p.credit, body .container .site-content .description-box p.credit {
           text-align: center; }
         html .container .site-content .description-box .legend, body .container .site-content .description-box .legend {

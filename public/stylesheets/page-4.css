@@ -68,7 +68,8 @@ html, body {
         border-radius: 5px;
         padding: 25px; }
         html .container .site-content .description-box .comment p.highlight, body .container .site-content .description-box .comment p.highlight {
-          background-color: #E8C047; }
+          border: solid;
+          border-color: #E8C047; }
         html .container .site-content .description-box .comment p, body .container .site-content .description-box .comment p {
           text-align: left;
           margin-bottom: 20px;
@@ -118,7 +119,7 @@ html, body {
       html .container .site-content button.submit, body .container .site-content button.submit {
         box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
         text-align: center;
-        background-color: #E8C047;
+        background-color: #499AA0;
         color: #353638;
         font-family: "Lato", sans-serif;
         font-size: 20px;
@@ -128,7 +129,7 @@ html, body {
         padding: 10px;
         cursor: pointer; }
         html .container .site-content button.submit:hover, body .container .site-content button.submit:hover {
-          background-color: #FFF15E; }
+          background-color: #64b2b8; }
         html .container .site-content button.submit a, body .container .site-content button.submit a {
           text-decoration: none;
           color: #353638; }

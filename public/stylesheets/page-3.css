@@ -70,7 +70,7 @@ html, body {
         background-color: #E8C047;
         cursor: pointer; }
         html .container .site-content .tabs .inactive-tab:hover, body .container .site-content .tabs .inactive-tab:hover {
-          background-color: #FFF15E; }
+          background-color: #eed074; }
       html .container .site-content .tabs .active-tab, body .container .site-content .tabs .active-tab {
         background-color: #499AA0;
         color: #353638;
@@ -91,7 +91,8 @@ html, body {
         html .container .site-content .description-box form, body .container .site-content .description-box form {
           margin: 10px; }
           html .container .site-content .description-box form p.highlight, body .container .site-content .description-box form p.highlight {
-            background-color: #E8C047; }
+            border: solid;
+            border-color: #E8C047; }
           html .container .site-content .description-box form p, body .container .site-content .description-box form p {
             text-align: left;
             margin-bottom: 20px;
@@ -162,7 +163,7 @@ html, body {
         box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
         margin: 10px;
         text-align: center;
-        background-color: #E8C047;
+        background-color: #499AA0;
         font-family: "Lato", sans-serif;
         font-size: 20px;
         border-radius: 5px;
@@ -172,7 +173,7 @@ html, body {
         cursor: pointer;
         color: #353638; }
         html .container .site-content button.submit:hover, body .container .site-content button.submit:hover {
-          background-color: #FFF15E; }
+          background-color: #64b2b8; }
     html .container .footer, body .container .footer {
       background-color: #2B1F2A;
       font-family: "PT Sans Narrow", sans-serif;
