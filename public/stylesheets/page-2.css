@@ -82,7 +82,7 @@ html, body {
           color: #353638;
           box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); }
           html .container .site-content .directory .search-to-directory button.search-button:hover, body .container .site-content .directory .search-to-directory button.search-button:hover {
-            background-color: #FFF15E;
+            background-color: #eed074;
             cursor: pointer; }
       html .container .site-content .directory .click-to-directory h2, body .container .site-content .directory .click-to-directory h2 {
         font-family: "Lato", sans-serif;
@@ -116,8 +116,11 @@ html, body {
             margin-right: 0; }
           html .container .site-content .directory .click-to-directory .row-1 .square:hover, body .container .site-content .directory .click-to-directory .row-1 .square:hover {
             background-color: #64b2b8;
-            font-size: 15px;
             cursor: pointer; }
+          html .container .site-content .directory .click-to-directory .row-1 .square .definition, body .container .site-content .directory .click-to-directory .row-1 .square .definition {
+            display: none;
+            font-size: 12px;
+            text-align: justify; }
       html .container .site-content .directory .click-to-directory .row-2, body .container .site-content .directory .click-to-directory .row-2 {
         max-width: 900px;
         margin-left: auto;
@@ -148,7 +151,11 @@ html, body {
             margin-right: 0; }
           html .container .site-content .directory .click-to-directory .row-2 .square:hover, body .container .site-content .directory .click-to-directory .row-2 .square:hover {
             background-color: #64b2b8;
-            font-size: 15px; }
+            cursor: pointer; }
+          html .container .site-content .directory .click-to-directory .row-2 .square .definition, body .container .site-content .directory .click-to-directory .row-2 .square .definition {
+            display: none;
+            font-size: 12px;
+            text-align: justify; }
       html .container .site-content .directory .click-to-directory button, body .container .site-content .directory .click-to-directory button {
         box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
         text-align: center;

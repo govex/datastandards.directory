@@ -71,8 +71,11 @@
 									<option value="Traffic Accidents">Traffic Accidents</option>
 									<option value="Transport Schedules">Transport Schedules</option>
 									<option value="Zoning">Zoning</option>
+									<option value="Other">Other</option>
 							</select>
 						</p>
+
+						<p class="category" style="display: none"><input id="input1-other" class="form-input" name="" type="text" placeholder="Enter the category" value=""/></p>
 						
 						<p><label for="input2">Description </label>
 						<input id="input2" class="form-input" name="description" type="text" placeholder="Input a description of the standard" placeholder="Input a description of the standard" value=""/></p>
@@ -266,7 +269,23 @@
 				$.each(standard, function(i, el){
 					options.innerHTML += '<option value="' + standard[i] + '">' + standard[i] + '</option>';
 				});
-			})	
+			})
+
+			// This function runs if a user selects the "Other" option for a category 
+			$("#input1").on('change', function(){
+				var selectedCategory = document.getElementById("input1").value;
+				if (selectedCategory == "Other"){
+					$(this).removeAttr("name");
+					$("#input1-other").show();
+					$(".category").show();
+					$("#input1-other").attr("name", "category");
+				} else {
+					$("#input1-other").hide();
+					$(".category").hide();
+					$("#input1-other").removeAttr("name");
+					$(this).attr("name", "category");
+				}
+			})
 
 			// this function toggles between the short and long form for adding a standard
 			$(".hide-show").on('click', function(){
@@ -275,6 +294,7 @@
 				var shortform = $('.shortform');
 				var test = $(form).children('p');
 				$(form).children('p').not('.shortform').not(this).not('.metadata').toggle(); // show the details 
+				$(".category").hide();
 			})
 
 		</script>

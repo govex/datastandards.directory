@@ -143,6 +143,11 @@ html, body {
             display: none; }
           html .container .site-content .description-box form p.timestamp, body .container .site-content .description-box form p.timestamp {
             display: none; }
+          html .container .site-content .description-box form p.category, body .container .site-content .description-box form p.category {
+            padding-bottom: 25px;
+            display: none; }
+            html .container .site-content .description-box form p.category input#input1-other, body .container .site-content .description-box form p.category input#input1-other {
+              display: none; }
         html .container .site-content .description-box form.update-standard p, body .container .site-content .description-box form.update-standard p {
           display: block; }
         html .container .site-content .description-box form.update-standard p.timestamp, body .container .site-content .description-box form.update-standard p.timestamp {
