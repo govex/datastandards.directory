@@ -118,7 +118,8 @@ html, body {
             cursor: pointer; }
           html .container .site-content .directory .click-to-directory .row-1 .square .definition, body .container .site-content .directory .click-to-directory .row-1 .square .definition {
             display: none;
-            font-size: 14px; }
+            font-size: 12px;
+            text-align: justify; }
       html .container .site-content .directory .click-to-directory .row-2, body .container .site-content .directory .click-to-directory .row-2 {
         max-width: 900px;
         margin-left: auto;
@@ -152,7 +153,8 @@ html, body {
             cursor: pointer; }
           html .container .site-content .directory .click-to-directory .row-2 .square .definition, body .container .site-content .directory .click-to-directory .row-2 .square .definition {
             display: none;
-            font-size: 14px; }
+            font-size: 12px;
+            text-align: justify; }
       html .container .site-content .directory .click-to-directory a, body .container .site-content .directory .click-to-directory a {
         text-decoration: none; }
         html .container .site-content .directory .click-to-directory a button, body .container .site-content .directory .click-to-directory a button {
