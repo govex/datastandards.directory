@@ -2,7 +2,6 @@
 function buildDirectory(input) {
 	$(".click-to-directory").hide(); // input will get results if it is a category or standard name
 	var allStandards = [];
-	console.log('test')
 	// get the data from the getAllStandards query on the server side 
 	$.getJSON("https://odstandards-directory.herokuapp.com/api/all-standards", function(standards) {
 		if (input == "all") { // if user selects all standards
@@ -35,17 +34,8 @@ function buildDirectory(input) {
 		// if the client's search/selection matches standards
 		if (allStandards.length > 0) {
 
-			// create the sorting functionality
-			$("#sortby").change(function() {
-				$("#standards").html("");
-				$("#standards").html(sortby(allStandards));
-				$(".standard-body").hide();
-				clickStandard();
-				clickLink(link);
-			});
 			$("#standards").html(allStandards); // add the matched standards to the directory
 			$(".search-title").html("<h2>Search results for: " + input + "</strong>") 
-			$(".standard-body").hide();
 			$(".directory-results").show();
 			$('.no-results').hide();
 			$('.click-to-learn').hide();
