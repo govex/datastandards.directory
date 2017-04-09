@@ -45,6 +45,7 @@ function buildDirectory(input) {
 
 			if (allStandards.length > 1) {
 				$(".standard-body").hide();
+				$(".filters").hide();
 				// create the sorting functionality
 				$("#sortby").change(function() {
 					$("#standards").html("");
