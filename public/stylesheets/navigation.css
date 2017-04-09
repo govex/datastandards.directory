@@ -1,0 +1,53 @@
+@import url(https://fonts.googleapis.com/css?family=PT+Sans+Narrow|Lato);
+html {
+  box-sizing: border-box; }
+
+*, *::after, *::before {
+  box-sizing: inherit; }
+
+.header {
+  position: fixed;
+  width: 100%; }
+  .header ul {
+    background-color: #2B1F2A;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden; }
+    .header ul li {
+      text-align: center;
+      display: inline-block;
+      top: 0; }
+      .header ul li a {
+        font-size: 30px;
+        font-family: "PT Sans Narrow", sans-serif;
+        display: inline-block;
+        text-align: center;
+        padding: 14px 20px;
+        text-decoration: none;
+        color: #FFFeF7; }
+      .header ul li .page-content {
+        display: none;
+        background-color: #2B1F2A;
+        color: #FFFeF7;
+        position: absolute;
+        min-width: 140px;
+        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+        z-index: 1; }
+        .header ul li .page-content a {
+          width: 170px;
+          display: block;
+          font-size: 18px; }
+      .header ul li:hover a {
+        background-color: #FFFeF7;
+        color: #2B1F2A; }
+      .header ul li:hover .page-content {
+        display: block; }
+        .header ul li:hover .page-content a:hover {
+          background-color: white;
+          color: #2B1F2A; }
+    .header ul li.selected-page a {
+      background-color: #FFFeF7;
+      color: #2B1F2A; }
+
+/*# sourceMappingURL=navigation.css.map */

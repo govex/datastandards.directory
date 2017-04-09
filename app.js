@@ -36,7 +36,7 @@ app.use(bodyParser.urlencoded({ extended: false })); // allows app to read data 
 // app.use(cookieParser()); // adds cookie object to all requests you get
 
 // create routes from the above paths to the following html pages 
-app.use('/index', index); 
+app.use('/', index); 
 app.use('/directory', directory);
 app.use('/contribute', contribute);
 app.use('/contact', contact);
@@ -61,7 +61,7 @@ app.use(function(req, res, next) {
 app.use(function(err, req, res, next) {
   res.locals.message = err.message;
   res.locals.error = req.app.get('env') === 'development' ? err : {};
-  res.render('error.jade')
+  res.render('error.jade');
   res.status(err.status || 500);
 });
 

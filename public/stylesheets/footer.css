@@ -1,0 +1,22 @@
+@import url(https://fonts.googleapis.com/css?family=PT+Sans+Narrow|Lato);
+html {
+  box-sizing: border-box; }
+
+*, *::after, *::before {
+  box-sizing: inherit; }
+
+.footer {
+  background-color: #2B1F2A;
+  font-family: "PT Sans Narrow", sans-serif;
+  color: #FFFeF7;
+  padding: 20px;
+  position: absolute;
+  bottom: 0;
+  width: 100%; }
+  .footer a {
+    text-decoration: none;
+    color: #FFFeF7; }
+    .footer a:hover {
+      color: #FFFeF7; }
+
+/*# sourceMappingURL=footer.css.map */

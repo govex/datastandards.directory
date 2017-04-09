@@ -14,30 +14,6 @@ html, body {
   html .container, body .container {
     min-height: 100%;
     position: relative; }
-    html .container .header, body .container .header {
-      position: fixed;
-      width: 100%; }
-      html .container .header ul, body .container .header ul {
-        background-color: #2B1F2A;
-        list-style-type: none;
-        margin: 0;
-        padding: 0;
-        overflow: hidden; }
-        html .container .header ul li, body .container .header ul li {
-          text-align: center;
-          display: inline-block;
-          top: 0; }
-          html .container .header ul li a, body .container .header ul li a {
-            font-size: 30px;
-            font-family: "PT Sans Narrow", sans-serif;
-            display: inline-block;
-            text-align: center;
-            padding: 14px 20px;
-            text-decoration: none;
-            color: #FFFeF7; }
-            html .container .header ul li a:hover, body .container .header ul li a:hover {
-              background-color: #FFFeF7;
-              color: #2B1F2A; }
     html .container .site-content, body .container .site-content {
       padding-bottom: 40px;
       padding-top: 60px;
@@ -51,130 +27,16 @@ html, body {
         font-size: 50px; }
       html .container .site-content i, body .container .site-content i {
         color: #353638; }
-      html .container .site-content .directory .search-to-directory, body .container .site-content .directory .search-to-directory {
-        margin-top: 30px; }
-        html .container .site-content .directory .search-to-directory input, body .container .site-content .directory .search-to-directory input {
-          width: 840px;
-          font-family: "Lato", sans-serif;
-          font-size: 22px;
-          padding: 12px 45px;
-          padding-bottom: 19px;
-          border-top-left-radius: 5px;
-          border-bottom-left-radius: 5px;
-          border: 2px;
-          border-style: solid;
-          border-color: #353638;
-          text-align: center;
-          box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); }
-        html .container .site-content .directory .search-to-directory button.search-button, body .container .site-content .directory .search-to-directory button.search-button {
-          margin-left: auto 0px;
-          font-size: 22px;
-          width: 60px;
-          background-color: #E8C047;
-          padding: 15px 10px;
-          padding-bottom: 21px;
-          border-top-right-radius: 5px;
-          border-bottom-right-radius: 5px;
-          border: 2px;
-          border-style: solid;
-          border-color: #353638;
-          color: #353638;
-          box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); }
-          html .container .site-content .directory .search-to-directory button.search-button:hover, body .container .site-content .directory .search-to-directory button.search-button:hover {
-            background-color: #eed074;
-            cursor: pointer; }
-      html .container .site-content .directory .click-to-directory h2, body .container .site-content .directory .click-to-directory h2 {
-        font-family: "Lato", sans-serif;
-        color: #353638; }
-      html .container .site-content .directory .click-to-directory .row-1, body .container .site-content .directory .click-to-directory .row-1 {
-        max-width: 900px;
-        margin-left: auto;
-        margin-right: auto; }
-        html .container .site-content .directory .click-to-directory .row-1::after, body .container .site-content .directory .click-to-directory .row-1::after {
-          clear: both;
-          content: "";
-          display: block; }
-        html .container .site-content .directory .click-to-directory .row-1 .square, body .container .site-content .directory .click-to-directory .row-1 .square {
-          box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-          float: left;
-          display: block;
-          margin-right: 2.35765%;
-          width: 100%;
-          margin-right: 0;
-          text-align: center;
-          background-color: #499AA0;
-          color: #353638;
-          font-family: "Lato", sans-serif;
-          font-size: 18px;
-          border-radius: 5px;
-          width: 170px;
-          height: 140px;
-          margin: 5px;
-          padding: 10px; }
-          html .container .site-content .directory .click-to-directory .row-1 .square:last-child, body .container .site-content .directory .click-to-directory .row-1 .square:last-child {
-            margin-right: 0; }
-          html .container .site-content .directory .click-to-directory .row-1 .square:hover, body .container .site-content .directory .click-to-directory .row-1 .square:hover {
-            background-color: #64b2b8;
-            cursor: pointer; }
-          html .container .site-content .directory .click-to-directory .row-1 .square .definition, body .container .site-content .directory .click-to-directory .row-1 .square .definition {
-            display: none;
-            font-size: 12px;
-            text-align: justify; }
-      html .container .site-content .directory .click-to-directory .row-2, body .container .site-content .directory .click-to-directory .row-2 {
-        max-width: 900px;
-        margin-left: auto;
-        margin-right: auto; }
-        html .container .site-content .directory .click-to-directory .row-2::after, body .container .site-content .directory .click-to-directory .row-2::after {
-          clear: both;
-          content: "";
-          display: block; }
-        html .container .site-content .directory .click-to-directory .row-2 .square, body .container .site-content .directory .click-to-directory .row-2 .square {
-          box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-          float: left;
-          display: block;
-          margin-right: 2.35765%;
-          width: 100%;
-          margin-right: 0;
-          text-align: center;
-          background-color: #499AA0;
-          color: #353638;
-          font-family: "Lato", sans-serif;
-          font-size: 18px;
-          border-radius: 5px;
-          width: 170px;
-          height: 140px;
-          margin: 5px;
-          padding: 10px;
-          cursor: pointer; }
-          html .container .site-content .directory .click-to-directory .row-2 .square:last-child, body .container .site-content .directory .click-to-directory .row-2 .square:last-child {
-            margin-right: 0; }
-          html .container .site-content .directory .click-to-directory .row-2 .square:hover, body .container .site-content .directory .click-to-directory .row-2 .square:hover {
-            background-color: #64b2b8;
-            cursor: pointer; }
-          html .container .site-content .directory .click-to-directory .row-2 .square .definition, body .container .site-content .directory .click-to-directory .row-2 .square .definition {
-            display: none;
-            font-size: 12px;
-            text-align: justify; }
-      html .container .site-content .directory .click-to-directory a, body .container .site-content .directory .click-to-directory a {
-        text-decoration: none; }
-        html .container .site-content .directory .click-to-directory a button, body .container .site-content .directory .click-to-directory a button {
-          box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-          text-align: center;
-          background-color: #499AA0;
-          color: #353638;
-          font-family: "Lato", sans-serif;
-          font-size: 20px;
-          border: 1px;
-          border-radius: 5px;
-          width: 895px;
-          padding: 10px;
-          cursor: pointer; }
-          html .container .site-content .directory .click-to-directory a button:hover, body .container .site-content .directory .click-to-directory a button:hover {
-            background-color: #64b2b8; }
       html .container .site-content .click-to-learn, body .container .site-content .click-to-learn {
         max-width: 100%;
         margin-left: auto;
-        margin-right: auto; }
+        margin-right: auto;
+        background-color: #FFFeF7;
+        margin-top: 20px;
+        border-top: solid;
+        border-bottom: solid;
+        border-color: #E8C047;
+        margin-bottom: 30px; }
         html .container .site-content .click-to-learn::after, body .container .site-content .click-to-learn::after {
           clear: both;
           content: "";
@@ -185,14 +47,7 @@ html, body {
           margin-right: 2.35765%;
           width: 48.82117%;
           margin-right: 0;
-          background-color: #FFFeF7;
-          width: 50%;
-          border: solid;
-          border-color: #E8C047;
-          border-top: solid 5px;
-          border-top-color: #E8C047;
-          border-bottom: 0px;
-          margin-top: 20px; }
+          width: 50%; }
           html .container .site-content .click-to-learn div.to-learn:last-child, body .container .site-content .click-to-learn div.to-learn:last-child {
             margin-right: 0; }
           html .container .site-content .click-to-learn div.to-learn h1, body .container .site-content .click-to-learn div.to-learn h1 {
@@ -210,12 +65,6 @@ html, body {
               text-decoration: none; }
               html .container .site-content .click-to-learn div.to-learn h2 a:hover, body .container .site-content .click-to-learn div.to-learn h2 a:hover {
                 color: #64b2b8; }
-        html .container .site-content .click-to-learn a div.right, body .container .site-content .click-to-learn a div.right {
-          border-left-style: solid;
-          border-left-color: #FFFeF7; }
-        html .container .site-content .click-to-learn a div.left, body .container .site-content .click-to-learn a div.left {
-          border-right-style: solid;
-          border-right-color: #FFFeF7; }
         html .container .site-content .click-to-learn a div.to-learn, body .container .site-content .click-to-learn a div.to-learn {
           margin-top: 0px;
           padding: 10px;
@@ -224,24 +73,12 @@ html, body {
           background-color: #E8C047;
           font-size: 20px;
           text-decoration: none;
-          cursor: pointer; }
+          cursor: pointer;
+          border-top: solid 5px;
+          border-bottom: solid;
+          border-color: #E8C047; }
           html .container .site-content .click-to-learn a div.to-learn:hover, body .container .site-content .click-to-learn a div.to-learn:hover {
             background-color: #FFFeF7;
             color: #E8C047; }
-    html .container .footer, body .container .footer {
-      background-color: #2B1F2A;
-      font-family: "PT Sans Narrow", sans-serif;
-      color: #FFFeF7;
-      padding: 20px;
-      margin-top: 0px;
-      position: absolute;
-      bottom: 0;
-      width: 100%;
-      margin-top: 0px; }
-      html .container .footer a, body .container .footer a {
-        text-decoration: none;
-        color: #FFFeF7; }
-        html .container .footer a:hover, body .container .footer a:hover {
-          color: #FFFeF7; }
 
 /*# sourceMappingURL=page-1.css.map */

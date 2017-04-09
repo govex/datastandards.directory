@@ -1,0 +1,73 @@
+html
+  head
+    title About Us
+    // stylesheet
+    link(rel='stylesheet', type='text/css', href='/stylesheets/page-5.css')
+    // Font Awesome Icons
+    script(src='https://use.fontawesome.com/5f92b1f541.js')
+    // jQuery
+    script(src='https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js')
+    script(src='https://code.jquery.com/ui/1.12.1/jquery-ui.js')
+    link(rel='stylesheet', href='//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css')
+    // custom JS functions
+    script(src='/javascripts/build-metrics.js')
+  body
+    .container
+      include navigation.jade
+      .site-content
+        div#project
+          h1 About Project
+        .description-box
+          img(src='https://imgs.xkcd.com/comics/standards.png')
+          p.credit By XKCD
+        br
+        div#acknowledgements
+          h1 Acknowledgements
+        .description-box
+          | This site is operated by the 
+          a(href='https://govex.jhu.edu/', target='_blank') Center for Government Excellence
+          |  at Johns Hopkins University, in partnership with 
+          a(href='http://geothink.ca/', target='_blank') Geothink
+          | , 
+          a(href='https://www.mcgill.ca/', target='_blank') McGill University
+          |  and 
+          a(href='https://groups.google.com/forum/#!topic/data-standards-discovery-use-and-creation/') members of the open data community
+          | . Our initial work is based upon research conducted by 
+          a(href='http://geothink.ca/tag/rachel-bloom/', target='_blank') Rachel Bloom
+          | , and will expand to include work compiled by 
+          a(href='https://www.linkedin.com/in/mckinneyjames/', target='_blank') James McKinney
+          |  and others.
+          a(href='https://docs.google.com/spreadsheets/d/1lqnfwPtaI9cqHMnxkclvtLLsmhVPESPJAajpWDHcOsg/edit?usp=sharing', target='_blank')  Categories
+          |  were defined by Jury Konga. It was funded through the 
+          a(href='https://whatworkscities.bloomberg.org/', target='_blank') What Works Cities
+          |  program, sponsored by 
+          a(href='https://www.bloomberg.org/') Bloomberg Philanthropies
+          | . Site development by 
+          a(href='https://www.linkedin.com/in/julia-conzon-991034115', target='_blank') Julia Conzon
+          | , with support from 
+          a(href='https://www.linkedin.com/in/sophia-dengo-0548a9a/', target='_blank') Sophia Dengo
+          | , 
+          a(href='https://www.linkedin.com/in/andrewnicklin/', target='_blank') Andrew Nicklin
+          | , 
+          a(href='https://www.linkedin.com/in/sharonpaley/', target='_blank') Sharon Paley
+          | , and 
+          a(href='https://www.linkedin.com/in/matthew-pazoles-0bb93619/', target='_blank') Matthew Pazoles
+          | .
+          ul
+            li
+              strong Open source codes: 
+              a(href='https://developers.google.com/fonts/', target='_blank') Google API Font
+              | , 
+              a(href='https://thenounproject.com/', target='_blank') Noun Project
+              | , 
+              a(href='http://fontawesome.io/', target='_blank') Font Awesome
+            li
+              strong Open source icons: 
+              | Sarah Joy, Jayati Bandyopadhyay, Aruther Shillain, Evan Shuster, icon 54, Daouna Jeong, Piero Borgo, Vicons Design, Davo Sime, Made, Shawn M, Kokota, Jinashi Wu, Nook Fulloption, Jonathan Collie
+      include footer.jade
+      script.
+        $('#about').addClass("selected-page");
+        // initiate jQuery tooltip
+        $( function() {
+        $( document ).tooltip();
+        } );

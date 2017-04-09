@@ -1,0 +1,8 @@
+@import url(https://fonts.googleapis.com/css?family=PT+Sans+Narrow|Lato);
+html {
+  box-sizing: border-box; }
+
+*, *::after, *::before {
+  box-sizing: inherit; }
+
+/*# sourceMappingURL=variables.css.map */

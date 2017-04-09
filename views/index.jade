@@ -1,0 +1,51 @@
+html
+  head
+    title Home
+    // stylesheet
+    link(rel='stylesheet', type='text/css', href='/stylesheets/page-1.css')
+    // Font Awesome Icons
+    script(src='https://use.fontawesome.com/5f92b1f541.js')
+    // jQuery
+    script(src='https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js')
+    script(src='https://code.jquery.com/ui/1.12.1/jquery-ui.js')
+    link(rel='stylesheet', href='//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css')
+    // custom JS functions
+    script(src='/javascripts/click-to-directory.js')
+    script(src='/javascripts/autosearch.js')
+    script(src='/javascripts/search.js')
+    script(src='/javascripts/build-directory.js')
+    script(src='/javascripts/hover-for-category.js')
+  body
+    .container
+      include navigation.jade
+      .site-content
+        div
+          h1 Welcome to the Open Data Standards Directory
+        .directory
+          include categories.jade
+        .click-to-learn
+          .to-learn
+            h1 What are Open Data Standards?
+            h2
+              | An open data standard is a set of specifications (or requirements) for how some sets of data should be made publicly available. Generally, open data standards describe data about a particular subject, for example service requests (Open311) or building permits (BLDS). Like the data they describe, open data standards are generally developed “in the open”, meaning that anyone who is interested has a way to contribute.
+          .to-learn
+            h1 How are Open Data Standards Useful?
+            h2
+              | Open data standards allow data to be more easily consumed and repurporsed for valuable ends. Consider the 
+              a(href='https://developers.google.com/transit/gtfs/', target='_blank') General Transit Feed Specification (GTFS)
+              | . Through collaborations with public and private organizations, a standarad for public transporation was developed. Since its establishment, several municipalities across North America have adopted the standard. The GTFS has made it easier for citizens to know what public transportation to take to get to their destination on time.
+          br
+          a(href='/glossary')
+            .left.to-learn Learn About Open Data Standards
+          a(href='/about')
+            .right.to-learn Learn About The Project
+          include footer.jade
+    script(type='text/javascript').
+      var category = ""; // variable that will store the category the client has selected from .square class
+      // create a global function that will be stored on the browser if the user clicks on the .square class
+      (function (global) {
+      $(".square").on('click', function(){
+      category = $(this).html() // store the selected category
+      global.localStorage.setItem("search-category", $(this).attr("value")); // create a global function that is the value of the category (i.e., the category name). This value will then be picked up in directory.html
+      });
+      }(window));

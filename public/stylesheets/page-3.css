@@ -16,33 +16,6 @@ html, body {
     background-size: 100%;
     min-height: 100%;
     position: relative; }
-    html .container .header, body .container .header {
-      position: fixed;
-      width: 100%; }
-      html .container .header ul, body .container .header ul {
-        background-color: #2B1F2A;
-        list-style-type: none;
-        margin: 0;
-        padding: 0;
-        overflow: hidden; }
-        html .container .header ul li, body .container .header ul li {
-          text-align: center;
-          display: inline-block;
-          top: 0; }
-          html .container .header ul li a, body .container .header ul li a {
-            font-size: 30px;
-            font-family: "PT Sans Narrow", sans-serif;
-            display: inline-block;
-            text-align: center;
-            padding: 14px 20px;
-            text-decoration: none;
-            color: #FFFeF7; }
-            html .container .header ul li a:hover, body .container .header ul li a:hover {
-              background-color: #FFFeF7;
-              color: #2B1F2A; }
-        html .container .header ul li.selected-page a, body .container .header ul li.selected-page a {
-          background-color: #FFFeF7;
-          color: #2B1F2A; }
     html .container .site-content, body .container .site-content {
       padding-bottom: 60px;
       padding-top: 60px; }
@@ -179,18 +152,5 @@ html, body {
         color: #353638; }
         html .container .site-content button.submit:hover, body .container .site-content button.submit:hover {
           background-color: #64b2b8; }
-    html .container .footer, body .container .footer {
-      background-color: #2B1F2A;
-      font-family: "PT Sans Narrow", sans-serif;
-      color: #FFFeF7;
-      padding: 20px;
-      position: absolute;
-      bottom: 0;
-      width: 100%; }
-      html .container .footer a, body .container .footer a {
-        text-decoration: none;
-        color: #FFFeF7; }
-        html .container .footer a:hover, body .container .footer a:hover {
-          color: #FFFeF7; }
 
 /*# sourceMappingURL=page-3.css.map */
