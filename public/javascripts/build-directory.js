@@ -34,6 +34,7 @@ function buildDirectory(input) {
 		}
 		// if the client's search/selection matches standards
 		if (allStandards.length > 0) {
+
 			// create the sorting functionality
 			$("#sortby").change(function() {
 				$("#standards").html("");
@@ -51,6 +52,18 @@ function buildDirectory(input) {
 			$(".directory-items").show();
 			clickStandard() // allows the client to click the "+ Details" for more information
 			clickLink(link) // allows the client to select a standard's link to share
+
+			if (allStandards.lenght > 1) {
+				$(".standard-body").hide();
+				// create the sorting functionality
+				$("#sortby").change(function() {
+					$("#standards").html("");
+					$("#standards").html(sortby(allStandards));
+					$(".standard-body").hide();
+					clickStandard();
+					clickLink(link);
+				});
+			}
 		} else { // else if there is no match 
 			$('.directory-items').hide();
 			$('.no-results').show();
