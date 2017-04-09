@@ -123,14 +123,14 @@ function renderRequest(req, res, next){
   var standard = req.params.id;
   db.many('select * from standards where id=$1', standard)
     .then(function (data) {
-      res.render('directory');
+      res.render('directory.jade');
     })
     .catch(function (err) {
       return next(err);
     });
   db.many('select * from standards where category=$1', standard)
     .then(function (data) {
-      res.render('directory')
+      res.render('directory.jade')
     })
     .catch(function (err) {
       return next(err);

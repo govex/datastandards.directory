@@ -8,7 +8,6 @@ var bodyParser = require('body-parser'); // adds a body object to your request s
 //var cookieParser = require('cookie-parser'); 
 
 // paths to routers
-var index = require('./routes/index');
 var directory = require('./routes/directory');
 var contribute = require('./routes/contribute');
 var contact = require('./routes/contact');
@@ -36,15 +35,14 @@ app.use(bodyParser.urlencoded({ extended: false })); // allows app to read data 
 // app.use(cookieParser()); // adds cookie object to all requests you get
 
 // create routes from the above paths to the following html pages 
-app.use('/', index); 
-app.use('/directory', directory);
+app.use('/', directory);
 app.use('/contribute', contribute);
 app.use('/contact', contact);
 app.use('/glossary', glossary);
 app.use('/about', about);
-app.use('/directory', allstandards);
+app.use('/', allstandards);
 app.use('/directory', onestandard);
-app.use('/directory', renderstandard);
+app.use('/', renderstandard);
 app.use('/inventory-search', inventorySearch);
 app.use('/contribute', create);
 app.use('/contribute', post);

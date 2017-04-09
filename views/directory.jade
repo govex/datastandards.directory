@@ -1,8 +1,9 @@
 html
   head
     title Directory
-    // stylesheet
-    link(rel='stylesheet', type='text/css', href='/stylesheets/page-2.css')
+    // stylesheets
+    link(rel='stylesheet', type='text/css', href='/stylesheets/page-1.css')
+    link(rel='stylesheet', type='text/css', href='/stylesheets/directory.css')
     // Font Awesome Icons
     script(src='https://use.fontawesome.com/5f92b1f541.js')
     // jQuery
@@ -19,12 +20,13 @@ html
     script(src='/javascripts/click-on-standard.js')
     script(src='/javascripts/sort.js')
     script(src='/javascripts/build-directory.js')
+    script(src='/javascripts/get.js')
   body
     .container
       include navigation.jade
       .site-content
         div
-          h1 Open Data Standards Directory
+          h1 Welcome to the Open Data Standards Directory
         .directory
           include categories.jade
           .directory-results
@@ -32,36 +34,33 @@ html
             .directory-items
               strong.search-title
               .filters
-                strong Sort
+                strong Sort  
                 select#sortby.dropdown
                   option(selected='selected')
                   option(value='new') Newest
                   option(value='old') Oldest
                   option(value='updated') Last Updated
             #standards
-      include footer.jade
-    script.
+        .click-to-learn
+          .to-learn
+            h1 What are Open Data Standards?
+            h2
+              | An open data standard is a set of specifications (or requirements) for how some sets of data should be made publicly available. Generally, open data standards describe data about a particular subject, for example service requests (Open311) or building permits (BLDS). Like the data they describe, open data standards are generally developed “in the open”, meaning that anyone who is interested has a way to contribute.
+          .to-learn
+            h1 How are Open Data Standards Useful?
+            h2
+              | Open data standards allow data to be more easily consumed and repurporsed for valuable ends. Consider the 
+              a(href='https://developers.google.com/transit/gtfs/', target='_blank') General Transit Feed Specification (GTFS)
+              | . Through collaborations with public and private organizations, a standarad for public transporation was developed. Since its establishment, several municipalities across North America have adopted the standard. The GTFS has made it easier for citizens to know what public transportation to take to get to their destination on time.
+          br
+          a(href='/glossary')
+            .left.to-learn Learn About Open Data Standards
+          a(href='/about')
+            .right.to-learn Learn About The Project
+        include footer.jade
+    script(type='text/javascript').
       // create jQuery tooltip
       $( function() {
       $( document ).tooltip();
       } );
-      $('#directory').addClass("selected-page");
-      var url = window.location.href // stores the url the client has entered
-      console.log(url)
-      if (url !== 'http://localhost:3000/directory' && url !== 'https://odstandards-directory.herokuapp.com/directory') {
-      var id  = getId(url) // get the id of the url
-      // if there is an id, then output the standard to the directory
-      if (id !== 0){
-      buildDirectory(id);
-      }
-      }
-      // obtain the id number of the url
-      function getId(str) {
-      if (str.indexOf("http://localhost:3000/directory") >= 0){
-      return str.split('http://localhost:3000/directory/api/')[1];
-      } else if (str.indexOf("https://odstandards-directory.herokuapp.com/directory") >= 0) {
-      return str.split('https://odstandards-directory.herokuapp.com/directory/api/')[1];
-      } else {
-      return 0;
-      }
-      }
+      getURL()

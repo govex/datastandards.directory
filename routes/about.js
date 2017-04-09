@@ -3,7 +3,7 @@ var router = express.Router(); // defining the router, which define an app behav
 
 var db = require('../queries');
 
-router.get('/', function (req, res) {  
+router.get('/', function (req, res, next) {  
   res.render('about.jade');
 });
 
