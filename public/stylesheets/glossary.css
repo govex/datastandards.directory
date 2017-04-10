@@ -9,14 +9,11 @@ html, body {
   text-align: center;
   margin: 0 auto;
   padding: 0px 0px;
-  background-color: #FFFeF7;
+  background-color: #FFFFFF;
   height: 100%; }
   html .container, body .container {
     min-height: 100%;
-    position: relative;
-    background: url("/images/background.png");
-    background-repeat: repeat;
-    background-size: 100%; }
+    position: relative; }
     html .container .site-content, body .container .site-content {
       padding-bottom: 60px;
       padding-top: 60px; }
@@ -71,18 +68,5 @@ html, body {
         html .container .site-content .description-box a, body .container .site-content .description-box a {
           text-decoration: none;
           color: #FFFeF7; }
-    html .container .footer, body .container .footer {
-      background-color: #2B1F2A;
-      font-family: "PT Sans Narrow", sans-serif;
-      color: #FFFeF7;
-      padding: 20px;
-      position: absolute;
-      bottom: 0;
-      width: 100%; }
-      html .container .footer a, body .container .footer a {
-        text-decoration: none;
-        color: #FFFeF7; }
-        html .container .footer a:hover, body .container .footer a:hover {
-          color: #FFFeF7; }
 
-/*# sourceMappingURL=page-5.css.map */
+/*# sourceMappingURL=glossary.css.map */

@@ -9,11 +9,9 @@ html, body {
   text-align: center;
   margin: 0 auto;
   padding: 0px 0px;
-  background-color: #FFFeF7;
+  background-color: #FFFFFF;
   height: 100%; }
   html .container, body .container {
-    background: url("/images/background.png");
-    background-size: 100%;
     min-height: 100%;
     position: relative; }
     html .container .site-content, body .container .site-content {
@@ -153,4 +151,4 @@ html, body {
         html .container .site-content button.submit:hover, body .container .site-content button.submit:hover {
           background-color: #64b2b8; }
 
-/*# sourceMappingURL=page-3.css.map */
+/*# sourceMappingURL=contribute.css.map */

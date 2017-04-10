@@ -10,14 +10,13 @@ html, body {
   margin: 0 auto;
   padding: 0px 0px;
   height: 100%;
-  background-color: #FFFeF7; }
+  background-color: #FFFFFF; }
   html .container, body .container {
     min-height: 100%;
     position: relative; }
     html .container .site-content, body .container .site-content {
       padding-bottom: 40px;
-      padding-top: 60px;
-      background: url("/images/background.png"); }
+      padding-top: 60px; }
       html .container .site-content h1, body .container .site-content h1 {
         padding: 30px;
         background-color: #FFFeF7;
@@ -81,4 +80,4 @@ html, body {
             background-color: #FFFeF7;
             color: #E8C047; }
 
-/*# sourceMappingURL=page-1.css.map */
+/*# sourceMappingURL=home.css.map */

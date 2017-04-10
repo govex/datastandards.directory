@@ -40,6 +40,7 @@ function buildDirectory(input) {
 			$('.no-results').hide();
 			$('.click-to-learn').hide();
 			$(".directory-items").show();
+			$(".filters").show();
 			clickStandard() // allows the client to click the "+ Details" for more information
 			clickLink(link) // allows the client to select a standard's link to share
 
