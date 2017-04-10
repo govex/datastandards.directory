@@ -40,13 +40,13 @@ function buildDirectory(input) {
 			$('.no-results').hide();
 			$('.click-to-learn').hide();
 			$(".directory-items").show();
-			$(".filters").show();
+			$(".filters").hide();
 			clickStandard() // allows the client to click the "+ Details" for more information
 			clickLink(link) // allows the client to select a standard's link to share
 
 			if (allStandards.length > 1) {
 				$(".standard-body").hide();
-				$(".filters").hide();
+				$(".filters").show();
 				// create the sorting functionality
 				$("#sortby").change(function() {
 					$("#standards").html("");
