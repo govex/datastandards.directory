@@ -44,9 +44,11 @@ function buildDirectory(input) {
 			clickStandard() // allows the client to click the "+ Details" for more information
 			clickLink(link) // allows the client to select a standard's link to share
 
+			// if there is more than one standard for the search
 			if (allStandards.length > 1) {
 				$(".standard-body").hide();
 				$(".filters").show();
+				$(".hide-show").html("<i class='fa fa-plus-circle'></i> Details");
 				// create the sorting functionality
 				$("#sortby").change(function() {
 					$("#standards").html("");

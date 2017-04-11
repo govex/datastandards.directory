@@ -10,7 +10,7 @@ function buildStandard(selectedStandard, link){
 	standard += "<div class='standard-items'>Updated: <div id='updated' value='" + createDates(selectedStandard.updated) + "'>" + selectedStandard.updated + "</div> | Added: <div id='added' value='" + createDates(selectedStandard.recorded) + "'>" + selectedStandard.recorded + "</div> | Version: <div id='version'>" + selectedStandard.version + "</div></div>";
 	standard += "</div>";
 	standard += "<p class='standard-description'>" + selectedStandard.description + "</p>";
-	standard += "<a class='hide-show'><i class='fa fa-plus-circle'></i> Details</a></div>";
+	standard += "<a class='hide-show'><i class='fa fa-minus-circle'></i> Details</a></div>";
 	standard += "<ul class ='standard-body'>";
 	standard += "<li><strong>License: </strong>" + selectedStandard.license + "</li>";
 	standard += "<li><strong>Publisher: </strong>" + selectedStandard.publisher + "</li>";
