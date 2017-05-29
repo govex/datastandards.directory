@@ -1,7 +1,7 @@
 {
-  "name": "open-data-standards-directory",
+  "name": "datastandards.directory",
   "version": "0.0.2",
-  "description": "open data standards directory",
+  "description": "data standards directory",
   "scripts": {
     "start": "node ./bin/www"
   },
@@ -20,7 +20,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/Noznoc/open-data-standards-directory"
+    "url": "https://github.com/govex/datastandards.directory"
   },
   "author": "Julia Conzon"
 }

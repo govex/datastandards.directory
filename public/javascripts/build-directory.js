@@ -3,11 +3,11 @@ function buildDirectory(input) {
 	$(".click-to-directory").hide(); // input will get results if it is a category or standard name
 	var allStandards = [];
 	// get the data from the getAllStandards query on the server side 
-	$.getJSON("https://odstandards-directory.herokuapp.com/api/all-standards", function(standards) {
+	$.getJSON("https://datastandards-directory.herokuapp.com/api/all-standards", function(standards) {
 		if (input == "all") { // if user selects all standards
 			var link;
 			$.each(standards.data, function(i){
-				link = "https://odstandards-directory.herokuapp.com/" + standards.data[i].id;
+				link = "https://odatastandards-directory.herokuapp.com/" + standards.data[i].id;
 				allStandards.push(buildStandard(standards.data[i], link));
 			});
 
@@ -26,7 +26,7 @@ function buildDirectory(input) {
 			})
 			if (match.length > 0) {
 				$.each(match, function(i) {	
-					var link = "https://odstandards-directory.herokuapp.com/" + match[i].id
+					var link = "https://datastandards-directory.herokuapp.com/" + match[i].id
 					allStandards.push(buildStandard(match[i], link));
 				});
 			}
