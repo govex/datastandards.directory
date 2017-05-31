@@ -10,6 +10,8 @@ html
     script(src='https://use.fontawesome.com/5f92b1f541.js')
     // jQuery
     script(src='https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js')
+    script(src='https://code.jquery.com/ui/1.12.1/jquery-ui.js')
+    link(rel='stylesheet', href='//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css')
     // custom JS functions
     script(src='/javascripts/add.js')
     script(src='/javascripts/update.js')
@@ -283,11 +285,14 @@ html
           button.submit.large(type='submit', value='add') Submit
       include footer.jade
     script.
+      // create jQuery tooltip
+      $( function() {
+      $( document ).tooltip();
+      } );
       $('#contribute').addClass("selected-page");
       $(".update-standard").hide();
       $(".popup").hide();
       $(".form-info").html("Add");
-
       $("div.tabs button").click(function() {
       // remove class of active tab
       $("div.tabs button.active-tab").removeClass("active-tab");
