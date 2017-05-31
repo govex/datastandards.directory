@@ -25,7 +25,8 @@
 		border: 1px
 		border-radius: 5px
 		padding: 10px
-		background-color: $container-color
+		font-size: 18px
+		border: 1px solid $container-color
 
 		label
 			font-weight: bold
@@ -40,12 +41,19 @@
 			&:hover
 				cursor: pointer
 
+			i
+				color: $dark-font-color
+				&:hover
+					cursor: pointer
+
 		input
 			height: 30px
-			margin-top: -3px
+			margin-top: -2px
+
 
 		input[type="text"], select
 			float: right
+			background-color: $light-font-color
 			width: 70%
 			padding: 3px
 			font-family: $body-font
