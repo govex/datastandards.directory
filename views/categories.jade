@@ -1,54 +1,54 @@
 link(rel='stylesheet', type='text/css', href='/stylesheets/categories.css')
 .search-to-directory
   input#search(type='text', name='search', placeholder='search a category or open data standard')
-  button.search-button
+  button.search-button.button.long
     i.fa.fa-search(aria-hidden='true')
 .click-to-directory
   h2 Click on any high-valued category to see associated open data standards
   .row-1
-    .square(value='Annual Budget')
+    .categories.button(value='Annual Budget')
       | Annual Budget
       img.category-icon(src='/images/annual_budget.png', alt='', height='110', width='120')
       h3.definition Municipal budgets that plan for expenditure
-    .square(value='Building Permits')
+    .categories.button(value='Building Permits')
       | Building Permits
       img.category-icon(src='/images/building_permits.png', alt='', height='100', width='100')
       h3.definition Municial permits for construction
-    .square(value='Crime Statistics')
+    .categories.button(value='Crime Statistics')
       | Crime Statistics
       img.category-icon(src='/images/crime_statistics.png', alt='', height='100', width='115')
       h3.definition Municipal crime data, such as police responses
-    .square(value='Election Results')
+    .categories.button(value='Election Results')
       | Election Results
       img.category-icon(src='/images/election_results.png', alt='', height='90', width='90')
       h3.definition Municipal major election results by consitutency/district
-    .square(value='Expenditure')
+    .categories.button(value='Expenditure')
       | Expenditure
       img.category-icon(src='/images/expenditure.png', alt='', height='90', width='100')
       h3.definition Municipal records of past spendings
   .row-2
-    .square(value='Public Facilities')
+    .categories.button(value='Public Facilities')
       | Public Facilities
       img.category-icon(src='/images/public_facilities.png', alt='', height='100', width='120')
       h3.definition
         | Municipal public amenities, such as schools or parks and their associated location information
-    .square(value='Real-Time Transit')
+    .categories.button(value='Real-Time Transit')
       | Real-Time Transit
       img.category-icon(src='/images/transit.png', alt='', height='90', width='90')
       h3.definition
         | Municipal or commissioned transit services' real-time information, such as the location of a bus in real-time
-    .square(value='Road Construction')
+    .categories.button(value='Road Construction')
       | Road Construction
       img.category-icon(src='/images/road_construction.png', alt='', height='90', width='90')
       h3.definition Municipal current and planned road construction
-    .square(value='Service Requests')
+    .categories.button(value='Service Requests')
       | Service Requests
       img.category-icon(src='/images/service_requests.png', alt='', height='80', width='80')
       h3.definition
         | Non-emergency service requests to a municipality, such as a request for graffiti removal
-    .square(value='Zoning')
+    .categories.button(value='Zoning')
       | Zoning
       img.category-icon(src='/images/zoning.png', alt='', height='120', width='110')
       h3.definition Municipal specifications on what development is allowed in a given piece of land
   br
-  button.all-standards View All Standards
+  button.all-standards.button.large View All Standards

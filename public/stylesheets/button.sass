@@ -1,0 +1,41 @@
+.button
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)
+	text-align: center
+	background-color: $container-color
+	color: $dark-font-color
+	font-family: $body-font
+	font-size: 20px
+	border: 1px
+	border-radius: 5px
+	padding: 10px
+	cursor: pointer
+	&:hover
+		background-color: lighten($container-color, 10%)
+		cursor: pointer
+
+.active-tab
+	background-color: $accent-color
+	box-shadow: 0 0px 0px 0 rgba(0, 0, 0, 0), 0 0px 0px 0 rgba(0, 0, 0, 0)
+	&:hover
+		cursor: default
+		background-color: $accent-color
+	
+.inactive-tab
+	cursor: pointer
+	margin: 0px 20px
+	margin: 30px
+
+.categories
+	@include span-columns(12)
+	@include omega()
+	font-size: 18px
+	width: 170px
+	height: 140px
+	margin: 5px
+	padding: 10px
+
+	.definition
+		display: none
+		font-size: 13px
+		text-align: center
+		padding: 0px 10px

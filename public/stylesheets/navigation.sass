@@ -1,0 +1,60 @@
+.header
+	position: fixed
+	width: 100%
+
+	ul 
+		background-color: $banner-color
+		list-style-type: none
+		margin: 0
+		padding: 0
+		overflow: hidden
+
+		li
+			text-align: center
+			display: inline-block
+			top: 0
+
+			a
+				font-size: 30px
+				font-family: $header-font
+				display: inline-block
+				text-align: center
+				padding: 14px 20px
+				text-decoration: none
+				color: $light-font-color
+
+				i
+					color: $light-font-color
+
+			.page-content
+				display: none
+				background-color: $banner-color
+				color: $light-font-color
+				position: absolute
+				min-width: 140px
+				box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2)
+				z-index: 1
+				a
+					width: 170px
+					display: block
+					font-size: 18px
+				
+			&:hover
+				a, i
+					background-color: white
+					color: $banner-color
+
+				.page-content
+					display: block
+
+					a
+						&:hover
+							background-color: lighten($light-font-color, 70%)
+							color: $banner-color
+		li.selected-page
+			a 
+				background-color: white
+				color: $banner-color
+
+
+					

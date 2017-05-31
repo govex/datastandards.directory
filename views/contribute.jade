@@ -5,6 +5,7 @@ html
     meta(name='viewport', content='width=device-width, initial-scale=1.0')
     // stylesheet
     link(rel='stylesheet', type='text/css', href='/stylesheets/contribute.css')
+    link(rel='stylesheet', type='text/css', href='/stylesheets/stylesheet.css')
     // Font Awesome Icons
     script(src='https://use.fontawesome.com/5f92b1f541.js')
     // jQuery
@@ -17,14 +18,14 @@ html
     .container
       include navigation.jade
       .site-content
-        div
-          h1 Contribute: Add or Update an OD Standard
-        h2 Please select whether you would like to add or update an open data standard
-        .tabs
-          button#add.inactive-tab Add
-          button#update.inactive-tab Update
-        .description-box
-          p.form-info
+        h1 
+          .tabs
+            button#add.inactive-tab.button.small ADD
+            | OR
+            button#update.inactive-tab.button.small UPDATE
+            | A DATA STANDARD
+        .text-container.form.form-add
+          h2.form-info
           form.add-standard
             p.shortform
               label.form-label(for='input0') Name 
@@ -32,7 +33,7 @@ html
             p.shortform
               label(for='input8') URL to Website 
               input#input8.form-input(name='website', type='text', placeholder="Copy a URL link to the standard's website", value='')
-            p.hide-show
+            .hide-show
               i.fa.fa-plus-circle
               | Complete long form
             p
@@ -279,14 +280,14 @@ html
           .popup.success
             | Thank you for your contribution. We will validate and release your contribution within 7 days.
           .popup.error
-        button.submit(type='submit', value='add') Submit
+          button.submit.large(type='submit', value='add') Submit
       include footer.jade
     script.
       $('#contribute').addClass("selected-page");
-      $("div.tabs button:first").addClass("active-tab").show();
       $(".update-standard").hide();
       $(".popup").hide();
-      $(".form-info").html("Either fill out the short or long form and then submit your contribution");
+      $(".form-info").html("Add");
+
       $("div.tabs button").click(function() {
       // remove class of active tab
       $("div.tabs button.active-tab").removeClass("active-tab");
@@ -296,18 +297,20 @@ html
       // when client clicks the add tab
       $("#add").click(function(){
       $(".add-standard").show();
+      $(".text-container").show();
       $(".update-standard").hide();
       $(".submit").attr("value", "add");
       $(".popup").hide();
-      $(".form-info").html("Either fill out the short or long form and then submit your contribution");
+      $(".form-info").html("Add");
       })
       // when client clicks the update tab
       $("#update").click(function(){
+      $(".text-container").show();
       $(".add-standard").hide();
       $(".update-standard").show();
       $(".submit").attr("value", "update");
       $(".popup").hide();;
-      $(".form-info").html("Fill out which standards needs to be updated and what needs to be updated");
+      $(".form-info").html("Update");
       })
       var inventory = []; // inventory of items for autocomplete, currently: name and category... ADD TAGS
       var options = document.getElementById("input37");

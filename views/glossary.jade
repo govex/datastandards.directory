@@ -5,6 +5,7 @@ html
     meta(name='viewport', content='width=device-width, initial-scale=1.0')
     // stylesheet
     link(rel='stylesheet', type='text/css', href='/stylesheets/glossary.css')
+    link(rel='stylesheet', type='text/css', href='/stylesheets/stylesheet.css')
     // Font Awesome Icons
     script(src='https://use.fontawesome.com/5f92b1f541.js')
     // jQuery
@@ -14,15 +15,13 @@ html
     .container
       include navigation.jade
       .site-content
-        div
-          h1 What are Open Data Standards?
-        .description-box
-          div
-            | An open data standard is a set of specifications (or requirements) for how some sets of data should be made publicly available. Generally, open data standards describe data about a particular subject, for example service requests (
-            a(href='http://www.open311.org/', target='_blank') Open311
-            | ) or building permits (
-            a(href='http://permitdata.org/', target='_blank') BLDS
-            | ). Like the data they describe, open data standards are generally developed “in the open”, meaning that anyone who is interested has a way to contribute. There are several types of standards, two of which are explained below:
+        .text-container
+          h2 OD Standards Definition:
+          | An open data standard is a set of specifications (or requirements) for how some sets of data should be made publicly available. Generally, open data standards describe data about a particular subject, for example service requests (
+          a(href='http://www.open311.org/', target='_blank') Open311
+          | ) or building permits (
+          a(href='http://permitdata.org/', target='_blank') BLDS
+          | ). Like the data they describe, open data standards are generally developed “in the open”, meaning that anyone who is interested has a way to contribute. There are several types of standards, two of which are explained below:
           ul
             li
               | Schematic. Schematic standards define the structure of the data to be published. This includes the names, descriptions, and data types of data fields or columns. Schematic standards also may include how one dataset is related to another.
@@ -55,11 +54,12 @@ html
           | ” as ‘Non-Residential (Commercial, Industrial, Institutional).’
         br
         div#odstandards
-          h1 How are Open Data Standards Useful?
-        .description-box [description]
+        .text-container 
+          h2 Example:
+          Open data standards allow data to be more easily consumed and repurporsed for valuable ends. Consider the General Transit Feed Specification (GTFS). Through collaborations with public and private organizations, a standarad for public transporation was developed. Since its establishment, several municipalities across North America have adopted the standard. The GTFS has made it easier for citizens to know what public transportation to take to get to their destination on time.
         br
-        h1 Glossary
-        .description-box
+        .text-container
+          h2 Glossary:
           ul
             li#categories
               a(href='https://docs.google.com/spreadsheets/d/1lqnfwPtaI9cqHMnxkclvtLLsmhVPESPJAajpWDHcOsg/edit?usp=sharing', target='_blank') Categories

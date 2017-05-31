@@ -3,6 +3,7 @@ html
     title Contact
     // stylesheet
     link(rel='stylesheet', type='text/css', href='/stylesheets/contact.css')
+    link(rel='stylesheet', type='text/css', href='/stylesheets/stylesheet.css')
     // Font Awesome Icons
     script(src='https://use.fontawesome.com/5f92b1f541.js')
     // jQuery
@@ -13,11 +14,9 @@ html
     .container
       include navigation.jade
       .site-content
-        div
-          h1 Contact
-        h2 Have any questions or want to join the community? Feel free to contact us
-        .description-box
-          form.comment
+        h1 CONTACT US
+        .text-container.form
+          form
             p
               label Name 
               input(type='text', name='client_name', placeholder='Input your name [optional]', value='')
@@ -29,12 +28,10 @@ html
               input#input38(type='text', name='comment', placeholder='Input your comment', value='')
             p.timestamp
               input#timestamp(type='text', name='timestamp', value='')
-        .popup.success
-          | We have received your comment. We will review your response within 7 days. Thank you.
-        .popup.error
-        br
-        button.submit
-          a(href='#') Submit
+          .popup.success
+            | We have received your comment. We will review your response within 7 days. Thank you.
+          .popup.error
+          button.submit.large Submit
       include footer.jade
     script.
       $('#contact').addClass("selected-page");

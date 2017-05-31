@@ -5,6 +5,7 @@ html
     meta(name='viewport', content='width=device-width, initial-scale=1.0')
     // stylesheet
     link(rel='stylesheet', type='text/css', href='/stylesheets/glossary.css')
+    link(rel='stylesheet', type='text/css', href='/stylesheets/stylesheet.css')
     // Font Awesome Icons
     script(src='https://use.fontawesome.com/5f92b1f541.js')
     // jQuery
@@ -17,15 +18,9 @@ html
     .container
       include navigation.jade
       .site-content
-        div#project
-          h1 About Project
-        .description-box
-          img(src='https://imgs.xkcd.com/comics/standards.png')
-          p.credit By XKCD
-        br
         div#acknowledgements
-          h1 Acknowledgements
-        .description-box
+        .text-container
+          h2 Acknowledgements:
           | This site is operated by the 
           a(href='https://govex.jhu.edu/', target='_blank') Center for Government Excellence
           |  at Johns Hopkins University, in partnership with 
@@ -66,6 +61,10 @@ html
             li
               strong Open source icons: 
               | Sarah Joy, Jayati Bandyopadhyay, Aruther Shillain, Evan Shuster, icon 54, Daouna Jeong, Piero Borgo, Vicons Design, Davo Sime, Made, Shawn M, Kokota, Jinashi Wu, Nook Fulloption, Jonathan Collie
+        br
+        .text-container
+          img(src='https://imgs.xkcd.com/comics/standards.png')
+          p.credit By XKCD
       include footer.jade
       script.
         $('#about').addClass("selected-page");

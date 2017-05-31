@@ -9,8 +9,8 @@ $(function(){
 		buildDirectory("all");
 	});
 
-	// if the client clicks on a .square or hovers on a .square the following events will occur
-	$(".square").on('click mouseover', function(event){
+	// if the client clicks on a .categories or hovers on a .square the following events will occur
+	$(".categories").on('click mouseover', function(event){
 		category = $(this).html(); // store the category name
 		selectedCategory = $(this).attr('value'); // store the value of the category button (i.e., the category name)
 		if(event.type == "mouseover"){ // if the user hover overs the category button show the definitions
