@@ -1,7 +1,7 @@
 function getURL(){   
       var url = window.location.href // stores the url the client has entered
       console.log(url)
-      if (url !== 'http://localhost:3000/' && url !== 'https://datastandards.directory/') {
+      if (url !== 'http://localhost:3000/' && url !== 'https://datastandards-directory.herokuapp.com/') {
             var id  = getId(url) // get the id of the url
             // if there is an id, then output the standard to the directory
             if (id !== 0){
