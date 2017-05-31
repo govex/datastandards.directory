@@ -11,10 +11,9 @@ html {
   font-family: "PT Sans Narrow", sans-serif;
   color: #FFFeF7;
   padding: 20px;
-  bottom: 0;
+  bottom: 0px;
   width: 100%;
-  position: relative;
-  clear: both; }
+  position: absolute; }
   .footer a {
     text-decoration: none;
     color: #FFFeF7; }
@@ -71,12 +70,17 @@ html {
 html, body {
   text-align: center;
   margin: 0 auto;
-  padding: 0px 0px;
-  background-color: #FFFFFF; }
-  html .container .site-content, body .container .site-content {
-    padding-top: 60px;
-    width: 100%;
-    height: 100%; }
+  padding: 0px;
+  background-color: #FFFFFF;
+  height: 100%; }
+  html .container, body .container {
+    min-height: 100%;
+    position: relative; }
+    html .container .site-content, body .container .site-content {
+      padding-top: 60px;
+      width: 100%;
+      min-height: 100%;
+      padding-bottom: 60px; }
 
 .click-to-directory h2 {
   font-family: "Lato", sans-serif;
