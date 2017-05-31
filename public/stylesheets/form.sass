@@ -1,0 +1,89 @@
+.form-add
+	display: none
+
+.hide-show
+	text-align: center
+	display: block
+	color: $container-color
+	&:hover
+		cursor: pointer
+		color: darken($container-color, 10%)
+
+	i
+		margin-right: 10px
+
+.form
+
+	p.highlight
+		border: solid
+		border-color: $banner-color	
+		background-color: lighten($banner-color, 50%)
+	p
+		text-align: left
+		margin-bottom: 20px
+		border: solid
+		border: 1px
+		border-radius: 5px
+		padding: 10px
+		background-color: $container-color
+
+		label
+			font-weight: bold
+			width: 20%
+
+		p label a
+			float: left
+
+		a
+			margin-left: 5px
+			text-align: left
+			&:hover
+				cursor: pointer
+
+		input
+			height: 30px
+			margin-top: -3px
+
+		input[type="text"], select
+			float: right
+			width: 70%
+			padding: 3px
+			font-family: $body-font
+			border: 0px
+			&:hover
+				cursor: text
+
+	.checkbox input[type="checkbox"]
+		width: 20px
+		margin-left: 50px
+		&:hover
+			cursor: pointer
+
+	p.shortform
+		display: block
+
+	p.rationale 
+		margin-left: 15px
+
+	p.metadata
+		display: none
+
+	p.timestamp
+		display: none
+
+	p.category
+		padding-bottom: 25px
+		display: none
+
+		input#input1-other
+			display: none
+
+	form.update-standard p
+		display: block
+
+	form.update-standard p.timestamp
+		display: none
+
+.add-standard
+	p
+		display: none

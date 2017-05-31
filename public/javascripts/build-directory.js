@@ -7,7 +7,7 @@ function buildDirectory(input) {
 		if (input == "all") { // if user selects all standards
 			var link;
 			$.each(standards.data, function(i){
-				link = "https://odatastandards-directory.herokuapp.com/" + standards.data[i].id;
+				link = "https://datastandards-directory.herokuapp.com/" + standards.data[i].id;
 				allStandards.push(buildStandard(standards.data[i], link));
 			});
 
@@ -38,7 +38,7 @@ function buildDirectory(input) {
 			$(".search-title").html("<h2>Search results for: " + input + "</strong>") 
 			$(".directory-results").show();
 			$('.no-results').hide();
-			$('.click-to-learn').hide();
+			$('.text-container').hide();
 			$(".directory-items").show();
 			$(".filters").hide();
 			clickStandard() // allows the client to click the "+ Details" for more information

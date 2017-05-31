@@ -6,6 +6,7 @@ function postAdd() {
 	if (standard == "" || website == "") { // if either of these are empty 
 		$(".error").show(); // show the error popup
 		$(".error").html("Sorry, but you have not provided us with enough information. Please provide the name and website of the standard and then submit your contribution. Thank you.");
+		$("form").children('p').not('.shortform').not(this).not('.metadata').hide();
 		$("#input0").parent("p").addClass("highlight"); // highlight the input that should be entered
 		$("#input8").parent("p").addClass("highlight"); // highlight the input that should be entered
 	} else {
