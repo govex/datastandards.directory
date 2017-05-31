@@ -3,7 +3,7 @@ function buildDirectory(input) {
 	$(".click-to-directory").hide(); // input will get results if it is a category or standard name
 	var allStandards = [];
 	// get the data from the getAllStandards query on the server side 
-	$.getJSON("https://datastandards.directory/api/all-standards", function(standards) {
+	$.getJSON("https://datastandards-directory.herokuapp.com/api/all-standards", function(standards) {
 		if (input == "all") { // if user selects all standards
 			var link;
 			$.each(standards.data, function(i){
