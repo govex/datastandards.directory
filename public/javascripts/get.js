@@ -1,7 +1,7 @@
 function getURL(){   
       var url = window.location.href // stores the url the client has entered
       console.log(url)
-      if (url !== 'http://localhost:3000/' && url !== 'https://datastandards.directory/') {
+      if (url !== 'http://localhost:3000/' && url !== 'https://datastandards.directory/' && url !== 'https://odstandards-directory.herokuapp/') {
             var id  = getId(url) // get the id of the url
             // if there is an id, then output the standard to the directory
             if (id !== 0){
@@ -14,6 +14,8 @@ function getURL(){
                   return str.split('http://localhost:3000/')[1];
             } else if (str.indexOf("https://datastandards.directory/") >= 0) {
                   return str.split('https://datastandards.directory/')[1];
+            } else if (str.indexOf("https://odstandards-directory.herokuapp/") >= 0) {
+                  return str.split('https://odstandards-directory.herokuapp/')[1];
             } else {
                   return 0;
             }
