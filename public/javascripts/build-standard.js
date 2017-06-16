@@ -19,8 +19,8 @@ function buildStandard(selectedStandard, link){
 	standard += "<li>" + metric[0][2] + " " + "<strong>Stakeholder Participation: </strong>" + selectedStandard.stakeholder_participation_rationale + "</li>";
 	standard += "<li>" + metric[0][3] + " " + "<strong>Consensus-based Governance: </strong>" + selectedStandard.consensus_government_rationale + "</li>";
 	standard += "<li>" + metric[0][4] + " " + "<strong>Extensions: </strong>" + selectedStandard.extensions_indicators + "</li>";
-	standard += "<li>" + metric[0][6] + " " + "<strong>Human Readable: </strong>" + selectedStandard.human_readable_rationale + "</li>";
-	standard += "<li>" + metric[0][5] + " " + "<strong>Machine Readable: </strong>" + selectedStandard.machine_readable_rationale + "</li>";
+	standard += "<li>" + metric[0][5] + " " + "<strong>Human Readable: </strong>" + selectedStandard.human_readable_rationale + "</li>";
+	standard += "<li>" + metric[0][6] + " " + "<strong>Machine Readable: </strong>" + selectedStandard.machine_readable_rationale + "</li>";
 	standard += "<li>" + metric[0][7] + " " + "<strong>Requires up-to-date Data: </strong>" + selectedStandard.requires_realtime_rationale + "</li>";
 	standard += "<li>" + metric[0][8] + " " + "<strong>Metadata: </strong>" + selectedStandard.metadata_rationale + "</li>";					
 	standard += "</ul></div>";
