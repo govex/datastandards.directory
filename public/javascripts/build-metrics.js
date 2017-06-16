@@ -42,13 +42,13 @@ function buildMetrics (metric) {
 		metrics.push(conGov);
 	}
 	if (metric.extensions == "Yes"){
-		var ext = '<a title="Extensions: ' + metric.extensions_rationale + '"><button type="button" id="metric" style="color:white; background-color: #619e81"><i id="metricIcon" class="fa fa-external-link" aria-hidden="true"></i></button></a>';
+		var ext = '<a title="Extensions: ' + metric.extensions_indicators + '"><button type="button" id="metric" style="color:white; background-color: #619e81"><i id="metricIcon" class="fa fa-external-link" aria-hidden="true"></i></button></a>';
 		metrics.push(ext);
 	} else if (metric.extensions == "No"){
-		var ext = '<a title="Extensions: ' + metric.extensions_rationale + '"><button type="button" id="metric" style="color:white; background-color: #990033"><i id="metricIcon" class="fa fa-external-link" aria-hidden="true"></i></button></a>';
+		var ext = '<a title="Extensions: ' + metric.extensions_indicators + '"><button type="button" id="metric" style="color:white; background-color: #990033"><i id="metricIcon" class="fa fa-external-link" aria-hidden="true"></i></button></a>';
 		metrics.push(ext);
 	} else {
-		var ext = '<a title="Extensions: ' + metric.extensions_rationale + '"><button type="button" id="metric"  style="color:white; background-color: #353638"><i id="metricIcon" class="fa fa-external-link" aria-hidden="true"></i></button></a>';
+		var ext = '<a title="Extensions: ' + metric.extensions_indicators + '"><button type="button" id="metric"  style="color:white; background-color: #353638"><i id="metricIcon" class="fa fa-external-link" aria-hidden="true"></i></button></a>';
 		metrics.push(ext);
 	}
 	if (metric.human_readable == "Yes"){
