@@ -13,20 +13,17 @@ var contribute = require('./routes/contribute');
 var contact = require('./routes/contact');
 var glossary = require('./routes/glossary');
 var about = require('./routes/about');
-var allstandards = require('./routes/all-standards');
-var onestandard = require('./routes/get-standard');
-var renderstandard = require('./routes/render-standard');
-var inventorySearch = require('./routes/inventory-search');
 var create = require('./routes/create-standard');
 var post = require('./routes/post');
+var get = require('./routes/get-data');
 
 var app = express(); // initate app
 app.use(express.static(path.join(__dirname, 'public'))); // tells app to use the /public directory
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views')); // path.join() normalises all the arguments into a path string. _dirname = global and 'views' = file/folder name
-app.engine('html', require('ejs').renderFile);
-app.set('view engine', 'html'); // set the view engine to html
+//app.engine('html', require('ejs').renderFile);
+app.set('view engine', 'jade'); // set the view engine to html
 
 app.use(logger('dev')); // logs the requests to the console
 app.use(bodyParser.json()); // gives app the ability to parse JSON
@@ -40,13 +37,10 @@ app.use('/contribute', contribute);
 app.use('/contact', contact);
 app.use('/glossary', glossary);
 app.use('/about', about);
-app.use('/', allstandards);
-app.use('/directory', onestandard);
-app.use('/', renderstandard);
-app.use('/inventory-search', inventorySearch);
 app.use('/contribute', create);
 app.use('/contribute', post);
 app.use('/contact', post);
+app.use('/', get);
 
 // catch 404 and forward to error handler. 404 error indicates the app ran out of options
 app.use(function(req, res, next) {

@@ -1,26 +1,14 @@
 html
   head
     title About
-    meta(charset='utf-8')
-    meta(name='viewport', content='width=device-width, initial-scale=1.0')
-    // stylesheet
-    link(rel='stylesheet', type='text/css', href='/stylesheets/glossary.css')
-    link(rel='stylesheet', type='text/css', href='/stylesheets/stylesheet.css')
-    // Font Awesome Icons
-    script(src='https://use.fontawesome.com/5f92b1f541.js')
-    // jQuery
-    script(src='https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js')
-    script(src='https://code.jquery.com/ui/1.12.1/jquery-ui.js')
-    link(rel='stylesheet', href='//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css')
-    // custom JS functions
-    script(src='/javascripts/build-metrics.js')
+    include head.jade
   body
     .container
-      include navigation.jade
+      include header.jade
       .site-content
-        div#acknowledgements
+        div#about-acknowledgements
         .text-container
-          h2 Acknowledgements:
+          h2 Acknowledgements
           | This site is operated by the 
           a(href='https://govex.jhu.edu/', target='_blank') Center for Government Excellence
           |  at Johns Hopkins University, in partnership with 
@@ -50,15 +38,19 @@ html
           | , and 
           a(href='https://www.linkedin.com/in/matthew-pazoles-0bb93619/', target='_blank') Matthew Pazoles
           | .
-          ul
-            li
+        br
+        .text-container#about-development
+          h2 Development
+          | This site is under continual development. Source code is accessible on 
+          a(href='https://github.com/govex/datastandards.directory', target='_blank') GitHub
+          p 
               strong Open source codes: 
               a(href='https://developers.google.com/fonts/', target='_blank') Google API Font
               | , 
               a(href='https://thenounproject.com/', target='_blank') Noun Project
               | , 
               a(href='http://fontawesome.io/', target='_blank') Font Awesome
-            li
+            p
               strong Open source icons: 
               | Sarah Joy, Jayati Bandyopadhyay, Aruther Shillain, Evan Shuster, icon 54, Daouna Jeong, Piero Borgo, Vicons Design, Davo Sime, Made, Shawn M, Kokota, Jinashi Wu, Nook Fulloption, Jonathan Collie
         br
@@ -68,7 +60,3 @@ html
       include footer.jade
       script.
         $('#about').addClass("selected-page");
-        // initiate jQuery tooltip
-        $( function() {
-        $( document ).tooltip();
-        } );

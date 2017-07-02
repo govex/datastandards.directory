@@ -1,14 +1,13 @@
 // function when the client clicks on the '+ Details' part of the standard, more details will appear
 function clickStandard (){
+	$('.standard-body').hide();
 	$(".hide-show").on('click', function(){
 		$(this).find('i').toggleClass('fa-plus-circle fa-minus-circle') // toggle between the + and - icons
-		var standard = $(this).parents('.standards'); // find the standard that the client has clicked on
-		var body = $(standard).find('ul'); // find the text for the standard
-		if (body[0].style.display == 'none') { // if the details are not visible
-			body.show(); // show the details 
-		} else {
-			body.hide(); // else hide the details because they are already visible
-		}
+		var standard = $(this).parents('.standard'); // find the standard that the client has clicked on
+		console.log(standard)
+		var body = $(standard).find('.standard-body'); // find the text for the standard
+		console.log(body)
+		body.toggle('hide show')
 	})
 }
 
@@ -18,6 +17,7 @@ function clickLink(url) {
 	// if client clicks the link icon
 	$(".link").on('click', function(){
 		link = $(this).siblings('div.copy-link'); // get the hidden div that has the link value stored in it
+		console.log(link)
 		$(link).tooltip(); // initialize a tooltip for the link
 		$(link).tooltip({ // change the position of the tooltip
   			position: {my: "left center", at: "right center", of: this}

@@ -1,0 +1,42 @@
+a.tooltipStyle(id='#{item.open}', name='open', href='#open', title='Open: #{item.open}')
+  button#metric.metric(type='button', style='color:white;')
+    i.fa.fa-unlock(aria-hidden='true')
+a.tooltipStyle(id='#{item.transferability}', name='transferability', href='#transferable',  title='Transferable to other Jurisdictions: #{item.transferability_rationale}')
+  button#metric.metric(type='button', style='color:white;')
+    i.fa.fa-exchange(aria-hidden='true')
+a.tooltipStyle(id='#{item.requires_realtime}', name='requires_realtime', href='#up-to-date',  title='Requires Real-Time Data: #{item.requires_realtime_rationale}')
+  button#metric.metric(type='button', style='color:white;  ')
+    i.fa.fa-clock-o(aria-hidden='true')
+a.tooltipStyle(id='#{item.stakePart}', href='#stakeholder', name='stakePart'  title='Stakeholder Participation: #{item.stakeholder_participation_rationale}')
+  button#metric.metric(type='button', style='color:white;  ')
+    i.fa.fa-group(aria-hidden='true')
+a.tooltipStyle(id='#{item.consensus_government}', name='consensus_government', href='#consensus',  title='Consensus-based Governance: #{item.consensus_government_rationale}')
+  button#metric.metric(type='button', style='color:white;  ')
+    i.fa.fa-thumbs-up(aria-hidden='true')
+a.tooltipStyle(id='#{item.extensions}', name='extensions', href='#extension', title='Extensions: #{item.extensions_rationale}')
+  button#metric.metric(type='button', style='color:white;  ')
+    i.fa.fa-external-link(aria-hidden='true')
+a.tooltipStyle(id='#{item.human_readable}', name='human_readable', href='#human',  title='Human-Readable: #{item.human_readable_rationale}')
+  button#metric.metric(type='button', style='color:white;  ')
+    i.fa.fa-eye(aria-hidden='true')
+a.tooltipStyle(id='#{item.machine_readable}', name='machine_readable' href='#machine',  title='Machine-Readable: #{item.machine_readable_rationale}')
+  button#metric.metric(type='button', style='color:white;  ')
+    i.fa.fa-desktop(aria-hidden='true')
+a.tooltipStyle(id='#{item.metadata}', name='metadata', href='#metadata',  title='Metadata: #{item.metadata_rationale}')
+  button#metric.metric(type='button', style='color:white;  ')
+    i.fa.fa-file(aria-hidden='true')
+
+- if (standards)
+  script.
+    var metrics = $('.metrics').children('a');
+    for (var i = 0; i < metrics.length; i++){
+      var id = metrics[i].id
+      var name = metrics[i].name
+      if (id == "Yes") {
+        $(metrics[i]).addClass('yes');
+      } else if (id == "No") {
+        $(metrics[i]).addClass('no');
+      } else {
+        $(metrics[i]).addClass('unsure');
+      }
+    }

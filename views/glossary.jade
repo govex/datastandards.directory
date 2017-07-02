@@ -1,22 +1,13 @@
 html
   head
     title Glossary
-    meta(charset='utf-8')
-    meta(name='viewport', content='width=device-width, initial-scale=1.0')
-    // stylesheet
-    link(rel='stylesheet', type='text/css', href='/stylesheets/glossary.css')
-    link(rel='stylesheet', type='text/css', href='/stylesheets/stylesheet.css')
-    // Font Awesome Icons
-    script(src='https://use.fontawesome.com/5f92b1f541.js')
-    // jQuery
-    script(src='https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js')
-    script(src='https://code.jquery.com/ui/1.12.1/jquery-ui.js')
+    include head.jade
   body
     .container
-      include navigation.jade
+      include header.jade
       .site-content
-        .text-container
-          h2 OD Standards Definition:
+        .text-container#glossary-definition
+          h2 OD Standards Definition
           | An open data standard is a set of specifications (or requirements) for how some sets of data should be made publicly available. Generally, open data standards describe data about a particular subject, for example service requests (
           a(href='http://www.open311.org/', target='_blank') Open311
           | ) or building permits (
@@ -24,9 +15,11 @@ html
           | ). Like the data they describe, open data standards are generally developed “in the open”, meaning that anyone who is interested has a way to contribute. There are several types of standards, two of which are explained below:
           ul
             li
-              | Schematic. Schematic standards define the structure of the data to be published. This includes the names, descriptions, and data types of data fields or columns. Schematic standards also may include how one dataset is related to another.
+              strong Schematic: 
+              | Schematic standards define the structure of the data to be published. This includes the names, descriptions, and data types of data fields or columns. Schematic standards also may include how one dataset is related to another.
             li
-              | Semantic. Semantic standards define the terminology or language in the data which is published. For example, 
+              strong Semantic: 
+              | Semantic standards define the terminology or language in the data which is published. For example, 
               a(href='https://ucr.fbi.gov/nibrs-overview', target='_blank') U.S. FBI NIBRS / Unified Crime Reporting
               |  semantics include the terms “
               kbd Arson
@@ -34,7 +27,8 @@ html
               kbd Robbery
               | ,” with a detailed definition of what each term means. (Note: NIBRS also includes schematic standards.)
             li
-              | Atomic. Atomic standards define how basic elements of data must be represented when there is an opportunity for confusion. Atomic standards may represent individual data values or a combination of data values. For example, a date and time should be formatted as “
+              strong Atomic: 
+              | Atomic standards define how basic elements of data must be represented when there is an opportunity for confusion. Atomic standards may represent individual data values or a combination of data values. For example, a date and time should be formatted as “
               kbd 2017-01-01T13:00:00Z
               | ” (the 
               a(href='https://en.wikipedia.org/wiki/ISO_8601', target='_blank') ISO8601
@@ -53,93 +47,102 @@ html
           kbd Non-Residential
           | ” as ‘Non-Residential (Commercial, Industrial, Institutional).’
         br
-        div#odstandards
-        .text-container 
-          h2 Example:
-          Open data standards allow data to be more easily consumed and repurporsed for valuable ends. Consider the General Transit Feed Specification (GTFS). Through collaborations with public and private organizations, a standarad for public transporation was developed. Since its establishment, several municipalities across North America have adopted the standard. The GTFS has made it easier for citizens to know what public transportation to take to get to their destination on time.
+        .text-container#glossary-example
+          h2 Example
+          | Open data standards allow data to be more easily consumed and repurporsed for valuable ends. Consider the General Transit Feed Specification (GTFS). Through collaborations with public and private organizations, a standarad for public transporation was developed. Since its establishment, several municipalities across North America have adopted the standard. The GTFS has made it easier for citizens to know what public transportation to take to get to their destination on time.
         br
-        .text-container
-          h2#glossary-metrics OD Standards Metrics:
-          ul
-            li#categories
-              a(href='https://docs.google.com/spreadsheets/d/1lqnfwPtaI9cqHMnxkclvtLLsmhVPESPJAajpWDHcOsg/edit?usp=sharing', target='_blank') Categories
-              |  were defined by Jury Konga
-            li.legend
-              strong.legend-title Directory legend: 
-              |                 Yes    
-              a(data-toggle='tooltip', title='Yes')
-                button#metric(type='button', style='color:white; background-color: #619e81; border: solid; border-color: #37393B')
-              |  No    
-              a.tooltipStyle(data-toggle='tooltip', title='No')
-                button#metric(type='button', style='color:white; background-color: #990033; border: solid; border-color: #37393B')
-              |  No Data    
-              a.tooltipStyle(data-toggle='tooltip', title='No Data')
-                button#metric(type='button', style='color:white; background-color: #37393B; border: solid; border-color: #37393B')
-              #legend-metrics.legend-metrics
-                ul
-                  li
-                    a.tooltipStyle
-                      button#metric(type='button', style='color:white; background-color: #37393B')
-                        i.fa.fa-unlock(aria-hidden='true')
-                    strong  Open License 
-                    p
-                      | What qualifies a standard as being “open” is debated. However, openness may be inferred when the standard is published under an open license. Open licenses iterate that anyone has the right to repurpose and share the material without restriction. Examples of open licenses include public domain licenses, the UK Open Government License v3, creative commons licenses, and open data common licenses (World Bank, Open Data Essentials).
-                  li
-                    a.tooltipStyle
-                      button#metric(type='button', style='color:white; background-color: #37393B')
-                        i.fa.fa-exchange(aria-hidden='true')
-                    strong  Transferable to Other Jurisdictions 
-                    p
-                      | There is a hierarchy regarding the ease of implementation for a standard. For example, CSV format of a standard requires a minimal degree of resources and technical knowledge. On the other hand, more complex and sophisticated ways of formatting standards, such as RDF and SOAP, are not as easy for municipal bodies to implement. More often than not, sophisticated formats tend not to be manageable for municipal actors that lack resources and technical background. Standards that handle dynamic data and cURL APIs exemplify more complex ways of publishing city datasets.
-                  li
-                    a.tooltipStyle
-                      button#metric(type='button', style='color:white; background-color: #37393B')
-                        i.fa.fa-thumbs-up(aria-hidden='true')
-                    strong  Consensus-Based Governance 
-                    p
-                      | Standardization implies an ongoing dialogue between producers and consumers of data. It is important to note that consensus-based governance does not mean that all inputs are accepted if the majority agrees. Instead, consensus-based indicates a process willing to address any request pertaining to the standard’s statement of purpose.  A charter providing transparency of decisions about the standard’s evolution support a consensus-based approach. Consensus-based governance can be inferred by the presence of a mailing list or active working group for the standard.
-                  li
-                    a.tooltipStyle
-                      button#metric(type='button', style='color:white; background-color: #37393B')
-                        i.fa.fa-external-link(aria-hidden='true')
-                    strong  Extensions 
-                    p
-                      | This indicates the flexibility of a standard’s implementation. Extensibility of a standard provides insight into how a standard is being implemented and enhanced for specific purposes.
-                  li
-                    a.tooltipStyle
-                      button#metric(type='button', style='color:white; background-color: #37393B')
-                        i.fa.fa-eye(aria-hidden='true')
-                    strong  Human Readable 
-                    p
-                      | Human readable requires a medium of data or information that can easily be understood by people. Therefore, the standard should encode the data by using easily identifiable text. Of course, there are semantic consideration for human readable standards. For example, there could be a variety of interpretive meanings associated with encoding the data through text.
-                  li
-                    a.tooltipStyle
-                      button#metric(type='button', style='color:white; background-color: #37393B')
-                        i.fa.fa-desktop(aria-hidden='true')
-                    strong  Machine Readable 
-                    p
-                      | Acceptable machine readable structures include XML, RSS feed, CSV, RDF, JSON, TXT, XLS(X), and KML formats. Formats that are not machine readable include PDF, HTML, DOC(X), anything scanned, anything faxed, and anything typed in an email (Suszan, 2014). Standard’s ought to compliment techniques to provide human and machine readable structures for the data. Publishing data as machine readable includes (1) established standard vocabularies, (2) enriching the HTML resources with metadata, semantics, and identifiers, (3) and implementing simple, manageable, and stable URIs (Bennett and Harvey, 2009). Data tables, according to the standard’s specification, should be normalized so to be incorporated into a relational database.
-                  li
-                    a.tooltipStyle
-                      button#metric(type='button', style='color:white; background-color: #37393B')
-                        i.fa.fa-clock-o(aria-hidden='true')
-                    strong  Requires Up-To-Date Data 
-                    p
-                      | This metric varies depending on the domain of the data. Some domains require formats that handle data in real time. However, other domains may require that the standard specify that data be updated quarterly or annually. For example, standards that handle transit and road construction data would require a web feed format to deliver updates about developments as they occur. However, budget datasets only requires a quarterly or yearly update. In practice, many municipal publishers still publish data in static files.
-                  li
-                    a.tooltipStyle
-                      button#metric(type='button', style='color:white; background-color: #37393B')
-                        i.fa.fa-group(aria-hidden='true')
-                    strong  Stakeholder Participation 
-                    p
-                      | Stakeholders for a standard include civil society, government, and the private sector. An open standard should aim to include all types of stakeholders in its conception and maintenance. Types of stakeholder participation can be inferred based on the types of publisher reputations.
-                  li
-                    a.tooltipStyle
-                      button#metric(type='button', style='color:white; background-color: #37393B')
-                        i.fa.fa-file(aria-hidden='true')
-                    strong  Takes into Account Associated Metadata for the Dataset 
-                    p
-                      | This metric checks whether the standard schema requires metadata. A “yes” for this metric indicates a presence of both descriptive and structural metadata for the primary data. Each standard should readily make available the time and date of the data’s creation, the author, location of the data on the computer networks, and information about any standard applied to the raw data. Metadata should have embedded permanent and/or discoverable URIs and should utilize electronic citations of the data in the form of hyperlinks (Bennett and Harvey, 2009).
+        .text-container#glossary-metrics
+          h2 Metrics
+          .legend#glossary-legend
+            #glossary-metrics-color 
+              | Click-to or hover-over to see metric's description
+              br
+              br
+              include metric-template.jade
+              br
+              br
+              strong.legend-title
+              .row-1
+                a.subtitle  Yes
+                a.subtitle  No
+                a.subtitle  Unsure
+              .row-2
+                a.tooltipStyle(data-toggle='tooltip', title='Yes')
+                  button#metric(class='metric', type='button', style='color:white; background-color: #619e81;')    
+                a.tooltipStyle(data-toggle='tooltip', title='No')
+                  button#metric(class='metric', type='button', style='color:white; background-color: #990033;')
+                a.tooltipStyle(data-toggle='tooltip', title='No Data')
+                  button#metric(class='metric', type='button', style='color:white; background-color: #37393B;')
+            #legend-metrics.legend-metrics
+              ul
+                li#open
+                  a.tooltipStyle
+                    button#metric(type='button', class='metric', style='color:white;')
+                      i.fa.fa-unlock(aria-hidden='true')
+                  strong  Open License 
+                  p
+                    | What qualifies a standard as being “open” is debated. However, openness may be inferred when the standard is published under an open license. Open licenses iterate that anyone has the right to repurpose and share the material without restriction. Examples of open licenses include public domain licenses, the UK Open Government License v3, creative commons licenses, and open data common licenses (World Bank, Open Data Essentials).
+                li#transferable
+                  a.tooltipStyle
+                    button#metric(type='button', class='metric', style='color:white;')
+                      i.fa.fa-exchange(aria-hidden='true')
+                  strong  Transferable to Other Jurisdictions 
+                  p
+                    | There is a hierarchy regarding the ease of implementation for a standard. For example, CSV format of a standard requires a minimal degree of resources and technical knowledge. On the other hand, more complex and sophisticated ways of formatting standards, such as RDF and SOAP, are not as easy for municipal bodies to implement. More often than not, sophisticated formats tend not to be manageable for municipal actors that lack resources and technical background. Standards that handle dynamic data and cURL APIs exemplify more complex ways of publishing city datasets.
+                li#consensus
+                  a.tooltipStyle
+                    button#metric(type='button', class='metric', style='color:white;')
+                      i.fa.fa-thumbs-up(aria-hidden='true')
+                  strong  Consensus-Based Governance 
+                  p
+                    | Standardization implies an ongoing dialogue between producers and consumers of data. It is important to note that consensus-based governance does not mean that all inputs are accepted if the majority agrees. Instead, consensus-based indicates a process willing to address any request pertaining to the standard’s statement of purpose.  A charter providing transparency of decisions about the standard’s evolution support a consensus-based approach. Consensus-based governance can be inferred by the presence of a mailing list or active working group for the standard.
+                li#extension
+                  a.tooltipStyle
+                    button#metric(type='button', class='metric', style='color:white;')
+                      i.fa.fa-external-link(aria-hidden='true')
+                  strong  Extensions 
+                  p
+                    | This indicates the flexibility of a standard’s implementation. Extensibility of a standard provides insight into how a standard is being implemented and enhanced for specific purposes.
+                li#human
+                  a.tooltipStyle
+                    button#metric(type='button', class='metric', style='color:white;')
+                      i.fa.fa-eye(aria-hidden='true')
+                  strong  Human Readable 
+                  p
+                    | Human readable requires a medium of data or information that can easily be understood by people. Therefore, the standard should encode the data by using easily identifiable text. Of course, there are semantic consideration for human readable standards. For example, there could be a variety of interpretive meanings associated with encoding the data through text.
+                li#machine
+                  a.tooltipStyle
+                    button#metric(type='button', class='metric', style='color:white;')
+                      i.fa.fa-desktop(aria-hidden='true')
+                  strong  Machine Readable 
+                  p
+                    | Acceptable machine readable structures include XML, RSS feed, CSV, RDF, JSON, TXT, XLS(X), and KML formats. Formats that are not machine readable include PDF, HTML, DOC(X), anything scanned, anything faxed, and anything typed in an email (Suszan, 2014). Standard’s ought to compliment techniques to provide human and machine readable structures for the data. Publishing data as machine readable includes (1) established standard vocabularies, (2) enriching the HTML resources with metadata, semantics, and identifiers, (3) and implementing simple, manageable, and stable URIs (Bennett and Harvey, 2009). Data tables, according to the standard’s specification, should be normalized so to be incorporated into a relational database.
+                li#up-to-date
+                  a.tooltipStyle
+                    button#metric(type='button', class='metric', style='color:white;')
+                      i.fa.fa-clock-o(aria-hidden='true')
+                  strong  Requires Up-To-Date Data 
+                  p
+                    | This metric varies depending on the domain of the data. Some domains require formats that handle data in real time. However, other domains may require that the standard specify that data be updated quarterly or annually. For example, standards that handle transit and road construction data would require a web feed format to deliver updates about developments as they occur. However, budget datasets only requires a quarterly or yearly update. In practice, many municipal publishers still publish data in static files.
+                li
+                  a.tooltipStyle
+                    button#metric(type='button', class='metric', style='color:white;')
+                      i.fa.fa-group(aria-hidden='true')
+                  strong  Stakeholder Participation 
+                  p
+                    | Stakeholders for a standard include civil society, government, and the private sector. An open standard should aim to include all types of stakeholders in its conception and maintenance. Types of stakeholder participation can be inferred based on the types of publisher reputations.
+                li#metadata
+                  a.tooltipStyle
+                    button#metric(type='button', class='metric', style='color:white;')
+                      i.fa.fa-file(aria-hidden='true')
+                  strong  Takes into Account Associated Metadata for the Dataset 
+                  p
+                    | This metric checks whether the standard schema requires metadata. A “yes” for this metric indicates a presence of both descriptive and structural metadata for the primary data. Each standard should readily make available the time and date of the data’s creation, the author, location of the data on the computer networks, and information about any standard applied to the raw data. Metadata should have embedded permanent and/or discoverable URIs and should utilize electronic citations of the data in the form of hyperlinks (Bennett and Harvey, 2009).
+        .text-container#glossary-categories
+          h2 Categories
+          | The
+          a(href='https://docs.google.com/spreadsheets/d/1lqnfwPtaI9cqHMnxkclvtLLsmhVPESPJAajpWDHcOsg/edit?usp=sharing', target='_blank')  categories 
+          | were defined by Jury Konga
         include footer.jade
     script
       $('#glossary').addClass("selected-page");

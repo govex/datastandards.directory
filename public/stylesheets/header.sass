@@ -1,0 +1,98 @@
+.header
+	position: fixed
+	width: 100%
+	font-family: $header-font
+
+	.navigation, .banner
+		ul 
+			background-color: $banner-color
+			list-style-type: none
+			margin: 0
+			padding: 0
+			overflow: hidden
+			&:hover
+				background-color: $banner-color
+
+			li
+				text-align: center
+				display: inline-block
+				top: 0
+
+				a
+					font-size: 30px
+					display: inline-block
+					text-align: center
+					padding: 14px 20px
+					text-decoration: none
+					color: $light-font-color
+
+					i
+						color: $light-font-color
+
+				.page-content
+					display: none
+					background-color: $banner-color
+					color: $light-font-color
+					position: absolute
+					box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2)
+					z-index: 1
+					a
+						width: 170px
+						display: block
+						font-size: 15px
+						border-bottom: 1px solid $banner-color
+					
+				&:hover
+					a, i
+						background-color: white
+						color: $banner-color
+
+					.page-content
+						display: block
+
+						a
+							&:hover
+								background-color: lighten($banner-color, 70%)
+								color: $banner-color
+			li.selected-page
+				a 
+					background-color: white
+					color: $banner-color
+	.banner
+		ul 
+			background-color: $banner-color
+			color: #fff
+			border-bottom: solid 1px
+			border-color: #fff
+			list-style-typ: none
+			margin: 0
+			padding: 0
+			overflow: hidden
+			text-align: right
+			padding: 3px 3px
+
+			li
+				display: inline-block
+				top: 0
+				margin-right: 5px
+
+				&:hover
+					cursor: pointer
+					background-color: $container-color
+
+				.search
+					font-size: 12px
+					padding-bottom: 6px
+					padding-top: 10px
+				
+				a, i
+					cursor: default
+					background-color: $banner-color
+					font-size: 20px
+					padding: 5px
+
+					&:hover
+						cursor: pointer
+						background-color: $container-color
+
+					
