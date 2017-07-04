@@ -89,6 +89,13 @@ html
                   strong  Transferable to Other Jurisdictions 
                   p
                     | There is a hierarchy regarding the ease of implementation for a standard. For example, CSV format of a standard requires a minimal degree of resources and technical knowledge. On the other hand, more complex and sophisticated ways of formatting standards, such as RDF and SOAP, are not as easy for municipal bodies to implement. More often than not, sophisticated formats tend not to be manageable for municipal actors that lack resources and technical background. Standards that handle dynamic data and cURL APIs exemplify more complex ways of publishing city datasets.
+                li#stakeholder
+                  a.tooltipStyle
+                    button#metric(type='button', class='metric', style='color:white;')
+                      i.fa.fa-group(aria-hidden='true')
+                  strong  Stakeholder Participation 
+                  p
+                    | Stakeholders for a standard include civil society, government, and the private sector. An open standard should aim to include all types of stakeholders in its conception and maintenance. Types of stakeholder participation can be inferred based on the types of publisher reputations.
                 li#consensus
                   a.tooltipStyle
                     button#metric(type='button', class='metric', style='color:white;')
@@ -124,13 +131,6 @@ html
                   strong  Requires Up-To-Date Data 
                   p
                     | This metric varies depending on the domain of the data. Some domains require formats that handle data in real time. However, other domains may require that the standard specify that data be updated quarterly or annually. For example, standards that handle transit and road construction data would require a web feed format to deliver updates about developments as they occur. However, budget datasets only requires a quarterly or yearly update. In practice, many municipal publishers still publish data in static files.
-                li
-                  a.tooltipStyle
-                    button#metric(type='button', class='metric', style='color:white;')
-                      i.fa.fa-group(aria-hidden='true')
-                  strong  Stakeholder Participation 
-                  p
-                    | Stakeholders for a standard include civil society, government, and the private sector. An open standard should aim to include all types of stakeholders in its conception and maintenance. Types of stakeholder participation can be inferred based on the types of publisher reputations.
                 li#metadata
                   a.tooltipStyle
                     button#metric(type='button', class='metric', style='color:white;')
