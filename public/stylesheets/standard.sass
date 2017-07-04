@@ -56,15 +56,15 @@
 					font-size: 11px
 					color: $dark-font-color 
 					padding: 2px 1px
-					background-color: lighten($container-color, 20%)
+					background-color: lighten($button-color, 20%)
 					width: 100px
 					text-align: center
 					border-radius: 5px
-					border: 1px solid $container-color
+					border: 1px solid $button-color
 					float: right
 					cursor: pointer
 					&:hover
-						background-color: $container-color
+						background-color: $button-color
 						color: $dark-font-color
 						cursor: pointer
 
@@ -92,7 +92,7 @@
 					float: left
 
 					a
-						border-color: $container-color
+						border-color: $button-color
 						text-decoration: none
 						color: $dark-font-color
 
@@ -113,7 +113,7 @@
 
 					&:hover
 						cursor: pointer
-						color: $container-color
+						color: $button-color
 
 				.standard-items
 					display: inline
@@ -141,9 +141,11 @@
 					padding-bottom: 7px
 
 					a
-						border-color: $container-color
+						border-color: $button-color
 						text-decoration: none
-						color: $dark-font-color
+						color: $button-color
+						&:hover
+							text-decoration: underline
 
 					button#metric
 						width: 30px

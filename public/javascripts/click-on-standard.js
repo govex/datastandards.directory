@@ -6,7 +6,6 @@ function clickStandard (){
 		var standard = $(this).parents('.standard'); // find the standard that the client has clicked on
 		console.log(standard)
 		var body = $(standard).find('.standard-body'); // find the text for the standard
-		console.log(body)
 		body.toggle('hide show')
 	})
 }
@@ -15,7 +14,7 @@ function clickStandard (){
 function clickLink(url) {
 	var link;
 	// if client clicks the link icon
-	$(".link").on('click', function(){
+	$("#copy-link").on('click', function(){
 		link = $(this).siblings('div.copy-link'); // get the hidden div that has the link value stored in it
 		console.log(link)
 		$(link).tooltip(); // initialize a tooltip for the link

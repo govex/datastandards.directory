@@ -2,14 +2,14 @@ h1
 	border-bottom: 2px solid $accent-color
 	font-family: $body-font
 	color: $dark-font-color
-	padding-bottom: 20px
+	padding-bottom: 30px
 	font-size: 40px
 	word-spacing: 15px
 	a
-		color: $container-color
+		color: $button-color
 		text-decoration: none
 		&:hover
-			color: lighten($container-color, 10%)
+			color: lighten($button-color, 10%)
 
 		i
 			color: white
@@ -17,10 +17,10 @@ h1
 h2
 	font-family: $body-font
 	a
-		color: $container-color
+		color: $button-color
 		text-decoration: none
 		&:hover
-			color: lighten($container-color, 10%)
+			color: lighten($button-color, 10%)
 
 		i
 			color: white
@@ -28,6 +28,9 @@ h2
 .form-info
 	text-align: center
 
-.align-right
-	text-align: right
-	padding-right: 10px
+.link
+	border-color: $button-color
+	text-decoration: none
+	color: $button-color
+	&:hover
+		text-decoration: none

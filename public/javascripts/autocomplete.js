@@ -16,8 +16,6 @@ function autocomplete() {
 			if($.inArray(el, keys) === -1) keys.push(el);
 		});
 
-		console.log(keys)
-
 		// initate ajax autocomplete with the 
 		$('.search-input').autocomplete({
 			source: keys,

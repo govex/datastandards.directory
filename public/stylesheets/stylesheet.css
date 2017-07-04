@@ -23,13 +23,12 @@ html, body {
   text-align: center;
   margin: 0 auto;
   padding: 0px;
-  background-color: #FFFFFF;
   height: 100%; }
   html .container, body .container {
     min-height: 100%;
     position: relative; }
     html .container .site-content, body .container .site-content {
-      padding-top: 80px;
+      padding-top: 110px;
       width: 100%;
       min-height: 100%;
       padding-bottom: 60px; }
@@ -178,7 +177,9 @@ html, body {
         .directory .standard .standard-header .standard-body li a {
           border-color: #499AA0;
           text-decoration: none;
-          color: #353638; }
+          color: #499AA0; }
+          .directory .standard .standard-header .standard-body li a:hover {
+            text-decoration: underline; }
         .directory .standard .standard-header .standard-body li button#metric {
           width: 30px;
           height: 30px;
@@ -443,7 +444,7 @@ h1 {
   border-bottom: 2px solid #E8C047;
   font-family: "Lato", sans-serif;
   color: #353638;
-  padding-bottom: 20px;
+  padding-bottom: 30px;
   font-size: 40px;
   word-spacing: 15px; }
   h1 a {
@@ -467,9 +468,12 @@ h2 {
 .form-info {
   text-align: center; }
 
-.align-right {
-  text-align: right;
-  padding-right: 10px; }
+.link {
+  border-color: #499AA0;
+  text-decoration: none;
+  color: #499AA0; }
+  .link:hover {
+    text-decoration: none; }
 
 .popup {
   border: 2px solid;
@@ -601,14 +605,5 @@ h2 {
         .header .banner ul li a:hover, .header .banner ul li i:hover {
           cursor: pointer;
           background-color: #499AA0; }
-
-.laptop-view {
-  width: 800px; }
-
-.tablet-view {
-  width: 500px; }
-
-.mobile-view {
-  width: 300px; }
 
 /*# sourceMappingURL=stylesheet.css.map */

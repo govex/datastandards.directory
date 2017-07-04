@@ -18,6 +18,7 @@ function getUpdateForm(req, res, next){
   res.render('add');
 }
 
+// function gets all categories and standard names for the autocomplete 
 function keywords(req, res, next){
   var query = 'select lower(name) as name, lower(category) as category from standards',
       keywords = [];
@@ -34,6 +35,7 @@ function keywords(req, res, next){
   });
 }
 
+// function gets data based on user input (e.g., all, )
 function getData(req, res, next){
   var user_input = req.params.id.toLowerCase(),
       query = ""; // store the user's input
@@ -47,10 +49,8 @@ function getData(req, res, next){
   db.task(t => {
     db.each(query, user_input, row => {
       for (var column in row) {
-        console.log(row[column])
-         if (row[column] == '' || row[column] == null || row[column] == undefined || row[column].toLowerCase() == 'null' || row[column].toLowerCase() == 'n/a') {
+         if (row[column] == '' || row[column] == null || row[column].toLowerCase() == 'unsure' || row[column] == undefined || row[column].toLowerCase() == 'null' || row[column].toLowerCase() == 'n/a') {
           row[column] = 'No information';
-          console.log(row[column])
         }
       }
     }) //category::text, name::text like "%$1%"
