@@ -3,6 +3,7 @@ html
     title Contact
     include head.jade
     script(src='/javascripts/update.js')
+    script(src='/javascripts/timestamp.js')
   body
     .container
       include header.jade
@@ -29,22 +30,9 @@ html
     script.
       $('#contact').addClass("selected-page");
       $('.popup').hide(); // hides popup information that would appear after a client submits form
-      var recorded = document.getElementById("timestamp").value // create variable to store the date
-      var date = new Date(); // get the current date
-      var month = date.getMonth() + 1; // get the current month
-      var year = date.getFullYear(); // get the current full year
-      var day = date.getDate(); // get the day
-      // Creates current date in the same format as the rest of the dates in the database
-      if (String(day).length < 2){
-      recorded = month + "-0" + day + "-" + year;
-      } else if (String(month).length < 2) {
-      recorded = "0" + month + "-" + day + "-" + year;
-      } else {
-      recorded = month + "-" + day + "-" + year;
-      }
-      document.getElementById("timestamp").value = recorded; // update the timestamp to this reformatted date
       // when user submits form, post run the postUpdate function to post the data to database
       $(".submit").click(function(){
+      $(".popup").hide();
       var form = $(".comment");
       postUpdate(form);
       });

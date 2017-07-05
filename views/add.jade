@@ -26,6 +26,7 @@ html
                 label.form-label(for='input1')
                   strong Category 
                 select#input1.form-input(type='drop-down', name='category')
+                  option(disabled='', selected='', value='') Select a category
               p.category(style='display: none')
                 input#input1-other.form-input(name='', type='text', placeholder='Enter the category', value='')
               p
@@ -235,20 +236,10 @@ html
       var allstandards = [];
       var options = document.getElementById("input37");
       var url = location.origin;
-      // This function fills in #input37 dropdown menu
-      $.getJSON(url + "/api/all", function(standards) {
-        $.each(standards.data, function(i) {
-          allstandards.push(standards.data[i].name);
-        });
-        options.innerHTML = '<option default value="">Select what standard needs to be updated</option>';
-        $.each(allstandards, function(i, el){
-          options.innerHTML += '<option value="' + allstandards[i] + '">' + allstandards[i] + '</option>';
-        });
-      });
       // This function runs if a user selects the "Other" option for a category
       $("#input1").on('change', function(){
         var selectedCategory = document.getElementById("input1").value;
-        if (selectedCategory == "Other"){
+        if (selectedCategory == "other"){
           $(this).removeAttr("name");
           $("#input1-other").show();
           $(".category").show();
@@ -270,7 +261,7 @@ html
         $(".category").hide();
       })
       // This function fills in #input1 dropdown menu
-      $.getJSON(url + "/api/all", function(standards) {
+      $.getJSON(url + "/api/get/all", function(standards) {
         $.each(standards.data, function(i) {
           allstandards.push(standards.data[i].category);
         });
@@ -280,7 +271,6 @@ html
         $.each(allstandards, function(i, el){ // removes any duplicates
         if($.inArray(el, category) === -1) category.push(el);
         });
-        options.innerHTML = '<option default value="">Select what standard needs to be updated</option>';
         $.each(category, function(i, el){
           options.innerHTML += '<option value="' + category[i] + '">' + category[i] + '</option>';
         });

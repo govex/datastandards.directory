@@ -103,7 +103,8 @@ function post(req, res, next) {
       res.status(200)
         .json({
           status: 'successfully added post',
-          message: 'Inserted post'
+          message: 'Inserted post',
+          data: data
         });
     })
     .catch(function (err) {

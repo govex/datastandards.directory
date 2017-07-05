@@ -3,14 +3,14 @@ html
     title Contribute
     include head.jade
     // custom JS functions
-    script(src='/javascripts/add.js')
     script(src='/javascripts/update.js')
+    script(src='/javascripts/timestamp.js')
   body
     .container
       include header.jade
       .site-content
         h1.title Update Standard
-        .text-container.form.form-add
+        .text-container.form
           h2.form-info 
             form.update-standard
               p
@@ -34,13 +34,14 @@ html
           button.submit.large(type='submit', value='add') Submit
       include footer.jade
     script.
-      $('#contribute').addClass("selected-page");
+      timestamp();
       $(".popup").hide();
+      $('#contribute').addClass("selected-page");
       var allstandards = [];
       var options = document.getElementById("input37");
       var url = location.origin;
       // This function fills in #input37 dropdown menu
-      $.getJSON(url + "/api/all", function(standards) {
+      $.getJSON(url + "/api/get/all", function(standards) {
         $.each(standards.data, function(i) {
           allstandards.push(standards.data[i].name);
         });
@@ -67,7 +68,10 @@ html
       });
       // submit form
       $(".submit").click(function(){
+        $(".popup").hide();
         var form = $(".update-standard");
+        console.log(form)
         postUpdate(form);
       });
+
 

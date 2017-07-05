@@ -5,7 +5,7 @@ function postUpdate(form){
 	var url = window.location.href // stores the url the client has entered
 
 	// if either the standard, website or comment is blank run an error popup telling the client that they must enter this information
-	if (standard == "" || website == "" || comment == "") {
+	if (standard == "" || comment == "") {
 		$(".error").show();
 			if (url.indexOf("contribute")  >= 0){
 				$(".error").html("Sorry, but you have not provided us with enough information. Please provide the name of the standard and what needs to be updated then submit your contribution. Thank you.");
@@ -16,17 +16,19 @@ function postUpdate(form){
 		$("#input37").parent("p").addClass("highlight");
 		$("#input38").parent("p").addClass("highlight");
 	} else {			
-		var $inputs = form.find("client_name, email, standard, comment, timestamp"); // find all the inputs	
+		var $inputs = form.find("client_name, email, standard, comment, timestamp"); // find all the inputs
 		var serializedData = form.serialize(); // serialize the data
 		$inputs.prop("disabled", true); // disable the inputs for the duration of the Ajax request
 		
 		// create ajax call to post the serialized data to the route (url)
 		request = $.ajax({
 					type: "POST",
-					url: "./contribute/api/post",
+					url: location.origin + "/api/update",
 					data: serializedData,
 					success: console.log("success")
 				});
+
+		console.log(request)
 								
 		// callback handler that will be called on success
 		request.done(function (response, textStatus, jqXHR){

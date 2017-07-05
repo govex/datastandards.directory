@@ -13,8 +13,6 @@ var contribute = require('./routes/contribute');
 var contact = require('./routes/contact');
 var glossary = require('./routes/glossary');
 var about = require('./routes/about');
-var create = require('./routes/create-standard');
-var post = require('./routes/post');
 var get = require('./routes/get-data');
 var api = require('./routes/api');
 
@@ -41,9 +39,6 @@ app.use('/contribute', contribute);
 app.use('/contact', contact);
 app.use('/glossary', glossary);
 app.use('/about', about);
-app.use('/contribute', create);
-app.use('/contribute', post);
-app.use('/contact', post);
 app.use('/', get);
 app.use('/api', api);
 
