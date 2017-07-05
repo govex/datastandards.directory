@@ -2,13 +2,14 @@ html
   head
     title Contact
     include head.jade
+    script(src='/javascripts/update.js')
   body
     .container
       include header.jade
       .site-content
         h1 CONTACT US
         .text-container.form
-          form
+          form.comment
             p
               label Name 
               input(type='text', name='client_name', placeholder='Input your name [optional]', value='')

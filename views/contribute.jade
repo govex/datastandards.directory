@@ -1,6 +1,6 @@
 html
   head
-    title Contribute
+    title Directory
     include head.jade
     // custom JS functions
     script(src='/javascripts/add.js')
@@ -10,92 +10,27 @@ html
     .container
       include header.jade
       .site-content
-        h1 
-          .tabs
-            button#add.inactive-tab.button.small ADD
-            | OR
-            button#update.inactive-tab.button.small UPDATE
-            | A DATA STANDARD
-        .text-container.form.form-add
-          h2.form-info
-          include add.jade
-          include update.jade
-          br
-          .popup.success
-            | Thank you for your contribution. We will validate and release your contribution within 7 days.
-          .popup.error
-          button.submit.large(type='submit', value='add') Submit
-      include footer.jade
-    script.
-      // create jQuery tooltip
-      $( function() {
-      $( document ).tooltip();
-      } );
-      $('#contribute').addClass("selected-page");
-      $(".update-standard").hide();
-      $(".popup").hide();
-      $(".form-info").html("Add");
-      $("div.tabs button").click(function() {
-      // remove class of active tab
-      $("div.tabs button.active-tab").removeClass("active-tab");
-      // add active class to inactive tab
-      $(this).addClass("active-tab");
-      });
-      // when client clicks the add tab
-      $("#add").click(function(){
-      $(".add-standard").show();
-      $(".text-container").show();
-      $(".update-standard").hide();
-      $(".submit").attr("value", "add");
-      $(".popup").hide();
-      $(".form-info").html("Add");
-      })
-      // when client clicks the update tab
-      $("#update").click(function(){
-      $(".text-container").show();
-      $(".add-standard").hide();
-      $(".update-standard").show();
-      $(".submit").attr("value", "update");
-      $(".popup").hide();;
-      $(".form-info").html("Update");
-      })
-      var inventory = []; // inventory of items for autocomplete, currently: name and category... ADD TAGS
-      var options = document.getElementById("input37");
-      // This function fills in #input37 dropdown menu
-      $.getJSON("./inventory-search/api/inventory-search", function(standards) {
-      $.each(standards.data, function(i) {
-      inventory.push(standards.data[i].name);
-      });
-      var standard = [];
-      $.each(inventory, function(i, el){ // removes any duplicates
-      if($.inArray(el, standard) === -1) standard.push(el);
-      });
-      options.innerHTML = '<option default value="">Select what standard needs to be updated</option>';
-      $.each(standard, function(i, el){
-      options.innerHTML += '<option value="' + standard[i] + '">' + standard[i] + '</option>';
-      });
-      })
-      // This function runs if a user selects the "Other" option for a category
-      $("#input1").on('change', function(){
-      var selectedCategory = document.getElementById("input1").value;
-      if (selectedCategory == "Other"){
-      $(this).removeAttr("name");
-      $("#input1-other").show();
-      $(".category").show();
-      $("#input1-other").attr("name", "category");
-      } else {
-      $("#input1-other").hide();
-      $(".category").hide();
-      $("#input1-other").removeAttr("name");
-      $(this).attr("name", "category");
-      }
-      })
-      // this function toggles between the short and long form for adding a standard
-      $(".hide-show").on('click', function(){
-      $(this).find('i').toggleClass('fa-plus-circle fa-minus-circle') // toggle between the + and - icons
-      var form = $(".add-standard"); // find the standard that the client has clicked on
-      var shortform = $('.shortform');
-      var test = $(form).children('p');
-      $(form).children('p').not('.shortform').not(this).not('.metadata').toggle(); // show the details
-      $(".category").hide();
-      })
+        h1 Add / Update Data Standards
+        .text-container
+          h2 Add
+          h3
+            ul
+              li 
+                i Are you a standard provider?
+              li 
+                i Do you know a standard that isn't in the directory?
+          a(href='/contribute/add')
+            button Add
+         .text-container
+          h2 Update
+          h3
+            ul
+              li 
+                i Is your standard outdated?
+              li 
+                i Is a standard outdated?
+          a(href='/contribute/update')
+            button Update
+        include footer.jade
+
+

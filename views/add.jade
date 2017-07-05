@@ -1,235 +1,292 @@
-form.add-standard
-  p.shortform
-    label.form-label(for='input0') Name 
-    input#input0.form-input(name='name', type='text', placeholder='Input a description of the standard', value='')
-  p.shortform
-    label(for='input8') URL to Website 
-    input#input8.form-input(name='website', type='text', placeholder="Copy a URL link to the standard's website", value='')
-  .hide-show
-    i.fa.fa-plus-circle
-    | Complete long form
-  p
-    label.form-label(for='input1')
-      strong Category 
-    select#input1.form-input(type='drop-down', name='category')
-      // Add another domain here
-      option(disabled='', selected='', value='') Select a category
-      option(value='Address Points') Address Points
-      option(value='Annual Budget') Annual Budget
-      option(value='Business Permits') Business Permits
-      option(value='Building Permits') Building Permits
-      option(value='Business Listing') Building Listing
-      option(value='Campaign Finance Contributions') Campaign Finance Contributions
-      option(value='Crime Statistics') Crime Statistics
-      option(value='Election Results') Election Results
-      option(value='Expenditure') Expenditure
-      option(value='Food Safety') Food Safety
-      option(value='Lobbyist Activity') Lobbyist Activity
-      option(value='Natural Resources') Natural Resources
-      option(value='Procurement Contracts') Procurement Contracts
-      option(value='Public Facilities') Public Facilities
-      option(value='Real-Time Transit') Real-Time Transit
-      option(value='Rezoning Permit Applications') Rezoning Permit Applications
-      option(value='Road Construction') Road Construction
-      option(value='Service Requests') Service Requests
-      option(value='Traffic Accidents') Traffic Accidents
-      option(value='Transport Schedules') Transport Schedules
-      option(value='Zoning') Zoning
-      option(value='Other') Other
-  p.category(style='display: none')
-    input#input1-other.form-input(name='', type='text', placeholder='Enter the category', value='')
-  p
-    label(for='input2') Description 
-    input#input2.form-input(name='description', type='text', placeholder='Input a description of the standard', value='')
-  p
-    label(for='input3') License 
-    input#input3.form-input(name='license', type='text', placeholder='Input the license of the standard', value='')
-  p
-    label(for='input4') Last Updated (m-d-y) 
-    input#input4.form-input(name='updated', type='text', placeholder='Input when the standard was last updated', value='')
-  p
-    label(for='input5') Version 
-    input#input5.form-input(name='version', type='text', placeholder='Input the version number of the standard', value='')
-  p
-    label(for='input7') Stage in Development 
-    select#input7.form-input(type='drop-down', name='stage_in_development')
-      | <
-      option(disabled='', selected='', value='') Select the stage in development
-      option(value='Completed') Completed
-      option(value='Draft') Draft
-  p
-    label(for='input8') URL to Website 
-    input#input8.form-input(name='website', type='text', placeholder="Copy a URL link to the standard's website", value='')
-  p
-    label(for='input9') URL to Contact Info 
-    input#input9.form-input(name='contact', type='text', placeholder="Copy a URL link to the contact page on the standard's website", value='')
-  p
-    label(for='input10') URL to Example 
-    input#input10.form-input(name='example', type='text', placeholder='Input a description of the standard', value='')
-  p
-    label(for='input11') Publisher(s) 
-    input#input11.form-input(name='publisher', type='text', placeholder='List the actors in charge of the standard’s conception and further development', value='')
-  p
-    label(for='input12') Publisher(s) Reputation 
-    input#input12.form-input(name='publisher_reputation', type='text', placeholder='Provide background information about the publisher(s)', value='')
-  p
-    label(for='input13') Number of Consumers
-    input#input13.form-input(name='number_of_consumers', type='text', placeholder='Input the number of municipalities that use the standard', value='')
-  p
-    label(for='input14') List the Consumers
-    input#input14.form-input(name='consumers', type='text', placeholder='Provide a list of municipalities who use the standard value=')
-  p
-    label(for='input15') Number of Apps
-    input#input15.form-input(name='number_of_apps', type='text', placeholder='Input the number of applications developed from the standard', value='')
-  p
-    label(for='input16') List the Apps
-    input#input16.form-input(name='apps', type='text', placeholder='Provide a list of applications developed from the standard', value='')
-  p
-    label(for='input17') Open License 
-    a(data-toggle='tooltip', title='Open License: What qualifies a standard as being “open” is debated. However, openness may be inferred when the standard is published under an open license. Open licenses iterate that anyone has the right to repurpose and share the material without restriction. Examples of open licenses include public domain licenses, the UK Open Government License v3, creative commons licenses, and open data common licenses (World Bank, Open Data Essentials)')
-      i#label17.fa.fa-question-circle(aria-hidden='true')
-    label.checkbox
-      input#input17(type='checkbox', name='open', value='Yes')
-      |  Yes
-    label.checkbox
-      input#input17(type='checkbox', name='open', value='No')
-      |  No
-    label.checkbox
-      input#input17(type='checkbox', name='open', value='No Data')
-      |  No Data
-  p
-    label(for='input18') Transferable 
-    a(data-toggle='tooltip', title='Transferable: There is a hierarchy regarding the ease of implementation for a standard. For example, CSV format of a standard requires a minimal degree of resources and technical knowledge. On the other hand, more complex and sophisticated ways of formatting standards, such as RDF and SOAP, are not as easy for municipal bodies to implement. More often than not, sophisticated formats tend not to be manageable for municipal actors that lack resources and technical background. Standards that handle dynamic data and cURL APIs exemplify more complex ways of publishing city datasets.')
-      i#label18.fa.fa-question-circle(aria-hidden='true')
-    label.checkbox
-      input#input18(type='checkbox', name='transferability', value='Yes')
-      |  Yes
-    label.checkbox
-      input#input18(type='checkbox', name='transferability', value='No')
-      |  No
-    label.checkbox
-      input#input18(type='checkbox', name='transferability', value='No Data')
-      |  No Data
-  p.rationale
-    label(for='input19') Rationale 
-    // Where user can enter their name
-    input#input19.form-input(name='transferability_rationale', type='text', placeholder='Input a rationale for your selection', value='')
-  p
-    label(for='input19') Stakeholder Participation 
-    a(data-toggle='tooltip', title='Stakeholder Participation: Stakeholders for a standard include civil society, government, and the private sector. An open standard should aim to include all types of stakeholders in its conception and maintenance. Types of stakeholder participation can be inferred based on the types of publisher reputations.')
-      i#label19.fa.fa-question-circle(aria-hidden='true')
-    label.checkbox
-      input#input19(type='checkbox', name='stakeholder_participation', value='Yes')
-      |  Yes
-    label.checkbox
-      input#input19(type='checkbox', name='stakeholder_participation', value='No')
-      |  No
-    label.checkbox
-      input#input19(type='checkbox', name='stakeholder_participation', value='No Data')
-      |  No Data
-  p.rationale
-    label(for='input20') Rationale 
-    // Where user can enter their name
-    input#input20.form-input(name='stakeholder_participation_rationale', type='text', placeholder='Input a rationale for your selection', value='')
-  p
-    label(for='input21') Consensus-Based Governance 
-    a(data-toggle='tooltip', title='Consensus-Based Governance: Standardization implies an ongoing dialogue between producers and consumers of data. It is important to note that consensus-based governance does not mean that all inputs are accepted if the majority agrees. Instead, consensus-based indicates a process willing to address any request pertaining to the standard’s statement of purpose.  A charter providing transparency of decisions about the standard’s evolution support a consensus-based approach. Consensus-based governance can be inferred by the presence of a mailing list or active working group for the standard.')
-      i#label21.fa.fa-question-circle(aria-hidden='true')
-    label.checkbox
-      input#input21(type='checkbox', name='consensus_government', value='Yes')
-      |  Yes
-    label.checkbox
-      input#input21(type='checkbox', name='consensus_government', value='No')
-      |  No
-    label.checkbox
-      input#input21(type='checkbox', name='consensus_government', value='No Data')
-      |  No Data
-  p.rationale
-    label(for='input22') Rationale 
-    input#input22.form-input(name='consensus_government_rationale', type='text', placeholder='Input a rationale for your selection', value='')
-  p
-    label(for='input23') Extensions 
-    a(data-toggle='tooltip', title='Extensions: This column indicates the flexibility of a standard’s implementation. In addition, extensibility of a standard provides insight into how a standard is being implemented and enhanced for specific purposes.')
-      i#label23.fa.fa-question-circle(aria-hidden='true')
-    label.checkbox
-      input#input23(type='checkbox', name='extensions', value='Yes')
-      |  Yes
-    label.checkbox
-      input#input23(type='checkbox', name='extensions', value='No')
-      |  No
-    label.checkbox
-      input#input23(type='checkbox', name='extensions', value='No Data')
-      |  No Data
-  p.rationale
-    label(for='input24') Extension Indicators 
-    input#input24.form-input(name='extensions_indicators', type='text', placeholder='Input a rationale for your selection', value='')
-  p
-    label(for='input25') Machine Readable 
-    a(data-toggle='tooltip', title='Machine Readable: Acceptable machine readable structures include XML, RSS feed, CSV, RDF, JSON, TXT, XLS(X), and KML formats. Formats that are not machine readable include PDF, HTML, DOC(X), anything scanned, anything faxed, and anything typed in an email (Suszan, 2014). Standard’s ought to compliment techniques to provide human and machine readable structures for the data. Publishing data as machine readable includes (1) established standard vocabularies, (2) enriching the HTML resources with metadata, semantics, and identifiers, (3) and implementing simple, manageable, and stable URIs (Bennett and Harvey, 2009). Data tables, according to the standard’s specification, should be normalized so to be incorporated into a relational database.')
-      i#label25.fa.fa-question-circle(aria-hidden='true')
-    label.checkbox
-      input#input25(type='checkbox', name='machine_readable', value='Yes')
-      |  Yes
-    label.checkbox
-      input#input25(type='checkbox', name='machine_readable', value='No')
-      |  No
-    label.checkbox
-      input#input25(type='checkbox', name='machine_readable', value='No Data')
-      |  No Data
-  p.rationale
-    label(for='input26') Rationale 
-    input#input26.form-input(name='machine_readable_rationale', type='text', placeholder='Input a rationale for your selection', value='')
-  p
-    label(for='input27') Human Readable 
-    a(data-toggle='tooltip', title='Human Readable: Human readable requires a medium of data or information that can easily be understood by people. Therefore, the standard should encode the data by using easily identifiable text. Of course, there are semantic consideration for human readable standards. For example, there could be a variety of interpretive meanings associated with encoding the data through text.')
-      i#label16.fa.fa-question-circle(aria-hidden='true')
-    label.checkbox
-      input#input27(type='checkbox', name='human_readable', value='Yes')
-      |  Yes
-    label.checkbox
-      input#input27(type='checkbox', name='human_readable', value='No')
-      |  No
-    label.checkbox
-      input#input27(type='checkbox', name='human_readable', value='No Data')
-      |  No Data
-  p.rationale
-    label(for='input28') Rationale 
-    input#input28.form-input(name='human_readable_rationale', type='text', placeholder='Input a rationale for your selection', value='')
-  p
-    label(for='input29') Requires Real-Time Data 
-    a(data-toggle='tooltip', title='Requires Up-To-Date Data: This metric varies depending on the domain of the data. Some domains require formats that handle data in real time. However, other domains may require that the standard specify that data be updated quarterly or annually. For example, standards that handle transit and road construction data would require a web feed format to deliver updates about developments as they occur. However, budget datasets only requires a quarterly or yearly update. In practice, many municipal publishers still publish data in static files.')
-      i#label29.fa.fa-question-circle(aria-hidden='true')
-    label.checkbox
-      input#input29(type='checkbox', name='requires_realtime', value='Yes')
-      |  Yes
-    label.checkbox
-      input#input29(type='checkbox', name='requires_realtime', value='No')
-      |  No
-    label.checkbox
-      input#input29(type='checkbox', name='requires_realtime', value='No Data')
-      |  No Data
-  p.rationale
-    label(for='input30') Rationale 
-    input#input30.form-input(name='requires_realtime_rationale', type='text', placeholder='Input a rationale for your selection', value='')
-  p
-    label(for='input31') Metadata Accounted 
-    a(data-toggle='tooltip', title='Takes into Account Associated Metadata for the Dataset: This metric checks whether the standard schema requires metadata. A “yes” for this metric indicates a presence of both descriptive and structural metadata for the primary data. Each standard should readily make available the time and date of the data’s creation, the author, location of the data on the computer networks, and information about any standard applied to the raw data. Metadata should have embedded permanent and/or discoverable URIs and should utilize electronic citations of the data in the form of hyperlinks (Bennett and Harvey, 2009).')
-      i#label31.fa.fa-question-circle(aria-hidden='true')
-    label.checkbox
-      input#input31(type='checkbox', name='metadata', value='Yes')
-      |  Yes
-    label.checkbox
-      input#input31(type='checkbox', name='metadata', value='No')
-      |  No
-    label.checkbox
-      input#input31(type='checkbox', name='metadata', value='No Data')
-      |  No Data
-  p.rationale
-    label(for='input32') Rationale 
-    input#input32.form-input(name='metadata_rationale', type='text', placeholder='Input a rationale for your selection', value='')
-  p.metadata
-    label(for='input33') Recorded 
-    input#input33.form-input(name='recorded', type='text', value='')
-  p.metadata
-    label(for='input34') Verified 
-    input#input34.form-input(name='verified', type='text', value='No')
+html
+  head
+    title Contribute
+    include head.jade
+    // custom JS functions
+    script(src='/javascripts/add.js')
+    script(src='/javascripts/post-contribution.js')
+  body
+    .container
+      include header.jade
+      .site-content
+        h1.title Add Standard
+        .text-container.form.form-add
+          h2.form-info 
+            form.add-standard
+              p.shortform
+                label.form-label(for='input0') Name 
+                input#input0.form-input(name='name', type='text', placeholder='Input a description of the standard', value='')
+              p.shortform
+                label(for='input8') URL to Website 
+                input#input8.form-input(name='website', type='text', placeholder="Copy a URL link to the standard's website", value='')
+              .hide-show
+                i.fa.fa-plus-circle
+                | Complete long form
+              p
+                label.form-label(for='input1')
+                  strong Category 
+                select#input1.form-input(type='drop-down', name='category')
+              p.category(style='display: none')
+                input#input1-other.form-input(name='', type='text', placeholder='Enter the category', value='')
+              p
+                label(for='input2') Description 
+                input#input2.form-input(name='description', type='text', placeholder='Input a description of the standard', value='')
+              p
+                label(for='input3') License 
+                input#input3.form-input(name='license', type='text', placeholder='Input the license of the standard', value='')
+              p
+                label(for='input4') Last Updated (m-d-y) 
+                input#input4.form-input(name='updated', type='text', placeholder='Input when the standard was last updated', value='')
+              p
+                label(for='input5') Version 
+                input#input5.form-input(name='version', type='text', placeholder='Input the version number of the standard', value='')
+              p
+                label(for='input7') Stage in Development 
+                select#input7.form-input(type='drop-down', name='stage_in_development')
+                  | <
+                  option(disabled='', selected='', value='') Select the stage in development
+                  option(value='Completed') Completed
+                  option(value='Draft') Draft
+              p
+                label(for='input8') URL to Website 
+                input#input8.form-input(name='website', type='text', placeholder="Copy a URL link to the standard's website", value='')
+              p
+                label(for='input9') URL to Contact Info 
+                input#input9.form-input(name='contact', type='text', placeholder="Copy a URL link to the contact page on the standard's website", value='')
+              p
+                label(for='input10') URL to Example 
+                input#input10.form-input(name='example', type='text', placeholder='Input a description of the standard', value='')
+              p
+                label(for='input11') Publisher(s) 
+                input#input11.form-input(name='publisher', type='text', placeholder='List the actors in charge of the standard’s conception and further development', value='')
+              p
+                label(for='input12') Publisher(s) Reputation 
+                input#input12.form-input(name='publisher_reputation', type='text', placeholder='Provide background information about the publisher(s)', value='')
+              p
+                label(for='input13') Number of Consumers
+                input#input13.form-input(name='number_of_consumers', type='text', placeholder='Input the number of municipalities that use the standard', value='')
+              p
+                label(for='input14') List the Consumers
+                input#input14.form-input(name='consumers', type='text', placeholder='Provide a list of municipalities who use the standard value=')
+              p
+                label(for='input15') Number of Apps
+                input#input15.form-input(name='number_of_apps', type='text', placeholder='Input the number of applications developed from the standard', value='')
+              p
+                label(for='input16') List the Apps
+                input#input16.form-input(name='apps', type='text', placeholder='Provide a list of applications developed from the standard', value='')
+              p
+                label(for='input17') Open License 
+                a(data-toggle='tooltip', title='Open License: What qualifies a standard as being “open” is debated. However, openness may be inferred when the standard is published under an open license. Open licenses iterate that anyone has the right to repurpose and share the material without restriction. Examples of open licenses include public domain licenses, the UK Open Government License v3, creative commons licenses, and open data common licenses (World Bank, Open Data Essentials)')
+                  i#label17.fa.fa-question-circle(aria-hidden='true')
+                label.checkbox
+                  input#input17(type='checkbox', name='open', value='Yes')
+                  |  Yes
+                label.checkbox
+                  input#input17(type='checkbox', name='open', value='No')
+                  |  No
+                label.checkbox
+                  input#input17(type='checkbox', name='open', value='No Data')
+                  |  No Data
+              p
+                label(for='input18') Transferable 
+                a(data-toggle='tooltip', title='Transferable: There is a hierarchy regarding the ease of implementation for a standard. For example, CSV format of a standard requires a minimal degree of resources and technical knowledge. On the other hand, more complex and sophisticated ways of formatting standards, such as RDF and SOAP, are not as easy for municipal bodies to implement. More often than not, sophisticated formats tend not to be manageable for municipal actors that lack resources and technical background. Standards that handle dynamic data and cURL APIs exemplify more complex ways of publishing city datasets.')
+                  i#label18.fa.fa-question-circle(aria-hidden='true')
+                label.checkbox
+                  input#input18(type='checkbox', name='transferability', value='Yes')
+                  |  Yes
+                label.checkbox
+                  input#input18(type='checkbox', name='transferability', value='No')
+                  |  No
+                label.checkbox
+                  input#input18(type='checkbox', name='transferability', value='No Data')
+                  |  No Data
+              p.rationale
+                label(for='input19') Rationale 
+                // Where user can enter their name
+                input#input19.form-input(name='transferability_rationale', type='text', placeholder='Input a rationale for your selection', value='')
+              p
+                label(for='input19') Stakeholder Participation 
+                a(data-toggle='tooltip', title='Stakeholder Participation: Stakeholders for a standard include civil society, government, and the private sector. An open standard should aim to include all types of stakeholders in its conception and maintenance. Types of stakeholder participation can be inferred based on the types of publisher reputations.')
+                  i#label19.fa.fa-question-circle(aria-hidden='true')
+                label.checkbox
+                  input#input19(type='checkbox', name='stakeholder_participation', value='Yes')
+                  |  Yes
+                label.checkbox
+                  input#input19(type='checkbox', name='stakeholder_participation', value='No')
+                  |  No
+                label.checkbox
+                  input#input19(type='checkbox', name='stakeholder_participation', value='No Data')
+                  |  No Data
+              p.rationale
+                label(for='input20') Rationale 
+                // Where user can enter their name
+                input#input20.form-input(name='stakeholder_participation_rationale', type='text', placeholder='Input a rationale for your selection', value='')
+              p
+                label(for='input21') Consensus-Based Governance 
+                a(data-toggle='tooltip', title='Consensus-Based Governance: Standardization implies an ongoing dialogue between producers and consumers of data. It is important to note that consensus-based governance does not mean that all inputs are accepted if the majority agrees. Instead, consensus-based indicates a process willing to address any request pertaining to the standard’s statement of purpose.  A charter providing transparency of decisions about the standard’s evolution support a consensus-based approach. Consensus-based governance can be inferred by the presence of a mailing list or active working group for the standard.')
+                  i#label21.fa.fa-question-circle(aria-hidden='true')
+                label.checkbox
+                  input#input21(type='checkbox', name='consensus_government', value='Yes')
+                  |  Yes
+                label.checkbox
+                  input#input21(type='checkbox', name='consensus_government', value='No')
+                  |  No
+                label.checkbox
+                  input#input21(type='checkbox', name='consensus_government', value='No Data')
+                  |  No Data
+              p.rationale
+                label(for='input22') Rationale 
+                input#input22.form-input(name='consensus_government_rationale', type='text', placeholder='Input a rationale for your selection', value='')
+              p
+                label(for='input23') Extensions 
+                a(data-toggle='tooltip', title='Extensions: This column indicates the flexibility of a standard’s implementation. In addition, extensibility of a standard provides insight into how a standard is being implemented and enhanced for specific purposes.')
+                  i#label23.fa.fa-question-circle(aria-hidden='true')
+                label.checkbox
+                  input#input23(type='checkbox', name='extensions', value='Yes')
+                  |  Yes
+                label.checkbox
+                  input#input23(type='checkbox', name='extensions', value='No')
+                  |  No
+                label.checkbox
+                  input#input23(type='checkbox', name='extensions', value='No Data')
+                  |  No Data
+              p.rationale
+                label(for='input24') Extension Indicators 
+                input#input24.form-input(name='extensions_indicators', type='text', placeholder='Input a rationale for your selection', value='')
+              p
+                label(for='input25') Machine Readable 
+                a(data-toggle='tooltip', title='Machine Readable: Acceptable machine readable structures include XML, RSS feed, CSV, RDF, JSON, TXT, XLS(X), and KML formats. Formats that are not machine readable include PDF, HTML, DOC(X), anything scanned, anything faxed, and anything typed in an email (Suszan, 2014). Standard’s ought to compliment techniques to provide human and machine readable structures for the data. Publishing data as machine readable includes (1) established standard vocabularies, (2) enriching the HTML resources with metadata, semantics, and identifiers, (3) and implementing simple, manageable, and stable URIs (Bennett and Harvey, 2009). Data tables, according to the standard’s specification, should be normalized so to be incorporated into a relational database.')
+                  i#label25.fa.fa-question-circle(aria-hidden='true')
+                label.checkbox
+                  input#input25(type='checkbox', name='machine_readable', value='Yes')
+                  |  Yes
+                label.checkbox
+                  input#input25(type='checkbox', name='machine_readable', value='No')
+                  |  No
+                label.checkbox
+                  input#input25(type='checkbox', name='machine_readable', value='No Data')
+                  |  No Data
+              p.rationale
+                label(for='input26') Rationale 
+                input#input26.form-input(name='machine_readable_rationale', type='text', placeholder='Input a rationale for your selection', value='')
+              p
+                label(for='input27') Human Readable 
+                a(data-toggle='tooltip', title='Human Readable: Human readable requires a medium of data or information that can easily be understood by people. Therefore, the standard should encode the data by using easily identifiable text. Of course, there are semantic consideration for human readable standards. For example, there could be a variety of interpretive meanings associated with encoding the data through text.')
+                  i#label16.fa.fa-question-circle(aria-hidden='true')
+                label.checkbox
+                  input#input27(type='checkbox', name='human_readable', value='Yes')
+                  |  Yes
+                label.checkbox
+                  input#input27(type='checkbox', name='human_readable', value='No')
+                  |  No
+                label.checkbox
+                  input#input27(type='checkbox', name='human_readable', value='No Data')
+                  |  No Data
+              p.rationale
+                label(for='input28') Rationale 
+                input#input28.form-input(name='human_readable_rationale', type='text', placeholder='Input a rationale for your selection', value='')
+              p
+                label(for='input29') Requires Real-Time Data 
+                a(data-toggle='tooltip', title='Requires Up-To-Date Data: This metric varies depending on the domain of the data. Some domains require formats that handle data in real time. However, other domains may require that the standard specify that data be updated quarterly or annually. For example, standards that handle transit and road construction data would require a web feed format to deliver updates about developments as they occur. However, budget datasets only requires a quarterly or yearly update. In practice, many municipal publishers still publish data in static files.')
+                  i#label29.fa.fa-question-circle(aria-hidden='true')
+                label.checkbox
+                  input#input29(type='checkbox', name='requires_realtime', value='Yes')
+                  |  Yes
+                label.checkbox
+                  input#input29(type='checkbox', name='requires_realtime', value='No')
+                  |  No
+                label.checkbox
+                  input#input29(type='checkbox', name='requires_realtime', value='No Data')
+                  |  No Data
+              p.rationale
+                label(for='input30') Rationale 
+                input#input30.form-input(name='requires_realtime_rationale', type='text', placeholder='Input a rationale for your selection', value='')
+              p
+                label(for='input31') Metadata Accounted 
+                a(data-toggle='tooltip', title='Takes into Account Associated Metadata for the Dataset: This metric checks whether the standard schema requires metadata. A “yes” for this metric indicates a presence of both descriptive and structural metadata for the primary data. Each standard should readily make available the time and date of the data’s creation, the author, location of the data on the computer networks, and information about any standard applied to the raw data. Metadata should have embedded permanent and/or discoverable URIs and should utilize electronic citations of the data in the form of hyperlinks (Bennett and Harvey, 2009).')
+                  i#label31.fa.fa-question-circle(aria-hidden='true')
+                label.checkbox
+                  input#input31(type='checkbox', name='metadata', value='Yes')
+                  |  Yes
+                label.checkbox
+                  input#input31(type='checkbox', name='metadata', value='No')
+                  |  No
+                label.checkbox
+                  input#input31(type='checkbox', name='metadata', value='No Data')
+                  |  No Data
+              p.rationale
+                label(for='input32') Rationale 
+                input#input32.form-input(name='metadata_rationale', type='text', placeholder='Input a rationale for your selection', value='')
+              p.metadata
+                label(for='input33') Recorded 
+                input#input33.form-input(name='recorded', type='text', value='')
+              p.metadata
+                label(for='input34') Verified 
+                input#input34.form-input(name='verified', type='text', value='No')
+          br
+          .popup.success
+            | Thank you for your contribution. We will validate and release your contribution within 7 days.
+          .popup.error
+          button.submit.large(type='submit', value='add') Submit
+      include footer.jade
+    script.
+      $('#contribute').addClass("selected-page");
+      $(".popup").hide();
+      var allstandards = [];
+      var options = document.getElementById("input37");
+      var url = location.origin;
+      // This function fills in #input37 dropdown menu
+      $.getJSON(url + "/api/all", function(standards) {
+        $.each(standards.data, function(i) {
+          allstandards.push(standards.data[i].name);
+        });
+        options.innerHTML = '<option default value="">Select what standard needs to be updated</option>';
+        $.each(allstandards, function(i, el){
+          options.innerHTML += '<option value="' + allstandards[i] + '">' + allstandards[i] + '</option>';
+        });
+      });
+      // This function runs if a user selects the "Other" option for a category
+      $("#input1").on('change', function(){
+        var selectedCategory = document.getElementById("input1").value;
+        if (selectedCategory == "Other"){
+          $(this).removeAttr("name");
+          $("#input1-other").show();
+          $(".category").show();
+          $("#input1-other").attr("name", "category");
+        } else {
+          $("#input1-other").hide();
+          $(".category").hide();
+          $("#input1-other").removeAttr("name");
+          $(this).attr("name", "category");
+        }
+      });
+      // this function toggles between the short and long form for adding a standard
+      $(".hide-show").on('click', function(){
+        $(this).find('i').toggleClass('fa-plus-circle fa-minus-circle') // toggle between the + and - icons
+        var form = $(".add-standard"); // find the standard that the client has clicked on
+        var shortform = $('.shortform');
+        var test = $(form).children('p');
+        $(form).children('p').not('.shortform').not(this).not('.metadata').toggle(); // show the details
+        $(".category").hide();
+      })
+      // This function fills in #input1 dropdown menu
+      $.getJSON(url + "/api/all", function(standards) {
+        $.each(standards.data, function(i) {
+          allstandards.push(standards.data[i].category);
+        });
+        allstandards.sort();
+        var category = [],
+            options = document.getElementById("input1");
+        $.each(allstandards, function(i, el){ // removes any duplicates
+        if($.inArray(el, category) === -1) category.push(el);
+        });
+        options.innerHTML = '<option default value="">Select what standard needs to be updated</option>';
+        $.each(category, function(i, el){
+          options.innerHTML += '<option value="' + category[i] + '">' + category[i] + '</option>';
+        });
+        options.innerHTML += '<option value="other">Other</option>'
+      });
+      // submit form
+      $(".submit").click(function(){
+        postAdd();
+      });

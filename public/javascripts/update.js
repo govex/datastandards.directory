@@ -4,11 +4,6 @@ function postUpdate(form){
 	var comment = document.getElementById("input38").value; // input value of comment in the update/comment form on contribute.html and contact.html
 	var url = window.location.href // stores the url the client has entered
 
-	// since this function runs for both contibute.html and contact.html the code checks the url to see if it is in the contribute.html, and if so then store the website variable 
-	if (url.indexOf("contribute") >= 0 && comment == ""){
-		var website = document.getElementById("input8").value;
-	}
-
 	// if either the standard, website or comment is blank run an error popup telling the client that they must enter this information
 	if (standard == "" || website == "" || comment == "") {
 		$(".error").show();

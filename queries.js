@@ -11,11 +11,42 @@ var connectionString = process.env.DATABASE_URL || 'postgres://postgres:january2
 var db = pgp(connectionString); // using pg-promise, create database with connection details
 
 function getAddForm(req, res, next){
-  res.render('update');
+  res.render('add');
 }
 
 function getUpdateForm(req, res, next){
-  res.render('add');
+  res.render('update');
+}
+
+// function gets data based on user input (e.g., all, )
+function api(req, res, next){
+  var user_input = req.params.id.toLowerCase(),
+      query = ""; // store the user's input
+
+  if (user_input == 'all') {
+    query = 'select * from standards';
+  } else {
+    query = 'select * from standards where lower(name) || lower(category) like \'%$1#%\'';
+  }
+
+  db.task(t => {
+    db.each(query, user_input, row => {
+      for (var column in row) {
+        if (row[column] == '' || row[column] == null || row[column].toLowerCase() == 'unsure' || row[column] == undefined || row[column].toLowerCase() == 'null' || row[column].toLowerCase() == 'n/a') {
+          row[column] = 'No information';
+        }
+      }
+    }) //category::text, name::text like "%$1%"
+      .then(function (data) {
+        res.status(200)
+        .json({
+          data: data
+        });
+      })
+      .catch(function (err) {
+        return next(err);
+      });
+  });
 }
 
 // function gets all categories and standard names for the autocomplete 
@@ -103,5 +134,6 @@ module.exports = {
   post: post,
   getAddForm: getAddForm,
   getUpdateForm: getUpdateForm,
-  keywords: keywords
+  keywords: keywords,
+  api: api
 };
