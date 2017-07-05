@@ -82,7 +82,7 @@ function getData(req, res, next){
       for (var column in row) {
          if (row[column] == '' || row[column] == null || row[column].toLowerCase() == 'unsure' || row[column] == undefined || row[column].toLowerCase() == 'null' || row[column].toLowerCase() == 'n/a') {
           row[column] = 'No information';
-        }
+        } 
       }
     }) //category::text, name::text like "%$1%"
       .then(function (data) {
