@@ -5,4 +5,7 @@ router.get('/', function(req, res, next) { // router.get() = HTTP method; '/' = 
   res.render('contribute.jade');
 });
 
+router.get('/add', db.getAddForm); // outputs the getRequest function
+router.get('/update', db.getUpdateForm);
+
 module.exports = router;

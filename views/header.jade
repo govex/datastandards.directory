@@ -1,0 +1,34 @@
+.header
+  .banner
+    ul
+      li
+        | Eng 
+      li.search
+        input#search-header.search.search-input(type='text', name='search', placeholder='search directory')
+      li
+        a#search-button.fa.fa-search(aria-hidden='true')
+        a.fa.fa-github(aria-hidden='true' href='https://github.com/govex/datastandards.directory', target='_blank')
+  .navigation
+    ul
+      li#index
+        a(href='/')
+          i.fa.fa-home(aria-hidden='true')
+      li#contribute
+        a(href='/contribute') CONTRIBUTE
+        .page-content
+          a(href='/contribute/add') add standard
+          a(href='/contribute/update') update existing standard
+      li#glossary
+        a(href='/glossary') GLOSSARY
+        .page-content
+          a(href='/glossary#glossary-definition') open data standards
+          a(href='/glossary#glossary-example') example
+          a(href='/glossary#glossary-metrics') metrics
+          a(href='/glossary#glossary-categories') categories
+      li#about
+        a(href='/about') ABOUT
+        .page-content
+          a(href='/about#about-acknowledgements') acknowledgments
+          a(href='/about#about-development') development
+      li#contact
+        a(href='/contact') CONTACT

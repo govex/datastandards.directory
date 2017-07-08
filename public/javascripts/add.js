@@ -20,7 +20,7 @@ function postAdd() {
 		// create ajax call to post the serialized data to the route (url)
 		request = $.ajax({
 					type: "POST",
-					url: "./contribute/api/create-standard",
+					url: location.origin + "/api/add",
 					data: serializedData,
 					success: console.log("success")
 				});

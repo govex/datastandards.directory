@@ -1,24 +1,27 @@
 .text-container
-	border: solid
+	border-bottom: solid
+	border-top: solid
 	border-color: $accent-color
 	color: $dark-font-color
 	font-family: $body-font
-	background-color: $light-font-color
 	width: 900px
 	font-size: 20px
 	margin: 0 auto
-	margin-top: 20px
-	margin-bottom: 20px
+	margin-top: 40px
 	padding-bottom: 30px
 	padding-right: 80px
 	padding-left: 80px
 	text-align: justify
 
+	ul
+		li
+			padding-bottom: 12px
+
 	a
-		color: $container-color
+		color: $button-color
 		text-decoration: none
 		&:hover
-			color: lighten($container-color, 10%)
+			color: lighten($button-color, 10%)
 
 		i
 			color: white
@@ -35,16 +38,6 @@
 	p.credit 
 		text-align: center
 
-	button#metric
-		display: inline-block
-		width: 40px
-		height: 40px
-		border-radius: 5px
-		border: 0px
-		margin: 2px
-		font-family: $body-font
-		&:hover
-			cursor: pointer
 	p
 		text-align: justify
 		padding-right: 70px
@@ -52,18 +45,57 @@
 	button
 		text-align: center
 		width: 735px
-		background-color: lighten($container-color, 20%)
+		background-color: lighten($button-color, 20%)
 		color: $dark-font-color
 		font-family: $body-font
 		font-size: 20px
-		border: 3px solid $container-color
+		border: 3px solid $button-color
 		border-radius: 5px
 		padding: 10px
 		cursor: pointer
 		&:hover
-			background-color: $container-color
+			background-color: $button-color
 			color: $dark-font-color
 			cursor: pointer
+	
+	#glossary-metrics-color
+		text-align: center
+
+		.row-1
+			@include outer-container(300px)
+			.subtitle		
+				display: inline-block
+				padding: 10px
+				margin-left: 20px
+				color: $dark-font-color
+		.row-2
+			@include outer-container(300px)
+			.metric
+				margin: 0px 15px
+
+	button.metric
+		border: 1px solid black
+		background-color: $button-color
+		display: inline-block
+		width: 40px
+		height: 40px
+		border-radius: 5px
+		margin: 2px
+		font-family: $body-font
+		&:hover
+			cursor: pointer
+			background-color: lighten($button-color, 20%)
+
+		i
+			color: $dark-font-color
+
+	#legend-metrics
+		.metric
+			&:hover
+				cursor: default
+				background-color: $button-color	
+
+
 	
 
 

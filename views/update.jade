@@ -1,0 +1,77 @@
+html
+  head
+    title Contribute
+    include head.jade
+    // custom JS functions
+    script(src='/javascripts/update.js')
+    script(src='/javascripts/timestamp.js')
+  body
+    .container
+      include header.jade
+      .site-content
+        h1.title Update Standard
+        .text-container.form
+          h2.form-info 
+            form.update-standard
+              p
+                label(for='input35') Name 
+                input#input35(type='text', placeholder='Input your name [optional]', name='client_name', value='')
+              p
+                label(for='input36') E-mail 
+                input#input36(type='text', placeholder='Input your email [optional]', name='email', value='')
+              p
+                label(for='input37') Standard 
+                select#input37.form-input(type='drop-down', name='standard')
+              p
+                label(for='input38') Comment 
+                input#input38(type='text', name='comment', placeholder='Input anything regarding what needs to be updated for the standard', value='')
+              p.timestamp
+                input#timestamp(type='text', name='timestamp', value='')
+          br
+          .popup.success
+            | Thank you for your contribution. We will validate and release your contribution within 7 days.
+          .popup.error
+          button.submit.large(type='submit', value='add') Submit
+      include footer.jade
+    script.
+      timestamp();
+      $(".popup").hide();
+      $('#contribute').addClass("selected-page");
+      var allstandards = [];
+      var options = document.getElementById("input37");
+      var url = location.origin;
+      // This function fills in #input37 dropdown menu
+      $.getJSON(url + "/api/get/all", function(standards) {
+        $.each(standards.data, function(i) {
+          allstandards.push(standards.data[i].name);
+        });
+        allstandards.sort();
+        options.innerHTML = '<option default value="">Select what standard needs to be updated</option>';
+        $.each(allstandards, function(i, el){
+          options.innerHTML += '<option value="' + allstandards[i] + '">' + allstandards[i] + '</option>';
+        });
+      });
+      // This function runs if a user selects the "Other" option for a category
+      $("#input1").on('change', function(){
+        var selectedCategory = document.getElementById("input1").value;
+        if (selectedCategory == "Other"){
+          $(this).removeAttr("name");
+          $("#input1-other").show();
+          $(".category").show();
+          $("#input1-other").attr("name", "category");
+        } else {
+          $("#input1-other").hide();
+          $(".category").hide();
+          $("#input1-other").removeAttr("name");
+          $(this).attr("name", "category");
+        }
+      });
+      // submit form
+      $(".submit").click(function(){
+        $(".popup").hide();
+        var form = $(".update-standard");
+        console.log(form)
+        postUpdate(form);
+      });
+
+

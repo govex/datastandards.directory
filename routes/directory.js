@@ -4,7 +4,9 @@ var router = express.Router(); // defining the router, which define an app behav
 db = require('../queries');
 
 router.get('/', function(req, res, next) { // router.get() = HTTP method; '/' = URI path to where the capture the request; function (req, res, next) = handler function
-  res.render('directory.jade');
+  res.render('index.jade');
 });
+
+router.get('/keywords', db.keywords);
 
 module.exports = router;

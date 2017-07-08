@@ -1,5 +1,4 @@
 @import url(https://fonts.googleapis.com/css?family=PT+Sans+Narrow|Lato);
-@import url(https://fonts.googleapis.com/css?family=PT+Sans+Narrow|Lato);
 html {
   box-sizing: border-box; }
 
@@ -20,64 +19,16 @@ html {
     .footer a:hover {
       color: #FFFeF7; }
 
-.header {
-  position: fixed;
-  width: 100%; }
-  .header ul {
-    background-color: #2B1F2A;
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden; }
-    .header ul li {
-      text-align: center;
-      display: inline-block;
-      top: 0; }
-      .header ul li a {
-        font-size: 30px;
-        font-family: "PT Sans Narrow", sans-serif;
-        display: inline-block;
-        text-align: center;
-        padding: 14px 20px;
-        text-decoration: none;
-        color: #FFFeF7; }
-        .header ul li a i {
-          color: #FFFeF7; }
-      .header ul li .page-content {
-        display: none;
-        background-color: #2B1F2A;
-        color: #FFFeF7;
-        position: absolute;
-        min-width: 140px;
-        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-        z-index: 1; }
-        .header ul li .page-content a {
-          width: 170px;
-          display: block;
-          font-size: 18px; }
-      .header ul li:hover a, .header ul li:hover i {
-        background-color: white;
-        color: #2B1F2A; }
-      .header ul li:hover .page-content {
-        display: block; }
-        .header ul li:hover .page-content a:hover {
-          background-color: white;
-          color: #2B1F2A; }
-    .header ul li.selected-page a {
-      background-color: white;
-      color: #2B1F2A; }
-
 html, body {
   text-align: center;
   margin: 0 auto;
   padding: 0px;
-  background-color: #FFFFFF;
   height: 100%; }
   html .container, body .container {
     min-height: 100%;
     position: relative; }
     html .container .site-content, body .container .site-content {
-      padding-top: 60px;
+      padding-top: 110px;
       width: 100%;
       min-height: 100%;
       padding-bottom: 60px; }
@@ -102,14 +53,7 @@ html, body {
     content: "";
     display: block; }
 
-html {
-  box-sizing: border-box; }
-
-*, *::after, *::before {
-  box-sizing: inherit; }
-
 .directory .directory-results {
-  display: none;
   font-family: "Lato", sans-serif;
   color: #353638;
   max-width: 900px;
@@ -120,7 +64,6 @@ html {
     content: "";
     display: block; }
 .directory .no-results {
-  display: none;
   color: #353638;
   font-family: "Lato", sans-serif; }
 .directory .directory-items {
@@ -130,17 +73,19 @@ html {
   .directory .directory-items .search-title {
     float: left; }
   .directory .directory-items .filters {
-    float: right;
-    padding: 20px 0px; }
+    float: right; }
     .directory .directory-items .filters .dropdown {
-      background-color: #FFFeF7;
       border: solid;
-      border-color: #E8C047;
-      border-radius: 5px;
       color: #353638;
       padding: 5px;
-      cursor: pointer; }
-.directory .standards {
+      margin-left: 10px;
+      cursor: pointer;
+      font-family: "Lato", sans-serif;
+      border: 1px;
+      border-style: solid;
+      border-color: #353638;
+      text-align: center; }
+.directory .standard {
   border: solid;
   border-color: #E8C047;
   color: #353638;
@@ -148,79 +93,103 @@ html {
   background-color: #FFFeF7;
   width: 900px;
   margin-top: 50px;
-  padding: 10px; }
-  .directory .standards .standard-header {
+  padding: 20px; }
+  .directory .standard .standard-header {
     text-align: justify; }
-    .directory .standards .standard-header .standard-name {
+    .directory .standard .standard-header .standard-name {
       font-size: 20px;
       width: 100%;
       padding: 5px;
       padding-bottom: 10px;
       border-bottom: solid; }
-      .directory .standards .standard-header .standard-name i#copy-link {
+      .directory .standard .standard-header .standard-name .standard-category {
+        font-size: 11px;
+        color: #353638;
+        padding: 2px 1px;
+        background-color: #87c4c8;
+        width: 100px;
+        text-align: center;
+        border-radius: 5px;
+        border: 1px solid #499AA0;
         float: right;
         cursor: pointer; }
-        .directory .standards .standard-header .standard-name i#copy-link:hover {
+        .directory .standard .standard-header .standard-name .standard-category:hover {
+          background-color: #499AA0;
+          color: #353638;
+          cursor: pointer; }
+      .directory .standard .standard-header .standard-name i#copy-link {
+        float: right;
+        cursor: pointer;
+        margin-left: 20px; }
+        .directory .standard .standard-header .standard-name i#copy-link:hover {
           color: #4e4f52; }
-      .directory .standards .standard-header .standard-name div.copy-link {
+      .directory .standard .standard-header .standard-name div.copy-link {
         display: none;
         background-color: #fff;
         text-decoration: underline;
         float: right;
         cursor: pointer; }
-    .directory .standards .standard-header .standard-info {
+    .directory .standard .standard-header .standard-info {
       border-bottom: solid;
-      width: 875px;
       padding: 5px;
       padding-bottom: 40px; }
-      .directory .standards .standard-header .standard-info .metrics {
+      .directory .standard .standard-header .standard-info .metrics {
         display: inline;
         float: left; }
-        .directory .standards .standard-header .standard-info .metrics a {
+        .directory .standard .standard-header .standard-info .metrics a {
           border-color: #499AA0;
           text-decoration: none;
           color: #353638; }
-        .directory .standards .standard-header .standard-info .metrics button#metric {
+        .directory .standard .standard-header .standard-info .metrics button#metric {
           width: 30px;
           height: 30px;
           border-radius: 5px;
           border: 0px;
           margin: 2px; }
-          .directory .standards .standard-header .standard-info .metrics button#metric:hover {
+          .directory .standard .standard-header .standard-info .metrics button#metric:hover {
             cursor: pointer; }
-          .directory .standards .standard-header .standard-info .metrics button#metric i {
+          .directory .standard .standard-header .standard-info .metrics button#metric i {
             color: #fff; }
-      .directory .standards .standard-header .standard-info .standard-items {
+      .directory .standard .standard-header .standard-info i a {
+        margin-left: 10px; }
+      .directory .standard .standard-header .standard-info i:hover {
+        cursor: pointer;
+        color: #499AA0; }
+      .directory .standard .standard-header .standard-info .standard-items {
         display: inline;
         float: right;
         font-size: 15px;
         padding: 5px; }
-        .directory .standards .standard-header .standard-info .standard-items #updated, .directory .standards .standard-header .standard-info .standard-items #added, .directory .standards .standard-header .standard-info .standard-items #version {
+        .directory .standard .standard-header .standard-info .standard-items #updated, .directory .standard .standard-header .standard-info .standard-items #added, .directory .standard .standard-header .standard-info .standard-items #version {
           display: inline; }
-    .directory .standards .standard-header a.hide-show {
+    .directory .standard .standard-header .standard-description {
+      padding: 10px 0px; }
+    .directory .standard .standard-header a.hide-show {
       text-align: left;
       font-size: 20px; }
-      .directory .standards .standard-header a.hide-show:hover {
+      .directory .standard .standard-header a.hide-show:hover {
         cursor: pointer; }
-  .directory .standards .standard-body {
-    text-align: justify; }
-    .directory .standards .standard-body li {
-      padding-right: 10px;
-      padding-bottom: 7px; }
-      .directory .standards .standard-body li a {
-        border-color: #499AA0;
-        text-decoration: none;
-        color: #353638; }
-      .directory .standards .standard-body li button#metric {
-        width: 30px;
-        height: 30px;
-        border-radius: 5px;
-        border: 0px;
-        margin: 2px; }
-        .directory .standards .standard-body li button#metric:hover {
-          cursor: pointer; }
-        .directory .standards .standard-body li button#metric i {
-          color: #fff; }
+    .directory .standard .standard-header .standard-body {
+      text-align: justify; }
+      .directory .standard .standard-header .standard-body li {
+        padding-right: 10px;
+        padding-bottom: 7px; }
+        .directory .standard .standard-header .standard-body li a {
+          border-color: #499AA0;
+          text-decoration: none;
+          color: #499AA0; }
+          .directory .standard .standard-header .standard-body li a:hover {
+            text-decoration: underline; }
+        .directory .standard .standard-header .standard-body li button#metric {
+          width: 30px;
+          height: 30px;
+          border-radius: 5px;
+          border: 0px;
+          margin: 2px; }
+          .directory .standard .standard-header .standard-body li button#metric:hover {
+            cursor: pointer; }
+          .directory .standard .standard-header .standard-body li button#metric i {
+            color: #fff; }
 .directory .standard-links {
   text-align: center;
   margin-bottom: 30px; }
@@ -243,9 +212,6 @@ html {
     .directory .standard-links button:hover {
       background-color: #E8C047;
       color: #FFFeF7; }
-
-.form-add {
-  display: none; }
 
 .hide-show {
   text-align: center;
@@ -289,7 +255,6 @@ html {
     margin-top: -2px; }
   .form p input[type="text"], .form p select {
     float: right;
-    background-color: #FFFeF7;
     width: 70%;
     padding: 3px;
     font-family: "Lato", sans-serif;
@@ -332,6 +297,7 @@ html {
   border: 1px;
   border-radius: 5px;
   padding: 10px;
+  margin: 0px 20px;
   cursor: pointer; }
   .button:hover {
     background-color: #64b2b8;
@@ -368,21 +334,31 @@ html {
     text-align: center;
     padding: 0px 10px; }
 
+.yes button {
+  background: #619e81; }
+
+.no button {
+  background: #990033; }
+
+.unsure button {
+  background: #353638; }
+
 .text-container {
-  border: solid;
+  border-bottom: solid;
+  border-top: solid;
   border-color: #E8C047;
   color: #353638;
   font-family: "Lato", sans-serif;
-  background-color: #FFFeF7;
   width: 900px;
   font-size: 20px;
   margin: 0 auto;
-  margin-top: 20px;
-  margin-bottom: 20px;
+  margin-top: 40px;
   padding-bottom: 30px;
   padding-right: 80px;
   padding-left: 80px;
   text-align: justify; }
+  .text-container ul li {
+    padding-bottom: 12px; }
   .text-container a {
     color: #499AA0;
     text-decoration: none; }
@@ -400,16 +376,6 @@ html {
     border-radius: 5px; }
   .text-container p.credit {
     text-align: center; }
-  .text-container button#metric {
-    display: inline-block;
-    width: 40px;
-    height: 40px;
-    border-radius: 5px;
-    border: 0px;
-    margin: 2px;
-    font-family: "Lato", sans-serif; }
-    .text-container button#metric:hover {
-      cursor: pointer; }
   .text-container p {
     text-align: justify;
     padding-right: 70px; }
@@ -428,20 +394,83 @@ html {
       background-color: #499AA0;
       color: #353638;
       cursor: pointer; }
+  .text-container #glossary-metrics-color {
+    text-align: center; }
+    .text-container #glossary-metrics-color .row-1 {
+      max-width: 300px;
+      margin-left: auto;
+      margin-right: auto; }
+      .text-container #glossary-metrics-color .row-1::after {
+        clear: both;
+        content: "";
+        display: block; }
+      .text-container #glossary-metrics-color .row-1 .subtitle {
+        display: inline-block;
+        padding: 10px;
+        margin-left: 20px;
+        color: #353638; }
+    .text-container #glossary-metrics-color .row-2 {
+      max-width: 300px;
+      margin-left: auto;
+      margin-right: auto; }
+      .text-container #glossary-metrics-color .row-2::after {
+        clear: both;
+        content: "";
+        display: block; }
+      .text-container #glossary-metrics-color .row-2 .metric {
+        margin: 0px 15px; }
+  .text-container button.metric {
+    border: 1px solid black;
+    background-color: #499AA0;
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    border-radius: 5px;
+    margin: 2px;
+    font-family: "Lato", sans-serif; }
+    .text-container button.metric:hover {
+      cursor: pointer;
+      background-color: #87c4c8; }
+    .text-container button.metric i {
+      color: #353638; }
+  .text-container #legend-metrics .metric:hover {
+    cursor: default;
+    background-color: #499AA0; }
 
 h1 {
   border-bottom: 2px solid #E8C047;
   font-family: "Lato", sans-serif;
   color: #353638;
-  padding-bottom: 20px;
+  padding-bottom: 30px;
   font-size: 40px;
   word-spacing: 15px; }
+  h1 a {
+    color: #499AA0;
+    text-decoration: none; }
+    h1 a:hover {
+      color: #64b2b8; }
+    h1 a i {
+      color: white; }
 
 h2 {
   font-family: "Lato", sans-serif; }
+  h2 a {
+    color: #499AA0;
+    text-decoration: none; }
+    h2 a:hover {
+      color: #64b2b8; }
+    h2 a i {
+      color: white; }
 
 .form-info {
   text-align: center; }
+
+.link {
+  border-color: #499AA0;
+  text-decoration: none;
+  color: #499AA0; }
+  .link:hover {
+    text-decoration: none; }
 
 .popup {
   border: 2px solid;
@@ -462,30 +491,116 @@ h2 {
 .error {
   display: none; }
 
-.small {
-  width: 400px; }
+.very-small {
+  width: 50px;
+  font: 15px; }
 
-.large {
-  width: 895px; }
+.small {
+  width: 300px; }
 
 .medium {
   width: 600px; }
 
+.large {
+  width: 895px; }
+
 .long {
   height: 60px; }
 
-.search-to-directory {
-  margin-top: 30px; }
-  .search-to-directory input {
-    width: 840px;
-    margin-right: 5px;
-    font-family: "Lato", sans-serif;
-    font-size: 22px;
-    padding: 15px;
-    padding-top: 12px;
-    border: 2px;
-    border-style: solid;
-    border-color: #353638;
-    text-align: center; }
+.short {
+  height: 30px; }
+
+.search span {
+  position: absolute;
+  margin-left: 20px;
+  margin-top: 17px;
+  font-size: 20px; }
+.search input {
+  font-family: "Lato", sans-serif;
+  border: 1px;
+  border-style: solid;
+  border-color: #353638;
+  text-align: center; }
+.search #search {
+  font-size: 20px; }
+
+.header {
+  position: fixed;
+  width: 100%;
+  font-family: "PT Sans Narrow", sans-serif; }
+  .header .navigation ul, .header .banner ul {
+    background-color: #2B1F2A;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden; }
+    .header .navigation ul:hover, .header .banner ul:hover {
+      background-color: #2B1F2A; }
+    .header .navigation ul li, .header .banner ul li {
+      text-align: center;
+      display: inline-block;
+      top: 0; }
+      .header .navigation ul li a, .header .banner ul li a {
+        font-size: 30px;
+        display: inline-block;
+        text-align: center;
+        padding: 14px 20px;
+        text-decoration: none;
+        color: #FFFeF7; }
+        .header .navigation ul li a i, .header .banner ul li a i {
+          color: #FFFeF7; }
+      .header .navigation ul li .page-content, .header .banner ul li .page-content {
+        display: none;
+        background-color: #2B1F2A;
+        color: #FFFeF7;
+        position: absolute;
+        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+        z-index: 1; }
+        .header .navigation ul li .page-content a, .header .banner ul li .page-content a {
+          width: 170px;
+          display: block;
+          font-size: 15px;
+          border-bottom: 1px solid #2B1F2A; }
+      .header .navigation ul li:hover a, .header .navigation ul li:hover i, .header .banner ul li:hover a, .header .banner ul li:hover i {
+        background-color: white;
+        color: #2B1F2A; }
+      .header .navigation ul li:hover .page-content, .header .banner ul li:hover .page-content {
+        display: block; }
+        .header .navigation ul li:hover .page-content a:hover, .header .banner ul li:hover .page-content a:hover {
+          background-color: #ded1dd;
+          color: #2B1F2A; }
+    .header .navigation ul li.selected-page a, .header .banner ul li.selected-page a {
+      background-color: white;
+      color: #2B1F2A; }
+  .header .banner ul {
+    background-color: #2B1F2A;
+    color: #fff;
+    border-bottom: solid 1px;
+    border-color: #fff;
+    list-style-typ: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    text-align: right;
+    padding: 3px 3px; }
+    .header .banner ul li {
+      display: inline-block;
+      top: 0;
+      margin-right: 5px; }
+      .header .banner ul li:hover {
+        cursor: pointer;
+        background-color: #499AA0; }
+      .header .banner ul li .search {
+        font-size: 12px;
+        padding-bottom: 6px;
+        padding-top: 10px; }
+      .header .banner ul li a, .header .banner ul li i {
+        cursor: default;
+        background-color: #2B1F2A;
+        font-size: 20px;
+        padding: 5px; }
+        .header .banner ul li a:hover, .header .banner ul li i:hover {
+          cursor: pointer;
+          background-color: #499AA0; }
 
 /*# sourceMappingURL=stylesheet.css.map */

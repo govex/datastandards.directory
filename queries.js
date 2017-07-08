@@ -10,6 +10,91 @@ var options = {
 var connectionString = process.env.DATABASE_URL || 'postgres://postgres:january2017*@localhost:5432/inventory'; // Heroku postgres OR local host postgres inventory database
 var db = pgp(connectionString); // using pg-promise, create database with connection details
 
+function getAddForm(req, res, next){
+  res.render('add');
+}
+
+function getUpdateForm(req, res, next){
+  res.render('update');
+}
+
+// function gets data based on user input (e.g., all, )
+function api(req, res, next){
+  var user_input = req.params.id.toLowerCase(),
+      query = ""; // store the user's input
+
+  if (user_input == 'all') {
+    query = 'select * from standards';
+  } else {
+    query = 'select * from standards where lower(name) || lower(category) like \'%$1#%\'';
+  }
+
+  db.task(t => {
+    db.each(query, user_input, row => {
+      for (var column in row) {
+        if (row[column] == '' || row[column] == null || row[column].toLowerCase() == 'unsure' || row[column] == undefined || row[column].toLowerCase() == 'null' || row[column].toLowerCase() == 'n/a') {
+          row[column] = 'No information';
+        }
+      }
+    }) //category::text, name::text like "%$1%"
+      .then(function (data) {
+        res.status(200)
+        .json({
+          data: data
+        });
+      })
+      .catch(function (err) {
+        return next(err);
+      });
+  });
+}
+
+// function gets all categories and standard names for the autocomplete 
+function keywords(req, res, next){
+  var query = 'select lower(name) as name, lower(category) as category from standards',
+      keywords = [];
+  db.task(t => {
+    db.each(query, [], row =>{
+      keywords.push(row.name, row.category);
+    })
+      .then(function () {
+        res.send({keywords: keywords});
+      })
+      .catch(function (err) {
+        return next(err);
+      });
+  });
+}
+
+// function gets data based on user input (e.g., all, )
+function getData(req, res, next){
+  var user_input = req.params.id.toLowerCase(),
+      query = ""; // store the user's input
+
+  if (user_input == 'all') {
+    query = 'select * from standards';
+  } else {
+    query = 'select * from standards where lower(name) || lower(category) like \'%$1#%\'';
+  }
+
+  db.task(t => {
+    db.each(query, user_input, row => {
+      for (var column in row) {
+         if (row[column] == '' || row[column] == null || row[column].toLowerCase() == 'unsure' || row[column] == undefined || row[column].toLowerCase() == 'null' || row[column].toLowerCase() == 'n/a') {
+          row[column] = 'No information';
+        } 
+      }
+    }) //category::text, name::text like "%$1%"
+      .then(function (data) {
+        res.render('directory', {standards: data})
+
+      })
+      .catch(function (err) {
+        return next(err);
+      });
+  });
+}
+
 // Express middleware: function that will post any update or comment requests to postgres database
 function post(req, res, next) {
   var data = {client_name: req.body.client_name, email: req.body.email, standard: req.body.email, comment: req.body.email, timestamp: req.body.timestamp}
@@ -18,23 +103,8 @@ function post(req, res, next) {
       res.status(200)
         .json({
           status: 'successfully added post',
-          message: 'Inserted post'
-        });
-    })
-    .catch(function (err) {
-      return next(err);
-    });
-}
-
-// Express middleware: function that will return all the rows in the postgres database
-function getAllStandards(req, res, next) {
-  db.any('select * from standards')
-    .then(function (data) {
-      res.status(200)
-        .json({
-          data: data,
-          status: 'success',
-          message: 'Retrieved ALL standards'
+          message: 'Inserted post',
+          data: data
         });
     })
     .catch(function (err) {
@@ -58,91 +128,13 @@ function createStandard(req, res, next) {
     });
 }
 
-// Express middleware: function that will only get the category and names columns from the postgres database
-function inventorySearch(req, res, next) {
-  db.any('select category, name from standards')
-    .then(function (data) {
-      res.status(200)
-        .json({
-          status: 'success',
-          data: data,
-          message: 'Retrieved ALL categories and ALL names'
-        });
-    })
-    .catch(function (err) {
-      return next(err);
-    });
-}
-
-// Express middleware: function that will get a row based on whether the request is a category, name, or id
-function getRequest(req, res, next) {
-  var standard = req.params.id; // stores the id parameter (value) into var standard
-
-  db.many('select * from standards where category = $1', standard)
-    .then(function (data) {
-      res.status(200)
-        .json({
-          status: 'success',
-          data: data,
-          message: 'Retrieved ONE category'
-        });
-    })
-    .catch(function (err) {
-      return next(err);
-    });
-
-  db.many('select * from standards where name = $1', standard)
-    .then(function (data) {
-      res.status(200)
-        .json({
-          status: 'success',
-          data: data,
-          message: 'Retrieved ONE standard'
-        });
-    })
-    .catch(function (err) {
-      return next(err);
-    });
-
-  db.many('select * from standards where id = $1', standard)
-    .then(function (data) {
-      res.status(200)
-        .json({
-          status: 'success',
-          data: data,
-          message: 'Retrieved ONE id'
-        });
-    })
-    .catch(function (err) {
-      return next(err);
-    });
-}
-
-// Express middleware: function that will render the directory.html based on whether the request is a category or id
-function renderRequest(req, res, next){
-  var standard = req.params.id;
-  db.many('select * from standards where id=$1', standard)
-    .then(function (data) {
-      res.render('directory.jade');
-    })
-    .catch(function (err) {
-      return next(err);
-    });
-  db.many('select * from standards where category=$1', standard)
-    .then(function (data) {
-      res.render('directory.jade')
-    })
-    .catch(function (err) {
-      return next(err);
-    });
-}
-
 // add query functions to app 
 module.exports = {
-  inventorySearch: inventorySearch,
-  getAllStandards: getAllStandards,
+  getData: getData,
   createStandard: createStandard,
-  getRequest: getRequest,
-  renderRequest: renderRequest,
-  post: post
+  post: post,
+  getAddForm: getAddForm,
+  getUpdateForm: getUpdateForm,
+  keywords: keywords,
+  api: api
 };

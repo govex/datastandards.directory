@@ -1,0 +1,137 @@
+- if (standards.length > 0)
+	.directory-items
+		strong.search-title
+			script.
+				var origin = location.origin,
+					current = window.location.href,
+					search = current.split(origin + "/", 2)[1];
+				if (search.indexOf('%20') >= 0) {
+					$('.search-title').html('Search Results for: ' + search.split('%20').join(' '))
+				} else {
+					$('.search-title').html('Search Results for: ' + search.split('_').join(' '))
+				}
+		.filters
+			- if (standards.length > 1)
+				strong Sort  
+				select#sortby.dropdown
+					option(selected='selected')
+					option(value='new') Newest
+					option(value='old') Oldest
+					option(value='updated') Last Updated
+				script.
+					function createDates(date){
+						var parts = [];
+						parts = date.split("-");
+						var dt = new Date(parseInt(parts[2], 10),
+						                  parseInt(parts[0], 10) - 1,
+						                  parseInt(parts[1], 10));
+						return dt
+					}
+	.directory-standards
+	each item in standards
+		.standard-container
+			.standard
+				.standard-header
+					.standard-name
+						strong #{item.name}
+						i#copy-link.fa.fa-link(aria-hidden='true', title='Copy link to share')
+						.copy-link
+							script.
+								$('.copy-link').prop('title', location.origin + '/'  + '#{item.name}');
+								clickLink(location.origin + '/'  + '#{item.name}')
+						solid.standard-category(value='#{item.category}') #{item.category}
+							script.
+								$('.standard-category').on('click', function () {
+									window.location.href = location.origin + '/' + $(this).attr('value')
+								});
+					.standard-info
+						.metrics
+							include metrics
+							a(href='/glossary#glossary-metrics' target='_blank').very-small
+								i.fa.fa-question(title='About metrics')
+						strong.standard-items 
+							| Updated: #{item.updated} 
+							#updated(value="#{item.updated}")
+							| | Added: #{item.recorded} 
+							#added(value="#{item.recorded}")
+							| | Version: #{item.version} 
+							#version(value="#{item.version}")
+							script.
+								var updated = createDates("#{item.updated}");
+								var recorded = createDates("#{item.recorded}")
+								$('#updated').attr('value', updated);
+								$('#added').attr('value', recorded);
+					.standard-description #{item.description}
+					- if (standards.length > 1)
+						a.hide-show
+							i.fa.fa-plus-circle
+							|  Details        
+					.standard-body
+						ul
+							li
+								strong License: 
+								| #{item.license}
+							li 
+								strong Publisher: 
+								| #{item.publisher}
+							li
+								strong Consumers: 
+								| #{item.consumers}
+							li
+								strong Open: 
+								| #{item.open}
+							li
+								strong Transferable to other Jurisdictions: 
+								| #{item.transferability_rationale}
+							li
+								strong Stakeholder Participation: 
+								| #{item.stakeholder_participation_rationale}
+							li
+								strong Consensus-based Governance: 
+								| #{item.consensus_government_rationale}
+							li
+								strong Exentensions: 
+								| #{item.extensions_indicators}
+							li
+								strong Machine Readable: 
+								| #{item.machine_readable_rationale}
+							li
+								strong Human Readable: 
+								| #{item.human_readable_rationale}
+							li
+								strong Requires Real-Time Data: 
+								| #{item.requires_realtime_rationale}
+							li
+								strong Metadata: 
+								| #{item.metadata_rationale}
+			.standard-links
+				a(href='#{item.website}', target='_blank')
+					button Web Site
+				a(href='#{item.contact}', target='_blank')
+					button Documentation
+				a(href='#{item.example}', target='_blank')
+					button Example
+				a(href='./contribute/update', target='_blank')
+					button Update
+- else
+	.no-results
+	br
+	p Should there be a result?
+	br
+	a(href='./contact')
+		button.button.small Contact
+	a(href='./contribute/add')
+		button.button.small Add Standard
+	script.
+		var origin = location.origin,
+			current = window.location.href,
+			search = current.split(origin + "/", 2)[1];
+		if (search.indexOf('%20') >= 0) {
+			$('.no-results').html('<h2> No search results for: ' + search.split('%20').join(' ') + '</h2>')
+		} else {
+			$('.no-results').html('<h2> No search results for: ' + search.split('_').join(' ') + '</h2>')
+		}
+
+
+
+
