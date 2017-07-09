@@ -30,7 +30,7 @@ function api(req, res, next){
   }
 
   db.task(t => {
-    db.each(query, user_input, row => {
+    return t.each(query, user_input, row => {
       for (var column in row) {
         if (row[column] == '' || row[column] == null || row[column].toLowerCase() == 'unsure' || row[column] == undefined || row[column].toLowerCase() == 'null' || row[column].toLowerCase() == 'n/a') {
           row[column] = 'No information';
@@ -54,7 +54,7 @@ function keywords(req, res, next){
   var query = 'select lower(name) as name, lower(category) as category from standards',
       keywords = [];
   db.task(t => {
-    db.each(query, [], row =>{
+    return t.each(query, [], row =>{
       keywords.push(row.name, row.category);
     })
       .then(function () {
@@ -78,7 +78,7 @@ function getData(req, res, next){
   }
 
   db.task(t => {
-    db.each(query, user_input, row => {
+    return t.each(query, user_input, row => {
       for (var column in row) {
          if (row[column] == '' || row[column] == null || row[column].toLowerCase() == 'unsure' || row[column] == undefined || row[column].toLowerCase() == 'null' || row[column].toLowerCase() == 'n/a') {
           row[column] = 'No information';
