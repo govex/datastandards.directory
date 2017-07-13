@@ -30,7 +30,7 @@ function api(req, res, next){
   }
 
   db.task(t => {
-    db.each(query, user_input, row => {
+    return t.each(query, user_input, row => {
       for (var column in row) {
         if (row[column] == '' || row[column] == null || row[column].toLowerCase() == 'unsure' || row[column] == undefined || row[column].toLowerCase() == 'null' || row[column].toLowerCase() == 'n/a') {
           row[column] = 'No information';
@@ -54,7 +54,7 @@ function keywords(req, res, next){
   var query = 'select lower(name) as name, lower(category) as category from standards',
       keywords = [];
   db.task(t => {
-    db.each(query, [], row =>{
+    return t.each(query, [], row =>{
       keywords.push(row.name, row.category);
     })
       .then(function () {
@@ -74,11 +74,11 @@ function getData(req, res, next){
   if (user_input == 'all') {
     query = 'select * from standards';
   } else {
-    query = 'select * from standards where lower(name) || lower(category) like \'%$1#%\'';
+    query = 'select * from standards where lower(name) || lower(category) like \'%$1#%\''; // ADD URL
   }
 
   db.task(t => {
-    db.each(query, user_input, row => {
+    return t.each(query, user_input, row => {
       for (var column in row) {
          if (row[column] == '' || row[column] == null || row[column].toLowerCase() == 'unsure' || row[column] == undefined || row[column].toLowerCase() == 'null' || row[column].toLowerCase() == 'n/a') {
           row[column] = 'No information';
@@ -97,7 +97,7 @@ function getData(req, res, next){
 
 // Express middleware: function that will post any update or comment requests to postgres database
 function post(req, res, next) {
-  var data = {client_name: req.body.client_name, email: req.body.email, standard: req.body.email, comment: req.body.email, timestamp: req.body.timestamp}
+  var data = {client_name: req.body.client_name, email: req.body.email, standard: req.body.standard, comment: req.body.comment, timestamp: req.body.timestamp}
   db.none('insert into posts(client_name, email, standard, comment, timestamp) values(${client_name}, ${email}, ${standard}, ${comment}, ${timestamp})', data)
     .then(function () {
       res.status(200)
