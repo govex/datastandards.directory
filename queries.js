@@ -74,7 +74,7 @@ function getData(req, res, next){
   if (user_input == 'all') {
     query = 'select * from standards';
   } else {
-    query = 'select * from standards where lower(name) || lower(category) like \'%$1#%\'';
+    query = 'select * from standards where lower(name) || lower(category) like \'%$1#%\''; // ADD URL
   }
 
   db.task(t => {
@@ -97,7 +97,7 @@ function getData(req, res, next){
 
 // Express middleware: function that will post any update or comment requests to postgres database
 function post(req, res, next) {
-  var data = {client_name: req.body.client_name, email: req.body.email, standard: req.body.email, comment: req.body.email, timestamp: req.body.timestamp}
+  var data = {client_name: req.body.client_name, email: req.body.email, standard: req.body.standard, comment: req.body.comment, timestamp: req.body.timestamp}
   db.none('insert into posts(client_name, email, standard, comment, timestamp) values(${client_name}, ${email}, ${standard}, ${comment}, ${timestamp})', data)
     .then(function () {
       res.status(200)
