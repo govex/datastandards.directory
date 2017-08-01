@@ -7,7 +7,7 @@ var options = {
   promiseLib: promise // initialization options
 };
 
-var connectionString = process.env.DATABASE_URL || 'postgres://postgres:january2017*@localhost:5432/inventory'; // Heroku postgres OR local host postgres inventory database
+var connectionString = process.env.DATABASE_URL || 'postgres://postgres:qwerty@localhost:5432/poopydb'; // Heroku postgres OR local host postgres inventory database
 var db = pgp(connectionString); // using pg-promise, create database with connection details
 
 function getAddForm(req, res, next){
@@ -49,7 +49,7 @@ function api(req, res, next){
   });
 }
 
-// function gets all categories and standard names for the autocomplete 
+// function gets all categories and standard names for the autocomplete
 function keywords(req, res, next){
   var query = 'select lower(name) as name, lower(category) as category from standards',
       keywords = [];
@@ -82,7 +82,7 @@ function getData(req, res, next){
       for (var column in row) {
          if (row[column] == '' || row[column] == null || row[column].toLowerCase() == 'unsure' || row[column] == undefined || row[column].toLowerCase() == 'null' || row[column].toLowerCase() == 'n/a') {
           row[column] = 'No information';
-        } 
+        }
       }
     }) //category::text, name::text like "%$1%"
       .then(function (data) {
@@ -128,7 +128,7 @@ function createStandard(req, res, next) {
     });
 }
 
-// add query functions to app 
+// add query functions to app
 module.exports = {
   getData: getData,
   createStandard: createStandard,

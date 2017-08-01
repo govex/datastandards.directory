@@ -13,17 +13,43 @@ html
             #standards
               include standards.jade
         include footer.jade
-    - if (standards.length > 1)
-      script.
-        clickStandard();
     script(type='text/javascript').
       var standard = $('#standards').find('.standard-container')
       var standards = [];
       for (var i = 0; i < standard.length; i++){
         standards.push(standard[i]);
       }
-      $('#sortby').on('change', function() {
-        var sorted = sortby(standards)
-        $('.directory-standards').html(sorted);
+      $('.standard-container').each(function(){
+        var header = $(this).find('strong.standard-items');
+        var updated = $(header).find('#updated');
+        var added = $(header).find('#added');
+        var updatedDate = createDates($(updated).attr('value'));
+        var addedDate = createDates($(added).attr('value'));
+        var updatedRel = new moment(updatedDate);
+        var addedRel = new moment(addedDate);
+        // div values are set to the new Date object, for sorting purposes
+        $(updated).attr('value', updatedDate);
+        $(added).attr('value', addedDate);
+        $(updated).html("Published: <i>" + updatedRel.fromNow() + "</i>");
+        $(added).html(" | Updated in directory: <i>" + addedRel.fromNow() + "</i> ");
+        // version only displayed if necessary
+        if ($(header).find('#version').attr('value') == 'No information'){
+          $(header).find('#version').html("")
+        }
+        var body = $(this).find('.standard-body');
+        // full dates are now displayed in the standard's details
+        $(body).find('#updatedFull').html("<b>Updated by publisher:</b> " + updatedRel.format('Do MMMM YYYY'));
+        $(body).find('#addedFull').html("<b>Updated in directory:</b> " + addedRel.format('Do MMMM YYYY'));
+        $(body).find('#addedFull').css({'text-align': 'right', 'font-size': '11px', 'margin-bottom': '-12px', 'margin-right': '-8px'});
       });
-     
+      moment().format('Do MMMM YYYY');
+    - if (standards.length > 1)
+      script.
+        var sorted = sortby(standards)
+        $('.directory-standards').html(sorted); // sorts standards by default dropdown selection
+        clickStandard();
+        $('#sortby').on('change', function() { // resorts standards when dropdown selection is changed
+          sorted = sortby(standards)
+          $('.directory-standards').html(sorted);
+          clickStandard();
+        });
