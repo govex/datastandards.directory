@@ -31,4 +31,3 @@ function clickLink(url) {
 	    }
 	});
 }
-

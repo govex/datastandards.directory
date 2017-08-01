@@ -3,6 +3,8 @@ meta(name='viewport', content='width=device-width, initial-scale=1.0')
 link(rel='stylesheet', type='text/css', href='/stylesheets/stylesheet.css')
 // Font Awesome Icons
 script(src='https://use.fontawesome.com/5f92b1f541.js')
+// Moment.js for relative times
+script(src='//cdnjs.cloudflare.com/ajax/libs/moment.js/2.10.3/moment.js')
 // jQuery
 script(src='https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js')
 script(src='https://code.jquery.com/ui/1.12.1/jquery-ui.js')
@@ -19,3 +21,10 @@ script.
 		$( document ).tooltip();
 	});
 	autocomplete();
+	// Google analytics
+	  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	  ga('create', 'UA-67501679-8', 'auto');
+	  ga('send', 'pageview');

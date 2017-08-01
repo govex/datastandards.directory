@@ -2,9 +2,9 @@
 	position: fixed
 	width: 100%
 	font-family: $header-font
-	
+
 	.navigation, .banner
-		ul 
+		ul
 			background-color: $banner-color
 			list-style-type: none
 			margin: 0
@@ -20,7 +20,8 @@
 
 				a
 					font-size: 30px
-					display: inline-block
+					width: 170px
+					display: block
 					text-align: center
 					padding: 14px 20px
 					text-decoration: none
@@ -41,7 +42,7 @@
 						display: block
 						font-size: 15px
 						border-bottom: 1px solid $banner-color
-					
+
 				&:hover
 					a, i
 						background-color: white
@@ -55,11 +56,11 @@
 								background-color: lighten($banner-color, 70%)
 								color: $banner-color
 			li.selected-page
-				a 
+				a
 					background-color: white
 					color: $banner-color
 	.banner
-		ul 
+		ul
 			background-color: $banner-color
 			color: #fff
 			border-bottom: solid 1px
@@ -84,8 +85,9 @@
 					font-size: 12px
 					padding-bottom: 6px
 					padding-top: 10px
-				
+
 				a, i
+					display: inline
 					cursor: default
 					background-color: $banner-color
 					font-size: 20px
@@ -94,5 +96,3 @@
 					&:hover
 						cursor: pointer
 						background-color: $button-color
-
-					
