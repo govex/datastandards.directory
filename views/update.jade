@@ -52,12 +52,19 @@ html
           allstandards.push(standards.data[i].name);
         });
         allstandards.sort();
-        options.innerHTML = '<option default value="">Select what standard needs to be updated</option>';
+        options.innerHTML = '<option default value="default">Select what standard needs to be updated</option>';
         $.each(allstandards, function(i, el){
           options.innerHTML += '<option value="' + allstandards[i] + '">' + allstandards[i] + '</option>';
         });
+        var search = location.search.substring(1); // removes '?' symbol from querystring
+        if(search.length > 2){
+          search = decodeURI(search);
+          options.value = search;
+        }
+
       });
       // This function runs if a user selects the "Other" option for a category
+      /*
       $("#input1").on('change', function(){
         var selectedCategory = document.getElementById("input1").value;
         if (selectedCategory == "Other"){
@@ -72,6 +79,7 @@ html
           $(this).attr("name", "category");
         }
       });
+      */
       // submit form
       $(".submit").click(function(){
         $(".popup").hide();
@@ -79,5 +87,3 @@ html
         console.log(form)
         postUpdate(form);
       });
-
-

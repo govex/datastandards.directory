@@ -13,6 +13,9 @@ html
         .text-container.form.form-add
           h2.form-info 
             form.add-standard
+              p.metadata
+                label(for='input6') ID
+                input#input6.form-input(name='id', type='text', value='999')
               p.shortform
                 label.form-label(for='input0') Name 
                 input#input0.form-input(name='name', type='text', placeholder='Input a description of the standard', value='')
@@ -43,8 +46,8 @@ html
                 label(for='input3') License 
                 input#input3.form-input(name='license', type='text', placeholder='Input the license of the standard', value='')
               p
-                label(for='input4') Last Updated (m-d-y) 
-                input#input4.form-input(name='updated', type='text', placeholder='Input when the standard was last updated', value='')
+                label(for='input4') Last Updated
+                input#input4.form-input(name='updated', type='text', placeholder='(M/D/YYYY) Ex: Sept. 29th, 2007 -- 9/29/2007', value='')
               p
                 label(for='input5') Version 
                 input#input5.form-input(name='version', type='text', placeholder='Input the version number of the standard', value='')
@@ -56,29 +59,26 @@ html
                   option(value='Completed') Completed
                   option(value='Draft') Draft
               p
-                label(for='input8') URL to Website 
-                input#input8.form-input(name='website', type='text', placeholder="Copy a URL link to the standard's website", value='')
-              p
-                label(for='input9') URL to Contact Info 
-                input#input9.form-input(name='contact', type='text', placeholder="Copy a URL link to the contact page on the standard's website", value='')
+                label(for='input9') URL to Documentation
+                input#input9.form-input(name='documentation', type='text', placeholder="Copy a URL link to the standard's documentation or reference", value='')
               p
                 label(for='input10') URL to Example 
-                input#input10.form-input(name='example', type='text', placeholder='Input a description of the standard', value='')
+                input#input10.form-input(name='example', type='text', placeholder='Copy a URL link to an example file or schema using the standard', value='')
               p
                 label(for='input11') Publisher(s) 
                 input#input11.form-input(name='publisher', type='text', placeholder='List the actors in charge of the standard’s conception and further development', value='')
               p
                 label(for='input12') Publisher(s) Reputation 
                 input#input12.form-input(name='publisher_reputation', type='text', placeholder='Provide background information about the publisher(s)', value='')
-              p
+              p.metadata
                 label(for='input13') Number of Consumers
-                input#input13.form-input(name='number_of_consumers', type='text', placeholder='Input the number of municipalities that use the standard', value='')
+                input#input13.form-input(name='number_of_consumers', type='text', placeholder='Input the number of municipalities that use the standard', value='0')
               p
-                label(for='input14') List the Consumers
-                input#input14.form-input(name='consumers', type='text', placeholder='Provide a list of municipalities who use the standard value=')
-              p
+                label(for='input14') List the Providers
+                input#input14.form-input(name='consumers', type='text', placeholder='Provide a list of municipalities or organizations who publish data in the standard', value='')
+              p.metadata
                 label(for='input15') Number of Apps
-                input#input15.form-input(name='number_of_apps', type='text', placeholder='Input the number of applications developed from the standard', value='')
+                input#input15.form-input(name='number_of_apps', type='text', placeholder='Input the number of applications developed from the standard', value='0')
               p
                 label(for='input16') List the Apps
                 input#input16.form-input(name='apps', type='text', placeholder='Provide a list of applications developed from the standard', value='')
