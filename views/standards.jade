@@ -25,6 +25,7 @@
 					option(value='updated', selected='selected') Updated in Directory
 					option(value='new') Newest
 					option(value='old') Oldest
+					option(value='consumers') Most Published
 	.directory-standards
 		each item in standards
 			.standard-container
@@ -101,6 +102,12 @@
 								li
 									strong Metadata: 
 									| #{item.metadata_rationale}
+								#providers(value="#{item.provider_list}" count=0)
+									strong Data Providers:
+									br
+									#provider-list
+									a(href='./contribute/update?#{item.name}', target='_blank')
+										| Don't see your name here? Let us know!
 								// <date added to directory> is formatted in script
 							#addedFull
 								| Added to directory: #{item.recorded}
