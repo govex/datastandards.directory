@@ -15,11 +15,11 @@ function postUpdate(form){
 			}
 		$("#input37").parent("p").addClass("highlight");
 		$("#input38").parent("p").addClass("highlight");
-	} else {			
-		var $inputs = form.find("client_name, email, standard, comment, timestamp"); // find all the inputs
+	} else {
+		var $inputs = form.find("client_name, email, standard, comment, providers, examples, timestamp"); // find all the inputs
 		var serializedData = form.serialize(); // serialize the data
 		$inputs.prop("disabled", true); // disable the inputs for the duration of the Ajax request
-		
+
 		// create ajax call to post the serialized data to the route (url)
 		request = $.ajax({
 					type: "POST",
@@ -29,7 +29,7 @@ function postUpdate(form){
 				});
 
 		console.log(request)
-								
+
 		// callback handler that will be called on success
 		request.done(function (response, textStatus, jqXHR){
 			$(".success").show();
@@ -49,7 +49,7 @@ function postUpdate(form){
 		request.always(function () {
 			$inputs.prop("disabled", false); // reenable the inputs
 		});
-		
+
 		event.preventDefault();	// prevent default posting of form
 	}
 }
