@@ -38,6 +38,7 @@
 									$('.copy-link').prop('title', location.origin + '/'  + '#{item.name}');
 									clickLink(location.origin + '/'  + '#{item.name}')
 							solid.standard-category(value='#{item.category}') #{item.category}
+							solid.standard-category(value='#{item.subcategory}') #{item.subcategory}
 								script.
 									$('.standard-category').on('click', function () {
 										window.location.href = location.origin + '/' + $(this).attr('value')

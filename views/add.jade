@@ -30,6 +30,13 @@ html
               p.category(style='display: none')
                 input#input1-other.form-input(name='', type='text', placeholder='Enter the category', value='')
               p
+                label.form-label(for='input41')
+                  strong Subcategory 
+                select#input41.form-input(type='drop-down', name='subcategory')
+                  option(disabled='', selected='', value='') Select a subcategory
+              p.subcategory(style='display: none')
+                input#input41-other.form-input(name='', type='text', placeholder='Enter the subcategory', value='')
+              p
                 label(for='input2') Description 
                 input#input2.form-input(name='description', type='text', placeholder='Input a description of the standard', value='')
               p
@@ -233,7 +240,8 @@ html
     script.
       $('#contribute').addClass("selected-page");
       $(".popup").hide();
-      var allstandards = [];
+      var allstandardsCategories = [];
+      var allstandardsSubcategories = [];
       var options = document.getElementById("input37");
       var url = location.origin;
       // This function runs if a user selects the "Other" option for a category
@@ -251,6 +259,21 @@ html
           $(this).attr("name", "category");
         }
       });
+      // This function runs if a user selects the "Other" option for a subcategory
+      $("#input41").on('change', function(){
+        var selectedSubcategory = document.getElementById("input41").value;
+        if (selectedSubcategory == "other"){
+          $(this).removeAttr("name");
+          $("#input41-other").show();
+          $(".subcategory").show();
+          $("#input41-other").attr("name", "subcategory");
+        } else {
+          $("#input41-other").hide();
+          $(".subcategory").hide();
+          $("#input41-other").removeAttr("name");
+          $(this).attr("name", "subcategory");
+        }
+      });
       // this function toggles between the short and long form for adding a standard
       $(".hide-show").on('click', function(){
         $(this).find('i').toggleClass('fa-plus-circle fa-minus-circle') // toggle between the + and - icons
@@ -259,22 +282,38 @@ html
         var test = $(form).children('p');
         $(form).children('p').not('.shortform').not(this).not('.metadata').toggle(); // show the details
         $(".category").hide();
+        $(".subcategory").hide();
       })
       // This function fills in #input1 dropdown menu
       $.getJSON(url + "/api/get/all", function(standards) {
         $.each(standards.data, function(i) {
-          allstandards.push(standards.data[i].category);
+          allstandardsCategories.push(standards.data[i].category);
+          allstandardsSubcategories.push(standards.data[i].subcategory);
         });
-        allstandards.sort();
+        var newID = allstandardsCategories.length + 1;
+        document.getElementById("input6").value = newID.toString();  // adds new unique ID to submission      
+        allstandardsCategories.sort();
+        allstandardsSubcategories.sort();
+        
         var category = [],
-            options = document.getElementById("input1");
-        $.each(allstandards, function(i, el){ // removes any duplicates
+            catOptions = document.getElementById("input1");
+        $.each(allstandardsCategories, function(i, el){ // removes any duplicates
         if($.inArray(el, category) === -1) category.push(el);
         });
         $.each(category, function(i, el){
-          options.innerHTML += '<option value="' + category[i] + '">' + category[i] + '</option>';
+          catOptions.innerHTML += '<option value="' + category[i] + '">' + category[i] + '</option>';
         });
-        options.innerHTML += '<option value="other">Other</option>'
+        catOptions.innerHTML += '<option value="other">Other</option>';
+        
+        var subcategory = [],
+            subcatOptions = document.getElementById("input41");
+        $.each(allstandardsSubcategories, function(i, el){ // removes any duplicates
+        if($.inArray(el, subcategory) === -1) subcategory.push(el);
+        });
+        $.each(subcategory, function(i, el){
+          subcatOptions.innerHTML += '<option value="' + subcategory[i] + '">' + subcategory[i] + '</option>';
+        });
+        subcatOptions.innerHTML += '<option value="other">Other</option>';
       });
       // submit form
       $(".submit").click(function(){
