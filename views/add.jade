@@ -13,6 +13,9 @@ html
         .text-container.form.form-add
           h2.form-info 
             form.add-standard
+              p.metadata
+                label(for='input6') ID
+                input#input6.form-input(name='id', type='text', value='999')
               p.shortform
                 label.form-label(for='input0') Name 
                 input#input0.form-input(name='name', type='text', placeholder='Input a description of the standard', value='')
@@ -30,14 +33,21 @@ html
               p.category(style='display: none')
                 input#input1-other.form-input(name='', type='text', placeholder='Enter the category', value='')
               p
+                label.form-label(for='input41')
+                  strong Subcategory 
+                select#input41.form-input(type='drop-down', name='subcategory')
+                  option(disabled='', selected='', value='') Select a subcategory
+              p.subcategory(style='display: none')
+                input#input41-other.form-input(name='', type='text', placeholder='Enter the subcategory', value='')
+              p
                 label(for='input2') Description 
                 input#input2.form-input(name='description', type='text', placeholder='Input a description of the standard', value='')
               p
                 label(for='input3') License 
                 input#input3.form-input(name='license', type='text', placeholder='Input the license of the standard', value='')
               p
-                label(for='input4') Last Updated (m-d-y) 
-                input#input4.form-input(name='updated', type='text', placeholder='Input when the standard was last updated', value='')
+                label(for='input4') Last Updated
+                input#input4.form-input(name='updated', type='text', placeholder='(M/D/YYYY) Ex: Sept. 29th, 2007 -- 9/29/2007', value='')
               p
                 label(for='input5') Version 
                 input#input5.form-input(name='version', type='text', placeholder='Input the version number of the standard', value='')
@@ -49,29 +59,26 @@ html
                   option(value='Completed') Completed
                   option(value='Draft') Draft
               p
-                label(for='input8') URL to Website 
-                input#input8.form-input(name='website', type='text', placeholder="Copy a URL link to the standard's website", value='')
-              p
-                label(for='input9') URL to Contact Info 
-                input#input9.form-input(name='contact', type='text', placeholder="Copy a URL link to the contact page on the standard's website", value='')
+                label(for='input9') URL to Documentation
+                input#input9.form-input(name='documentation', type='text', placeholder="Copy a URL link to the standard's documentation or reference", value='')
               p
                 label(for='input10') URL to Example 
-                input#input10.form-input(name='example', type='text', placeholder='Input a description of the standard', value='')
+                input#input10.form-input(name='example', type='text', placeholder='Copy a URL link to an example file or schema using the standard', value='')
               p
                 label(for='input11') Publisher(s) 
                 input#input11.form-input(name='publisher', type='text', placeholder='List the actors in charge of the standard’s conception and further development', value='')
               p
                 label(for='input12') Publisher(s) Reputation 
                 input#input12.form-input(name='publisher_reputation', type='text', placeholder='Provide background information about the publisher(s)', value='')
-              p
+              p.metadata
                 label(for='input13') Number of Consumers
-                input#input13.form-input(name='number_of_consumers', type='text', placeholder='Input the number of municipalities that use the standard', value='')
+                input#input13.form-input(name='number_of_consumers', type='text', placeholder='Input the number of municipalities that use the standard', value='0')
               p
-                label(for='input14') List the Consumers
-                input#input14.form-input(name='consumers', type='text', placeholder='Provide a list of municipalities who use the standard value=')
-              p
+                label(for='input14') List the Providers
+                input#input14.form-input(name='consumers', type='text', placeholder='Provide a list of municipalities or organizations who publish data in the standard', value='')
+              p.metadata
                 label(for='input15') Number of Apps
-                input#input15.form-input(name='number_of_apps', type='text', placeholder='Input the number of applications developed from the standard', value='')
+                input#input15.form-input(name='number_of_apps', type='text', placeholder='Input the number of applications developed from the standard', value='0')
               p
                 label(for='input16') List the Apps
                 input#input16.form-input(name='apps', type='text', placeholder='Provide a list of applications developed from the standard', value='')
@@ -233,7 +240,8 @@ html
     script.
       $('#contribute').addClass("selected-page");
       $(".popup").hide();
-      var allstandards = [];
+      var allstandardsCategories = [];
+      var allstandardsSubcategories = [];
       var options = document.getElementById("input37");
       var url = location.origin;
       // This function runs if a user selects the "Other" option for a category
@@ -251,6 +259,21 @@ html
           $(this).attr("name", "category");
         }
       });
+      // This function runs if a user selects the "Other" option for a subcategory
+      $("#input41").on('change', function(){
+        var selectedSubcategory = document.getElementById("input41").value;
+        if (selectedSubcategory == "other"){
+          $(this).removeAttr("name");
+          $("#input41-other").show();
+          $(".subcategory").show();
+          $("#input41-other").attr("name", "subcategory");
+        } else {
+          $("#input41-other").hide();
+          $(".subcategory").hide();
+          $("#input41-other").removeAttr("name");
+          $(this).attr("name", "subcategory");
+        }
+      });
       // this function toggles between the short and long form for adding a standard
       $(".hide-show").on('click', function(){
         $(this).find('i').toggleClass('fa-plus-circle fa-minus-circle') // toggle between the + and - icons
@@ -259,22 +282,38 @@ html
         var test = $(form).children('p');
         $(form).children('p').not('.shortform').not(this).not('.metadata').toggle(); // show the details
         $(".category").hide();
+        $(".subcategory").hide();
       })
       // This function fills in #input1 dropdown menu
       $.getJSON(url + "/api/get/all", function(standards) {
         $.each(standards.data, function(i) {
-          allstandards.push(standards.data[i].category);
+          allstandardsCategories.push(standards.data[i].category);
+          allstandardsSubcategories.push(standards.data[i].subcategory);
         });
-        allstandards.sort();
+        var newID = allstandardsCategories.length + 1;
+        document.getElementById("input6").value = newID.toString();  // adds new unique ID to submission      
+        allstandardsCategories.sort();
+        allstandardsSubcategories.sort();
+        
         var category = [],
-            options = document.getElementById("input1");
-        $.each(allstandards, function(i, el){ // removes any duplicates
+            catOptions = document.getElementById("input1");
+        $.each(allstandardsCategories, function(i, el){ // removes any duplicates
         if($.inArray(el, category) === -1) category.push(el);
         });
         $.each(category, function(i, el){
-          options.innerHTML += '<option value="' + category[i] + '">' + category[i] + '</option>';
+          catOptions.innerHTML += '<option value="' + category[i] + '">' + category[i] + '</option>';
         });
-        options.innerHTML += '<option value="other">Other</option>'
+        catOptions.innerHTML += '<option value="other">Other</option>';
+        
+        var subcategory = [],
+            subcatOptions = document.getElementById("input41");
+        $.each(allstandardsSubcategories, function(i, el){ // removes any duplicates
+        if($.inArray(el, subcategory) === -1) subcategory.push(el);
+        });
+        $.each(subcategory, function(i, el){
+          subcatOptions.innerHTML += '<option value="' + subcategory[i] + '">' + subcategory[i] + '</option>';
+        });
+        subcatOptions.innerHTML += '<option value="other">Other</option>';
       });
       // submit form
       $(".submit").click(function(){

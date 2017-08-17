@@ -25,6 +25,12 @@ html
               p
                 label(for='input38') Comment 
                 input#input38(type='text', name='comment', placeholder='Input anything regarding what needs to be updated for the standard', value='')
+              p
+                label(for='input39') Add Provider(s)
+                input#input39(type='text', name='providers', placeholder='Add to our list of organizations publishing data in this standard', value='')
+              P
+                label(for='input40') Add Example(s)
+                input#input40(type='text', name='examples', placeholder='Add links to datasets which have been published in this standard', value='')
               p.timestamp
                 input#timestamp(type='text', name='timestamp', value='')
           br
@@ -46,12 +52,19 @@ html
           allstandards.push(standards.data[i].name);
         });
         allstandards.sort();
-        options.innerHTML = '<option default value="">Select what standard needs to be updated</option>';
+        options.innerHTML = '<option default value="default">Select what standard needs to be updated</option>';
         $.each(allstandards, function(i, el){
           options.innerHTML += '<option value="' + allstandards[i] + '">' + allstandards[i] + '</option>';
         });
+        var search = location.search.substring(1); // removes '?' symbol from querystring
+        if(search.length > 2){
+          search = decodeURI(search);
+          options.value = search;
+        }
+
       });
       // This function runs if a user selects the "Other" option for a category
+      /*
       $("#input1").on('change', function(){
         var selectedCategory = document.getElementById("input1").value;
         if (selectedCategory == "Other"){
@@ -66,6 +79,7 @@ html
           $(this).attr("name", "category");
         }
       });
+      */
       // submit form
       $(".submit").click(function(){
         $(".popup").hide();
@@ -73,5 +87,3 @@ html
         console.log(form)
         postUpdate(form);
       });
-
-

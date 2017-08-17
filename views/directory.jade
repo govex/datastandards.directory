@@ -41,6 +41,23 @@ html
         $(body).find('#updatedFull').html("<b>Updated by publisher:</b> " + updatedRel.format('Do MMMM YYYY'));
         $(body).find('#addedFull').html("<b>Updated in directory:</b> " + addedRel.format('Do MMMM YYYY'));
         $(body).find('#addedFull').css({'text-align': 'right', 'font-size': '11px', 'margin-bottom': '-12px', 'margin-right': '-8px'});
+        // Build list of providers
+        var providerList = $(body).find('#providers').attr('value');
+        if (providerList != 'No information') {
+          var providers = [];
+          providers = providerList.split('|');
+          providers.sort();
+          $(body).find('#providers').attr('count', providers.length); //sets value of div to the number of providers, for sorting purposes
+          var list = '';
+          for (var i = 0; i < providers.length-1; i++){
+            list += providers[i] + '<b> | </b>'
+          }
+          list += providers[providers.length-1];
+          $(body).find('#provider-list').html(list);
+        }
+        else{
+          $(body).find('#providers').hide();
+        }
       });
       moment().format('Do MMMM YYYY');
     - if (standards.length > 1)

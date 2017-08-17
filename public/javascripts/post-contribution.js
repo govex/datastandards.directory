@@ -1,7 +1,7 @@
 // this function runs for any form submission
 $(function(){
 
-	// code that prevents a client from selecting more than one checkbox on a submission form 
+	// code that prevents a client from selecting more than one checkbox on a submission form
 	$("input:checkbox").on('click', function() {
 	  var $box = $(this);
 	  if ($box.is(":checked")) {
@@ -20,26 +20,26 @@ $(function(){
 	var year = date.getFullYear();
 	var day = date.getDate();
 
-	// creates current date in the correct format 
+	// creates current date in the correct format
 	if (String(day).length < 2){
-		recorded = month + "-0" + day + "-" + year;
+		recorded = month + "/" + day + "/" + year;
 	} else if (String(month).length < 2) {
-		recorded = "0" + month + "-" + day + "-" + year;
+		recorded = month + "/" + day + "/" + year;
 	} else {
-		recorded = month + "-" + day + "-" + year;
+		recorded = month + "/" + day + "/" + year;
 	}
-	
+
 	document.getElementById("input33").value = recorded;
 	document.getElementById("timestamp").value = recorded;
 
 	// when the user clicks the submit button, the following will occur
 	$("button.submit").click(function(event){
-		$(".success").hide(); 
+		$(".success").hide();
 		$(".error").hide();
 
 		var postType = $(".submit").val();
 
-		if (request) { 
+		if (request) {
 			request.abort();
 		}
 
@@ -52,6 +52,6 @@ $(function(){
 		if(postType == "update"){
 			var form = $(".update-standard"); // run the function that will serialize the inputs and post them to the db
 			postUpdate(form);
-		}			
+		}
 	});
 });

@@ -26,7 +26,7 @@ function api(req, res, next){
   if (user_input == 'all') {
     query = 'select * from standards';
   } else {
-    query = 'select * from standards where lower(name) || lower(category) like \'%$1#%\'';
+    query = 'select * from standards where lower(name) || lower(category) || lower(subcategory) like \'%$1#%\'';
   }
 
   db.task(t => {
@@ -51,11 +51,11 @@ function api(req, res, next){
 
 // function gets all categories and standard names for the autocomplete
 function keywords(req, res, next){
-  var query = 'select lower(name) as name, lower(category) as category from standards',
+  var query = 'select lower(name) as name, lower(category) as category, lower(subcategory) as subcategory from standards',
       keywords = [];
   db.task(t => {
     return t.each(query, [], row =>{
-      keywords.push(row.name, row.category);
+      keywords.push(row.name, row.category, row.subcategory);
     })
       .then(function () {
         res.send({keywords: keywords});
@@ -74,7 +74,7 @@ function getData(req, res, next){
   if (user_input == 'all') {
     query = 'select * from standards';
   } else {
-    query = 'select * from standards where lower(name) || lower(category) like \'%$1#%\''; // ADD URL
+    query = 'select * from standards where lower(name) || lower(category) || lower(subcategory) like \'%$1#%\''; // ADD URL
   }
 
   db.task(t => {
@@ -97,8 +97,8 @@ function getData(req, res, next){
 
 // Express middleware: function that will post any update or comment requests to postgres database
 function post(req, res, next) {
-  var data = {client_name: req.body.client_name, email: req.body.email, standard: req.body.standard, comment: req.body.comment, timestamp: req.body.timestamp}
-  db.none('insert into posts(client_name, email, standard, comment, timestamp) values(${client_name}, ${email}, ${standard}, ${comment}, ${timestamp})', data)
+  var data = {client_name: req.body.client_name, email: req.body.email, standard: req.body.standard, comment: req.body.comment, timestamp: req.body.timestamp, providers: req.body.providers, examples: req.body.examples}
+  db.none('insert into posts(client_name, email, standard, comment, timestamp, providers, examples) values(${client_name}, ${email}, ${standard}, ${comment}, ${timestamp}, ${providers}, ${examples})', data)
     .then(function () {
       res.status(200)
         .json({
@@ -114,8 +114,8 @@ function post(req, res, next) {
 
 // Express middleware: function that will post a new row into the postgres database
 function createStandard(req, res, next) {
-  var data = {name: req.body.name, category: req.body.category, description: req.body.description, license: req.body.license, updated: req.body.update, version: req.body.version, stage_in_development: req.body.stage_in_development, documentation: req.body.documentation, website: req.body.website, contact: req.body.contact, example: req.body.example, publisher: req.body.publisher, publisher_reputation: req.body.publisher_reputation, number_of_consumers: req.body.number_of_consumers, consumers: req.body.consumers, number_of_apps: req.body.number_of_apps, apps: req.body.apps, open: req.body.open, transferability: req.body.transferability, transferability_rationale: req.body.transferability_rationale, stakeholder_participation: req.body.stakeholder_participation, stakeholder_participation_rationale: req.body.stakeholder_participation_rationale, consensus_government: req.body.consensus_government, consensus_government_rationale: req.body.consensus_government_rationale, extensions: req.body.extensions, extensions_indicators: req.body.extensions_indicators, machine_readable: req.body.machine_readable, machine_readable_rationale: req.body.machine_readable_rationale, human_readable: req.body.human_readable, human_readable_rationale: req.body.human_readable_rationale, requires_realtime: req.body.requires_realtime, requires_realtime_rationale: req.body.requires_realtime_rationale, metadata: req.body.metadata, metadata_rationale: req.body.metadata_rationale, recorded: req.body.recorded, verified: req.body.verified}
-  db.none('insert into standards(name, category, description, license, updated, version, stage_in_development, documentation, website, contact, example, publisher, publisher_reputation, number_of_consumers, consumers, number_of_apps, apps, open, transferability, transferability_rationale, stakeholder_participation, stakeholder_participation_rationale, consensus_government, consensus_government_rationale, extensions, extensions_indicators, machine_readable, machine_readable_rationale, human_readable, human_readable_rationale, requires_realtime, requires_realtime_rationale, metadata, metadata_rationale, recorded, verified) values(${name}, ${category}, ${description}, ${license}, ${updated}, ${version}, ${stage_in_development}, ${documentation}, ${website}, ${contact}, ${example}, ${publisher}, ${publisher_reputation}, ${number_of_consumers}, ${consumers}, ${number_of_apps}, ${apps}, ${open}, ${transferability}, ${transferability_rationale}, ${stakeholder_participation}, ${stakeholder_participation_rationale}, ${consensus_government}, ${consensus_government_rationale}, ${extensions}, ${extensions_indicators}, ${machine_readable}, ${machine_readable_rationale}, ${human_readable}, ${human_readable_rationale}, ${requires_realtime}, ${requires_realtime_rationale}, ${metadata}, ${metadata_rationale}, ${recorded}, ${verified})', data)
+  var data = {id: req.body.id, name: req.body.name, category: req.body.category, subcategory: req.body.subcategory, description: req.body.description, license: req.body.license, updated: req.body.updated, version: req.body.version, stage_in_development: req.body.stage_in_development, documentation: req.body.documentation, website: req.body.website, contact: req.body.contact, example: req.body.example, publisher: req.body.publisher, publisher_reputation: req.body.publisher_reputation, number_of_consumers: req.body.number_of_consumers, consumers: req.body.consumers, number_of_apps: req.body.number_of_apps, apps: req.body.apps, open: req.body.open, transferability: req.body.transferability, transferability_rationale: req.body.transferability_rationale, stakeholder_participation: req.body.stakeholder_participation, stakeholder_participation_rationale: req.body.stakeholder_participation_rationale, consensus_government: req.body.consensus_government, consensus_government_rationale: req.body.consensus_government_rationale, extensions: req.body.extensions, extensions_indicators: req.body.extensions_indicators, machine_readable: req.body.machine_readable, machine_readable_rationale: req.body.machine_readable_rationale, human_readable: req.body.human_readable, human_readable_rationale: req.body.human_readable_rationale, requires_realtime: req.body.requires_realtime, requires_realtime_rationale: req.body.requires_realtime_rationale, metadata: req.body.metadata, metadata_rationale: req.body.metadata_rationale, recorded: req.body.recorded, verified: req.body.verified}
+  db.none('insert into standards(id, name, category, subcategory, description, license, updated, version, stage_in_development, documentation, website, contact, example, publisher, publisher_reputation, number_of_consumers, consumers, number_of_apps, apps, open, transferability, transferability_rationale, stakeholder_participation, stakeholder_participation_rationale, consensus_government, consensus_government_rationale, extensions, extensions_indicators, machine_readable, machine_readable_rationale, human_readable, human_readable_rationale, requires_realtime, requires_realtime_rationale, metadata, metadata_rationale, recorded, verified) values(${id}, ${name}, ${category}, ${subcategory}, ${description}, ${license}, ${updated}, ${version}, ${stage_in_development}, ${documentation}, ${website}, ${contact}, ${example}, ${publisher}, ${publisher_reputation}, ${number_of_consumers}, ${consumers}, ${number_of_apps}, ${apps}, ${open}, ${transferability}, ${transferability_rationale}, ${stakeholder_participation}, ${stakeholder_participation_rationale}, ${consensus_government}, ${consensus_government_rationale}, ${extensions}, ${extensions_indicators}, ${machine_readable}, ${machine_readable_rationale}, ${human_readable}, ${human_readable_rationale}, ${requires_realtime}, ${requires_realtime_rationale}, ${metadata}, ${metadata_rationale}, ${recorded}, ${verified})', data)
     .then(function () {
       res.status(200)
         .json({

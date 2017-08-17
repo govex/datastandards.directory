@@ -25,6 +25,7 @@
 					option(value='updated', selected='selected') Updated in Directory
 					option(value='new') Newest
 					option(value='old') Oldest
+					option(value='consumers') Most Published
 	.directory-standards
 		each item in standards
 			.standard-container
@@ -38,6 +39,7 @@
 									$('.copy-link').prop('title', location.origin + '/'  + '#{item.name}');
 									clickLink(location.origin + '/'  + '#{item.name}')
 							solid.standard-category(value='#{item.category}') #{item.category}
+							solid.standard-category(value='#{item.subcategory}') #{item.subcategory}
 								script.
 									$('.standard-category').on('click', function () {
 										window.location.href = location.origin + '/' + $(this).attr('value')
@@ -100,6 +102,12 @@
 								li
 									strong Metadata: 
 									| #{item.metadata_rationale}
+								#providers(value="#{item.provider_list}" count=0)
+									strong Data Providers:
+									br
+									#provider-list
+									a(href='./contribute/update?#{item.name}', target='_blank')
+										| Don't see your name here? Let us know!
 								// <date added to directory> is formatted in script
 							#addedFull
 								| Added to directory: #{item.recorded}
@@ -110,7 +118,7 @@
 						button Documentation
 					a(href='#{item.example}', target='_blank')
 						button Example
-					a(href='./contribute/update', target='_blank')
+					a(href='./contribute/update?#{item.name}', target='_blank')
 						button Update
 - else
 	.no-results

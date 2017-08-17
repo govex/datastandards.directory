@@ -28,6 +28,7 @@ html
           button.submit.large Submit
       include footer.jade
     script.
+      timestamp();
       $('#contact').addClass("selected-page");
       $('.popup').hide(); // hides popup information that would appear after a client submits form
       // when user submits form, post run the postUpdate function to post the data to database
