@@ -36,6 +36,7 @@ html, body {
 .click-to-directory h2 {
   font-family: "Lato", sans-serif;
   color: #353638; }
+
 .click-to-directory .row-1 {
   max-width: 900px;
   margin-left: auto;
@@ -44,6 +45,7 @@ html, body {
     clear: both;
     content: "";
     display: block; }
+
 .click-to-directory .row-2 {
   max-width: 900px;
   margin-left: auto;
@@ -63,9 +65,11 @@ html, body {
     clear: both;
     content: "";
     display: block; }
+
 .directory .no-results {
   color: #353638;
   font-family: "Lato", sans-serif; }
+
 .directory .directory-items {
   padding: 5px;
   font-size: 18px;
@@ -85,6 +89,7 @@ html, body {
       border-style: solid;
       border-color: #353638;
       text-align: center; }
+
 .directory .standard {
   border: solid;
   border-color: #E8C047;
@@ -112,6 +117,7 @@ html, body {
         border-radius: 5px;
         border: 1px solid #499AA0;
         float: right;
+        display: inline;
         cursor: pointer; }
         .directory .standard .standard-header .standard-name .standard-category:hover {
           background-color: #499AA0;
@@ -174,22 +180,30 @@ html, body {
       .directory .standard .standard-header .standard-body li {
         padding-right: 10px;
         padding-bottom: 7px; }
-        .directory .standard .standard-header .standard-body li a {
+      .directory .standard .standard-header .standard-body #providers {
+        border: solid;
+        border-color: #E8C047;
+        padding: 10px;
+        text-align: center; }
+        .directory .standard .standard-header .standard-body #providers a {
           border-color: #499AA0;
           text-decoration: none;
-          color: #499AA0; }
-          .directory .standard .standard-header .standard-body li a:hover {
+          color: #499AA0;
+          font-size: 12px;
+          font-style: normal; }
+          .directory .standard .standard-header .standard-body #providers a:hover {
             text-decoration: underline; }
-        .directory .standard .standard-header .standard-body li button#metric {
+        .directory .standard .standard-header .standard-body #providers button#metric {
           width: 30px;
           height: 30px;
           border-radius: 5px;
           border: 0px;
           margin: 2px; }
-          .directory .standard .standard-header .standard-body li button#metric:hover {
+          .directory .standard .standard-header .standard-body #providers button#metric:hover {
             cursor: pointer; }
-          .directory .standard .standard-header .standard-body li button#metric i {
+          .directory .standard .standard-header .standard-body #providers button#metric i {
             color: #fff; }
+
 .directory .standard-links {
   text-align: center;
   margin-bottom: 30px; }
@@ -227,6 +241,7 @@ html, body {
   border: solid;
   border-color: #2B1F2A;
   background-color: #b396b1; }
+
 .form p {
   text-align: left;
   margin-bottom: 20px;
@@ -255,32 +270,46 @@ html, body {
     margin-top: -2px; }
   .form p input[type="text"], .form p select {
     float: right;
-    width: 70%;
+    width: 72%;
     padding: 3px;
     font-family: "Lato", sans-serif;
     border: 0px; }
     .form p input[type="text"]:hover, .form p select:hover {
       cursor: text; }
+
 .form .checkbox input[type="checkbox"] {
   width: 20px;
   margin-left: 50px; }
   .form .checkbox input[type="checkbox"]:hover {
     cursor: pointer; }
+
 .form p.shortform {
   display: block; }
+
 .form p.rationale {
   margin-left: 15px; }
+
 .form p.metadata {
   display: none; }
+
 .form p.timestamp {
   display: none; }
+
 .form p.category {
-  padding-bottom: 25px;
+  height: 44px;
   display: none; }
   .form p.category input#input1-other {
     display: none; }
+
+.form p.subcategory {
+  height: 44px;
+  display: none; }
+  .form p.subcategory input#input41-other {
+    display: none; }
+
 .form form.update-standard p {
   display: block; }
+
 .form form.update-standard p.timestamp {
   display: none; }
 
@@ -378,7 +407,7 @@ html, body {
     text-align: center; }
   .text-container p {
     text-align: justify;
-    padding-right: 70px; }
+    padding-right: 20px; }
   .text-container button {
     text-align: center;
     width: 735px;
@@ -515,12 +544,14 @@ h2 {
   margin-left: 20px;
   margin-top: 17px;
   font-size: 20px; }
+
 .search input {
   font-family: "Lato", sans-serif;
   border: 1px;
   border-style: solid;
   border-color: #353638;
   text-align: center; }
+
 .search #search {
   font-size: 20px; }
 
@@ -528,79 +559,97 @@ h2 {
   position: fixed;
   width: 100%;
   font-family: "PT Sans Narrow", sans-serif; }
-  .header .navigation ul, .header .banner ul {
+  .header .navigation ul {
     background-color: #2B1F2A;
     list-style-type: none;
     margin: 0;
     padding: 0;
     overflow: hidden; }
-    .header .navigation ul:hover, .header .banner ul:hover {
+    .header .navigation ul:hover {
       background-color: #2B1F2A; }
-    .header .navigation ul li, .header .banner ul li {
+    .header .navigation ul li {
       text-align: center;
       display: inline-block;
       top: 0; }
-      .header .navigation ul li a, .header .banner ul li a {
+      .header .navigation ul li a {
         font-size: 30px;
-        display: inline-block;
+        width: 170px;
+        display: block;
         text-align: center;
         padding: 14px 20px;
         text-decoration: none;
         color: #FFFeF7; }
-        .header .navigation ul li a i, .header .banner ul li a i {
+        .header .navigation ul li a i {
           color: #FFFeF7; }
-      .header .navigation ul li .page-content, .header .banner ul li .page-content {
+      .header .navigation ul li .page-content {
         display: none;
         background-color: #2B1F2A;
         color: #FFFeF7;
         position: absolute;
         box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
         z-index: 1; }
-        .header .navigation ul li .page-content a, .header .banner ul li .page-content a {
+        .header .navigation ul li .page-content a {
           width: 170px;
           display: block;
           font-size: 15px;
           border-bottom: 1px solid #2B1F2A; }
-      .header .navigation ul li:hover a, .header .navigation ul li:hover i, .header .banner ul li:hover a, .header .banner ul li:hover i {
+      .header .navigation ul li:hover a, .header .navigation ul li:hover i {
         background-color: white;
         color: #2B1F2A; }
-      .header .navigation ul li:hover .page-content, .header .banner ul li:hover .page-content {
+      .header .navigation ul li:hover .page-content {
         display: block; }
-        .header .navigation ul li:hover .page-content a:hover, .header .banner ul li:hover .page-content a:hover {
+        .header .navigation ul li:hover .page-content a:hover {
           background-color: #ded1dd;
           color: #2B1F2A; }
-    .header .navigation ul li.selected-page a, .header .banner ul li.selected-page a {
+    .header .navigation ul li.selected-page a {
       background-color: white;
       color: #2B1F2A; }
-  .header .banner ul {
+  .header .banner {
     background-color: #2B1F2A;
     color: #fff;
     border-bottom: solid 1px;
     border-color: #fff;
-    list-style-typ: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    text-align: right;
-    padding: 3px 3px; }
-    .header .banner ul li {
-      display: inline-block;
-      top: 0;
-      margin-right: 5px; }
-      .header .banner ul li:hover {
-        cursor: pointer;
-        background-color: #499AA0; }
-      .header .banner ul li .search {
-        font-size: 12px;
-        padding-bottom: 6px;
-        padding-top: 10px; }
-      .header .banner ul li a, .header .banner ul li i {
-        cursor: default;
-        background-color: #2B1F2A;
-        font-size: 20px;
-        padding: 5px; }
-        .header .banner ul li a:hover, .header .banner ul li i:hover {
+    height: 40px;
+    list-style-type: none;
+    display: flex;
+    justify-content: space-between; }
+    .header .banner #title-link {
+      display: inline;
+      text-align: left;
+      padding: 3px;
+      cursor: pointer;
+      color: #fff;
+      font-size: 24px;
+      text-decoration: none;
+      margin-left: 8%;
+      font-family: "Lato";
+      font-weight: bold; }
+      .header .banner #title-link strong {
+        color: #FB6140;
+        font-size: 10px; }
+    .header .banner ul {
+      text-align: right;
+      padding: 3px 3px;
+      margin-top: 0; }
+      .header .banner ul li {
+        display: inline-block;
+        top: 0;
+        margin-right: 5px; }
+        .header .banner ul li:hover {
           cursor: pointer;
           background-color: #499AA0; }
-
-/*# sourceMappingURL=stylesheet.css.map */
+        .header .banner ul li .search {
+          font-size: 12px;
+          padding-bottom: 6px;
+          padding-top: 10px; }
+        .header .banner ul li a, .header .banner ul li i {
+          display: inline;
+          cursor: default;
+          background-color: #2B1F2A;
+          font-size: 20px;
+          padding: 5px;
+          color: inherit;
+          text-decoration: none; }
+          .header .banner ul li a:hover, .header .banner ul li i:hover {
+            cursor: pointer;
+            background-color: #499AA0; }
