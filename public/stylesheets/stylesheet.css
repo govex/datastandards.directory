@@ -118,7 +118,8 @@ html, body {
         border: 1px solid #499AA0;
         float: right;
         display: inline;
-        cursor: pointer; }
+        cursor: pointer;
+        margin-left: 5px; }
         .directory .standard .standard-header .standard-name .standard-category:hover {
           background-color: #499AA0;
           color: #353638;
