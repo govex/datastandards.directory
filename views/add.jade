@@ -287,10 +287,12 @@ html
       // This function fills in #input1 dropdown menu
       $.getJSON(url + "/api/get/all", function(standards) {
         $.each(standards.data, function(i) {
-          allstandardsCategories.push(standards.data[i].category);
-          allstandardsSubcategories.push(standards.data[i].subcategory);
+          if (standards.data[i].verified == 'Yes'){ // so categories of submitted but unverified standards aren't included in list
+            allstandardsCategories.push(standards.data[i].category);
+            allstandardsSubcategories.push(standards.data[i].subcategory);
+          }
         });
-        var newID = allstandardsCategories.length + 1;
+        var newID = standards.data.length + 1;
         document.getElementById("input6").value = newID.toString();  // adds new unique ID to submission      
         allstandardsCategories.sort();
         allstandardsSubcategories.sort();
