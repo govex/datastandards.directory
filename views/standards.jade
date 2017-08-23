@@ -74,9 +74,9 @@
 								li
 									// <date updated> is formatted in script
 									#updatedFull
-										|	Updated by publisher: #{item.updated}
-								li
-									strong Consumers: 
+										|	Updated by Publisher: #{item.updated}
+								li#consumers(value="#{item.consumers}")
+									strong Level of Use: 
 									| #{item.consumers}
 								li
 									strong Open License: 
@@ -102,7 +102,7 @@
 								li
 									strong Requires Real-Time Data: 
 									| #{item.requires_realtime_rationale}
-								li
+								li#metadata(value="#{item.metadata}")
 									strong Metadata: 
 									| #{item.metadata_rationale}
 								#providers(value="#{item.provider_list}" count=0)

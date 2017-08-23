@@ -38,9 +38,16 @@ html
         }
         var body = $(this).find('.standard-body');
         // full dates are now displayed in the standard's details
-        $(body).find('#updatedFull').html("<b>Updated by publisher:</b> " + updatedRel.format('Do MMMM YYYY'));
+        $(body).find('#updatedFull').html("<b>Updated by Publisher:</b> " + updatedRel.format('Do MMMM YYYY'));
         $(body).find('#addedFull').html("<b>Updated in directory:</b> " + addedRel.format('Do MMMM YYYY'));
         $(body).find('#addedFull').css({'text-align': 'right', 'font-size': '11px', 'margin-bottom': '-12px', 'margin-right': '-8px'});
+        //Hide consumers field if empty (this should be empty if there is a provider_list)
+        if ($(body).find('#consumers').attr('value') == 'No information'){
+          $(body).find('#consumers').hide();
+        }
+        if ($(body).find('#metadata').attr('value') == 'No information'){
+          $(body).find('#metadata').hide();
+        }
         // Build list of providers
         var providerList = $(body).find('#providers').attr('value');
         if (providerList != 'No information') {
