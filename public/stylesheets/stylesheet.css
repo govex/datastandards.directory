@@ -387,8 +387,41 @@ html, body {
   padding-right: 80px;
   padding-left: 80px;
   text-align: justify; }
-  .text-container ul li {
-    padding-bottom: 12px; }
+  .text-container .allcategories {
+    font-size: 20px; }
+    .text-container .allcategories a.show-all {
+      font-size: 12px;
+      margin-left: 10px; }
+      .text-container .allcategories a.show-all:hover {
+        cursor: pointer; }
+    .text-container .allcategories .category {
+      font-size: 24px;
+      padding: 5px;
+        padding-text-align: left; }
+      .text-container .allcategories .category a {
+        color: #615958; }
+        .text-container .allcategories .category a:hover {
+          color: #817675; }
+      .text-container .allcategories .category a.hide-show {
+        display: inline;
+        text-align: left;
+        font-size: 20px;
+          font-size-margin-right: 5px; }
+        .text-container .allcategories .category a.hide-show:hover {
+          cursor: pointer; }
+        .text-container .allcategories .category a.hide-show i {
+          color: #499AA0; }
+      .text-container .allcategories .category .subcategories {
+        font-size: 16px;
+        margin-left: 10px; }
+      .text-container .allcategories .category a {
+        color: #615958; }
+        .text-container .allcategories .category a:hover {
+          color: #817675; }
+  .text-container ul {
+    margin-bottom: -8px; }
+    .text-container ul li {
+      padding-bottom: 12px; }
   .text-container a {
     color: #499AA0;
     text-decoration: none; }
