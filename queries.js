@@ -65,7 +65,58 @@ function keywords(req, res, next){
       });
   });
 }
+// object for getCategories()
+function categoryItem(category, subcategory){
+  this.category = category;
+  this.subcategory = subcategory;
+}
 
+function getCategories(req, res, next){
+  var query = "",
+      user_input = '',
+      allcategories = [], //tracks duplicate categories
+      list = []; //object to be returned
+
+  query = "select category, subcategory from standards where verified = 'Yes'";
+
+  db.task(t => {
+    return t.each(query, user_input, row => {
+      var cat = '';
+      var subCat = '';
+      for (var column in row) {
+        cat = row["category"];
+        subCat = row["subcategory"];
+        if (row[column] == '' || row[column] == null || row[column].toLowerCase() == 'unsure' || row[column] == undefined || row[column].toLowerCase() == 'null' || row[column].toLowerCase() == 'n/a') {
+          row[column] = 'No information';
+        }
+      }
+      if (allcategories.includes(cat) == false){
+        var newCategory = new categoryItem();
+        var tempArr = [];
+        newCategory.subcategory = tempArr;
+        newCategory.category = cat;
+        newCategory.subcategory.push(subCat);
+        allcategories.push(cat);
+        list.push(newCategory);
+      }
+      else {
+        for (j in list){
+          if (list[j].category == cat){
+            if (list[j].subcategory.includes(subCat) == false){
+              list[j].subcategory.push(subCat);
+            }
+          }
+        }
+      }
+    })
+      .then(function () {
+        res.render('all-categories', {categories: list})
+      })
+      .catch(function (err) {
+        return next(err);
+      });
+  });
+}
 // function gets data based on user input (e.g., all, )
 function getData(req, res, next){
   var user_input = req.params.id.toLowerCase(),
@@ -135,6 +186,7 @@ module.exports = {
   post: post,
   getAddForm: getAddForm,
   getUpdateForm: getUpdateForm,
+  getCategories: getCategories,
   keywords: keywords,
   api: api
 };

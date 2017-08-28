@@ -33,11 +33,14 @@
 					.standard-header
 						.standard-name
 							strong #{item.name}
-							i#copy-link.fa.fa-link(aria-hidden='true', title='Copy link to share')
-							.copy-link
+							i#copy-link.fa.fa-link
+							.copy-link(value="#{item.name}")
 								script.
-									$('.copy-link').prop('title', location.origin + '/'  + '#{item.name}');
-									clickLink(location.origin + '/'  + '#{item.name}')
+									$('.copy-link').each(function(){
+										var name = $(this).attr('value');
+										$(this).prop('title', location.origin + '/'  + name);
+										clickLink(location.origin + '/'  + name, $(this).siblings('#copy-link'));
+									});
 							solid.standard-category(value='#{item.category}') #{item.category}
 							solid.standard-category(value='#{item.subcategory}') #{item.subcategory}
 								script.
@@ -71,9 +74,9 @@
 								li
 									// <date updated> is formatted in script
 									#updatedFull
-										|	Updated by publisher: #{item.updated}
-								li
-									strong Consumers: 
+										|	Updated by Publisher: #{item.updated}
+								li#consumers(value="#{item.consumers}")
+									strong Level of Use: 
 									| #{item.consumers}
 								li
 									strong Open License: 
@@ -99,7 +102,7 @@
 								li
 									strong Requires Real-Time Data: 
 									| #{item.requires_realtime_rationale}
-								li
+								li#metadata(value="#{item.metadata}")
 									strong Metadata: 
 									| #{item.metadata_rationale}
 								#providers(value="#{item.provider_list}" count=0)

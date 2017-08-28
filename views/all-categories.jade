@@ -1,0 +1,53 @@
+html
+  head
+    title Categories
+    include head.jade
+  body
+    .container
+      include header.jade
+      .site-content
+        h1 CATEGORIES
+        h2 Click on a category or subcategory to see associated standards
+        .text-container
+          .allcategories
+            h3 Expand category to see subcategories
+            a.show-all
+              | Expand all
+            - each item in categories
+                .category
+                  a.hide-show
+                    i.fa.fa-plus-circle
+                  a(href='./#{item.category}')
+                    | #{item.category}
+                  .subcategories
+                    ul
+                      - each subcat in item.subcategory
+                        li
+                          a(href='./#{subcat}')
+                            | #{subcat}
+      include footer.jade
+      script.
+        	$('.subcategories').hide();
+          var hidden = true;
+        	$(".hide-show").on('click', function(){
+        		$(this).find('i').toggleClass('fa-plus-circle fa-minus-circle') // toggle between the + and - icons
+        		var category = $(this).parents('.category'); // find the category that the client has clicked on
+        		var subs = $(category).find('.subcategories'); // find the text for the standard
+            subs.toggle('hide show')
+        	});
+          $('.show-all').on('click', function(){
+            if (hidden){
+              hidden = false;
+              $('.subcategories').show('hide show');
+              $('.hide-show').find('i').removeClass('fa-plus-circle');
+              $('.hide-show').find('i').addClass('fa-minus-circle');
+              text = $('.show-all').html("Collapse all");
+            }
+            else {
+              hidden = true;
+              $('.subcategories').hide('hide show');
+              $('.hide-show').find('i').removeClass('fa-minus-circle');
+              $('.hide-show').find('i').addClass('fa-plus-circle');
+              text = $('.show-all').html("Expand all");
+            }
+          });
