@@ -65,6 +65,15 @@ html
         else{
           $(body).find('#providers').hide();
         }
+        // disables buttons with empty targets
+        $(this).find('.standard-links').children("a").each(function(){
+          if ($(this).attr('href') == "No information"){
+            $(this).attr('onclick', 'return false;');
+            $(this).children("button").css("cursor", "not-allowed");
+            $(this).children("button").css("opacity", "0.4");
+            $(this).children("button").css("z-index", "1");
+          }	
+        })
       });
       moment().format('Do MMMM YYYY');
     - if (standards.length > 1)
