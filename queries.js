@@ -55,7 +55,11 @@ function keywords(req, res, next){
       keywords = [];
   db.task(t => {
     return t.each(query, [], row =>{
-      keywords.push(row.name, row.category, row.subcategory);
+      var subcats = row.subcategory.split(',');
+      keywords.push(row.name, row.category);
+      for(sub in subcats){
+        keywords.push(subcats[sub]);
+      }
     })
       .then(function () {
         res.send({keywords: keywords});
@@ -90,24 +94,31 @@ function getCategories(req, res, next){
           row[column] = 'No information';
         }
       }
+      subCat = subCat.split(',');
       if (allcategories.includes(cat) == false){
         var newCategory = new categoryItem();
         var tempArr = [];
         newCategory.subcategory = tempArr;
         newCategory.category = cat;
-        newCategory.subcategory.push(subCat);
+        for(var i=0; i<subCat.length; i++){
+          newCategory.subcategory.push(subCat[i]);
+        }
         allcategories.push(cat);
         list.push(newCategory);
       }
       else {
         for (j in list){
           if (list[j].category == cat){
-            if (list[j].subcategory.includes(subCat) == false){
-              list[j].subcategory.push(subCat);
+            for(var k=0; k<subCat.length; k++){
+              if (list[j].subcategory.includes(subCat[k]) == false){
+                list[j].subcategory.push(subCat[k]);
+                list[j].subcategory.sort();
+              }
             }
           }
         }
       }
+      list.sort(function(a,b){return b.subcategory.length - a.subcategory.length});
     })
       .then(function () {
         res.render('all-categories', {categories: list})
@@ -130,10 +141,17 @@ function getData(req, res, next){
 
   db.task(t => {
     return t.each(query, user_input, row => {
+      var subCat = '';
       for (var column in row) {
          if (row[column] == '' || row[column] == null || row[column].toLowerCase() == 'unsure' || row[column] == undefined || row[column].toLowerCase() == 'null' || row[column].toLowerCase() == 'n/a') {
           row[column] = 'No information';
         }
+        subCat = row["subcategory"];
+      }
+      var temp;
+      if(typeof subCat === 'string'){
+        temp = subCat.split(',');
+        row["subcategory"] = temp;
       }
     }) //category::text, name::text like "%$1%"
       .then(function (data) {
@@ -165,8 +183,8 @@ function post(req, res, next) {
 
 // Express middleware: function that will post a new row into the postgres database
 function createStandard(req, res, next) {
-  var data = {id: req.body.id, name: req.body.name, category: req.body.category, subcategory: req.body.subcategory, description: req.body.description, license: req.body.license, updated: req.body.updated, version: req.body.version, stage_in_development: req.body.stage_in_development, documentation: req.body.documentation, website: req.body.website, contact: req.body.contact, example: req.body.example, publisher: req.body.publisher, publisher_reputation: req.body.publisher_reputation, number_of_consumers: req.body.number_of_consumers, consumers: req.body.consumers, number_of_apps: req.body.number_of_apps, apps: req.body.apps, open: req.body.open, transferability: req.body.transferability, transferability_rationale: req.body.transferability_rationale, stakeholder_participation: req.body.stakeholder_participation, stakeholder_participation_rationale: req.body.stakeholder_participation_rationale, consensus_government: req.body.consensus_government, consensus_government_rationale: req.body.consensus_government_rationale, extensions: req.body.extensions, extensions_indicators: req.body.extensions_indicators, machine_readable: req.body.machine_readable, machine_readable_rationale: req.body.machine_readable_rationale, human_readable: req.body.human_readable, human_readable_rationale: req.body.human_readable_rationale, requires_realtime: req.body.requires_realtime, requires_realtime_rationale: req.body.requires_realtime_rationale, metadata: req.body.metadata, metadata_rationale: req.body.metadata_rationale, recorded: req.body.recorded, verified: req.body.verified}
-  db.none('insert into standards(id, name, category, subcategory, description, license, updated, version, stage_in_development, documentation, website, contact, example, publisher, publisher_reputation, number_of_consumers, consumers, number_of_apps, apps, open, transferability, transferability_rationale, stakeholder_participation, stakeholder_participation_rationale, consensus_government, consensus_government_rationale, extensions, extensions_indicators, machine_readable, machine_readable_rationale, human_readable, human_readable_rationale, requires_realtime, requires_realtime_rationale, metadata, metadata_rationale, recorded, verified) values(${id}, ${name}, ${category}, ${subcategory}, ${description}, ${license}, ${updated}, ${version}, ${stage_in_development}, ${documentation}, ${website}, ${contact}, ${example}, ${publisher}, ${publisher_reputation}, ${number_of_consumers}, ${consumers}, ${number_of_apps}, ${apps}, ${open}, ${transferability}, ${transferability_rationale}, ${stakeholder_participation}, ${stakeholder_participation_rationale}, ${consensus_government}, ${consensus_government_rationale}, ${extensions}, ${extensions_indicators}, ${machine_readable}, ${machine_readable_rationale}, ${human_readable}, ${human_readable_rationale}, ${requires_realtime}, ${requires_realtime_rationale}, ${metadata}, ${metadata_rationale}, ${recorded}, ${verified})', data)
+  var data = {id: req.body.id, name: req.body.name, category: req.body.category, subcategory: req.body.subcategory, description: req.body.description, license: req.body.license, updated: req.body.updated, version: req.body.version, stage_in_development: req.body.stage_in_development, documentation: req.body.documentation, website: req.body.website, contact: req.body.contact, example: req.body.example, publisher: req.body.publisher, publisher_reputation: req.body.publisher_reputation, consumers: req.body.consumers, apps: req.body.apps, open: req.body.open, transferability: req.body.transferability, transferability_rationale: req.body.transferability_rationale, stakeholder_participation: req.body.stakeholder_participation, stakeholder_participation_rationale: req.body.stakeholder_participation_rationale, consensus_government: req.body.consensus_government, consensus_government_rationale: req.body.consensus_government_rationale, extensions: req.body.extensions, extensions_indicators: req.body.extensions_indicators, machine_readable: req.body.machine_readable, machine_readable_rationale: req.body.machine_readable_rationale, human_readable: req.body.human_readable, human_readable_rationale: req.body.human_readable_rationale, requires_realtime: req.body.requires_realtime, requires_realtime_rationale: req.body.requires_realtime_rationale, metadata: req.body.metadata, metadata_rationale: req.body.metadata_rationale, recorded: req.body.recorded, verified: req.body.verified}
+  db.none('insert into standards(id, name, category, subcategory, description, license, updated, version, stage_in_development, documentation, website, contact, example, publisher, publisher_reputation, consumers, apps, open, transferability, transferability_rationale, stakeholder_participation, stakeholder_participation_rationale, consensus_government, consensus_government_rationale, extensions, extensions_indicators, machine_readable, machine_readable_rationale, human_readable, human_readable_rationale, requires_realtime, requires_realtime_rationale, metadata, metadata_rationale, recorded, verified) values(${id}, ${name}, ${category}, ${subcategory}, ${description}, ${license}, ${updated}, ${version}, ${stage_in_development}, ${documentation}, ${website}, ${contact}, ${example}, ${publisher}, ${publisher_reputation}, ${consumers}, ${apps}, ${open}, ${transferability}, ${transferability_rationale}, ${stakeholder_participation}, ${stakeholder_participation_rationale}, ${consensus_government}, ${consensus_government_rationale}, ${extensions}, ${extensions_indicators}, ${machine_readable}, ${machine_readable_rationale}, ${human_readable}, ${human_readable_rationale}, ${requires_realtime}, ${requires_realtime_rationale}, ${metadata}, ${metadata_rationale}, ${recorded}, ${verified})', data)
     .then(function () {
       res.status(200)
         .json({

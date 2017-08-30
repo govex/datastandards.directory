@@ -41,12 +41,13 @@
 										$(this).prop('title', location.origin + '/'  + name);
 										clickLink(location.origin + '/'  + name, $(this).siblings('#copy-link'));
 									});
-							solid.standard-category(value='#{item.category}') #{item.category}
-							solid.standard-category(value='#{item.subcategory}') #{item.subcategory}
-								script.
-									$('.standard-category').on('click', function () {
-										window.location.href = location.origin + '/' + $(this).attr('value')
-									});
+							solid.standard-category(value='#{item.category}', style='border-color: black; font-weight: bold') #{item.category}
+							- each sub in item.subcategory
+								solid.standard-category(value='#{sub}') #{sub}
+									script.
+										$('.standard-category').on('click', function () {
+											window.location.href = location.origin + '/' + $(this).attr('value')
+										});
 						.standard-info
 							.metrics
 								include metrics
@@ -71,47 +72,48 @@
 								li 
 									strong Publisher: 
 									| #{item.publisher}
-								li
+								li#publisher_reputation(value="#{item.publisher_reputation}")
+									strong About the Publisher: 
+									| #{item.publisher_reputation}
+								li#updatedFull(value="#{item.updated}")
 									// <date updated> is formatted in script
-									#updatedFull
-										|	Updated by Publisher: #{item.updated}
+									|	Updated by Publisher: #{item.updated}
 								li#consumers(value="#{item.consumers}")
 									strong Level of Use: 
 									| #{item.consumers}
 								li
 									strong Open License: 
 									| #{item.open}
-								li
+								li#transferability(value="#{item.transferability_rationale}")
 									strong Transferable to other Jurisdictions: 
 									| #{item.transferability_rationale}
-								li
+								li#participation(value="#{item.stakeholder_participation_rationale}")
 									strong Stakeholder Participation: 
 									| #{item.stakeholder_participation_rationale}
-								li
+								li#governance(value="#{item.consensus_government_rationale}")
 									strong Consensus-based Governance: 
 									| #{item.consensus_government_rationale}
-								li
+								li#extensions(value="#{item.extensions_indicators}")
 									strong Extensions: 
 									| #{item.extensions_indicators}
-								li
+								li#machine(value="#{item.machine_readable_rationale}")
 									strong Machine Readable: 
 									| #{item.machine_readable_rationale}
-								li
+								li#human(value="#{item.human_readable_rationale}")
 									strong Human Readable: 
 									| #{item.human_readable_rationale}
-								li
+								li#realtime(value="#{item.requires_realtime_rationale}")
 									strong Requires Real-Time Data: 
 									| #{item.requires_realtime_rationale}
 								li#metadata(value="#{item.metadata_rationale}")
 									strong Metadata: 
 									| #{item.metadata_rationale}
-								#providers(value="#{item.provider_list}" count=0)
-									strong Data Providers:
-									br
-									#provider-list
-									a(href='./contribute/update?#{item.name}', target='_blank')
-										| Don't see your name here? Let us know!
-								// <date added to directory> is formatted in script
+							#providers(value="#{item.provider_list}" count=0)
+								strong Data Providers:
+								br
+								#provider-list
+								a(href='./contribute/update?#{item.name}', target='_blank')
+									| Don't see your name here? Let us know!
 							#addedFull
 								| Added to directory: #{item.recorded}
 				.standard-links
