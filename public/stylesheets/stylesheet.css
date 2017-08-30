@@ -181,6 +181,12 @@ html, body {
       .directory .standard .standard-header .standard-body li {
         padding-right: 10px;
         padding-bottom: 7px; }
+      .directory .standard .standard-header .standard-body #addedFull {
+        text-align: right;
+        font-size: 11px;
+        margin-top: 6px;
+        margin-bottom: -12px;
+        margin-right: -8px; }
       .directory .standard .standard-header .standard-body #providers {
         border: solid;
         border-color: #E8C047;
@@ -592,7 +598,9 @@ h2 {
 .header {
   position: fixed;
   width: 100%;
-  font-family: "PT Sans Narrow", sans-serif; }
+  font-family: "PT Sans Narrow", sans-serif;
+  opacity: 0.99;
+  z-index: 100; }
   .header .navigation ul {
     background-color: #2B1F2A;
     list-style-type: none;
