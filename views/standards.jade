@@ -48,6 +48,8 @@
 										$('.standard-category').on('click', function () {
 											window.location.href = location.origin + '/' + $(this).attr('value')
 										});
+							#publisher
+								| #{item.publisher}
 						.standard-info
 							.metrics
 								include metrics
@@ -69,9 +71,6 @@
 								li
 									strong License: 
 									| #{item.license}
-								li 
-									strong Publisher: 
-									| #{item.publisher}
 								li#publisher_reputation(value="#{item.publisher_reputation}")
 									strong About the Publisher: 
 									| #{item.publisher_reputation}

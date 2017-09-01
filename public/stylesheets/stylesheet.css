@@ -98,7 +98,8 @@ html, body {
   background-color: #FFFeF7;
   width: 900px;
   margin-top: 50px;
-  padding: 20px; }
+  padding: 20px;
+  padding-top: 10px; }
   .directory .standard .standard-header {
     text-align: justify; }
     .directory .standard .standard-header .standard-name {
@@ -119,8 +120,7 @@ html, body {
         float: right;
         display: inline;
         cursor: pointer;
-        margin-left: 5px;
-        margin-top: -8px; }
+        margin-left: 5px; }
         .directory .standard .standard-header .standard-name .standard-category:hover {
           background-color: #499AA0;
           color: #353638;
@@ -137,6 +137,8 @@ html, body {
         text-decoration: underline;
         float: right;
         cursor: pointer; }
+      .directory .standard .standard-header .standard-name #publisher {
+        font-size: 14px; }
     .directory .standard .standard-header .standard-info {
       border-bottom: solid;
       padding: 5px;
