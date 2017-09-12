@@ -317,4 +317,12 @@ html
       // submit form
       $(".submit").click(function(){
         postAdd();
+        //Google form autofill
+        var formURLbase = 'https://docs.google.com/forms/d/e/1FAIpQLSdT5XyCWPBsC7CSU4bs-vtKGrj_vLUi7Z2g4pnRcynAhwCUxw/formResponse';
+        var nameURL = '?entry.1031090349=' + $("#input0").val();
+        var emailURL = '&entry.939312954=' + $("#email").val();
+        var websiteURL = '&entry.1738623814=' + $("#input8").val();
+        var formURL = formURLbase + nameURL + websiteURL + emailURL + '&submit=Submit';
+        console.log(formURL);
+        window.open(formURL, '_blank');
       });

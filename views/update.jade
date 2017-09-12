@@ -18,19 +18,19 @@ html
                 input#input35(type='text', placeholder='Input your name [optional]', name='client_name', value='')
               p
                 label(for='input36') E-mail 
-                input#input36(type='text', placeholder='Input your email [optional]', name='email', value='')
+                input#input36(type='email', placeholder='Input your email [optional]', name='email', value='')
               p
                 label(for='input37') Standard 
                 select#input37.form-input(type='drop-down', name='standard')
-              p
-                label(for='input38') Comment 
-                input#input38(type='text', name='comment', placeholder='Input anything regarding what needs to be updated for the standard', value='')
               p
                 label(for='input39') Add Provider(s)
                 input#input39(type='text', name='providers', placeholder='Add to our list of organizations publishing data in this standard', value='')
               P
                 label(for='input40') Add Example(s)
                 input#input40(type='text', name='examples', placeholder='Add links to datasets which have been published in this standard', value='')
+              p(style='height: 110px')
+                label(for='input38') Comment 
+                textarea#input38(rows='5', name='comment', placeholder='Input anything regarding what needs to be updated for the standard', value='')
               p.timestamp
                 input#timestamp(type='text', name='timestamp', value='')
           br
@@ -63,27 +63,21 @@ html
         }
 
       });
-      // This function runs if a user selects the "Other" option for a category
-      /*
-      $("#input1").on('change', function(){
-        var selectedCategory = document.getElementById("input1").value;
-        if (selectedCategory == "Other"){
-          $(this).removeAttr("name");
-          $("#input1-other").show();
-          $(".category").show();
-          $("#input1-other").attr("name", "category");
-        } else {
-          $("#input1-other").hide();
-          $(".category").hide();
-          $("#input1-other").removeAttr("name");
-          $(this).attr("name", "category");
-        }
-      });
-      */
       // submit form
       $(".submit").click(function(){
         $(".popup").hide();
         var form = $(".update-standard");
         console.log(form)
         postUpdate(form);
+        //Google form autofill
+        var formURLbase = 'https://docs.google.com/forms/d/e/1FAIpQLScAvZj5HUFHZtcJ6SofF8CMtbVy0lkuDwYwQDNgUavDPY5Avw/formResponse';
+        var nameURL = '?entry.1092914073=' + $("#input35").val();
+        var emailURL = '&entry.679147926=' + $("#input36").val();
+        var standardURL = '&entry.1888358654=' + $("#input37").val();
+        var commentURL = '&entry.869466190=' + $("#input38").val();
+        var providersURL = '&entry.1439856983=' + $("#input39").val();
+        var examplesURL = '&entry.141248292=' + $("#input40").val();
+        var formURL = formURLbase + nameURL + emailURL + standardURL + commentURL + providersURL + examplesURL + '&submit=Submit';
+        console.log(formURL);
+        window.open(formURL, '_blank');
       });
