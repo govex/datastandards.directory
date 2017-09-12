@@ -12,7 +12,7 @@ function postAdd() {
 	} else {
 		var $form = $(".add-standard"); // create variable for the add form
 		// find all the inputs
-		var $inputs = $form.find("id, name, category, subcategory, description, license, updated, version, stage_in_development, documentation, website, contact, example, publisher, publisher_reputation, consumers, apps, open, transferability, transferability_rationale, stakeholder_participation, stakeholder_participation_rationale, consensus_government, consensus_government_rationale, extensions, extensions_indicators, machine_readable, machine_readable_rationale, human_readable, human_readable_rationale, requires_realtime, requires_realtime_rationale, metadata, metadata_rationale, recorded, verified");
+		var $inputs = $form.find("id, name, email, category, subcategory, description, license, updated, version, stage_in_development, documentation, website, contact, example, publisher, publisher_reputation, consumers, apps, open, transferability, transferability_rationale, stakeholder_participation, stakeholder_participation_rationale, consensus_government, consensus_government_rationale, extensions, extensions_indicators, machine_readable, machine_readable_rationale, human_readable, human_readable_rationale, requires_realtime, requires_realtime_rationale, metadata, metadata_rationale, recorded, verified");
 		var serializedData = $form.serialize(); // serialize the data in the form
 		console.log(serializedData);
 		$inputs.prop("disabled", true); // disable the inputs for the duration of the Ajax request
