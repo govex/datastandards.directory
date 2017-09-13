@@ -278,13 +278,13 @@ html, body {
   .form p input {
     height: 30px;
     margin-top: -2px; }
-  .form p input[type="text"], .form p select {
+  .form p input[type="text"], .form p input[type="email"], .form p textarea, .form p select {
     float: right;
     width: 72%;
     padding: 3px;
     font-family: "Lato", sans-serif;
     border: 0px; }
-    .form p input[type="text"]:hover, .form p select:hover {
+    .form p input[type="text"]:hover, .form p input[type="email"]:hover, .form p textarea:hover, .form p select:hover {
       cursor: text; }
 
 .form .checkbox input[type="checkbox"] {

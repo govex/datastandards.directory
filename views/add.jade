@@ -17,11 +17,14 @@ html
                 label(for='input6') ID
                 input#input6.form-input(name='id', type='text', value='999')
               p.shortform
-                label.form-label(for='input0') Name 
+                label.form-label(for='input0') Name
                 input#input0.form-input(name='name', type='text', placeholder='Input a description of the standard', value='')
               p.shortform
                 label(for='input8') URL to Website 
                 input#input8.form-input(name='website', type='text', placeholder="Copy a URL link to the standard's website", value='')
+              p.shortform
+                label(for='email') E-mail
+                input#email.form-input(type='email', placeholder='Input your email [optional]', name='email', value='')
               .hide-show
                 i.fa.fa-plus-circle
                 | Complete long form
@@ -314,4 +317,12 @@ html
       // submit form
       $(".submit").click(function(){
         postAdd();
+        //Google form autofill
+        var formURLbase = 'https://docs.google.com/forms/d/e/1FAIpQLSdT5XyCWPBsC7CSU4bs-vtKGrj_vLUi7Z2g4pnRcynAhwCUxw/formResponse';
+        var nameURL = '?entry.1031090349=' + $("#input0").val();
+        var emailURL = '&entry.939312954=' + $("#email").val();
+        var websiteURL = '&entry.1738623814=' + $("#input8").val();
+        var formURL = formURLbase + nameURL + websiteURL + emailURL + '&submit=Submit';
+        console.log(formURL);
+        window.open(formURL, '_blank');
       });

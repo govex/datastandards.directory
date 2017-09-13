@@ -13,13 +13,13 @@ html
           form.comment
             p
               label Name 
-              input(type='text', name='client_name', placeholder='Input your name [optional]', value='')
+              input#name(type='text', name='client_name', placeholder='Input your name [optional]', value='')
             p
               label E-mail 
               input#input37(type='text', name='email', placeholder='Input your email', value='')
-            p
+            p(style='height: 110px')
               label Comment 
-              input#input38(type='text', name='comment', placeholder='Input your comment', value='')
+              textarea#input38(rows='5', name='comment', placeholder='Input your comment', value='')
             p.timestamp
               input#timestamp(type='text', name='timestamp', value='')
           .popup.success
@@ -36,4 +36,12 @@ html
       $(".popup").hide();
       var form = $(".comment");
       postUpdate(form);
+      //Google form autofill
+      var formURLbase = 'https://docs.google.com/forms/d/e/1FAIpQLScAvZj5HUFHZtcJ6SofF8CMtbVy0lkuDwYwQDNgUavDPY5Avw/formResponse';
+      var nameURL = '?entry.1092914073=' + $("#name").val();
+      var emailURL = '&entry.679147926=' + $("#input37").val();
+      var commentURL = '&entry.869466190=' + $("#input38").val();
+      var formURL = formURLbase + nameURL + emailURL + commentURL + '&submit=Submit';
+      console.log(formURL);
+      window.open(formURL, '_blank');
       });
