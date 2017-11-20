@@ -659,7 +659,7 @@ h2 {
     .header .banner #title-link {
       display: inline;
       text-align: left;
-      padding: 0px;
+      padding: 3px;
       cursor: pointer;
       color: #fff;
       font-size: 24px;
@@ -667,17 +667,9 @@ h2 {
       margin-left: 5%;
       font-family: "Lato", sans-serif;
       font-weight: bold; }
-      .header .banner #title-link #govex-logo {
-         height: 35px;
-	 width: 170px;}
-      .header .banner #title-link #geothink-logo {
-	 height: 40px;
-	 width: 275px;}
       .header .banner #title-link strong {
         color: #FB6140;
-        font-size: 15px;
-	position:relative;
-	top: -2px; }
+        font-size: 10px;}
     .header .banner ul {
       text-align: right;
       padding: 3px 3px;
@@ -704,3 +696,14 @@ h2 {
           .header .banner ul li a:hover, .header .banner ul li i:hover {
             cursor: pointer;
             background-color: #499AA0; }
+      .site-content .logos {
+	  padding: 10px;
+
+	  }
+    .site-content .logos #govex-logo {
+	width: 250px;
+	height: 45px;
+        padding-bottom: 2px;}
+    .site-content .logos #geothink-logo {
+	width: 350px;
+	height: 70px;}

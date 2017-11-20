@@ -6,7 +6,11 @@ html
     .container
       include header.jade
       .site-content
-        h1 OPEN DATA STANDARDS DIRECTORY
+        .logos
+          a(href='https://govex.jhu.edu')
+            img(src='/images/govex.png' id='govex-logo')
+          a(href='http://geothink.ca/')
+            img(src='/images/geothink.png' id='geothink-logo')
         .directory
           .search
             span.fa.fa-search(aria-hidden='true')
