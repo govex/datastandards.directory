@@ -1,10 +1,11 @@
 .header
   .banner
-    a#title-link(href='/') OPEN DATA STANDARDS DIRECTORY
-      strong BETA
+    div#title-link
+      a(href='https://govex.jhu.edu')
+        img(src='/images/govex.png' id='govex-logo')
+      a(href='http://geothink.ca/')
+        img(src='/images/geothink.png' id='geothink-logo')
     ul
-      li
-        | Eng 
       li.search
         input#search-header.search.search-input(type='text', name='search', placeholder='search directory')
       li
@@ -37,3 +38,4 @@
           a(href='/about#about-development') development
       li#contact
         a(href='/contact') CONTACT
+
