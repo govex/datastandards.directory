@@ -7,15 +7,7 @@ var options = {
   promiseLib: promise // initialization options
 };
 
-// load environmental variables to create pg connection string
-var user = process.env.DD_DB_USER;
-var pw = process.env.DD_DB_PASSWORD;
-var host = process.env.DD_DB_HOST;
-var port = process.env.DD_DB_PORT;
-var db = process.env.DD_DB_NAME;
-
-var connectionString = process.env.DATABASE_URL || `postgres:\/\/${user}:${pw}@${host}:${port}/${db}`; // Heroku postgres OR local host postgres inventory database
-
+var connectionString = process.env.DATABASE_URL || 'postgres://postgres:qwerty@localhost:5432/poopydb'; // Heroku postgres OR local host postgres inventory database
 var db = pgp(connectionString); // using pg-promise, create database with connection details
 
 function getAddForm(req, res, next){
@@ -30,7 +22,6 @@ function getUpdateForm(req, res, next){
 function api(req, res, next){
   var user_input = req.params.id.toLowerCase(),
       query = ""; // store the user's input
-    
 
   if (user_input == 'all') {
     query = "select * from standards";
