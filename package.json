@@ -6,7 +6,7 @@
   },
   "description": "data standards directory",
   "scripts": {
-    "start": "supervisor ./bin/www"
+    "start": "node ./bin/www"
   },
   "dependencies": {
     "bluebird": "^3.4.7",
