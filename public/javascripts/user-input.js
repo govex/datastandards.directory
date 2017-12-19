@@ -29,12 +29,12 @@ $(function(){
 	$('.search-input').on('keyup', function(e){
 		if(e.keyCode === 13) {
 			var parameters = $(this).val(); // stores the search result
-			window.location.href = './' + parameters.toLowerCase().split(' ').join('_');
+			window.location.href = '../' + parameters.toLowerCase().split(' ').join('_');
 		}
 	});
 
 	$('#search-button').on('click', function(e){
 		var parameters = $('#search-header').val(); // stores the search result
-		window.location.href = './' + parameters.toLowerCase().split(' ').join('_');
+		window.location.href = '../' + parameters.toLowerCase().split(' ').join('_');
 	});
 });

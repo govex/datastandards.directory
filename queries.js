@@ -60,14 +60,18 @@ function api(req, res, next){
 
 // function gets all categories and standard names for the autocomplete
 function keywords(req, res, next){
-  var query = "select lower(name) as name, lower(category) as category, lower(subcategory) as subcategory from standards where lower(verified) = 'yes'",
+  var query = "select lower(name) as name, lower(category) as category, lower(subcategory) as subcategory, lower(publisher) as publisher from standards where lower(verified) = 'yes'",
       keywords = [];
   db.task(t => {
     return t.each(query, [], row =>{
       var subcats = row.subcategory.split(',');
+      var pubs = row.publisher.split(',');
       keywords.push(row.name, row.category);
       for(sub in subcats){
         keywords.push(subcats[sub]);
+      }
+      for(pub in pubs){
+        keywords.push(pubs[pub]);
       }
     })
       .then(function () {
@@ -145,7 +149,7 @@ function getData(req, res, next){
   if (user_input == 'all') {
     query = "select * from standards where verified = 'Yes'";
   } else {
-    query = "select * from standards where lower(name) || lower(category) || lower(subcategory) like \'%$1#%\' AND lower(verified) = 'yes'"; // ADD URL
+    query = "select * from standards where lower(name) || lower(category) || lower(subcategory) || lower(publisher) like \'%$1#%\' AND lower(verified) = 'yes'"; // ADD URL
   }
 
   db.task(t => {
