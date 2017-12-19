@@ -7,7 +7,14 @@ var options = {
   promiseLib: promise // initialization options
 };
 
-var connectionString = process.env.DATABASE_URL || 'postgres://postgres:qwerty@localhost:5432/poopydb'; // Heroku postgres OR local host postgres inventory database
+var connectionString = process.env.DATABASE_URL || {
+  user: "mkxzwsbdgobvnv",
+  password: "2339b39dc40c4ef39249057a083fd3a3427b43d93c7e25d35a7ebcf7c61c90e3",
+  database: "d1ovi001vdvhnr",
+  port: 5432,
+  host: "ec2-54-235-120-39.compute-1.amazonaws.com",
+  ssl: true
+};
 var db = pgp(connectionString); // using pg-promise, create database with connection details
 
 function getAddForm(req, res, next){
