@@ -16,14 +16,14 @@ function autocomplete() {
 			if($.inArray(el, keys) === -1) keys.push(el);
 		});
 
-		// initate ajax autocomplete with the 
+		// initate ajax autocomplete with the
 		$('.search-input').autocomplete({
 			source: keys,
 			autoFill: true,
 			select: function (event, ui){
 				var input = ui.item.label;
-				window.location.href = './' + input;
+				window.location.href = '../' + input;
 			}
 		});
 	})
-}	
+}
