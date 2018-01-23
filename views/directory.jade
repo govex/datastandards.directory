@@ -38,13 +38,20 @@ html
         var body = $(this).find('.standard-body');
         // full dates are now displayed in the standard's details
         $(body).find('#updatedFull').html("<b>Updated by Publisher:</b> " + updatedRel.format('Do MMMM YYYY'));
-        $(body).find('#addedFull').html("<b>Updated in directory:</b> " + addedRel.format('Do MMMM YYYY'));
+        $(this).find('#addedFull').html("<b>Updated in directory:</b> " + addedRel.format('Do MMMM YYYY'));
         // hides specific empty fields
         $(body).find("li").each(function(){
           if ($(this).attr('value') == 'No information'){
             $(this).hide();
           }
         })
+        //hide tags when empty
+        var tagVal = $(this).find('.tag').attr('value');
+        if(tagVal.indexOf('No information') != -1){
+          var tagDiv = $(this).find('.tag').parent();
+          $(this).find('.tag').remove();
+          $(tagDiv).append("None");
+        }
         // Build list of providers
         var providerList = $(body).find('#providers').attr('value');
         if (providerList != 'No information') {

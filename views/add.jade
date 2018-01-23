@@ -25,6 +25,25 @@ html
               p.shortform
                 label(for='email') E-mail
                 input#email.form-input(type='email', placeholder='Input your email [optional]', name='email', value='')
+              p#tag-display.shortform
+                label(for='tag', style='margin-right: 10px') Tags
+                button.tag(type='button', value='keyword: user contribution') <b>Keyword:</b> user contribution
+              p.metadata
+                input#tags.form-input(name='tags', type-'text', value='')
+              p.shortform
+                label(for='facet') Facet
+                select#facet.form-input(name='facet', type='drop-down')
+                  option(disabled='', selected='', value='') Select a facet
+                  option(value='subject') Subject: 
+                  option(value='dataType') Data Type: 
+                  option(value='providerType') Provider Type: 
+                  option(value='language') Language: 
+                  option(value='keyword') Keyword: 
+              p#add-tag-options.shortform(style='display: none')
+                label(for='tag-value') New Tag
+                button#add-tag-button.small(type='button') Add Tag
+                input#tag-value.form-input(name='tag', type='text', placeholder='Input a value (tag) for this facet', value='')
+                label#facet-label Facet:              
               .hide-show
                 i.fa.fa-plus-circle
                 | Complete long form
@@ -32,15 +51,17 @@ html
                 label.form-label(for='input1')
                   strong Category 
                 select#input1.form-input(type='drop-down', name='category')
-                  option(disabled='', selected='', value='') Select a category
+                  option(value='') Select a category
               p.category(style='display: none')
+                label.form-label(for='input1-other') Other Category
                 input#input1-other.form-input(name='', type='text', placeholder='Enter the category', value='')
               p
                 label.form-label(for='input41')
                   strong Subcategory 
                 select#input41.form-input(type='drop-down', name='subcategory')
-                  option(disabled='', selected='', value='') Select a subcategory
+                  option(value='') Select a subcategory
               p.subcategory(style='display: none')
+                label.form-label(for='input41-other') Other Subcategory
                 input#input41-other.form-input(name='', type='text', placeholder='Enter the subcategory', value='')
               p
                 label(for='input2') Description 
@@ -58,7 +79,7 @@ html
                 label(for='input7') Stage in Development 
                 select#input7.form-input(type='drop-down', name='stage_in_development')
                   | <
-                  option(disabled='', selected='', value='') Select the stage in development
+                  option(value='') Select the stage in development
                   option(value='Completed') Completed
                   option(value='Draft') Draft
               p
@@ -237,6 +258,34 @@ html
     script.
       $('#contribute').addClass("selected-page");
       $(".popup").hide();
+      $("#facet").on('change', function(){
+        $("#add-tag-options").show();
+        $("#facet-label").html($("#facet option:selected").text())
+      });
+      $("#add-tag-button").on('click', function(){
+        var facetText = $("#facet option:selected").text();
+        var facetVal = $("#facet").val();
+        var tagVal = $("#tag-value").val();
+        var newButton = "<button type='button' class='tag' value='" + facetVal + ":" + tagVal + "'><strong style='color: gray' class='remove-tag'>X</strong> <b>" + facetText + "</b>" + tagVal + "</button>"
+        $("#tag-display").append(newButton)
+        //reset facet dropdown list and tag input
+        $("#facet").prop('selectedIndex', 0)
+        $("#add-tag-options").hide();
+        $("#tag-value").val('');
+        //"X" to remove tag
+        $(".remove-tag").on('click', function(){
+          $(this).parent().remove();
+        });
+      });
+      //concatenates values of all tags and sets value of hidden input
+      //this input is what is found in add.js
+      function serializeTags(){
+        var tagsObject = '';
+        $(".tag").each(function(){
+          tagsObject += $(this).val() + "|";
+        });
+        $("#tags").val(tagsObject);
+      }
       var allstandardsCategories = [];
       var allstandardsSubcategories = [];
       var options = document.getElementById("input37");
@@ -307,7 +356,15 @@ html
         var subcategory = [],
             subcatOptions = document.getElementById("input41");
         $.each(allstandardsSubcategories, function(i, el){ // removes any duplicates
-        if($.inArray(el, subcategory) === -1) subcategory.push(el);
+          if(el.indexOf(",") != -1){
+            var subcatArr = el.split(",")
+            for(d in subcatArr){
+              if($.inArray(subcatArr[d], subcategory) == -1) subcategory.push(subcatArr[d])
+            }
+          }
+          else{
+            if($.inArray(el, subcategory) === -1) subcategory.push(el);
+          }
         });
         $.each(subcategory, function(i, el){
           subcatOptions.innerHTML += '<option value="' + subcategory[i] + '">' + subcategory[i] + '</option>';
@@ -316,13 +373,5 @@ html
       });
       // submit form
       $(".submit").click(function(){
-        postAdd();
-        //Google form autofill
-        var formURLbase = 'https://docs.google.com/forms/d/e/1FAIpQLSdT5XyCWPBsC7CSU4bs-vtKGrj_vLUi7Z2g4pnRcynAhwCUxw/formResponse';
-        var nameURL = '?entry.1031090349=' + $("#input0").val();
-        var emailURL = '&entry.939312954=' + $("#email").val();
-        var websiteURL = '&entry.1738623814=' + $("#input8").val();
-        var formURL = formURLbase + nameURL + websiteURL + emailURL + '&submit=Submit';
-        console.log(formURL);
-        window.open(formURL, '_blank');
+        serializeTags();
       });

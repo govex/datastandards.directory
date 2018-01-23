@@ -139,19 +139,25 @@
 				&:hover
 					cursor: pointer
 
+			.standard-tags
+				margin-top: 5px
+				margin-bottom: -10px
+				text-align: left
+
+				a.tag
+					margin: 3px
+					font-size: 11px
+					color: $button-color
+					display: inline-table
+					&:hover
+						color: darken($button-color, 10%)
+
 			.standard-body
 				text-align: justify
 
 				li
 					padding-right: 10px
 					padding-bottom: 7px
-
-				#addedFull
-					text-align: right
-					font-size: 11px
-					margin-top: 6px
-					margin-bottom: -12px
-					margin-right: -8px
 
 				#providers
 					border: solid
@@ -179,6 +185,15 @@
 
 						i
 							color: #fff
+
+		#addedFull
+			display: none
+			text-align: right
+			font-size: 11px
+			margin-top: 6px
+			margin-bottom: -12px
+			margin-right: -8px
+
 	.standard-links
 		text-align: center
 		margin-bottom: 30px

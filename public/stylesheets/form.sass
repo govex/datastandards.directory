@@ -11,6 +11,21 @@
 
 .form
 
+	button.tag
+		width: auto
+		font-size: 11px
+		margin-left: 5px
+		padding: 4px
+		border-width: 1px
+
+	button.small
+		width: 10%
+		font-size: 14px
+		float: right
+		margin-right: -1px
+		border-width: 1px
+		padding: 5px
+
 	p.highlight
 		border: solid
 		border-color: $banner-color
@@ -24,6 +39,19 @@
 		padding: 10px
 		font-size: 18px
 		border: 1px solid $button-color
+
+		#tag-value
+			width: 62%
+			margin-right: 1%
+
+		#facet-label
+			width: auto
+			font-weight: normal
+			margin-right: 4px
+			float: right
+			font-style: italic
+			padding-top: 4px
+			font-size: 14px
 
 		label
 			font-weight: bold
@@ -54,6 +82,7 @@
 			padding: 3px
 			font-family: $body-font
 			border: 0px
+			padding: 3px
 			&:hover
 				cursor: text
 

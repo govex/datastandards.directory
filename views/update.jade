@@ -22,6 +22,24 @@ html
               p
                 label(for='input37') Standard 
                 select#input37.form-input(type='drop-down', name='standard')
+              p#tag-display
+                label(for='tag', style='margin-right: 10px') Tags
+              p.metadata(style='display: none')
+                input#tags.form-input(name='tags', type-'text', value='')
+              p
+                label(for='facet') Facet
+                select#facet.form-input(name='facet', type='drop-down')
+                  option(disabled='', selected='', value='') Select a facet
+                  option(value='subject') Subject: 
+                  option(value='dataType') Data Type: 
+                  option(value='providerType') Provider Type: 
+                  option(value='language') Language: 
+                  option(value='keyword') Keyword: 
+              p#add-tag-options(style='display: none')
+                label(for='tag-value') New Tag
+                button#add-tag-button.small(type='button') Add Tag
+                input#tag-value.form-input(name='tag', type='text', placeholder='Input a value (tag) for this facet', value='')
+                label#facet-label Facet:              
               p
                 label(for='input39') Add Provider(s)
                 input#input39(type='text', name='providers', placeholder='Add to our list of organizations publishing data in this standard', value='')
@@ -42,6 +60,34 @@ html
     script.
       $(".popup").hide();
       $('#contribute').addClass("selected-page");
+      $("#facet").on('change', function(){
+        $("#add-tag-options").show();
+        $("#facet-label").html($("#facet option:selected").text())
+      });
+      $("#add-tag-button").on('click', function(){
+        var facetText = $("#facet option:selected").text();
+        var facetVal = $("#facet").val();
+        var tagVal = $("#tag-value").val();
+        var newButton = "<button type='button' class='tag' value='" + facetVal + ":" + tagVal + "'><strong style='color: gray' class='remove-tag'>X</strong> <b>" + facetText + "</b>" + tagVal + "</button>"
+        $("#tag-display").append(newButton)
+        //reset facet dropdown list and tag input
+        $("#facet").prop('selectedIndex', 0)
+        $("#add-tag-options").hide();
+        $("#tag-value").val('');
+        //"X" to remove tag
+        $(".remove-tag").on('click', function(){
+          $(this).parent().remove();
+        });
+      });
+      //concatenates values of all tags and sets value of hidden input
+      //this input is what is found in add.js
+      function serializeTags(){
+        var tagsObject = '';
+        $(".tag").each(function(){
+          tagsObject += $(this).val() + "|";
+        });
+        $("#tags").val(tagsObject);
+      }
       var allstandards = [];
       var options = document.getElementById("input37");
       var url = location.origin;
@@ -64,11 +110,13 @@ html
       });
       // submit form
       $(".submit").click(function(){
+        serializeTags();
         $(".popup").hide();
         var form = $(".update-standard");
         console.log(form)
         postUpdate(form);
         //Google form autofill
+        /*
         var formURLbase = 'https://docs.google.com/forms/d/e/1FAIpQLScAvZj5HUFHZtcJ6SofF8CMtbVy0lkuDwYwQDNgUavDPY5Avw/formResponse';
         var nameURL = '?entry.1092914073=' + $("#input35").val();
         var emailURL = '&entry.679147926=' + $("#input36").val();
@@ -79,4 +127,5 @@ html
         var formURL = formURLbase + nameURL + emailURL + standardURL + commentURL + providersURL + examplesURL + '&submit=Submit';
         console.log(formURL);
         window.open(formURL, '_blank');
+        */
       });

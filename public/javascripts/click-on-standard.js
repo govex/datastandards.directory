@@ -4,9 +4,10 @@ function clickStandard (){
 	$(".hide-show").on('click', function(){
 		$(this).find('i').toggleClass('fa-plus-circle fa-minus-circle') // toggle between the + and - icons
 		var standard = $(this).parents('.standard'); // find the standard that the client has clicked on
-		console.log(standard)
 		var body = $(standard).find('.standard-body'); // find the text for the standard
-		body.toggle('hide show')
+		var addedFull = $(standard).find('#addedFull'); //find the 'updated in Directory' text that is not within standard-body
+		body.toggle('hide show');
+		addedFull.toggle('hide show');
 	})
 }
 
