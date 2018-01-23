@@ -4,10 +4,10 @@
 			script.
 				function createDates(date){
 					var parts = [];
-					parts = date.split("/");
-					var dt = new Date(parseInt(parts[2], 10),
-														parseInt(parts[0], 10) - 1,
-														parseInt(parts[1], 10));
+					parts = date.split("-");
+					var dt = new Date(parseInt(parts[0], 10),
+														parseInt(parts[1], 10) - 1,
+														parseInt(parts[2], 10));
 					return dt
 				}
 				var origin = location.origin,

@@ -16,18 +16,8 @@ $(function(){
 	var request;
 	var recorded = document.getElementById("input33").value;
 	var date = new Date();
-	var month = date.getMonth() + 1;
-	var year = date.getFullYear();
-	var day = date.getDate();
-
-	// creates current date in the correct format
-	if (String(day).length < 2){
-		recorded = month + "/" + day + "/" + year;
-	} else if (String(month).length < 2) {
-		recorded = month + "/" + day + "/" + year;
-	} else {
-		recorded = month + "/" + day + "/" + year;
-	}
+	date = date.toISOString();
+	recorded = date.substring(0, 10);
 
 	document.getElementById("input33").value = recorded;
 	document.getElementById("timestamp").value = recorded;
