@@ -34,6 +34,7 @@ html
                 select#input1.form-input(type='drop-down', name='category')
                   option(disabled='', selected='', value='') Select a category
               p.category(style='display: none')
+                label.form-label(for='input1-other') Other Category
                 input#input1-other.form-input(name='', type='text', placeholder='Enter the category', value='')
               p
                 label.form-label(for='input41')
@@ -41,6 +42,7 @@ html
                 select#input41.form-input(type='drop-down', name='subcategory')
                   option(disabled='', selected='', value='') Select a subcategory
               p.subcategory(style='display: none')
+                label.form-label(for='input41-other') Other Subcategory
                 input#input41-other.form-input(name='', type='text', placeholder='Enter the subcategory', value='')
               p
                 label(for='input2') Description 
@@ -307,7 +309,15 @@ html
         var subcategory = [],
             subcatOptions = document.getElementById("input41");
         $.each(allstandardsSubcategories, function(i, el){ // removes any duplicates
-        if($.inArray(el, subcategory) === -1) subcategory.push(el);
+          if(el.indexOf(",") != -1){
+            var subcatArr = el.split(",")
+            for(d in subcatArr){
+              if($.inArray(subcatArr[d], subcategory) == -1) subcategory.push(subcatArr[d])
+            }
+          }
+          else{
+            if($.inArray(el, subcategory) === -1) subcategory.push(el);
+          }
         });
         $.each(subcategory, function(i, el){
           subcatOptions.innerHTML += '<option value="' + subcategory[i] + '">' + subcategory[i] + '</option>';
