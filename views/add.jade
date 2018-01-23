@@ -51,7 +51,7 @@ html
                 label.form-label(for='input1')
                   strong Category 
                 select#input1.form-input(type='drop-down', name='category')
-                  option(disabled='', selected='', value='') Select a category
+                  option(value='') Select a category
               p.category(style='display: none')
                 label.form-label(for='input1-other') Other Category
                 input#input1-other.form-input(name='', type='text', placeholder='Enter the category', value='')
@@ -59,7 +59,7 @@ html
                 label.form-label(for='input41')
                   strong Subcategory 
                 select#input41.form-input(type='drop-down', name='subcategory')
-                  option(disabled='', selected='', value='') Select a subcategory
+                  option(value='') Select a subcategory
               p.subcategory(style='display: none')
                 label.form-label(for='input41-other') Other Subcategory
                 input#input41-other.form-input(name='', type='text', placeholder='Enter the subcategory', value='')
@@ -79,7 +79,7 @@ html
                 label(for='input7') Stage in Development 
                 select#input7.form-input(type='drop-down', name='stage_in_development')
                   | <
-                  option(disabled='', selected='', value='') Select the stage in development
+                  option(value='') Select the stage in development
                   option(value='Completed') Completed
                   option(value='Draft') Draft
               p
