@@ -33,13 +33,36 @@ $(function(){
 
 		// if user submits the add form
 		if(postType == "add"){
-			postAdd(); // run the function that will serialize the inputs and post them to the db
+			var chillFeck = postAdd();
+			if(chillFeck != 'error'){
+				//Google form autofill
+				var formURLbase = 'https://docs.google.com/forms/d/e/1FAIpQLSdT5XyCWPBsC7CSU4bs-vtKGrj_vLUi7Z2g4pnRcynAhwCUxw/formResponse';
+				var nameURL = '?entry.1031090349=' + $("#input0").val();
+				var emailURL = '&entry.939312954=' + $("#email").val();
+				var websiteURL = '&entry.1738623814=' + $("#input8").val();
+				var formURL = formURLbase + nameURL + websiteURL + emailURL + '&submit=Submit';
+				console.log(formURL);
+				window.open(formURL, '_blank');
+			}
 		}
 
 		// if user submits the update form
 		if(postType == "update"){
 			var form = $(".update-standard"); // run the function that will serialize the inputs and post them to the db
-			postUpdate(form);
+			var fillCheck = postUpdate();
+			if(fillCheck != 'error'){
+				//Google form autofill
+				var formURLbase = 'https://docs.google.com/forms/d/e/1FAIpQLScAvZj5HUFHZtcJ6SofF8CMtbVy0lkuDwYwQDNgUavDPY5Avw/formResponse';
+				var nameURL = '?entry.1092914073=' + $("#input35").val();
+				var emailURL = '&entry.679147926=' + $("#input36").val();
+				var standardURL = '&entry.1888358654=' + $("#input37").val();
+				var commentURL = '&entry.869466190=' + $("#input38").val();
+				var providersURL = '&entry.1439856983=' + $("#input39").val();
+				var examplesURL = '&entry.141248292=' + $("#input40").val();
+				var formURL = formURLbase + nameURL + emailURL + standardURL + commentURL + providersURL + examplesURL + '&submit=Submit';
+				console.log(formURL);
+				window.open(formURL, '_blank');
+			}
 		}
 	});
 });
