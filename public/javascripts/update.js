@@ -15,6 +15,7 @@ function postUpdate(form){
 			}
 		$("#input37").parent("p").addClass("highlight");
 		$("#input38").parent("p").addClass("highlight");
+		return "error";
 	} else {
 		var $inputs = form.find("client_name, email, standard, comment, providers, examples, timestamp"); // find all the inputs
 		var serializedData = form.serialize(); // serialize the data
@@ -51,5 +52,6 @@ function postUpdate(form){
 		});
 
 		event.preventDefault();	// prevent default posting of form
+		return "success";
 	}
 }
