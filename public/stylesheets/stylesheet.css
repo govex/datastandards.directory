@@ -28,7 +28,7 @@ html, body {
     min-height: 100%;
     position: relative; }
     html .container .site-content, body .container .site-content {
-      padding-top: 90px;
+      padding-top: 110px;
       width: 100%;
       min-height: 100%;
       padding-bottom: 60px; }
@@ -179,17 +179,21 @@ html, body {
       font-size: 20px; }
       .directory .standard .standard-header a.hide-show:hover {
         cursor: pointer; }
+    .directory .standard .standard-header .standard-tags {
+      margin-top: 5px;
+      text-align: left; }
+      .directory .standard .standard-header .standard-tags a.tag {
+        margin: 3px;
+        font-size: 11px;
+        color: #499AA0;
+        display: inline-table; }
+        .directory .standard .standard-header .standard-tags a.tag:hover {
+          color: #39787d; }
     .directory .standard .standard-header .standard-body {
       text-align: justify; }
       .directory .standard .standard-header .standard-body li {
         padding-right: 10px;
         padding-bottom: 7px; }
-      .directory .standard .standard-header .standard-body #addedFull {
-        text-align: right;
-        font-size: 11px;
-        margin-top: 6px;
-        margin-bottom: -12px;
-        margin-right: -8px; }
       .directory .standard .standard-header .standard-body #providers {
         border: solid;
         border-color: #E8C047;
@@ -213,6 +217,13 @@ html, body {
             cursor: pointer; }
           .directory .standard .standard-header .standard-body #providers button#metric i {
             color: #fff; }
+  .directory .standard #addedFull {
+    display: none;
+    text-align: right;
+    font-size: 11px;
+    margin-top: 6px;
+    margin-bottom: -12px;
+    margin-right: -8px; }
 
 .directory .standard-links {
   text-align: center;
@@ -247,6 +258,21 @@ html, body {
   .hide-show i {
     margin-right: 10px; }
 
+.form button.tag {
+  width: auto;
+  font-size: 11px;
+  margin-left: 5px;
+  padding: 4px;
+  border-width: 1px; }
+
+.form button.small {
+  width: 10%;
+  font-size: 14px;
+  float: right;
+  margin-right: -1px;
+  border-width: 1px;
+  padding: 5px; }
+
 .form p.highlight {
   border: solid;
   border-color: #2B1F2A;
@@ -261,6 +287,17 @@ html, body {
   padding: 10px;
   font-size: 18px;
   border: 1px solid #499AA0; }
+  .form p #tag-value {
+    width: 62%;
+    margin-right: 1%; }
+  .form p #facet-label {
+    width: auto;
+    font-weight: normal;
+    margin-right: 4px;
+    float: right;
+    font-style: italic;
+    padding-top: 4px;
+    font-size: 14px; }
   .form p label {
     font-weight: bold;
     width: 20%; }
@@ -283,7 +320,8 @@ html, body {
     width: 72%;
     padding: 3px;
     font-family: "Lato", sans-serif;
-    border: 0px; }
+    border: 0px;
+    padding: 3px; }
     .form p input[type="text"]:hover, .form p input[type="email"]:hover, .form p textarea:hover, .form p select:hover {
       cursor: text; }
 
@@ -510,8 +548,10 @@ html, body {
     background-color: #499AA0; }
 
 h1 {
+  border-bottom: 2px solid #E8C047;
   font-family: "Lato", sans-serif;
   color: #353638;
+  padding-bottom: 30px;
   font-size: 40px;
   word-spacing: 15px; }
   h1 a {
@@ -601,7 +641,7 @@ h2 {
   width: 100%;
   font-family: "PT Sans Narrow", sans-serif;
   opacity: 0.99;
-  z-index: 100;}
+  z-index: 100; }
   .header .navigation ul {
     background-color: #2B1F2A;
     list-style-type: none;
@@ -615,11 +655,11 @@ h2 {
       display: inline-block;
       top: 0; }
       .header .navigation ul li a {
-        font-size: 25px;
+        font-size: 30px;
         width: 170px;
         display: block;
         text-align: center;
-        padding: 10px 20px;
+        padding: 14px 20px;
         text-decoration: none;
         color: #FFFeF7; }
         .header .navigation ul li a i {
@@ -655,7 +695,7 @@ h2 {
     height: 40px;
     list-style-type: none;
     display: flex;
-    justify-content: space-between;}
+    justify-content: space-between; }
     .header .banner #title-link {
       display: inline;
       text-align: left;
@@ -664,16 +704,16 @@ h2 {
       color: #fff;
       font-size: 24px;
       text-decoration: none;
-      margin-left: 5%;
+      margin-left: 8%;
       font-family: "Lato", sans-serif;
       font-weight: bold; }
       .header .banner #title-link strong {
         color: #FB6140;
-        font-size: 10px;}
+        font-size: 10px; }
     .header .banner ul {
       text-align: right;
       padding: 3px 3px;
-      margin-top: 0;}
+      margin-top: 0; }
       .header .banner ul li {
         display: inline-block;
         top: 0;
@@ -696,14 +736,3 @@ h2 {
           .header .banner ul li a:hover, .header .banner ul li i:hover {
             cursor: pointer;
             background-color: #499AA0; }
-      .site-content .logos {
-	  padding: 10px;
-
-	  }
-    .site-content .logos #govex-logo {
-	width: 197px;
-	height: 45px;
-        padding-bottom: 2px;}
-    .site-content .logos #geothink-logo {
-	width: 286px;
-	height: 70px;}
