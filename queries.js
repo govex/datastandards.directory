@@ -30,18 +30,18 @@ function getUpdateForm(req, res, next){
 function api(req, res, next){
   var user_input = req.params.id.toLowerCase(),
       query = ""; // store the user's input
-    
+
 
   if (user_input == 'all') {
     query = "select * from standards";
   } else {
-    query = "select * from standards where lower(name) || lower(category) || lower(subcategory) like \'%$1#%\' AND lower(verified) = 'yes'";
+    query = "select * from standards where lower(name) || lower(category) || lower(subcategory) || lower(tags) like \'%$1#%\' AND lower(verified) = 'yes'";
   }
 
   db.task(t => {
     return t.each(query, user_input, row => {
       for (var column in row) {
-        if (row[column] == '' || row[column] == null || row[column].toLowerCase() == 'unsure' || row[column] == undefined || row[column].toLowerCase() == 'null' || row[column].toLowerCase() == 'n/a') {
+        if (row[column] == '' || row[column] == null || row[column] == undefined) {
           row[column] = 'No information';
         }
       }
@@ -60,18 +60,28 @@ function api(req, res, next){
 
 // function gets all categories and standard names for the autocomplete
 function keywords(req, res, next){
-  var query = "select lower(name) as name, lower(category) as category, lower(subcategory) as subcategory, lower(publisher) as publisher from standards where lower(verified) = 'yes'",
+  var query = "select lower(name) as name, lower(category) as category, lower(subcategory) as subcategory, lower(tags) as tags, lower(publisher) as publisher from standards where lower(verified) = 'yes'",
       keywords = [];
   db.task(t => {
     return t.each(query, [], row =>{
-      var subcats = row.subcategory.split(',');
-      var pubs = row.publisher.split(',');
       keywords.push(row.name, row.category);
-      for(sub in subcats){
-        keywords.push(subcats[sub]);
+      if(row.subcategory != null){
+        var subcats = row.subcategory.split(',');
+        for(sub in subcats){
+          keywords.push(subcats[sub]);
+        }
       }
-      for(pub in pubs){
-        keywords.push(pubs[pub]);
+      if(row.publisher != null){
+        var pubs = row.publisher.split(',');
+        for(pub in pubs){
+          keywords.push(pubs[pub]);
+        }
+      }
+      if(row.tags != null){
+        var tags = row.tags.split('|');
+        for(tag in tags){
+          keywords.push(tags[tag]);
+        }
       }
     })
       .then(function () {
@@ -149,14 +159,14 @@ function getData(req, res, next){
   if (user_input == 'all') {
     query = "select * from standards where verified = 'Yes'";
   } else {
-    query = "select * from standards where lower(name) || lower(category) || lower(subcategory) || lower(publisher) like \'%$1#%\' AND lower(verified) = 'yes'"; // ADD URL
+    query = "select * from standards where lower(name) || lower(tags) || lower(category) || lower(subcategory) || lower(publisher) like \'%$1#%\' AND lower(verified) = 'yes'"; // ADD URL
   }
 
   db.task(t => {
     return t.each(query, user_input, row => {
       var subCat = '';
       for (var column in row) {
-         if (row[column] == '' || row[column] == null || row[column].toLowerCase() == 'unsure' || row[column] == undefined || row[column].toLowerCase() == 'null' || row[column].toLowerCase() == 'n/a') {
+         if (row[column] == '' || row[column] == null || row[column] == undefined) {
           row[column] = 'No information';
         }
         subCat = row["subcategory"];
@@ -165,6 +175,22 @@ function getData(req, res, next){
       if(typeof subCat === 'string'){
         temp = subCat.split(',');
         row["subcategory"] = temp;
+      }
+      var tagStr = '';
+      for (var column in row) {
+        if (row[column] == '' || row[column] == null || row[column] == undefined) {
+         row[column] = 'No information';
+        }
+        tagStr = row["tags"];
+      }
+      var tagsArr;
+      if(typeof tagStr === 'string'){
+        tagsArr = tagStr.split('|');
+        for (tag in tagsArr){
+          tagsArr[tag] = tagsArr[tag].split(':');
+        }
+        console.log(tagsArr);
+        row["tags"] = tagsArr;
       }
     }) //category::text, name::text like "%$1%"
       .then(function (data) {
