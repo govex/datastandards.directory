@@ -128,13 +128,16 @@ function suggestTags() {
     console.log(suggestArr)
     $('#tag-value').autocomplete({
       source: suggestArr,
-      autofill: true,
-      select: function (event, ui){
+      minlength: 0,
+      select: function(event, ui) {
         var input = ui.item.label;
         $("#tag-value").val(input.slice(0, -4));
         var addTag = document.getElementById("add-tag-button");
         addTag.click()
       }
+      //displays all suggestions on 'focus'
+    }).focus(function() {
+      $(this).autocomplete("search", " ");
     });
   });
 }

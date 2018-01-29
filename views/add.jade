@@ -43,7 +43,7 @@ html
               p#add-tag-options.shortform(style='display: none')
                 label(for='tag-value') New Tag
                 button#add-tag-button.small(type='button') Add Tag
-                input#tag-value.form-input(name='tag', type='text', placeholder='Input a value (tag) for this facet', value='')
+                input#tag-value.form-input(name='tag', type='text', onfocus='this.value=""', placeholder='Input a value (tag) for this facet', value='')
                 label#facet-label Facet:              
               .hide-show
                 i.fa.fa-plus-circle
@@ -273,7 +273,7 @@ html
         //reset facet dropdown list and tag input
         $("#facet").prop('selectedIndex', 0)
         $("#add-tag-options").hide();
-        $("#tag-value").val('');
+        //$("#tag-value").reset();
         //"X" to remove tag
         $(".remove-tag").on('click', function(){
           $(this).parent().remove();

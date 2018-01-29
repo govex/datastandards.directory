@@ -39,7 +39,7 @@ html
               p#add-tag-options(style='display: none')
                 label(for='tag-value') New Tag
                 button#add-tag-button.small(type='button') Add Tag
-                input#tag-value.form-input(name='tag', type='text', placeholder='Input a value (tag) for this facet', value='')
+                input#tag-value.form-input(name='tag', type='text', onfocus='this.value=""', placeholder='Input a value (tag) for this facet', value='')
                 label#facet-label Facet:              
               p
                 label(for='input39') Add Provider(s)
