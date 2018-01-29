@@ -5,6 +5,7 @@ html
     // custom JS functions
     script(src='/javascripts/update.js')
     script(src='/javascripts/timestamp.js')
+    script(src='/javascripts/get-tags.js')
   body
     .container
       include header.jade
@@ -62,7 +63,8 @@ html
       $('#contribute').addClass("selected-page");
       $("#facet").on('change', function(){
         $("#add-tag-options").show();
-        $("#facet-label").html($("#facet option:selected").text())
+        $("#facet-label").html($("#facet option:selected").text());
+        suggestTags();
       });
       $("#add-tag-button").on('click', function(){
         var facetText = $("#facet option:selected").text();
@@ -106,8 +108,14 @@ html
           search = decodeURI(search);
           options.value = search;
         }
-
+        if(options.value != "default"){
+          getTags(options.value);
+        }
       });
+      $(options).on('change', function(){
+        $(".tag").remove();
+        getTags(options.value);
+      })
       // submit form
       $(".submit").click(function(){
         serializeTags();

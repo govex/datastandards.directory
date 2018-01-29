@@ -8,5 +8,6 @@ router.get('/', function(req, res, next) { // router.get() = HTTP method; '/' = 
 });
 
 router.get('/keywords', db.keywords);
+router.get('/tags', db.tags);
 
 module.exports = router;
