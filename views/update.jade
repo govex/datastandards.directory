@@ -63,7 +63,8 @@ html
       $('#contribute').addClass("selected-page");
       $("#facet").on('change', function(){
         $("#add-tag-options").show();
-        $("#facet-label").html($("#facet option:selected").text())
+        $("#facet-label").html($("#facet option:selected").text());
+        suggestTags();
       });
       $("#add-tag-button").on('click', function(){
         var facetText = $("#facet option:selected").text();
