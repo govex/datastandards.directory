@@ -181,6 +181,7 @@ html, body {
         cursor: pointer; }
     .directory .standard .standard-header .standard-tags {
       margin-top: 5px;
+      margin-bottom: -10px;
       text-align: left; }
       .directory .standard .standard-header .standard-tags a.tag {
         margin: 3px;
@@ -261,7 +262,7 @@ html, body {
 .form button.tag {
   width: auto;
   font-size: 11px;
-  margin-left: 5px;
+  margin: 3px;
   padding: 4px;
   border-width: 1px; }
 
