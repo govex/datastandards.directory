@@ -31,3 +31,22 @@ function getTags(standard) {
       return allTags;
     })
   }
+  // returns array of tags for a specific standard
+  else {
+    var tagArr
+    $.getJSON(url + "/api/get/" + standard, function(data) {
+      var tags = data.data[0].tags;
+      tagArr = tags.split('|');
+      console.log(tagArr);
+      $.each(tagArr, function(i) {
+        var splitTag = tagArr[i].split(':');
+        var facetText = splitTag[0];
+        var tagVal = splitTag[1];
+        var newButton = "<button type='button' class='tag' value='" + tagArr[i] + "'><b>" + facetText + ": </b>" + tagVal + "</button>"
+        $("#tag-display").append(newButton);
+      });
+    });
+    return tagArr;
+  }
+}
+

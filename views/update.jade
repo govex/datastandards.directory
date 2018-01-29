@@ -5,6 +5,7 @@ html
     // custom JS functions
     script(src='/javascripts/update.js')
     script(src='/javascripts/timestamp.js')
+    script(src='/javascripts/get-tags.js')
   body
     .container
       include header.jade
@@ -106,8 +107,14 @@ html
           search = decodeURI(search);
           options.value = search;
         }
-
+        if(options.value != "default"){
+          getTags(options.value);
+        }
       });
+      $(options).on('change', function(){
+        $(".tag").remove();
+        getTags(options.value);
+      })
       // submit form
       $(".submit").click(function(){
         serializeTags();
