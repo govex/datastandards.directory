@@ -62,6 +62,27 @@ function api(req, res, next){
   });
 }
 
+function tags(req, res, next){
+  var query = "select lower(tags) as tags from standards where lower(verified) = 'yes'",
+      tags = [];
+  db.task(t => {
+    return t.each(query, [], row =>{
+      if(row.tags != null || row.tags != ""){
+        var tagArr = row.tags.split('|');
+        for(tag in tagArr){
+          tags.push(tagArr[tag]);
+        }
+      }
+    })
+    .then(function () {
+      res.send({tags: tags});
+    })
+    .catch(function (err) {
+      return next(err);
+    });
+  });
+}
+
 // function gets all categories and standard names for the autocomplete
 function keywords(req, res, next){
   var query = "select lower(name) as name, lower(category) as category, lower(subcategory) as subcategory, lower(tags) as tags, lower(publisher) as publisher from standards where lower(verified) = 'yes'",
@@ -69,19 +90,19 @@ function keywords(req, res, next){
   db.task(t => {
     return t.each(query, [], row =>{
       keywords.push(row.name, row.category);
-      if(row.subcategory != null){
+      if(row.subcategory != null || row.subcategory != ""){
         var subcats = row.subcategory.split(',');
         for(sub in subcats){
           keywords.push(subcats[sub]);
         }
       }
-      if(row.publisher != null){
+      if(row.publisher != null || row.publisher != ""){
         var pubs = row.publisher.split(',');
         for(pub in pubs){
           keywords.push(pubs[pub]);
         }
       }
-      if(row.tags != null){
+      if(row.tags != null || row.tags != ""){
         var tags = row.tags.split('|');
         for(tag in tags){
           keywords.push(tags[tag]);
@@ -193,7 +214,6 @@ function getData(req, res, next){
         for (tag in tagsArr){
           tagsArr[tag] = tagsArr[tag].split(':');
         }
-        console.log(tagsArr);
         row["tags"] = tagsArr;
       }
     }) //category::text, name::text like "%$1%"
@@ -249,5 +269,6 @@ module.exports = {
   getUpdateForm: getUpdateForm,
   getCategories: getCategories,
   keywords: keywords,
+  tags: tags,
   api: api
 };
