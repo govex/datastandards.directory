@@ -17,7 +17,7 @@
 		.search-title
 			float: left
 
-		.filters
+		.sort
 			float: right
 
 			.dropdown
@@ -31,6 +31,33 @@
 				border-style: solid
 				border-color: $dark-font-color
 				text-align: center
+
+		.facets
+			display: flex
+			margin-top: 12px
+			margin-bottom: -70px
+
+			strong
+				width: 20%
+				font-size: 17px
+				text-align: left
+
+			ul
+				list-style: none
+				padding: 0px
+				margin-top: 5px
+
+			li
+				font-size: 12px
+				text-align: left
+				&:hover
+					color: lighten($dark-font-color, 24%)
+
+			.selected
+				color: #619e81
+				&:hover
+					color: lighten(#619e81, 10%)
+
 
 	.standard
 		border: solid

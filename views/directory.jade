@@ -82,6 +82,52 @@ html
       moment().format('Do MMMM YYYY');
     - if (standards.length > 1)
       script.
+        var facetTags = getTags("filter");
+        for (i in facetTags.subject){
+          $(".facets").find("#subject").find("ul").append("<li value='" + facetTags.subject[i][0] + ":" + facetTags.subject[i][1] + "'>" + facetTags.subject[i][1] + " (" + facetTags.subject[i][2] + ")</li>")
+        }
+        for (i in facetTags.providerType){
+          $(".facets").find("#provider-type").find("ul").append("<li value='" + facetTags.providerType[i][0] + ":" + facetTags.providerType[i][1] + "'>" + facetTags.providerType[i][1] + " (" + facetTags.providerType[i][2] + ")</li>")
+        }
+        for (i in facetTags.dataType){
+          $(".facets").find("#data-type").find("ul").append("<li value='" + facetTags.dataType[i][0] + ":" + facetTags.dataType[i][1] + "'>" + facetTags.dataType[i][1] + " (" + facetTags.dataType[i][2] + ")</li>")
+        }
+        for (i in facetTags.language){
+          $(".facets").find("#language").find("ul").append("<li value='" + facetTags.language[i][0] + ":" + facetTags.language[i][1] + "'>" + facetTags.language[i][1] + " (" + facetTags.language[i][2] + ")</li>")
+        }
+        for (i in facetTags.keyword){
+          $(".facets").find("#keyword").find("ul").append("<li value='" + facetTags.keyword[i][0] + ":" + facetTags.keyword[i][1] + "'>" + facetTags.keyword[i][1] + " (" + facetTags.keyword[i][2] + ")</li>")
+        }
+        var facetLists = $('.facets').find('ul');
+        $(facetLists).each(function(){
+          var ul = this;
+          $(this).find('li').each(function(){
+            $(this).on('click', function(){
+              var val = $(this).attr('value').toLowerCase();
+              var params = $("#filter-parameters").attr('value').split(',')
+              if($(this).hasClass("selected")){
+                var shift = params.indexOf(val);
+                if(shift != -1){
+                  params.splice(shift, 1);
+                }
+              }
+              else {
+                if(params[0] != ""){
+                  params.push(val);
+                }
+                else {
+                  params.splice(0, 1, val);
+                }
+              }
+              $("#filter-parameters").attr('value', params);
+              $(this).toggleClass("selected");
+              $("#sortby").val("relevance");
+              var sorted = sortby(standards)
+              $('.directory-standards').html(sorted);
+            });
+          });
+        });
+        
         var sorted = sortby(standards)
         $('.directory-standards').html(sorted); // sorts standards by default dropdown selection
         clickStandard();
