@@ -29,6 +29,8 @@ html
                 input#tags.form-input(name='tags', type-'text', value='')
               p
                 label(for='facet') Facet
+                a(data-toggle='tooltip', title='Facets lend additional meaning to tags. If a tag is describing a particular characteristic of an open data standard (a facet), all other tags describing the same characteristic can be grouped within the same facet. Facets also allow users to filter search results by desired facet values.')
+                  i.fa.fa-question-circle(aria-hidden='true')
                 select#facet.form-input(name='facet', type='drop-down')
                   option(disabled='', selected='', value='') Select a facet
                   option(value='subject') Subject: 
@@ -38,8 +40,10 @@ html
                   option(value='keyword') Keyword: 
               p#add-tag-options(style='display: none')
                 label(for='tag-value') New Tag
+                a#facet-tooltip(data-toggle='tooltip', title='')
+                  i.fa.fa-question-circle(aria-hidden='true')
                 button#add-tag-button.small(type='button') Add Tag
-                input#tag-value.form-input(name='tag', type='text', placeholder='Input a value (tag) for this facet', value='')
+                input#tag-value.form-input(name='tag', type='text', onfocus='this.value=""', placeholder='Input a value (tag) for this facet', value='')
                 label#facet-label Facet:              
               p
                 label(for='input39') Add Provider(s)
@@ -64,6 +68,23 @@ html
       $("#facet").on('change', function(){
         $("#add-tag-options").show();
         $("#facet-label").html($("#facet option:selected").text());
+        switch($(this).val()){
+          case "subject":
+            $("#facet-tooltip").attr('title', "This facet is used to separate tags specifying the subject matter a data standard is used to describe. Similar to the original purpose of the “Category” attribute, this facet is meant to classify non-exclusive descriptors specifying the content of a dataset in a standard. Values might include subjects more specific to a category such as “Financial”. For example, Checkbook NYC specifies annual budget, expenditure, and procurement contracts.");
+            break;
+          case "dataType":
+            $("#facet-tooltip").attr('title', "Some standards specify a format in which data must be serialized, such as XML or CSV, while some standards merely specify element or attribute names, allowing users to publish in any machine-readable format. Some standards specify multiple data files in different formats. In such cases a standard can have multiple dataType tags for different formats. dataType can also be used to describe standards that don’t require static datasets. The tag “dataType:static” can be used to distinguish the former. Standards that don’t specify published datasets might have the values “metadata” or “ontology”. Standards used for data exchange between hardware systems (such as TCIP or EML) can also be distinguished from published static datasets with the tag “dataType:hardware”.");
+            break;
+          case "providerType":
+            $("#facet-tooltip").attr('title', "This Directory was originally conceived to hold standards for governmental open data, yet some standards are used in the private sector or by non-governmental organizations. All standards currently in the Directory featuring a list of data providers are public-sector standards. Their associated lists include names of cities or government agencies. Many standards, such as WaterML are not used specifically in government publications and therefore might receive the values “public” and “private”. A third value, “non-profit” is likely also necessary to describe some open data standards.");
+            break;
+          case "language":
+            $("#facet-tooltip").attr('title', "Most entries in the Directory require the use of English element names and attributes. Many standard publishers provide documentation in languages other than English that describe language compatibility issues and solutions.");
+            break;
+          case "keyword":
+            $("#facet-tooltip").attr('title', "Any tags that do not describe a facet of a standard should be qualitative descriptors of the standard or other miscellaneous attributes. The value 'GitHub' can denote an open standard that is maintained on GitHub. The value 'CKAN' can denote a standard that is compatible with the CKAN open data system. The value 'API' should be given to standards whose publishers or a third party has provided an API for sharing data in that standard. Common qualitative keywords are 'transparency' and 'open government'.");
+            break;
+        }
         suggestTags();
       });
       $("#add-tag-button").on('click', function(){

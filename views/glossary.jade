@@ -138,13 +138,78 @@ html
                   strong  Takes into Account Associated Metadata for the Dataset 
                   p
                     | This metric checks whether the standard schema requires metadata. A “yes” for this metric indicates a presence of both descriptive and structural metadata for the primary data. Each standard should readily make available the time and date of the data’s creation, the author, location of the data on the computer networks, and information about any standard applied to the raw data. Metadata should have embedded permanent and/or discoverable URIs and should utilize electronic citations of the data in the form of hyperlinks (Bennett and Harvey, 2009).
-        .text-container#glossary-categories
-          h2 Categories
+        .text-container#glossary-classification
+          h2 Classification
+          h3 Categories
           | Originally 
           a(href='https://docs.google.com/spreadsheets/d/1lqnfwPtaI9cqHMnxkclvtLLsmhVPESPJAajpWDHcOsg/edit?usp=sharing', target='_blank') defined 
           | by 
           a(href='https://ca.linkedin.com/in/jurykonga') Jury Konga
           | , categories have evolved to meet a growing inventory of open data standards
+          h3 Tagging
+          | Tagging open data standard entries in the Directory allows users to view quick facts about the standard. Tagging also links standards with shared characteristics, allowing users to view all standards with a particular tag.
+          h3 Facets
+          | Facets lend additional meaning to tags. If a tag is describing a particular characteristic of an open data standard (a facet), all other tags describing the same characteristic can be grouped within the same facet. Facets also allow users to filter search results by desired facet values.
+          ul
+            li#subject
+              strong Subject: 
+              | This facet is used to separate tags specifying the subject matter a data standard is used to describe. Similar to the original purpose of the “Category” attribute, this facet is meant to classify non-exclusive descriptors specifying the content of a dataset in a standard. Values might include subjects more specific to a category such as “
+              kbd Financial
+              | ”. For example, 
+              i Checkbook NYC 
+              | specifies 
+              kbd annual budget
+              | , 
+              kbd expenditure
+              | , and 
+              kbd procurement contracts
+              | .
+            li#datatype
+              strong Data Type: 
+              | Some standards specify a format in which data must be serialized, such as XML or CSV, while some standards merely specify element or attribute names, allowing users to publish in any machine-readable format. Some standards specify multiple data files in different formats. In such cases a standard can have multiple 
+              kbd dataType 
+              | tags for different formats. 
+              kbd dataType 
+              | can also be used to describe standards that don’t require static datasets. The tag “
+              kbd dataType:static
+              | ” can be used to distinguish the former. Standards that don’t specify published datasets might have the values “
+              kbd metadata
+              | ” or “
+              kbd ontology
+              | ”. Standards used for data exchange between hardware systems (such as 
+              i TCIP 
+              | or 
+              i EML
+              | ) can also be distinguished from published static datasets with the tag “
+              kbd dataType:hardware
+              | ”.
+            li#providertype
+              strong Provider Type: 
+              | This Directory was originally conceived to hold standards for governmental open data, yet some standards are used in the private sector or by non-governmental organizations. All standards currently in the Directory featuring a list of data providers are public-sector standards. Their associated lists include names of cities or government agencies. Many standards, such as 
+              i WaterML 
+              | are not used specifically in government publications and therefore might receive the values “
+              kbd public
+              | ” and “
+              kbd private
+              | ”. A third value, “
+              kbd non-profit
+              | ” is likely also necessary to describe some open data standards.
+            li#language
+              strong Language: 
+              | Most entries in the Directory require the use of English element names and attributes. Many standard publishers provide documentation in languages other than English that describe language compatibility issues and solutions.
+            li#keyword
+              strong Keyword: 
+              | Any tags that do not describe a facet of a standard should be qualitative descriptors of the standard or other miscellaneous attributes. The value "
+              kbd GitHub
+              | " can denote an open standard that is maintained on GitHub. The value "
+              kbd CKAN
+              | " can denote a standard that is compatible with the CKAN open data system. The value "
+              kbd API
+              | " should be given to standards whose publishers or a third party has provided an API for sharing data in that standard. Common qualitative keywords are "
+              kbd transparency
+              | " and "
+              kbd open government
+              | ".
         include footer.jade
     script
       $('#glossary').addClass("selected-page");

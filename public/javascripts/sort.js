@@ -10,12 +10,60 @@ function sortby(allStandards){
 		this.id = id;
 		this.count = count;
 	}
+	function matchInfo(id, tagMatch){
+		this.id = id;
+		this.tagMatch = tagMatch;
+	}
 
 	if (selection == "consumers"){
 		return sortProviders(selection, allStandards);
 	}
+	else if (selection == "relevance"){
+		return facetedSearch(allStandards)
+	}
 	else {
 		return sort(selection, allStandards);
+	}
+
+	function facetedSearch(allStandards){
+		var parameters = $("#filter-parameters").attr('value').split(',');
+		console.log(parameters);
+		var id = "",
+			matchArr = [],
+			sortedMatches = [],
+			output = [];
+
+		for (var i in allStandards){ // run through all standards
+			id = $(allStandards[i]).find('.standard').attr('value'); // store the id of each standard
+			var stanTags = [];
+			var tagCont = $(allStandards[i]).find('.standard-tags');
+			$(tagCont).find('.tag').each(function(){
+				stanTags.push($(this).attr('value').toLowerCase());
+			});
+			var tagMatch = 0;
+			for (toMatch in parameters){
+				if(stanTags.includes(parameters[toMatch])){
+					tagMatch += 1;
+				}
+			}
+			var matchObject = new matchInfo(id, tagMatch);
+			matchArr.push(matchObject);
+		}
+		sortedMatches = sortByMatch(matchArr)
+		console.log(sortedMatches);
+		for(var i in sortedMatches){
+			for(var j in allStandards){
+				if ($(allStandards[j]).find('.standard').attr('value') == sortedMatches[i].id){
+					output.push(allStandards[j]);
+				}
+			}
+		}
+		return output;
+	}
+
+	function sortByMatch(matchArr){
+	  matchArr.sort(function(a,b){return b.tagMatch - a.tagMatch});
+	  return matchArr;
 	}
 
 	function sortProviders(selection, allStandards){
@@ -60,7 +108,7 @@ function sortby(allStandards){
 			} else {
 				date = $(allStandards[i]).find('#added').attr('value'); // store the added date of each standard
 			}
-			id = $(allStandards[i]).find('.standards').attr('id'); // store the id of each standard
+			id = $(allStandards[i]).find('.standard').attr('id'); // store the id of each standard
 			allDateInfo = new dateInfo(id, date); // build an object that stores the date and id for each standard
 			allDates.push(allDateInfo); // push the object into an array for now
 		}

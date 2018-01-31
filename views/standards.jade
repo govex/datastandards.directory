@@ -1,5 +1,6 @@
 - if (standards.length > 0)
 	.directory-items
+		#filter-parameters(style="display: none", value='')
 		strong.search-title
 			script.
 				function createDates(date){
@@ -14,11 +15,11 @@
 					current = window.location.href,
 					search = current.split(origin + "/", 2)[1];
 				if (search.indexOf('%20') >= 0) {
-					$('.search-title').html('Search Results for: ' + search.split('%20').join(' '))
+					$('.search-title').html('Search Results for:<kbd> ' + search.split('%20').join(' ') + '</kbd>')
 				} else {
-					$('.search-title').html('Search Results for: ' + search.split('_').join(' '))
+					$('.search-title').html('Search Results for:<kbd> ' + search.split('_').join(' ') + '</kbd>')
 				}
-		.filters
+		.sort
 			- if (standards.length > 1)
 				strong Sort  
 				select#sortby.dropdown
@@ -26,10 +27,34 @@
 					option(value='new') Newest
 					option(value='old') Oldest
 					option(value='consumers') Most Published
+					option(value='relevance') Relevance
+		.facets
+			- if (standards.length > 1)
+				strong#subject.filter Subject:
+					ul(value='subject')
+				strong#provider-type.filter Provider Type:
+					ul(value='providertype')
+				strong#data-type.filter Data Type:
+					ul(value='datatype')
+				strong#language.filter Language:
+					ul(value='language')
+				strong#keyword.filter Keyword:
+					ul(value='keyword')
+				strong#binary.filter Binary Metrics:
+					ul
+						li Open License
+						li Transferable
+						li Stakeholder Participation
+						li Consensus
+						li Extensible
+						li Human-Readable
+						li Machine-Readable
+						li Real-time
+						li Metadata
 	.directory-standards
 		each item in standards
 			.standard-container
-				.standard
+				.standard(value="#{item.id}")
 					.standard-header
 						.standard-name
 							strong #{item.name}
@@ -113,7 +138,7 @@
 								#provider-list
 								a(href='./contribute/update?#{item.name}', target='_blank')
 									| Don't see your name here? Let us know!
-						.standard-tags
+						.standard-tags(value='#{item.tags}')
 							strong Tags: 
 							- each tag in item.tags
 								a.tag(value='#{tag[0]}:#{tag[1]}') #{tag[0]}:<b>#{tag[1]}</b>,
