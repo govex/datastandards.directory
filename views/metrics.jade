@@ -1,28 +1,28 @@
-a.tooltipStyle(id='#{item.open}', name='open', href='#open', title='Open License: #{item.open}')
+a.tooltipStyle(type='#{item.open}', id='open', href='#open', title='Open License: #{item.open}')
   button#metric.metric(type='button', style='color:white;')
     i.fa.fa-unlock(aria-hidden='true')
-a.tooltipStyle(id='#{item.transferability}', name='transferability', href='#transferable',  title='Transferable to other Jurisdictions: #{item.transferability_rationale}')
+a.tooltipStyle(type='#{item.transferability}', id='transferability', href='#transferable',  title='Transferable to other Jurisdictions: #{item.transferability_rationale}')
   button#metric.metric(type='button', style='color:white;')
     i.fa.fa-exchange(aria-hidden='true')
-a.tooltipStyle(id='#{item.stakePart}', href='#stakeholder', name='stakePart'  title='Stakeholder Participation: #{item.stakeholder_participation_rationale}')
+a.tooltipStyle(type='#{item.stakePart}', href='#stakeholder', id='stakePart'  title='Stakeholder Participation: #{item.stakeholder_participation_rationale}')
   button#metric.metric(type='button', style='color:white;  ')
     i.fa.fa-group(aria-hidden='true')
-a.tooltipStyle(id='#{item.consensus_government}', name='consensus_government', href='#consensus',  title='Consensus-based Governance: #{item.consensus_government_rationale}')
+a.tooltipStyle(type='#{item.consensus_government}', id='consensus_government', href='#consensus',  title='Consensus-based Governance: #{item.consensus_government_rationale}')
   button#metric.metric(type='button', style='color:white;  ')
     i.fa.fa-thumbs-up(aria-hidden='true')
-a.tooltipStyle(id='#{item.extensions}', name='extensions', href='#extension', title='Extensions: #{item.extensions_indicators}')
+a.tooltipStyle(type='#{item.extensions}', id='extensions', href='#extension', title='Extensions: #{item.extensions_indicators}')
   button#metric.metric(type='button', style='color:white;  ')
     i.fa.fa-external-link(aria-hidden='true')
-a.tooltipStyle(id='#{item.human_readable}', name='human_readable', href='#human',  title='Human-Readable: #{item.human_readable_rationale}')
+a.tooltipStyle(type='#{item.human_readable}', id='human_readable', href='#human',  title='Human-Readable: #{item.human_readable_rationale}')
   button#metric.metric(type='button', style='color:white;  ')
     i.fa.fa-eye(aria-hidden='true')
-a.tooltipStyle(id='#{item.machine_readable}', name='machine_readable' href='#machine',  title='Machine-Readable: #{item.machine_readable_rationale}')
+a.tooltipStyle(type='#{item.machine_readable}', id='machine_readable' href='#machine',  title='Machine-Readable: #{item.machine_readable_rationale}')
   button#metric.metric(type='button', style='color:white;  ')
     i.fa.fa-desktop(aria-hidden='true')
-a.tooltipStyle(id='#{item.requires_realtime}', name='requires_realtime', href='#up-to-date',  title='Requires Real-Time Data: #{item.requires_realtime_rationale}')
+a.tooltipStyle(type='#{item.requires_realtime}', id='requires_realtime', href='#up-to-date',  title='Requires Real-Time Data: #{item.requires_realtime_rationale}')
   button#metric.metric(type='button', style='color:white;  ')
     i.fa.fa-clock-o(aria-hidden='true')
-a.tooltipStyle(id='#{item.metadata}', name='metadata', href='#metadata',  title='Metadata: #{item.metadata_rationale}')
+a.tooltipStyle(type='#{item.metadata}', id='metadata', href='#metadata',  title='Metadata: #{item.metadata_rationale}')
   button#metric.metric(type='button', style='color:white;  ')
     i.fa.fa-file(aria-hidden='true')
 
@@ -30,11 +30,10 @@ a.tooltipStyle(id='#{item.metadata}', name='metadata', href='#metadata',  title=
   script.
     var metrics = $('.metrics').children('a');
     for (var i = 0; i < metrics.length; i++){
-      var id = metrics[i].id
-      var name = metrics[i].name
-      if (id == "Yes") {
+      var type = metrics[i].type
+      if (type == "Yes") {
         $(metrics[i]).addClass('yes');
-      } else if (id == "No") {
+      } else if (type == "No") {
         $(metrics[i]).addClass('no');
       } else {
         $(metrics[i]).addClass('unsure');

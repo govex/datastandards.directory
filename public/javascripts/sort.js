@@ -40,9 +40,27 @@ function sortby(allStandards){
 			$(tagCont).find('.tag').each(function(){
 				stanTags.push($(this).attr('value').toLowerCase());
 			});
+			// metric name is pushed into array only if 'yes'
+			// cross-referenced with paramter array for matching metric name
+			var stanMetrics = [];
+			var metricsCont = $(allStandards[i]).find('.metrics');
+			$(metricsCont).find('a').each(function(){
+				var metric = $(this).attr('id');
+				var value = $(this).attr('type');
+				if(typeof value === 'string'){
+					value = value.toLowerCase();
+				}
+				if(value == 'yes'){
+					stanMetrics.push(metric);
+				}
+			});
+			console.log(stanMetrics)
 			var tagMatch = 0;
 			for (toMatch in parameters){
 				if(stanTags.includes(parameters[toMatch])){
+					tagMatch += 1;
+				}
+				if(stanMetrics.includes(parameters[toMatch])){
 					tagMatch += 1;
 				}
 			}
