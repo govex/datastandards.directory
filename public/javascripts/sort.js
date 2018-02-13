@@ -1,6 +1,5 @@
 function sortby(allStandards){
 	var selection = document.getElementById('sortby').value; // get the value of the sort option
-
 	// function that stores the enough that is necessary to effectively sort the standards
 	function dateInfo(id, date){
 		this.id = id;
@@ -27,7 +26,6 @@ function sortby(allStandards){
 
 	function facetedSearch(allStandards){
 		var parameters = $("#filter-parameters").attr('value').split(',');
-		console.log(parameters);
 		var id = "",
 			matchArr = [],
 			sortedMatches = [],
@@ -40,9 +38,26 @@ function sortby(allStandards){
 			$(tagCont).find('.tag').each(function(){
 				stanTags.push($(this).attr('value').toLowerCase());
 			});
+			// metric name is pushed into array only if 'yes'
+			// cross-referenced with paramter array for matching metric name
+			var stanMetrics = [];
+			var metricsCont = $(allStandards[i]).find('.metrics');
+			$(metricsCont).find('a').each(function(){
+				var metric = $(this).attr('id');
+				var value = $(this).attr('type');
+				if(typeof value === 'string'){
+					value = value.toLowerCase();
+				}
+				if(value == 'yes'){
+					stanMetrics.push(metric);
+				}
+			});
 			var tagMatch = 0;
 			for (toMatch in parameters){
 				if(stanTags.includes(parameters[toMatch])){
+					tagMatch += 1;
+				}
+				if(stanMetrics.includes(parameters[toMatch])){
 					tagMatch += 1;
 				}
 			}
@@ -50,7 +65,6 @@ function sortby(allStandards){
 			matchArr.push(matchObject);
 		}
 		sortedMatches = sortByMatch(matchArr)
-		console.log(sortedMatches);
 		for(var i in sortedMatches){
 			for(var j in allStandards){
 				if ($(allStandards[j]).find('.standard').attr('value') == sortedMatches[i].id){

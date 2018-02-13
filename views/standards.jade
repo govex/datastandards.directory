@@ -41,16 +41,16 @@
 				strong#keyword.filter Keyword:
 					ul(value='keyword')
 				strong#binary.filter Binary Metrics:
-					ul
-						li Open License
-						li Transferable
-						li Stakeholder Participation
-						li Consensus
-						li Extensible
-						li Human-Readable
-						li Machine-Readable
-						li Real-time
-						li Metadata
+					ul(value='binary')
+						li(value='open') Open License
+						li(value='transferability') Transferable
+						li(value='stakePart') Stakeholder Participation
+						li(value='consensus_government') Consensus
+						li(value='extensions') Extensible
+						li(value='human_readable') Human-Readable
+						li(value='machine_readable') Machine-Readable
+						li(value='requires_realtime') Real-time
+						li(value='metadata') Metadata
 	.directory-standards
 		each item in standards
 			.standard-container
