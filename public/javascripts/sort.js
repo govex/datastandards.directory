@@ -1,6 +1,5 @@
 function sortby(allStandards){
 	var selection = document.getElementById('sortby').value; // get the value of the sort option
-
 	// function that stores the enough that is necessary to effectively sort the standards
 	function dateInfo(id, date){
 		this.id = id;
@@ -27,7 +26,6 @@ function sortby(allStandards){
 
 	function facetedSearch(allStandards){
 		var parameters = $("#filter-parameters").attr('value').split(',');
-		console.log(parameters);
 		var id = "",
 			matchArr = [],
 			sortedMatches = [],
@@ -54,7 +52,6 @@ function sortby(allStandards){
 					stanMetrics.push(metric);
 				}
 			});
-			console.log(stanMetrics)
 			var tagMatch = 0;
 			for (toMatch in parameters){
 				if(stanTags.includes(parameters[toMatch])){
@@ -68,7 +65,6 @@ function sortby(allStandards){
 			matchArr.push(matchObject);
 		}
 		sortedMatches = sortByMatch(matchArr)
-		console.log(sortedMatches);
 		for(var i in sortedMatches){
 			for(var j in allStandards){
 				if ($(allStandards[j]).find('.standard').attr('value') == sortedMatches[i].id){
