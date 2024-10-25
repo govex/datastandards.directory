@@ -16,6 +16,9 @@ var db = process.env.DD_DB_NAME;
 
 var connectionString = process.env.DATABASE_URL || `postgres:\/\/${user}:${pw}@${host}:${port}/${db}`; // Heroku postgres OR local host postgres inventory database
 
+//var connectionString = 'postgres://dsd:dsd_password@localhost:5432/standards'
+console.log(connectionString)
+
 var db = pgp(connectionString); // using pg-promise, create database with connection details
 
 function getAddForm(req, res, next){
