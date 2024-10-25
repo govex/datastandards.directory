@@ -14,7 +14,7 @@ var host = process.env.DD_DB_HOST;
 var port = process.env.DD_DB_PORT;
 var db = process.env.DD_DB_NAME;
 
-var connectionString = process.env.DATABASE_URL || `postgres:\/\/${user}:${pw}@${host}:${port}/${db}`; // Heroku postgres OR local host postgres inventory database
+var connectionString = process.env.DATABASE_URL + 'sslmode=require' || `postgres:\/\/${user}:${pw}@${host}:${port}/${db}`; // Heroku postgres OR local host postgres inventory database
 
 //var connectionString = 'postgres://dsd:dsd_password@localhost:5432/standards'
 console.log(connectionString)
