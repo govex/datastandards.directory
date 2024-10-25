@@ -12,14 +12,18 @@ var user = process.env.DD_DB_USER;
 var pw = process.env.DD_DB_PASSWORD;
 var host = process.env.DD_DB_HOST;
 var port = process.env.DD_DB_PORT;
-var db = process.env.DD_DB_NAME;
+var db2 = process.env.DD_DB_NAME;
 
-var connectionString = process.env.DATABASE_URL + '&sslmode=require' || `postgres:\/\/${user}:${pw}@${host}:${port}/${db}`; // Heroku postgres OR local host postgres inventory database
+var connectionString = process.env.DATABASE_URL || `postgres:\/\/${user}:${pw}@${host}:${port}/${db2}`; // Heroku postgres OR local host postgres inventory database
 
-//var connectionString = 'postgres://dsd:dsd_password@localhost:5432/standards'
+var connectionString = 'postgres://dsd:dsd_password@localhost:5432/standards'
 console.log(connectionString)
 
+pgp.pg.defaults.ssl = false;
 var db = pgp(connectionString); // using pg-promise, create database with connection details
+
+
+
 
 function getAddForm(req, res, next){
   res.render('add');
