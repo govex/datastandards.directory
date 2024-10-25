@@ -16,7 +16,7 @@ var db2 = process.env.DD_DB_NAME;
 
 var connectionString = process.env.DATABASE_URL || `postgres:\/\/${user}:${pw}@${host}:${port}/${db2}`; // Heroku postgres OR local host postgres inventory database
 
-var connectionString = 'postgres://dsd:dsd_password@localhost:5432/standards'
+//var connectionString = 'postgres://dsd:dsd_password@localhost:5432/standards'
 console.log(connectionString)
 
 pgp.pg.defaults.ssl = false;
