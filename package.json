@@ -2,24 +2,24 @@
   "name": "datastandards.directory",
   "version": "0.0.3",
   "engines": {
-    "node": "6.11.1"
+    "node": "19.9.0"
   },
   "description": "data standards directory",
   "scripts": {
     "start": "node ./bin/www"
   },
   "dependencies": {
-    "bluebird": "^3.4.7",
-    "body-parser": "~1.16.0",
-    "clipboard": "^1.6.1",
-    "cookie-parser": "~1.4.3",
-    "debug": "~2.6.0",
-    "express": "~4.14.1",
+    "bluebird": "^3.7.2",
+    "body-parser": "~1.20.3",
+    "clipboard": "^2.0.11",
+    "cookie-parser": "~1.4.7",
+    "debug": "~4.3.7",
+    "express": "~4.21.1",
     "jade": "~1.11.0",
-    "morgan": "~1.7.0",
-    "pg": "4.x",
-    "pg-promise": "^5.5.8",
-    "serve-favicon": "~2.3.2"
+    "morgan": "~1.10.0",
+    "pg": "8.x",
+    "pg-promise": "^11.10.1",
+    "serve-favicon": "~2.5.0"
   },
   "repository": {
     "type": "git",
