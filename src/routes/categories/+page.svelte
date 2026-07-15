@@ -127,7 +127,7 @@
 	}
 	.subs a:hover {
 		text-decoration: none;
-		background: var(--brand-teal);
+		background: var(--interactive);
 		color: #fff;
 	}
 	.subs a:hover .count {

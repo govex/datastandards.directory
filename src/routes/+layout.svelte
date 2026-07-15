@@ -6,8 +6,9 @@
 </script>
 
 <div class="app">
+	<a class="skip-link" href="#main">Skip to content</a>
 	<Header />
-	<main>{@render children()}</main>
+	<main id="main">{@render children()}</main>
 	<Footer />
 </div>
 

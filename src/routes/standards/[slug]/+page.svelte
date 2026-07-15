@@ -172,7 +172,7 @@
 		display: inline-flex;
 		align-items: center;
 		gap: 0.4rem;
-		background: var(--brand-teal);
+		background: var(--interactive);
 		color: #fff;
 		padding: 0.55rem 1rem;
 		border-radius: var(--radius-sm);
@@ -180,7 +180,7 @@
 	}
 	.btn:hover {
 		text-decoration: none;
-		background: var(--brand-teal-dark);
+		background: var(--interactive-hover);
 	}
 	.btn--ghost {
 		background: transparent;
@@ -188,7 +188,7 @@
 		border: 2px solid var(--brand-teal);
 	}
 	.btn--ghost:hover {
-		background: var(--brand-teal);
+		background: var(--interactive);
 		color: #fff;
 	}
 	.grid {

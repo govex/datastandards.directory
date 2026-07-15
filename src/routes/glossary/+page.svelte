@@ -112,7 +112,7 @@
 		width: 2rem;
 		height: 2rem;
 		border-radius: var(--radius-sm);
-		background: var(--brand-teal);
+		background: var(--interactive);
 		color: #fff;
 		margin-top: 0.1rem;
 	}

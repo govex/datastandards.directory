@@ -6,9 +6,14 @@
 :root {
 	/* Brand accents (legacy palette) */
 	--brand-plum: #2b1f2a; /* header/footer banner */
-	--brand-teal: #499aa0; /* primary action / links */
-	--brand-teal-dark: #39787d;
+	--brand-teal: #499aa0; /* accent / borders / decorative */
+	--brand-teal-dark: #39787d; /* links & text on light bg (AA) */
 	--brand-gold: #e8c047; /* secondary accent */
+
+	/* Interactive fills that carry white text — darker teal for AA contrast
+	   (white on #39787d ≈ 5:1; the lighter --brand-teal is only ~3.3:1). */
+	--interactive: #39787d;
+	--interactive-hover: #2b5c60;
 	--brand-beta: #fb6140; /* beta / warning note */
 
 	/* Metric semantic colors (must be preserved) */
@@ -107,4 +112,32 @@ img {
 	clip: rect(0, 0, 0, 0);
 	white-space: nowrap;
 	border: 0;
+}
+
+/* Skip link — visible only when focused. */
+.skip-link {
+	position: absolute;
+	left: 0.5rem;
+	top: -3rem;
+	z-index: 100;
+	background: var(--brand-gold);
+	color: var(--brand-plum);
+	padding: 0.6rem 1rem;
+	border-radius: var(--radius-sm);
+	font-weight: 700;
+	transition: top 0.15s ease;
+}
+.skip-link:focus {
+	top: 0.5rem;
+}
+
+@media (prefers-reduced-motion: reduce) {
+	*,
+	*::before,
+	*::after {
+		animation-duration: 0.001ms !important;
+		animation-iteration-count: 1 !important;
+		transition-duration: 0.001ms !important;
+		scroll-behavior: auto !important;
+	}
 }

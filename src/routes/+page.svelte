@@ -24,6 +24,7 @@
 			<input
 				type="search"
 				name="q"
+				aria-label="Search open data standards"
 				placeholder="Type a category or open data standard, then press enter" />
 			<button type="submit">Search</button>
 		</form>
@@ -98,7 +99,7 @@
 		color: var(--text);
 	}
 	.search button {
-		background: var(--brand-teal);
+		background: var(--interactive);
 		color: #fff;
 		border: 0;
 		border-radius: var(--radius-sm);
@@ -108,7 +109,7 @@
 		cursor: pointer;
 	}
 	.search button:hover {
-		background: var(--brand-teal-dark);
+		background: var(--interactive-hover);
 	}
 	.quick {
 		margin-top: 0.9rem;

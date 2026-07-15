@@ -97,7 +97,7 @@
 		background: rgba(255, 255, 255, 0.12);
 	}
 	.nav a.active {
-		background: var(--brand-teal);
+		background: var(--interactive);
 	}
 	.nav .gh {
 		display: inline-grid;
