@@ -4,33 +4,39 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## What this is
 
-The Open Data Standards Directory — an inventory of open data standards, operated by the Center for Government Excellence at Johns Hopkins University (with Geothink/McGill). This `master` branch is the **legacy Node.js/Express + PostgreSQL app** that renders Jade templates server-side. A separate effort to migrate to a static Jekyll site lives on the `origin/jekyll-migration` branch (see "Jekyll migration" below).
+The Open Data Standards Directory — an inventory of ~69 open data standards, operated by the Center for Government Excellence at Johns Hopkins University (with Geothink / McGill). This `svelte-migration` branch is a **static SvelteKit site** (fully prerendered, deployed to GitHub Pages) that replaces the legacy Node/Express + PostgreSQL app. The Express app still lives on `master`.
+
+> ⚠️ **`master` auto-deploys to Heroku production (no staging).** Do all work on `svelte-migration`; never merge to `master` until the DNS cutover is done and Heroku auto-deploy is disabled. See `DEPLOY.md`.
 
 ## Commands
 
-- **Run the app:** `npm start` → serves on `http://localhost:3000` (`bin/www`, port from `$PORT` or 3000).
-- **Live-reload during development:** the README's convention is to temporarily change the `start` script in `package.json` from `node` to `supervisor`, then run `npm start`. Revert it back to `node` before committing/pushing.
-- No test, lint, or build step is configured (`npm test` is unset).
+- `npm run dev` — dev server (Vite).
+- `npm run build` — static build to `build/` (adapter-static, prerenders every route).
+- `npm run preview` — serve the production build locally.
+- `npm run check` — `svelte-kit sync` + `svelte-check` (TypeScript). Use this as the type gate.
+- `npm run data:convert` — regenerate the per-standard YAML from `standards-export.json` (see Data).
 
-Requires Node `19.9.0` (see `engines`) and a reachable PostgreSQL database (see Database below).
+Requires Node 20+.
 
 ## Architecture
 
-Request flow: **`bin/www` → `app.js` (Express setup) → `routes/*.js` → `queries.js` (pg-promise) → PostgreSQL → Jade view in `views/`**.
+**Data is the source of truth as YAML, loaded at build time — there is no runtime backend.**
 
-- `app.js` is the real app module: registers the Jade view engine, serves `public/` as static assets, and mounts one router per top-level route (`/`, `/contribute`, `/contact`, `/glossary`, `/about`, `/categories`, `/api`, and the catch-all `get-data` on `/`). `server.js` is a broken/unused stub — ignore it; the entry point is `bin/www`.
-- **`queries.js` is the entire data layer.** Every route delegates here. All read queries hardcode a `verified = 'Yes'` (or `lower(verified) = 'yes'`) filter — unverified rows are never served publicly. During row processing, any empty / `null` / `unsure` / `n/a` value is normalized to the string `"No information"`, and comma-separated `subcategory` strings are split into arrays. Replicate both behaviors when touching data output.
-- Two parallel read paths exist for the same search input `:id`: `GET /data/:id` (via `get-data.js`) renders the `directory` view as HTML, while `GET /api/get/:id` returns JSON. `:id === 'all'` returns every standard; otherwise it's matched against `lower(name)||lower(category)||lower(subcategory)||lower(publisher) LIKE '%<input>%'`. `GET /keywords` feeds client-side autocomplete.
-- Writes: `POST /api/add` (`createStandard`) inserts into the `standards` table; `POST /api/update` (`post`) inserts a contributor comment into the `posts` table. The full `standards` column set is enumerated in `createStandard` — it is the authoritative field list for a standard.
-- Client-side behavior lives in `public/javascripts/` (search, autocomplete, sort, contribution posting). Styles are **SASS** under `public/stylesheets/` (including a vendored `bourbon` mixin library) — edit the `.sass` sources, not compiled CSS.
+- **Data pipeline:** `standards-export.json` (a one-time DB export, kept at repo root) → `scripts/json-to-yaml.mjs` normalizes it into one file per standard under `src/lib/data/standards/<slug>.yaml`. Normalization: `"Yes"/"No"` → booleans; the `"No information"` sentinel / blanks → omitted keys; `provider_list` (pipe-delimited) → `providers[]`; `tags` (`key:value|…`) → grouped object over 5 keys; metrics grouped with their `rationale`/`indicators`. Editing a standard = editing its YAML (or accepting a contribution issue and committing the change). The converter only runs locally; CI builds from the committed YAML.
+- **Loader:** `src/lib/data/standards.ts` reads every YAML via `import.meta.glob(..., { query: '?raw', eager: true })` + `js-yaml`, coerces to the `Standard` type (`src/lib/types.ts`), and exports `standards`, `bySlug`, `searchText()`, and `categoryTree()`. Nothing ships to the client except data referenced by a rendered page (Vite inlines/tree-shakes).
+- **Routes** (all prerendered; `prerender = true` in `src/routes/+layout.ts`): `/` (home), `/standards` (browse), `/standards/[slug]` (detail — `entries()` enumerates all 69 slugs), `/categories`, `/glossary`, `/about`, `/contribute`. `404.html` is the fallback.
+- **Search/filter** (`/standards`): in-memory over the full dataset (no search library — 69 records). The **URL query is the source of truth** (`?q=&category=&stage=&m=`) via shallow `replaceState`, giving shareable links + back/forward. Reading `searchParams` is guarded behind `browser` because SvelteKit forbids it during prerender (the base page prerenders showing all standards).
 
-## Database
+## Symbology & styling
 
-- Connection is built in both `queries.js` and (on the migration branch) the export script from either `DATABASE_URL` or the `DD_DB_USER` / `DD_DB_PASSWORD` / `DD_DB_HOST` / `DD_DB_PORT` / `DD_DB_NAME` env vars. `.env` (git-ignored, holds `DATABASE_URL`) is loaded via `dotenv` on the migration branch; the legacy app expects these vars already present in the environment.
-- SSL is explicitly disabled (`pgp.pg.defaults.ssl = false`).
-- `latest.dump` is a PostgreSQL dump of the data — use it to seed a local `standards`/`posts` database for development.
-- Two tables: `standards` (the directory content) and `posts` (contributor submissions/comments).
+- **Metric system** is the core symbology. `src/lib/metrics.ts` defines the 9 metrics (order, label, icon, glossary text) + helpers; `src/lib/icons.ts` holds inline SVGs (Feather-style, replacing the Font Awesome webfont). Rendered by `MetricIcons.svelte` (compact row) and `MetricList.svelte` (full, with rationale). Semantic colors: yes `#619e81`, no `#990033`, unknown grey — tokens `--metric-*`.
+- **Curated homepage grid** (`src/lib/curatedCategories.ts` + `CategoryGrid.svelte`) preserves the 10 legacy PNG category icons. It is **intentionally decoupled** from the 11 real data categories; each card deep-links to a `/standards?q=` search. Images live in `static/images/`.
+- **Design tokens** are CSS custom properties in `src/app.css` (legacy palette as accents over a modern neutral base). Interactive fills that carry white text use `--interactive` (`#39787d`) for AA contrast — do not use the lighter `--brand-teal` for white-on-color text.
 
-## Jekyll migration (context, on `origin/jekyll-migration`)
+## Contributions
 
-The data is effectively static, so there's an in-progress migration to a Jekyll static site to drop the database and server. On `master`, `jekyll-site/` contains only build output (`_site/`) and vendored gems (`vendor/`) — the Jekyll *sources* live on the migration branch. That branch adds `export-to-jekyll.js`, which reads the Postgres `standards` table (verified only) and writes one YAML file per standard plus JSON search indexes, replacing server-side search with client-side JS. If asked to work on the static site, check out `origin/jekyll-migration` rather than working from `master`.
+No backend: Add/Update/Contact are **GitHub Issue Forms** (`.github/ISSUE_TEMPLATE/*.yml`). Site buttons deep-link via `issueForm` helpers in `src/lib/nav.ts` (the detail-page "update" link prefills the standard name). Accepted issues become YAML edits.
+
+## Deployment
+
+Static build → GitHub Pages via `.github/workflows/deploy.yml` (triggers on `svelte-migration` only). Custom domain served from the apex, so `paths.base` is empty. The `CNAME` is staged at `deploy/CNAME` and only moved into `static/` at cutover — see `DEPLOY.md` for the full ordered checklist.
