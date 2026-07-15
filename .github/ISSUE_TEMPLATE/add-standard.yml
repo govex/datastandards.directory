@@ -1,0 +1,58 @@
+name: Add a standard
+description: Propose a new open data standard for the directory
+title: "Add standard: "
+labels: ["add-standard"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for helping grow the directory! Fill in what you can — a maintainer
+        will review and turn accepted proposals into a data file.
+  - type: input
+    id: name
+    attributes:
+      label: Standard name
+      placeholder: e.g. General Transit Feed Specification (GTFS)
+    validations:
+      required: true
+  - type: input
+    id: website
+    attributes:
+      label: Website or documentation URL
+    validations:
+      required: true
+  - type: input
+    id: publisher
+    attributes:
+      label: Publisher / maintaining organization
+  - type: dropdown
+    id: category
+    attributes:
+      label: Category
+      options:
+        - Buildings
+        - Crime
+        - Elections
+        - Environment
+        - Finance
+        - Geospatial
+        - Legislature
+        - Metadata
+        - Public Facilities
+        - Services
+        - Transportation
+        - Other / not sure
+    validations:
+      required: true
+  - type: textarea
+    id: description
+    attributes:
+      label: Description
+      description: One or two sentences on what the standard covers.
+    validations:
+      required: true
+  - type: textarea
+    id: notes
+    attributes:
+      label: Anything else?
+      description: License, example datasets, known data providers, tags — anything useful.

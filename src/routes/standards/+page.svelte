@@ -6,7 +6,7 @@
 	import { METRICS, metricValue } from '$lib/metrics';
 	import StandardCard from '$lib/components/StandardCard.svelte';
 	import Icon from '$lib/components/Icon.svelte';
-	import { REPO } from '$lib/nav';
+	import { issueForm } from '$lib/nav';
 
 	// Precompute the search haystack once.
 	const haystacks = new Map(standards.map((s) => [s.slug, searchText(s)]));
@@ -129,7 +129,7 @@
 			<p>No standards match your search.</p>
 			<div class="empty-actions">
 				<button class="btn" onclick={clearAll}>Clear filters</button>
-				<a class="btn btn--ghost" href="{REPO}/issues/new?labels=add-standard" target="_blank" rel="noopener">
+				<a class="btn btn--ghost" href={issueForm.add} target="_blank" rel="noopener">
 					Suggest a standard
 				</a>
 			</div>

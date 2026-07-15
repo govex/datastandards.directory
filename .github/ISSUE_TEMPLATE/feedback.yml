@@ -1,0 +1,17 @@
+name: Feedback / contact
+description: Ask a question or share feedback about the directory
+title: "Feedback: "
+labels: ["feedback"]
+body:
+  - type: textarea
+    id: message
+    attributes:
+      label: Your message
+      description: Questions, corrections, or general feedback — all welcome.
+    validations:
+      required: true
+  - type: input
+    id: contact
+    attributes:
+      label: How can we reach you? (optional)
+      description: An email or handle, if you'd like a reply.

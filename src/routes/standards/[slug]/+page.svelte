@@ -1,7 +1,7 @@
 <script lang="ts">
 	import Icon from '$lib/components/Icon.svelte';
 	import MetricList from '$lib/components/MetricList.svelte';
-	import { REPO } from '$lib/nav';
+	import { issueForm } from '$lib/nav';
 	import type { PageProps } from './$types';
 
 	let { data }: PageProps = $props();
@@ -16,11 +16,7 @@
 		].filter((l): l is { label: string; href: string } => Boolean(l.href))
 	);
 
-	const updateUrl = $derived(
-		`${REPO}/issues/new?labels=update-standard&title=${encodeURIComponent(
-			`Update: ${s.name}`
-		)}&body=${encodeURIComponent(`Standard: ${s.name} (${s.slug})\n\nSuggested change:\n`)}`
-	);
+	const updateUrl = $derived(issueForm.update(s.name));
 
 	function fmtDate(iso?: string): string {
 		if (!iso) return '';

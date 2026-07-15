@@ -1,0 +1,24 @@
+name: Update a standard
+description: Suggest a correction or update to an existing standard
+title: "Update standard: "
+labels: ["update-standard"]
+body:
+  - type: input
+    id: standard
+    attributes:
+      label: Which standard?
+      description: The standard's name or slug (prefilled when you arrive from a standard's page).
+    validations:
+      required: true
+  - type: textarea
+    id: change
+    attributes:
+      label: What should change?
+      description: Describe the correction, addition, or update.
+    validations:
+      required: true
+  - type: input
+    id: source
+    attributes:
+      label: Source / evidence
+      description: A URL that supports the change, if available.
