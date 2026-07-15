@@ -115,6 +115,35 @@ export const standards: Standard[] = Object.values(raw)
 /** Slug -> standard, for detail-page lookups. */
 export const bySlug: Map<string, Standard> = new Map(standards.map((s) => [s.slug, s]));
 
+export interface CategoryNode {
+	name: string;
+	count: number;
+	subcategories: { name: string; count: number }[];
+}
+
+/** Categories with their subcategories and standard counts, most-populated first. */
+export function categoryTree(): CategoryNode[] {
+	const cats = new Map<string, { count: number; subs: Map<string, number> }>();
+	for (const s of standards) {
+		let cat = cats.get(s.category);
+		if (!cat) {
+			cat = { count: 0, subs: new Map() };
+			cats.set(s.category, cat);
+		}
+		cat.count++;
+		for (const sub of s.subcategory) cat.subs.set(sub, (cat.subs.get(sub) ?? 0) + 1);
+	}
+	return [...cats.entries()]
+		.map(([name, { count, subs }]) => ({
+			name,
+			count,
+			subcategories: [...subs.entries()]
+				.map(([n, c]) => ({ name: n, count: c }))
+				.sort((a, b) => a.name.localeCompare(b.name))
+		}))
+		.sort((a, b) => b.count - a.count || a.name.localeCompare(b.name));
+}
+
 /** Lower-cased haystack for substring search over the key fields. */
 export function searchText(s: Standard): string {
 	return [
