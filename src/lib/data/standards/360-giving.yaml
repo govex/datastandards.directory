@@ -1,0 +1,67 @@
+name: 360 Giving
+slug: 360-giving
+category: Finance
+subcategory:
+  - Philanthropy
+description: 360Giving aims to help UK grant makers and philanthropists to publish their grant information online in an easy to use way
+stage_in_development: Completed
+license: Creative Commons Attribution 4.0 International
+version: '1'
+updated: '2017-05-18'
+recorded: '2017-06-13'
+verified: true
+publisher: 360 Giving
+publisher_reputation: 360 Giving is a registered charity with a non-profit operating model focused solely on developing and promoting adoption of a data standard for charitable grants and donations
+consumers: High level of use within the UK
+apps: Web apps such as Beehive, GrantNav, and the 360Giving Data Registry
+links:
+  website: http://www.threesixtygiving.org/
+  documentation: http://www.threesixtygiving.org/standard/reference/
+  example: http://grantnav.threesixtygiving.org/
+  contact: https://github.com/ThreeSixtyGiving
+open: true
+metrics:
+  transferability:
+    value: true
+    rationale: Although the intended users of this standard are in the UK, the standard can specify activity in any country, and funding from any source or in any currency. The standard uses ISO codes for countries, currencies, and dates. Some of the geography codes are UK-specific.
+  stakeholder_participation:
+    value: true
+    rationale: The employees and board of directors at 360Giving are all associated with either the Open Data sector or the charity and government funding sector
+  consensus_government:
+    value: true
+    rationale: Standard and documentation is maintained on GitHub, with many contributors
+  machine_readable:
+    value: true
+    rationale: JSON or CSV format is specified
+  human_readable:
+    value: true
+    rationale: Any coded variables in the schema are accompanied by a plaintext description (e.g. ISO codes for currencies)
+  requires_realtime:
+    value: true
+    rationale: Grants and donations are one-time events, which are documented individually. Repeat transactions between parties are stored in an organized manner in the GrantNav tool
+  metadata:
+    value: true
+    rationale: The standard uses several standard codes in addition to ISOs, such as an organisation identifier that is specified on their website
+  extensions:
+    value: false
+    indicators: 360 Giving is encouraging users to follow a template for the schema, implying that all users should have identical fields
+tags:
+  dataType:
+    - CSV
+    - Excel
+    - JSON
+    - schema
+    - static
+  language:
+    - English
+  providerType:
+    - non-profit
+  subject:
+    - grants
+    - philanthropy
+  keyword:
+    - API
+    - GitHub
+    - NGO
+    - template
+    - transparency

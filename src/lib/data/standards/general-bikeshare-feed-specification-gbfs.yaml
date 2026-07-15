@@ -1,0 +1,113 @@
+name: General Bikeshare Feed Specification (GBFS)
+slug: general-bikeshare-feed-specification-gbfs
+category: Transportation
+subcategory:
+  - Bikeshare
+description: Provides real-time information for bikeshare systems, such as number of available docks or bikes per station. Apps such as Transit can easily incorporate bikeshare station locations and statuses across participating cities
+stage_in_development: Completed
+license: Creative Commons Attribution 3.0
+version: '1'
+updated: '2016-09-08'
+recorded: '2017-05-24'
+verified: true
+publisher: North American Bikeshare Systems Association (NABSA)
+consumers: Currently used by 50 bikeshare operators, mostly in the US.
+apps: Transit App, RideScout, Google Maps, Citymapper
+links:
+  website: https://github.com/NABSA/gbfs
+  documentation: https://github.com/NABSA/gbfs/blob/master/gbfs.md
+  example: https://gbfs.bcycle.com/bcycle_madison/station_status.json
+  contact: https://github.com/NABSA/gbfs
+open: true
+metrics:
+  transferability:
+    value: true
+    rationale: JSON format includes a root page on a gbfs domain with auto-discoverable links to JSON files
+  stakeholder_participation:
+    value: true
+    rationale: Stakeholders can collaborate and communicate on Github
+  consensus_government:
+    value: true
+    rationale: Documentation is completely open on Github
+  machine_readable:
+    value: true
+    rationale: JSON only
+  human_readable:
+    value: true
+    rationale: Standard uses long, descriptive attribute names. Root page includes links and names for all the feeds provided by the operator
+  requires_realtime:
+    value: true
+    rationale: First two attributes in JSON are last_updated in epoch time, and ttl, which specifies the number of seconds until the data will be updated
+  metadata:
+    value: false
+  extensions:
+    value: false
+    indicators: Possible future enhancements such as distinguishing between multiple bike types in a system were proposed but do not fit into the current specification
+providers:
+  - Abu Dhabi
+  - Ann Arbor
+  - Atlanta
+  - Austin
+  - Aventura
+  - Battle Creek
+  - Boise
+  - Boston
+  - Boulder
+  - Buffalo
+  - Charlotte
+  - Chattanooga
+  - Chicago
+  - Cincinnati
+  - Clarksville
+  - Clemson
+  - Columbus, IN
+  - Columbus, OH
+  - Curtin University (Perth)
+  - Dallas
+  - Dayton, OH
+  - Denver
+  - Des Moines
+  - El Paso
+  - Evans, GA
+  - Fargo
+  - Fort Lauderdale
+  - Fort Worth
+  - Greenville, SC
+  - Hamilton, ON
+  - Houston
+  - Indianapolis
+  - Jackson, MI
+  - Kansas CIty
+  - Las Vegas
+  - Long Beach, NY
+  - Los Angeles
+  - Madison, WI
+  - McAllen, TX
+  - Milwaukee
+  - Minneapolis-Saint Paul
+  - Monash University(Melbourne)
+  - Nashville
+  - New York City
+  - Oklahoma City
+  - Omaha
+  - Orlando
+  - Ottawa
+  - Philadelphia
+  - Phoenix
+  - Portland, OR
+  - Prague
+  - Rapid City, SD
+  - Salt Lake City
+  - San Antonio
+  - San Francisco
+  - San Ramon, CA
+  - Santa Monica
+  - Savannah
+  - Spartanburg, SC
+  - Sun Valley, ID
+  - Tampa
+  - Topeka
+  - Toronto
+  - University of South Florida
+  - University of Virginia
+  - Washington, DC

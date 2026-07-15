@@ -1,0 +1,46 @@
+name: WaterML
+slug: waterml
+category: Environment
+subcategory:
+  - Water
+description: WaterML is a standard model for representing water observation time series
+stage_in_development: Completed
+license: Copyright OGC
+version: 2.0.1
+updated: '2014-02-24'
+recorded: '2017-06-15'
+verified: true
+publisher: Open Geospatial Consortium (OGC)
+publisher_reputation: The Open Geospatial Consortium is an international standards body that promotes collaboration in developing formats for geospatial data
+apps: KISTERS is an example of Hydrological time-series management software. There are packages on GitHub made by various organizations and individuals for analyzing WaterML data
+links:
+  website: http://schemas.opengis.net/waterml/2.0/
+  documentation: http://www.opengeospatial.org/standards/waterml
+  example: http://schemas.opengis.net/waterml/2.0/examples/measurement-timeseries-qualifier.xml
+  contact: http://www.opengeospatial.org/projects/groups/waterml2.0swg
+open: false
+metrics:
+  transferability:
+    value: true
+    rationale: Designed to be a general specification for hydrologic time-series in any setting
+  stakeholder_participation:
+    value: true
+    rationale: Standard Working Group included public and private stakeholders such as Australian Bureau of Meteorology, Australian CSIRO, KISTERS AG, UK CEH, and USGS
+  consensus_government:
+    value: true
+    rationale: The OGC StandardsTracker tool allows change requests and comments to be submitted
+  machine_readable:
+    value: true
+    rationale: XML schema
+  human_readable:
+    value: false
+    rationale: Complex XML schemas with complex hierarchy and cryptic element names
+  requires_realtime:
+    value: true
+    rationale: Schemas include a generationDate
+  metadata:
+    value: true
+    rationale: Makes use of OGC's Observations & Measurements standards, Geography Markup Language
+  extensions:
+    value: true
+    indicators: WaterML is designed to allow encoding of data in a variety of exchange scenarios

@@ -1,0 +1,45 @@
+name: Ed-Fi Data Standard
+slug: ed-fi-data-standard
+category: Services
+subcategory:
+  - Education
+description: The Ed-Fi Data Standard builds a secure bridge between disparate data systems, empowering state agencies, districts and educators with up-to-date, actionable insights so they can better understand the individual needs of every student in their classroom. The Ed-Fi Data Standard serves as the foundation for enabling interoperability among secure data systems and contains a Unifying Data Model designed to capture the meaning and inherent structure in the most important information in the K-12 education enterprise.
+stage_in_development: Completed
+license: Licensed by Ed-Fi, but provided freely upon registration
+version: '2'
+updated: '2017-02-24'
+recorded: '2017-06-14'
+verified: true
+publisher: Ed-Fi Alliance
+publisher_reputation: Ed-Fi Alliance is funded by the Dell foundation and is composed of education IT personnel and technology solution partners
+consumers: Since launching in July 2011, Ed-Fi technology has gained significant momentum in K-12 education among state education agencies, school districts and vendors. As of February 2014, 19 states have licensed or are in discussions to license Ed-Fi technology. Collectively, these 19 states represent 40% of K-12 students and teachers across the United States
+apps: Ed-Fi Applications
+links:
+  website: https://www.ed-fi.org/
+  documentation: https://techdocs.ed-fi.org/display/EFDS20/Ed-Fi+Data+Standard+v2.0
+  example: https://techdocs.ed-fi.org/download/attachments/12159362/Interchange-StudentGrade-Bundle.zip?api=v2
+  contact: https://github.com/Ed-Fi-Alliance/Ed-Fi-Standard
+open: false
+metrics:
+  transferability:
+    value: true
+    rationale: Current Ed-Fi Technology licensees include only US school districts, but include everything in the K-12 range
+  stakeholder_participation:
+    value: false
+    rationale: Clients (school districts) are not expected to participate in creating the standard
+  consensus_government:
+    value: false
+    rationale: Standard and documentation is maintained on GitHub and is claimed to be open-source but contribution appears to be insular
+  machine_readable:
+    value: true
+    rationale: XML schema
+  human_readable:
+    value: true
+    rationale: Element names are logical and readable
+  requires_realtime:
+    value: false
+    rationale: Depends on the dataset (Student Attendance Interchange versus Education Organization Interchange)
+  metadata:
+    value: false
+  extensions:
+    value: false

@@ -1,0 +1,43 @@
+name: Commerical Zones
+slug: commerical-zones
+category: Services
+subcategory:
+  - Ontology
+  - Commercial
+description: Vocabulario para la representación de locales y zonas comerciales is an ontology for describing local businesses, shopping areas, and their accessibility
+stage_in_development: Draft
+license: Creative Commons Attribution License 4.0 International
+version: '0.1'
+updated: '2014-06-25'
+recorded: '2017-08-30'
+verified: true
+publisher: The Ontology Engineering Group
+publisher_reputation: The Ontology Engineering Group is based at the Computer Science School at Universidad Politécnica de Madrid. It is widely recognised in Europe in the areas of Ontology Engineering, Semantic Infrastructure, Linked Data, and Data Integration. Oscar Corcho has collaborated with members of Spanish city councils and other Spanish organizations to draft vocabularies for linked open data
+links:
+  website: http://www.segittur.es/en/inicio/index.html
+  documentation: http://vocab.linkeddata.es/datosabiertos/def/comercio/tejidoComercial.html
+  contact: mailto:ocorcho@fi.upm.es
+open: true
+metrics:
+  transferability:
+    value: false
+    rationale: This vocabulary is intended to be used by municipalities across Spain, but could be transferable. Data class and property names are in Spanish
+  stakeholder_participation:
+    value: true
+    rationale: The contributors to this vocabulary include members of both state and city governments, officials from the Ministry of Industry, Energy, and Tourism, and a member of Localidata, a Spanish start-up specializing in open data
+  consensus_government:
+    value: false
+    rationale: No way for the public and interested parties to contribute to the development of vocabularies
+  machine_readable:
+    value: true
+    rationale: An OWL schema is provided
+  human_readable:
+    value: true
+    rationale: An HTML documentation page makes the ontology schema human-readable
+  requires_realtime:
+    value: false
+  metadata:
+    value: true
+    rationale: Extends schema.org and GeoNames ontologies.
+  extensions:
+    value: false

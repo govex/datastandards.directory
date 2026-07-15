@@ -1,0 +1,46 @@
+name: Represent
+slug: represent
+category: Elections
+subcategory:
+  - Voter Precincts
+description: Represent is an open database of elected officials and districts in Canada. Open North provides a template to be filled out and uploaded on municipal websites. Open North has an API for finding representatives and districts by geographic location.
+stage_in_development: Completed
+license: MIT License
+updated: '2017-07-20'
+recorded: '2017-06-15'
+verified: true
+publisher: OpenNorth
+publisher_reputation: Open North is a non-profit that works to improve transparency through open data in Canadian government
+consumers: Used by many municipalities across Canada
+apps: Represent API. Open North provides libraries for Ruby, Python, PHP, and Node.js, as well as plugins for Drupal and WordPress
+links:
+  website: http://www.opennorth.ca/
+  documentation: http://represent.opennorth.ca/government/
+  example: http://www1.toronto.ca/City%20Of%20Toronto/Information%20&%20Technology/Open%20Data/Data%20Sets/Assets/Files/Councillor%20Contact%20Data%20Feb%2028%202017.xlsx
+  contact: https://github.com/opennorth/represent-canada
+open: true
+metrics:
+  transferability:
+    value: false
+    rationale: The fields in the template correspond only to Canadian electoral districts and positions
+  stakeholder_participation:
+    value: false
+    rationale: Template and API created solely by Open North
+  consensus_government:
+    value: true
+    rationale: All of Open North's projects are on GitHub, although contribution appears to be solely internal
+  machine_readable:
+    value: true
+    rationale: CSV or .xls spreadsheets are machine readable
+  human_readable:
+    value: true
+    rationale: Spreadsheets are downloadable and viewable in Excel or similar program
+  requires_realtime:
+    value: false
+  metadata:
+    value: false
+  extensions:
+    value: true
+    indicators: Template has optional fields as well as tolerance for additional fields (such as Personal Website)
+providers:
+  - Open North

@@ -1,0 +1,42 @@
+name: Air Quality
+slug: air-quality
+category: Environment
+subcategory:
+  - Ontology
+  - Air
+description: Calidad del aire is an ontology for describing air quality in a city. Classes include carbon monoxide, wind direction, ozone, and temperature
+stage_in_development: Draft
+license: Creative Commons Attribution License 4.0 International
+version: '0.1'
+updated: '2016-02-25'
+recorded: '2017-08-30'
+verified: true
+publisher: The Ontology Engineering Group
+publisher_reputation: The Ontology Engineering Group is based at the Computer Science School at Universidad Politécnica de Madrid. It is widely recognised in Europe in the areas of Ontology Engineering, Semantic Infrastructure, Linked Data, and Data Integration. Oscar Corcho has collaborated with members of Spanish city councils and other Spanish organizations to draft vocabularies for linked open data
+links:
+  documentation: http://vocab.linkeddata.es/datosabiertos/def/medio-ambiente/calidad-aire/OnToology/calidad-aire.owl/documentation/index-en.html
+  contact: mailto:ocorcho@fi.upm.es
+open: true
+metrics:
+  transferability:
+    value: true
+    rationale: This vocabulary is intended to be used by municipalities across Spain in accordance with the Spanish Law of Noise. Classes are cross-referenced bilingually
+  stakeholder_participation:
+    value: false
+    rationale: Contributors besides Oscar Corcho (OEG) are not specified
+  consensus_government:
+    value: false
+    rationale: No way for the public and interested parties to contribute to the development of vocabularies
+  machine_readable:
+    value: true
+    rationale: Although no OWL schema is provided, this vocabulary is cross-referenced with existing ontologies according to its documentation
+  human_readable:
+    value: true
+    rationale: An HTML documentation page makes the ontology schema human-readable
+  requires_realtime:
+    value: false
+  metadata:
+    value: true
+    rationale: Namespaces used are declared in section 1.1 of the documentation
+  extensions:
+    value: false

@@ -1,0 +1,47 @@
+name: Voting Information Project (VIP) Specification
+slug: voting-information-project-vip-specification
+category: Elections
+subcategory:
+  - Voter Precincts
+description: Specification indicates voter precincts. The intent is for information disseminators to utilize the schema to provide all citizens with the information they need to cast a ballot
+stage_in_development: Completed
+license: Creative Commons-Attribution license, version 4.0
+version: '5.1'
+updated: '2017-06-30'
+recorded: '2017-07-09'
+verified: true
+publisher: Pew Charitable Trusts, Google, US State Governments
+publisher_reputation: The Pew Charitable Trusts is a non-profit, non-governmental organization. Google is a private technology based company
+consumers: Only in the USA
+apps: Google Civic Information API, Google Voter Information Tool, 'The VoteStream election results reporting system'
+links:
+  website: https://votinginfoproject.org/projects/vip-5-specification/
+  documentation: http://vip-specification.readthedocs.org/en/vip5/
+  example: https://github.com/votinginfoproject/vip-specification/blob/vip5/sample_feed.xml
+  contact: https://github.com/votinginfoproject/vip-specification
+open: true
+metrics:
+  transferability:
+    value: true
+    rationale: Easy to adopt for state and local elections in the USA. Simple formats (CSV and XML) increase adoption across jurisdictions
+  stakeholder_participation:
+    value: true
+    rationale: Government workers at the state level contribute to the publication of the VIP spec. The diversity of stakeholders  encourages an inclusive open standard process
+  consensus_government:
+    value: true
+    rationale: The project also has a mailing list for inquiries. Also can contribute to the VIP Community Google Group. Google forum is meant to 'foster a collaborative environment'. https://groups.google.com/forum/#!forum/vip-community
+  machine_readable:
+    value: true
+    rationale: XML and CSV format. Required top level tags include source object and election results object. These top level tags require an id attribute in order to uniquely identify them within the data file
+  human_readable:
+    value: true
+    rationale: According to the standard's specification, the VIP feed should be named vipFeed-[FIPS code for state or county]-[election year]-[election month]-[election day].xml
+  requires_realtime:
+    value: false
+    rationale: No indication of when standard should be updated following an election
+  metadata:
+    value: false
+    rationale: Have metadata for political party. Otherwise not for metadata in standard's specification
+  extensions:
+    value: false
+    indicators: TrusttheVote Project is working on making the standard include contest and question data, location data, result for each location and contest combination, performance and participation data

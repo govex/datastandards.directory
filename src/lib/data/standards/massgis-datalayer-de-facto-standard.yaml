@@ -1,0 +1,47 @@
+name: MassGIS Datalayer De Facto Standard
+slug: massgis-datalayer-de-facto-standard
+category: Geospatial
+subcategory:
+  - Zoning
+description: Standard specifies zoning (GIS) data for jurisdictions across the state of Massachusetts
+stage_in_development: Completed
+version: '2.1'
+updated: '2012-05-01'
+recorded: '2016-08-01'
+verified: true
+publisher: Massachusetts Office of Geographic Information
+publisher_reputation: MassGIS is an official state agency in charge of collecting, storing and disseminating geographic data. Their work includes establishing a comprehensive, statewide database of geographic information
+consumers: This standard is used for every jurisdiction in Massachusetts except Boston (this is the most widespread zoning standard available at the moment)
+apps: 'Apps that better represent zoning data: Zoner (NYC), Second City Zoning (Chicago), Zonability (Cities in TX) - standard enables these applications across jurisdictions'
+links:
+  website: http://www.mass.gov/anf/research-and-tech/it-serv-and-support/application-serv/office-of-geographic-information-massgis/standards/
+  documentation: http://www.mass.gov/anf/docs/itd/services/massgis/parstndrd-ver2-1.pdf
+  example: http://www.mass.gov/anf/research-and-tech/it-serv-and-support/application-serv/office-of-geographic-information-massgis/datalayers/l3parcels.html
+  contact: http://www.mass.gov/anf/research-and-tech/it-serv-and-support/application-serv/office-of-geographic-information-massgis/standards/
+open: true
+metrics:
+  transferability:
+    value: false
+    rationale: Zoning laws are riddled with localized idiosyncrasies. Therefore devising a standard the would span jurisdictions would be very difficult
+  stakeholder_participation:
+    value: false
+    rationale: Government body has only authority over standard
+  consensus_government:
+    value: false
+    rationale: No mailing list or opportunity to pull requests/file issues on a public forum
+  machine_readable:
+    value: true
+    rationale: MassGIS stores the data in a statewide ArcSDE layer named ZONING_POLY'
+  human_readable:
+    value: true
+    rationale: Data can be opened in GIS platforms such as ArcGIS and QGIS
+  requires_realtime:
+    value: false
+    rationale: MassGIS has not formal method to handle updates for zoning
+  metadata:
+    value: true
+    rationale: Metadata included in the HTML format
+  extensions:
+    value: false
+providers:
+  - Massachusetts

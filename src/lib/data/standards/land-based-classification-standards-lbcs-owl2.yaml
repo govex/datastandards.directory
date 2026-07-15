@@ -1,0 +1,44 @@
+name: Land Based Classification Standards (LBCS) - OWL2
+slug: land-based-classification-standards-lbcs-owl2
+category: Geospatial
+subcategory:
+  - Zoning
+description: LBCS standard intends to categorize dimension or urban space and provide information about land use. Standard breaks up classification into Activity, Function, Structure Type, Site Development Character, and Ownership
+stage_in_development: Completed
+updated: '2001-04-01'
+recorded: '2016-08-01'
+verified: true
+publisher: American Planner's Association (APA)
+publisher_reputation: American Planner's Association is an urban planning organization
+consumers: Unsure if any city governments actually apply this standard to their open zoning data
+apps: City Induction is a project dedicated to building a tool for urban planning and design.  In addition, plans are in the works to collaborate with major software vendors in order to create templates for thematic mapping and applications
+links:
+  website: https://www.planning.org/lbcs/background/pdf/lbcsissuespaper.pdf
+  documentation: https://www.planning.org/lbcs/
+  example: https://www.planning.org/lbcs/implementation/
+  contact: https://www.planning.org/lbcs/implementation/
+open: false
+metrics:
+  transferability:
+    value: true
+    rationale: Coding of LBCS makes it possible to break down the data so it may be aggregated to larger jurisdictions. In addition, the standard organizes the terminology for classifying land use and typically is implements within a relational database of geo-referenced spatial units
+  stakeholder_participation:
+    value: false
+    rationale: APA devised the standard along with six other federal agencies
+  consensus_government:
+    value: false
+    rationale: Standard has no mailing list or forum to offer advice/file issues with publishers
+  machine_readable:
+    value: true
+    rationale: LBCS suggests storing multidimensional land use data in relational databases. The LBCS allows each concept to be modeled off an OWL class. Can establish a hierarchical structure for through the OWL subclass system. However, these schemas are NOT mandatory for LBCS adoption. Data for the standard is intended to be georeferenced
+  human_readable:
+    value: true
+    rationale: Standard utilizes defined vocabularies, semantics, and identifiers to categorize schema. Standard can be used for classifying georeferenced spatial units that are stored in a shapefile
+  requires_realtime:
+    value: false
+  metadata:
+    value: true
+    rationale: The standard moves towards applying the OWL2 ontology language for the Semantic Web. This structural framework applies extensive literature logic that can be manipulated with OWL2 tools
+  extensions:
+    value: true
+    indicators: Format is modular so that data can be shared, reused, and extended

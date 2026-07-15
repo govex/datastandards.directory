@@ -1,0 +1,65 @@
+name: International Aid Transparency Initiative (IATI)
+slug: international-aid-transparency-initiative-iati
+category: Finance
+subcategory:
+  - Philanthropy
+description: The IATI standard is a framework for publishing information on development cooperation activities in a timely, comprehensive and forward-looking manner. All published data should be structured and comparable
+stage_in_development: Completed
+license: Creative Commons Attribution 4.0 International
+version: '2.02'
+updated: '2017-04-01'
+recorded: '2017-06-13'
+verified: true
+publisher: IATI
+publisher_reputation: IATI is a voluntary, multi-stakeholder initiative that seeks to improve the transparency of aid, development, and humanitarian resources in order to increase their effectiveness in tackling poverty. IATI brings together donor and recipient countries, civil society organisations, and other experts in aid information who are committed to working together to increase the transparency and openness of aid.
+consumers: 547 Organisations so far have published their data in the IATI registry
+apps: https://www.iatiregistry.org/
+links:
+  website: http://iatistandard.org/
+  documentation: http://iatistandard.org/202/schema/
+  example: https://data.rainfoundation.org/iati/rain_iatiactivities_v22.php.xml
+  contact: https://github.com/IATI
+open: true
+metrics:
+  transferability:
+    value: true
+    rationale: IATI is an international effort. No jurisdiction per se
+  stakeholder_participation:
+    value: true
+    rationale: IATI brings together donor and recipient countries, civil society organisations, and other experts in aid information who are committed to working together to increase the transparency and openness of aid.
+  consensus_government:
+    value: true
+    rationale: IATI has a GitHub page where the references for the standards rae maintained
+  machine_readable:
+    value: true
+    rationale: All data is published in XML on the IATI registry
+  human_readable:
+    value: true
+    rationale: Datasets published on the IATI registry can also be downloaded or previewed in an easy to read CSV table
+  requires_realtime:
+    value: false
+    rationale: Organizations can choose when to publish or re-publish their data
+  metadata:
+    value: true
+    rationale: IATI has related standards that are associated with the main IATI standard such as The Organisations Standard and The Activity Standard
+  extensions:
+    value: true
+    indicators: IATI allows for publishing of additional data that are not covered by the default IATI elements by using an XML namespace to extend the schema
+tags:
+  dataType:
+    - schema
+    - static
+    - XML
+  language:
+    - English
+  providerType:
+    - non-profit
+  subject:
+    - philanthropy
+  keyword:
+    - API
+    - CKAN
+    - GitHub
+    - NGO
+    - software
+    - transparency

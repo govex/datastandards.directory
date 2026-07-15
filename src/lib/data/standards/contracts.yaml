@@ -1,0 +1,62 @@
+name: Contracts
+slug: contracts
+category: Finance
+subcategory:
+  - Procurement Contracts
+description: The Local Government Transparency Code requires that governments publish details of contracts, commissioned activity, purchase orders, and other agreements with a value exceeding £5,000. The Local Government Association developed a common format for local councils to publish contracts, providing a data template as well as a standardized schema for local governments to use
+stage_in_development: Completed
+license: Data providers are encouraged to publish under the Open Government Licence. While the LGA maintains a copyright to the documentation, the standard does not appear to be licensed
+version: '1.3'
+updated: '2015-01-06'
+recorded: '2017-08-18'
+verified: true
+publisher: Local Government Association (LGA)
+publisher_reputation: The Local Government Association represents the interests of English and Welsh municipal councils in national government. The LGA also promotes communication between local government authorities and develops best practices.  LGA standards have been developed in response to the UK's Local Government Transparency Code, which encourages the publication of government data in standardized machine-readable formats.
+consumers: 371 District and County Councils are members of the LGA
+apps: LG Inform Plus API. The LGA website also has a CSV data validator for all of their published schema
+links:
+  website: https://github.com/esd-org-uk/schemas/tree/master/Contracts
+  documentation: https://github.com/esd-org-uk/schemas/blob/master/Contracts/Transparency%20guidance%202014%20-%20spending%20and%20procurement%20%2020150601%20v1.3.pdf
+  example: https://github.com/esd-org-uk/schemas/blob/master/Contracts/Contracts.json
+  contact: https://github.com/esd-org-uk
+open: true
+metrics:
+  transferability:
+    value: false
+    rationale: Field headers use British government and business terminology
+  stakeholder_participation:
+    value: true
+    rationale: The Local Government Association consists of local government officials who collaborate to develop best practices for local authorities, the would-be stakeholders.
+  consensus_government:
+    value: false
+    rationale: Although schemas and documentation are held on GitHub, changes can only be decided by the LGA
+  machine_readable:
+    value: true
+    rationale: CSV format required
+  human_readable:
+    value: true
+    rationale: CSV template has readable headers
+  requires_realtime:
+    value: false
+    rationale: Contract and spending data are released quarterly
+  metadata:
+    value: false
+  extensions:
+    value: false
+    indicators: The schema contains many optional fields, but additional fields are not supported.
+tags:
+  dataType:
+    - CSV
+    - schema
+    - static
+  language:
+    - English
+  providerType:
+    - public
+  subject:
+    - procurement contracts
+  keyword:
+    - API
+    - GitHub
+    - open government
+    - template

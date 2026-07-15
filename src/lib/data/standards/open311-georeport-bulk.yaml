@@ -1,0 +1,49 @@
+name: Open311 GeoReport Bulk
+slug: open311-georeport-bulk
+category: Public Facilities
+subcategory:
+  - Service Requests
+description: Data format for publishing bulk datasets of service requests; datasets that would otherwise be too bulky for an API request.
+stage_in_development: Proposed
+updated: '2017-01-02'
+recorded: '2017-06-19'
+verified: true
+publisher: OpenPlans
+publisher_reputation: OpenPlans is a non-profit, technology based organization that aims to open up government data and improve public transportation systems
+consumers: 'Cities: Bloomington,IN, Louisville, KY San Diego, CA.  Development Stage: Raleigh, NC, Kansas City, MO'
+links:
+  website: http://www.open311.org/
+  documentation: http://wiki.open311.org/GeoReport/bulk
+  example: https://data.louisvilleky.gov/sites/default/files/citizen311data_2016_0.csv
+  contact: https://github.com/open311/open311.github.io/commits/master/GeoReport/bulk/index.md
+open: true
+metrics:
+  transferability:
+    value: true
+    rationale: GeoReport has been adopted in various jurisdictions across the US. The OPEN311 does not specify the codes, making it possible for the API to be applied to whatever civic services specifically offered in that city
+  stakeholder_participation:
+    value: true
+    rationale: Collaboration between developers, government, and nonprofit organizations
+  consensus_government:
+    value: true
+    rationale: The public can contribute to the standard's 'issue tracker' on GitHub and edit the open311 Wiki
+  machine_readable:
+    value: true
+    rationale: Bulk datasets are downloadable in CSV or another machine-readable format
+  human_readable:
+    value: true
+    rationale: Open311 follows the REST schema and uses human readable identifiers to label the data
+  requires_realtime:
+    value: true
+    rationale: Full datasets usually published annually, with a current year dataset also available
+  metadata:
+    value: false
+  extensions:
+    value: false
+    indicators: It is recommended to adhere strictly to the specification
+providers:
+  - Bloomington, IN
+  - Kansas City
+  - Louisville, KY
+  - Raleigh
+  - San Diego

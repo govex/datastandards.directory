@@ -1,0 +1,46 @@
+name: Open311 Inquiry API
+slug: open311-inquiry-api
+category: Public Facilities
+subcategory:
+  - Services
+description: Open 311's Inquiry API is a standardized protocol for information about public spaces and services. The Open311 Inquiry API consists of a set of content related to the services provided by the city, a city facilities list (concerning meaning not GIS, although there will be geospatial attributes for the facilities), and a RSS feed that contains information about daily status of public services and facilities.
+stage_in_development: Draft
+version: '1'
+updated: '2017-04-14'
+recorded: '2017-07-09'
+verified: true
+publisher: OpenPlans
+publisher_reputation: OpenPlans is a non-profit, technology based organization that aims to open up government data and improve public transportation systems
+consumers: Standard has only been adopted in NYC
+links:
+  website: http://www.open311.org/
+  documentation: http://wiki.open311.org/Inquiry_v1/
+  example: http://www1.nyc.gov/portal/apps/311_contentapi/facilities/all.xml
+  contact: http://www.open311.org/contact/
+open: true
+metrics:
+  transferability:
+    value: false
+    rationale: Potential to expand. At the moment, version 1 is specific to NYC
+  stakeholder_participation:
+    value: false
+    rationale: Public can contribute to the standard's 'issue tracker' on GitHub
+  consensus_government:
+    value: true
+    rationale: Mailing List for ideas for development, inquiries, and concerns
+  machine_readable:
+    value: true
+    rationale: Retrieves the data in XML format (and support JSON structure when indicated by API)
+  human_readable:
+    value: true
+    rationale: Schema has resource identifiers
+  requires_realtime:
+    value: true
+    rationale: 311 Today consists of a RSS feed that streams data about daily schedules and statuses of government services/facilities
+  metadata:
+    value: false
+  extensions:
+    value: true
+    indicators: Open311 Today is an RSS feed that provides updates on daily schedules for public facilities and services
+providers:
+  - New York City

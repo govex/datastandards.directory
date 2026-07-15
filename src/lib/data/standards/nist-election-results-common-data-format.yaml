@@ -1,0 +1,40 @@
+name: NIST Election Results Common Data Format
+slug: nist-election-results-common-data-format
+category: Elections
+subcategory:
+  - Election Results
+  - Hardware
+description: The standard establishes a XML schema for the export and import of data from and to election process devices. The standard establishes a comprehensive UML model to map out and define the components of the general election process
+stage_in_development: Completed
+version: '1'
+updated: '2016-02-01'
+recorded: '2017-07-09'
+verified: true
+publisher: National Institute of Standards and Technology (NIST)
+publisher_reputation: NIST aims to promote standards, measurement science, and technology in a way that will boost society's quality of life and encourage economic competition and innovation
+links:
+  website: https://www.nist.gov/itl/voting/nist-election-results-common-data-format-specification
+  documentation: https://www.nist.gov/sites/default/files/documents/itl/vote/ElectionResultsReporting-v26.pdf
+  example: http://www.nist.gov/itl/vote/upload/1622_2.xsd
+  contact: https://www.nist.gov/itl/voting/contact-us
+open: true
+metrics:
+  transferability:
+    value: false
+  stakeholder_participation:
+    value: false
+  consensus_government:
+    value: false
+    rationale: The standard hosts an issue tracker on GitHub
+  machine_readable:
+    value: true
+    rationale: XML - based import/export format for election devices that handles the data. Schema is organized by elements and their attributes of the election process. Sub-elements refer to elements that are nested within other elements. Schema is in XSD format
+  human_readable:
+    value: true
+    rationale: The standard uses object identifiers and links elements within the electoral system. Standard also includes a glossary to ensure compliance and uniformity during implementation
+  requires_realtime:
+    value: false
+  metadata:
+    value: false
+  extensions:
+    value: false

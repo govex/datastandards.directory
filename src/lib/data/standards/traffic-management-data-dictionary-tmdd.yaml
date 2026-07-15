@@ -1,0 +1,44 @@
+name: Traffic Management Data Dictionary (TMDD)
+slug: traffic-management-data-dictionary-tmdd
+category: Transportation
+subcategory:
+  - Traffic
+  - Metadata
+description: TMDD is a standard for traffic management centers to communicatie between themselves to cooperate in the management of roads and incidents
+stage_in_development: Completed
+license: Copyright ITE and American Association of State Highway and Transportation Officials (AASHTO)
+version: 3.03d
+updated: '2017-07-25'
+recorded: '2017-06-15'
+verified: true
+publisher: Institute of Transportation Engineers (ITE)
+publisher_reputation: The Institute of Transportation Engineers is an international association of transportation professionals that applies new technology to the design and management of ground transportation
+links:
+  website: http://www.ite.org/standards/TMDD/3.03.asp
+  documentation: http://www.ite.org/standards/TMDD/3.03/TMDDv3.03d-Vol1.pdf?pass=96
+  example: http://www.ite.org/standards/tmdd/3.03/TMDDv3.03c-schemas.zip
+  contact: http://www.ite.org/
+open: false
+metrics:
+  transferability:
+    value: true
+    rationale: The vocabulary included in the TMDD is very thorough and broad. There are few required fields in the schema and it is applicable to many fields of traffic management. The standard allows extensions.
+  stakeholder_participation:
+    value: true
+    rationale: Contributors consisted of members of the IT sector, the engineering sector, and public agencies such as CalTrans and the City of LA
+  consensus_government:
+    value: false
+  machine_readable:
+    value: true
+    rationale: XML schema
+  human_readable:
+    value: false
+    rationale: Element names are somewhat cryptic
+  requires_realtime:
+    value: false
+  metadata:
+    value: true
+    rationale: Provided metadata XML schema must be imported in header
+  extensions:
+    value: true
+    indicators: As long as additional features do not conflict with (i.e. substitute) TMDD features, extensions are permitted, but must be defined in a namespace separate from the copyrighted TMDD namespace

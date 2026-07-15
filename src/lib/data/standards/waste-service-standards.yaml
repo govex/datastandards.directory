@@ -1,0 +1,47 @@
+name: Waste Service Standards
+slug: waste-service-standards
+category: Services
+subcategory:
+  - Sanitation
+description: Digital standard data and API structure for exchanging waste service data
+stage_in_development: Completed
+license: MIT
+version: '1'
+updated: '2016-03-01'
+recorded: '2017-06-13'
+verified: true
+publisher: Local Digital Coalition
+publisher_reputation: The Local Digital Coalition is a publicly funded entity that helps local municipalities adopt collaborative digital standards to increase efficiency
+consumers: Low. Takeup has not been significant due to lack of resources
+apps: One demo app
+links:
+  website: http://communitiesuk.github.io/waste-service-standards/
+  documentation: http://communitiesuk.github.io/waste-service-standards/
+  example: https://github.com/communitiesuk/waste-service-standards/tree/master/examples
+  contact: mailto:paul@folklabs.com
+open: true
+metrics:
+  transferability:
+    value: true
+    rationale: Specification is general, but address format may be specific to UK addresses
+  stakeholder_participation:
+    value: true
+    rationale: 5 UK councils participated in development. Standard is now managed by a coalition group
+  consensus_government:
+    value: true
+    rationale: Documentation and Samples are on GitHub, but there appears to be only one contributor
+  machine_readable:
+    value: true
+    rationale: API specification is in RAML format
+  human_readable:
+    value: true
+    rationale: API specification is in RAML format
+  requires_realtime:
+    value: true
+    rationale: Specifies last_collection event as well as next scheduled collection
+  metadata:
+    value: true
+    rationale: Specification also includes a structure for addresses, which uses the Land Registry BS7666 type
+  extensions:
+    value: true
+    indicators: Ontology allows for additional terms, and related software projects such as report-a-missed-bin have ben undertaken by participating municipalities

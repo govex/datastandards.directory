@@ -1,0 +1,45 @@
+name: Election Data Format
+slug: election-data-format
+category: Elections
+subcategory:
+  - Election Results
+description: 'Specification utilized for elections at various levels (local, provincial, federal). It has four main tabular formats: contests, choices, results, and voting data. Contests documents metadata'
+stage_in_development: Draft
+license: Open source under the MIT license and content is open under the Creative Commons Attribution license
+updated: '2014-12-04'
+recorded: '2017-07-09'
+verified: true
+publisher: Open Data Institute
+publisher_reputation: Open Data Institute is a private non profit company that is committed to spreading and developing open data technologies and services
+consumers: Standard specifies that the standard model should support aggregation of data and have flexibility to compensate for regional differences in election processes. Customization of the data allows for a great scope of the standard's adoption
+links:
+  website: https://docs.google.com/document/d/1gyPpfod0eGzzutyZuak_xe5ZcY8hcWzH3onTScBoTPU/edit#
+  documentation: https://github.com/theodi/election-data-format/blob/gh-pages/tables/index.md
+  example: https://github.com/theodi/election-data-format/tree/gh-pages/tables
+  contact: https://docs.google.com/document/d/1gyPpfod0eGzzutyZuak_xe5ZcY8hcWzH3onTScBoTPU/edit#
+open: true
+metrics:
+  transferability:
+    value: true
+    rationale: Specification is meant to be general enough to cover broad aspects of elections (so that it  can be applied across jurisdictions). Standard focuses on the transparency of electoral process (rather than commitment to the automation of election results)
+  stakeholder_participation:
+    value: false
+    rationale: Standard specifies that election data must come from a primary, authoritative source
+  consensus_government:
+    value: true
+    rationale: The standard is posted to GitHub. Anyone can contribute feedback to the issue tracker
+  machine_readable:
+    value: true
+    rationale: Information stored in election data tables. Tabular format is meant to link to the graph based format. This format expresses statistical data and reference data (including geographic and vocabulary references). Model utilizes RDF Data Cube schema. Some fields in the files have controlled vocabularies
+  human_readable:
+    value: true
+    rationale: Vocabulary for the specification is based on definitions specified from the ACE project
+  requires_realtime:
+    value: true
+    rationale: The standard requires that the data is made available on a timely basis, e.g. updated immediately after the election results are announced
+  metadata:
+    value: false
+    rationale: According to the standard's documentation, 'metadata made available and the formats provided are outside the scope of this specification'
+  extensions:
+    value: true
+    indicators: Future extensions to the standard include geographic information about polling stations, a controlled vocabularies specification, and metadata about political parties and politicians

@@ -1,0 +1,65 @@
+name: Fiscal Data Package
+slug: fiscal-data-package
+category: Finance
+subcategory:
+  - Annual Budget
+description: Standardizes annual government budget by revenue and expenditure. These categories exist at the transactional or aggregated levels.
+stage_in_development: Draft
+license: Creative Commons Attribution - ShareAlike 4.0 International License
+version: '0.3'
+updated: '2017-05-02'
+recorded: '2017-08-09'
+verified: true
+publisher: Open Knowledge International
+publisher_reputation: Partnership among private sector and nonprofit organizations. Open Knowledge has published the Open Knowledge Definition and has developed open data projects such as CKAN
+consumers: Governments of Slovakia, Cameroon, Nicaragua have published government spending data through openspending.org using the fiscal data package
+apps: OpenSpending Next - https://next.openspending.org/, Budget Explorer Slovakia - https://slovakia.openspending.org/, UK Government spending - app.wheredoesmymoneygo.org
+links:
+  website: http://specs.frictionlessdata.io/fiscal-data-package/
+  documentation: https://github.com/openspending/fiscal-data-package/blob/master/0.3/index.md
+  example: https://github.com/openspending/fiscal-data-package/tree/master/examples
+  contact: https://github.com/openspending/fiscal-data-package/issues
+open: true
+metrics:
+  transferability:
+    value: true
+    rationale: Specification is an extension of the Tabular Data Package. It consists of CSV data files and metadata descriptor file in JSON format. Standard utilizes universal components so everyone may access it. The aggregated expense category requires classification according to the United Nations' Statistics Division's Classification of the Functions of Government (COFOG). Aggregated revenue data requires classification according to the IMF's Government Finance Statistic Manual 2001 (GFSFM). Classifications according to these institutions are widely implemented and broad enough to be applied across national governments
+  stakeholder_participation:
+    value: true
+    rationale: Standard is in consultation with budget data community. Adapts input from private sector and nonprofit organizations
+  consensus_government:
+    value: true
+    rationale: Can follow development of standard on the 'issue' tracker posted to Github. Contributions from the community will be overseen by a member of Open Knowledge International
+  machine_readable:
+    value: true
+    rationale: Standard uses tabular form. Data stored in CSV format. The CSV's structuration consists of a data table in which each tuple represents a single budget item. The first tuple of the data file signifies the required fields for the appropriate dataset type in addition to the required fields for all the dataset categories (dataset type is notated under metadata descriptor file)
+  human_readable:
+    value: true
+    rationale: Specification uses metadata, field identifiers and semantics
+  requires_realtime:
+    value: true
+    rationale: The standard dictates that the data be updated every year
+  metadata:
+    value: true
+    rationale: Metadata included in the required JSON file descriptor, datapackage.json. The datapackage.json is a metadata descriptor file that contextualizes the data and gives insight to the data file structure and budget attributes. The metadata object for each data file in the resource array has to contain the specific attributes related to budget data type (i.e. currency, whether the data reflects revenue or expenditure, the data's granularity, and status within the budget cycle)
+  extensions:
+    value: true
+    indicators: OpenSpending Data Package
+tags:
+  dataType:
+    - CSV
+    - JSON
+    - schema
+    - static
+  language:
+    - English
+  providerType:
+    - public
+  subject:
+    - annual budget
+    - expenditure
+  keyword:
+    - CKAN
+    - GitHub
+    - open government
+    - transparency

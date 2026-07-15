@@ -1,0 +1,47 @@
+name: Election Markup Language (EML)
+slug: election-markup-language-eml
+category: Elections
+subcategory:
+  - Election Results
+  - Hardware
+description: The standard supports the end to end process of the election system. The intent of the standard is to 'develop a standard for the structured interchange among hardware, software, and service providers who engage in any aspect of providing election or voter services to public or private organizations...' (https://en.wikipedia.org/wiki/Election_Markup_Language). This is a much more comprehensive schema than the other election data standards observed in this list. In addition, this standard engages in high level election processes
+stage_in_development: Completed
+license: OASIS Open 2011
+version: '7'
+updated: '2011-10-27'
+recorded: '2017-07-09'
+verified: true
+publisher: OASIS Election and Voter Services Technical Committee
+publisher_reputation: OASIS Election and Voter Services Technical Committee is committed to the technical development, refinement and formalization of election standard documents. *Technical Committee was closed in July of 2015 by the OASIS TC Administrator
+consumers: Ohio, USA, used the standard in their 2014 elections
+links:
+  website: http://docs.oasis-open.org/election/eml/v7.0/cs01/eml-v7.0-cs01.pdf
+  documentation: http://docs.oasis-open.org/election/eml/v7.0/cs01/eml-v7.0-cs01.html
+  example: ftp://mediafeedarchive.aec.gov.au/20499/Standard/Eml/
+  contact: https://www.oasis-open.org/committees/tc_home.php?wg_abbrev=election
+open: true
+metrics:
+  transferability:
+    value: true
+    rationale: The standard requires a common terminology and definition of election processes so it can be understood and applied across national boundaries. Standard claims to be multilingual, multinational, flexible, adaptable, and technology agnostic, making it easier to adopt across a wide array of jurisdictions
+  stakeholder_participation:
+    value: true
+    rationale: The standard is managed by members of the OASIS Technical Committee. In order to contribute to the standards development, there is a public mail list that acts as a forum for developers to contribute and exchange ideas and advice about the standard's implementation. An individual must subscribe to comment list to provide feedback. https://www.oasis-open.org/committees/comments/index.php?wg_abbrev=election
+  consensus_government:
+    value: true
+    rationale: According to Ron Rivest, EML is a 'consensus-based, publicly available common format that enables the exchange of electronic records between different components in election systems'
+  machine_readable:
+    value: true
+    rationale: EML is a XML based standard. The structure of the schema consists of vocabulary (the EML core) and individual message schemas
+  human_readable:
+    value: true
+    rationale: EML uses attribute IDs and standard election vocabulary
+  requires_realtime:
+    value: true
+    rationale: Standard requires data from various stages of the election process life cycle
+  metadata:
+    value: true
+    rationale: Standard allows for optional information to be included in the header. Some XML messages require the managing authority and date of issue
+  extensions:
+    value: true
+    indicators: The standard extends so not to change the election process. Implementers of the standard plan on providing a complementary document for a specific election scenario that clarifies security issues raised in the election process

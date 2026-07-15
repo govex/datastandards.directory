@@ -1,0 +1,45 @@
+name: Planning Applications
+slug: planning-applications
+category: Buildings
+subcategory:
+  - Building Permits
+description: A CSV template for publishing the details of construction permit applications to English local councils.
+stage_in_development: Completed
+license: Data providers are encouraged to publish under the Open Government Licence. While the LGA maintains a copyright to the documentation, the standard does not appear to be licensed
+updated: '2015-02-15'
+recorded: '2017-08-20'
+verified: true
+publisher: Local Government Association (LGA)
+publisher_reputation: The Local Government Association represents the interests of English and Welsh municipal councils in national government. The LGA also promotes communication between local government authorities and develops best practices.  LGA standards have been developed in response to the UK's Local Government Transparency Code, which encourages the publication of government data in standardized machine-readable formats.
+consumers: 376 District and County Councils are members of the LGA
+apps: LG Inform Plus API. The LGA website also has a CSV data validator for all of their published schema
+links:
+  website: https://github.com/esd-org-uk/schemas/tree/master/PlanningApplications
+  documentation: https://github.com/esd-org-uk/schemas/blob/master/PlanningApplications/LocalOpenDataIncentiveSchemePlanningApplicationsSchemaGuidance.pdf
+  example: https://github.com/esd-org-uk/schemas/blob/master/PlanningApplications/example-planning-applications.csv
+  contact: https://github.com/esd-org-uk
+open: true
+metrics:
+  transferability:
+    value: false
+    rationale: Many fields require URIs that are specific to UK legal code
+  stakeholder_participation:
+    value: true
+    rationale: The Local Government Association consists of local government officials who collaborate to develop best practices for local authorities, the would-be stakeholders.
+  consensus_government:
+    value: false
+    rationale: Although schemas and documentation are held on GitHub, changes can only be decided by the LGA
+  machine_readable:
+    value: true
+    rationale: CSV format required
+  human_readable:
+    value: true
+    rationale: CSV template has readable headers
+  requires_realtime:
+    value: false
+    rationale: Dates included in the applications are noted, as well as the date that the data was extracted from its source database, but there is no requirement for consistent publication
+  metadata:
+    value: false
+  extensions:
+    value: false
+    indicators: The LGA provides a CSV template, and extensions are not supported by the LGA data portal

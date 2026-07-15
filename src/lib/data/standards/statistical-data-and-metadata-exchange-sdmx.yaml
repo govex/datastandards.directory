@@ -1,0 +1,44 @@
+name: Statistical Data and Metadata eXchange (SDMX)
+slug: statistical-data-and-metadata-exchange-sdmx
+category: Metadata
+subcategory:
+  - Ontology
+description: SDMX is an ISO standard designed to describe statistical data and metadata, normalise their exchange, and improve their efficient sharing across statistical and similar organisations. It provides an integrated approach to facilitating statistical data and metadata exchange, enabling interoperable implementations within and between systems concerned with the exchange, reporting and dissemination of statistical data and their related meta-information. SDMX documentation consists of technical standards (including the Information Model), statistical guidelines, and an IT architecture
+stage_in_development: Completed
+license: Free License
+version: '2.1'
+updated: '2011-04-01'
+recorded: '2017-07-21'
+verified: true
+publisher: SDMX
+publisher_reputation: SDMX is sponsored by seven international organisations including the Bank for International Settlements (BIS), the European Central Bank (ECB), Eurostat (Statistical Office of the European Union), the International Monetary Fund (IMF), the Organisation for Economic Cooperation and Development (OECD), the United Nations Statistical Division (UNSD), and the World Bank. These organisations are the main players at world and regional levels in the collection of official statistics in a large variety of domains (agriculture statistics, economic and financial statistics, social statistics, environment statistics etc.).
+consumers: Many implementations of SDMX worldwide by national and international statistical organizations
+apps: SDMX Reference Infrastructure (SDMX-RI), SDMX Convertor, SDMX Registry, SDMX Source libraries. Many more at https://sdmx.org/?page_id=4500
+links:
+  website: https://sdmx.org/
+  documentation: https://sdmx.org/?page_id=5008
+  example: https://wiki.openmrs.org/display/docs/SDMX-HD+DSD+Example+and+Technical+Details
+  contact: mailto:danny.delcambre@ec.europa.eu
+open: true
+metrics:
+  transferability:
+    value: true
+    rationale: This standard can be used to share metadata universally.
+  stakeholder_participation:
+    value: true
+    rationale: SDMX is a collaboration of seven international organizations
+  consensus_government:
+    value: true
+  machine_readable:
+    value: true
+    rationale: SDMX message formats have two basic expressions, SDMX-ML (using XML syntax) and SDMX-EDI (using EDIFACT syntax and based on the GESMES/TS statistical message).
+  human_readable:
+    value: true
+  requires_realtime:
+    value: true
+    rationale: Some datasets require up-to-date data to increase the timeliness of statistics collection, exchange, and dissemination
+  metadata:
+    value: true
+    rationale: All metadata is fully described in the SDMX information model to make the data meaningul and process them. Metadata is a priority of SDMX
+  extensions:
+    value: false

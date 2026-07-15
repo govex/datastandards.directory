@@ -1,0 +1,45 @@
+name: Multi-Agency Incident Transfer (MAIT)
+slug: multi-agency-incident-transfer-mait
+category: Services
+subcategory:
+  - Emergency
+description: MAIT was created to solve the problem of exchanging incdents between agency control rooms (emergency dispatch). In line with the UK Government's Open Standards Principles, MAIT is a standard for sharing data between local emergency services in the UK
+stage_in_development: Completed
+license: Creative Commons Attribution NoDerivatives
+version: 1.0.0
+updated: '2016-08-01'
+recorded: '2017-06-14'
+verified: true
+publisher: British APCO
+publisher_reputation: As a not-for-profit organisation, British APCO (Association of Public safety Communications Officers) is an independent organisation that provides a forum for professionals in the field of public safety and civil contingencies communications and information technology, to exchange information, ideas and experiences. In partnership with industry it maintains regular liaison with suppliers and other commercial bodies, such as consultants, to monitor developments in technology, new techniques and major programmes.
+consumers: UK public safety agencies
+apps: None
+links:
+  website: http://www.bapco.org.uk/mait/
+  documentation: https://cm.findlay.co.uk/article-images/116578/2016_Multi-Agency-Incident-Transfer_MAIT_v1-0-0.pdf
+  contact: http://www.bapco.org.uk/mait/
+open: true
+metrics:
+  transferability:
+    value: false
+    rationale: Many of the elements in the schema are specific to the UK.  A similar standard could be adopted for another sovereignty
+  stakeholder_participation:
+    value: true
+    rationale: The standard is created by BAPCO, an organization that represents Public Safety Communications Officers, who are the stakeholders in different public safety agencies
+  consensus_government:
+    value: false
+    rationale: Any changes to the standard are made by the BAPCO MAIT Standards group. Conflicts can be submitted to them but all publishing/edits are centralized
+  machine_readable:
+    value: true
+    rationale: Data standard specifies XML notation
+  human_readable:
+    value: true
+    rationale: XML schema has relevant element names
+  requires_realtime:
+    value: true
+    rationale: Incident Creation Messages are sent induvidually between agencies and contain a timestamp
+  metadata:
+    value: false
+  extensions:
+    value: true
+    indicators: There is a section in the documentation specifying the structure of any additional elements (extensions to the schema)

@@ -1,0 +1,44 @@
+name: National Incident-Based Reporting System (NIBRS)
+slug: national-incident-based-reporting-system-nibrs
+category: Crime
+subcategory:
+  - Crime Statistics
+description: Every year the FBI releases the Uniform Crime Reports (UCR), which compiles crime data from law enforcement agencies across the US. The NIBRS was created to facilitate the compilation of the UCR by standardizing the formats of the crime data.
+stage_in_development: Completed
+license: Licensed by the FBI
+version: '3.1'
+updated: '2017-02-01'
+recorded: '2017-06-15'
+verified: true
+publisher: Federal Bureau of Investigation (FBI)
+publisher_reputation: The FBI is the United States' federal law enforcement agency which operates under the Department of Justice.
+consumers: Only particiapating law enforcement agencies submit their crime data to the UCR. Since a new NIBRS XML structure was released in late 2012, many participating law enforcement agencies still choose to use the legacy ASCII NIBRS schema. In 2013, NIBRS had 6,328 participating agencies, covering a population of 92.7 million
+apps: Crime data analysis programs from various researchers and institutions
+links:
+  website: https://ucr.fbi.gov/
+  documentation: https://ucr.fbi.gov/nibrs_technical_specification_version_3.1_pdf
+  example: http://www.icpsr.umich.edu/icpsrweb/NACJD/studies/36398
+  contact: https://ucr.fbi.gov/
+open: false
+metrics:
+  transferability:
+    value: false
+    rationale: NIBRS details federal crimes in the USA, which differ from federal crimes in other jurisdictions.
+  stakeholder_participation:
+    value: false
+  consensus_government:
+    value: false
+  machine_readable:
+    value: true
+    rationale: Formerly ASCII text formatted, with lines separated by a newline character. Currently an XML schema
+  human_readable:
+    value: true
+  requires_realtime:
+    value: true
+    rationale: Released annually
+  metadata:
+    value: true
+    rationale: Metadata provided includes MARC21 XML, Dublin Core, and JSON
+  extensions:
+    value: true
+    indicators: Some states, such as Texas and South Carolina, include additional crime data as required by the state. These additional data are appended to the appropriate segment type or form a new segment

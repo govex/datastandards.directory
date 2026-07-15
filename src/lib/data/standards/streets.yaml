@@ -1,0 +1,41 @@
+name: Streets
+slug: streets
+category: Geospatial
+subcategory:
+  - Ontology
+description: Vocabulario para la representación de un callejero is an ontology for describing municipal streets in Spain. It is being developed in conjunction with VPDA - Spanish Postal Addresses and VPDA - Spanish Administrative Land Units
+stage_in_development: Draft
+license: Creative Commons Attribution License 4.0 International
+version: '0.3'
+updated: '2014-04-28'
+recorded: '2017-08-29'
+verified: true
+publisher: The Ontology Engineering Group
+publisher_reputation: The Ontology Engineering Group is based at the Computer Science School at Universidad Politécnica de Madrid. It is widely recognised in Europe in the areas of Ontology Engineering, Semantic Infrastructure, Linked Data, and Data Integration. Oscar Corcho has collaborated with members of Spanish city councils and other Spanish organizations to draft vocabularies for linked open data
+links:
+  documentation: http://vocab.linkeddata.es/datosabiertos/def/urbanismo-infraestructuras/callejero.html
+  contact: mailto:ocorcho@fi.upm.es
+open: true
+metrics:
+  transferability:
+    value: false
+    rationale: This vocabulary is intended to be used by municipalities across Spain, but could be transferable. Data class and property names that are not inherited are in Spanish
+  stakeholder_participation:
+    value: true
+    rationale: The contributors to this vocabulary includes members of Spanish city councils
+  consensus_government:
+    value: false
+    rationale: No way for the public and interested parties to contribute to the development of vocabularies
+  machine_readable:
+    value: true
+    rationale: An OWL schema is provided
+  human_readable:
+    value: true
+    rationale: An HTML documentation page makes the ontology schema human-readable
+  requires_realtime:
+    value: false
+  metadata:
+    value: true
+    rationale: Extends geoSPARQL, DCMI, GeoNames, and schema.org ontologies
+  extensions:
+    value: false

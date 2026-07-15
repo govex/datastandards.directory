@@ -1,0 +1,56 @@
+name: Subsidies
+slug: subsidies
+category: Finance
+subcategory:
+  - Ontology
+  - Philanthropy
+description: Vocabulario para la representación de subvenciones is an ontology for describing subsidies granted by municipalities. It extends VPDA - Local Budget and uses common ontologies such as Event and Place
+stage_in_development: Draft
+license: Creative Commons Attribution License 4.0 International
+version: '0.1'
+updated: '2015-03-20'
+recorded: '2017-08-30'
+verified: true
+publisher: The Ontology Engineering Group
+publisher_reputation: The Ontology Engineering Group is based at the Computer Science School at Universidad Politécnica de Madrid. It is widely recognised in Europe in the areas of Ontology Engineering, Semantic Infrastructure, Linked Data, and Data Integration. Oscar Corcho has collaborated with members of Spanish city councils and other Spanish organizations to draft vocabularies for linked open data
+links:
+  website: http://www.oeg-upm.net/
+  documentation: http://vocab.linkeddata.es/datosabiertos/def/sector-publico/subvencion-content/index.html
+  contact: mailto:ocorcho@fi.upm.es
+open: true
+metrics:
+  transferability:
+    value: false
+    rationale: This vocabulary is intended to be used by municipalities across Spain, but could be transferable. Data class and property names are in Spanish
+  stakeholder_participation:
+    value: false
+    rationale: Contributors besides Oscar Corcho (OEG) are not specified
+  consensus_government:
+    value: false
+    rationale: No way for the public and interested parties to contribute to the development of the budget vocabularies
+  machine_readable:
+    value: true
+    rationale: An OWL schema is provided
+  human_readable:
+    value: true
+    rationale: An HTML documentation page makes the ontology schema human-readable
+  requires_realtime:
+    value: false
+  metadata:
+    value: true
+    rationale: Namespaces used are declared in section 1.1 of the documentation. A detailed flowchart describes relationships between local classes and xsd, skos, and VPDA - Local Budget classes
+  extensions:
+    value: false
+tags:
+  dataType:
+    - ontology
+    - OWL
+  language:
+    - Spanish
+  providerType:
+    - public
+  subject:
+    - metadata
+    - philanthropy
+  keyword:
+    - open government

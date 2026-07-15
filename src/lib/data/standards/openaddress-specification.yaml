@@ -1,0 +1,45 @@
+name: OpenAddress Specification
+slug: openaddress-specification
+category: Geospatial
+subcategory:
+  - Address Points
+description: OpenAdress Specification builds an open resource for geocoding at the global level
+stage_in_development: Completed
+license: BSD 3-clause New or Revised License
+updated: '2017-07-11'
+recorded: '2017-08-30'
+verified: true
+publisher: OpenAddress
+publisher_reputation: OpenAddress is an open data initiative that aims to establish an open, world wide resource for address information. Collection was originally compiled by Ian Dees
+consumers: 477,280,973 addresses have been processed as of August 30, 2017
+apps: The team of OpenAdresses developed the web application Sorting Office to help normalize contributed addresses for free. Returns the address data in JSON format. REST services provided by MapFish's development framework. In addition, web scrapers can contribute address points to OpenAddresses standard through the Turbot specification
+links:
+  website: https://openaddresses.io/
+  documentation: https://github.com/openaddresses/openaddresses
+  example: https://github.com/openaddresses/openaddresses/blob/ee65dae9e678b5bfe3e1ba53eb8d35f8885a5e6e/sources/au/city_of_canberra.json
+  contact: https://openaddresses.io/
+open: true
+metrics:
+  transferability:
+    value: false
+    rationale: The specification has been far reaching and is relatively easy to handle and implement. However, there are legal issues involved with building a database such as this
+  stakeholder_participation:
+    value: true
+    rationale: Address points are crowdsourced. Anyone can contribute to their wiki and on GitHub. Code for America has contributed a continuous integration service. This web service helps build participation and automatically updates the system within days
+  consensus_government:
+    value: true
+    rationale: Standard is posted to GitHub. Have the option to pull requests and post to the GitHub issue tracker
+  machine_readable:
+    value: true
+    rationale: Data is stored in JSON/GeoJSON format
+  human_readable:
+    value: true
+    rationale: Standard uses clearly universally understood identifiers to label the data
+  requires_realtime:
+    value: true
+    rationale: This metric doesn't really apply to this domain, considering that addresses do not change over time
+  metadata:
+    value: true
+    rationale: There is a list of attribute tags (they are optional) that store metadata. These tags include information about the source website, its license, a human readable note, whether the license requires attribution, and email of the data provider
+  extensions:
+    value: false

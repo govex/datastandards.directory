@@ -1,0 +1,101 @@
+name: GTFS Realtime
+slug: gtfs-realtime
+category: Transportation
+subcategory:
+  - Real-Time Transit
+description: GTFS Realtime is an extension to GTFS (General Transit Feed Specification) that allows public transportation agencies to provide application developers with real-time updates about the locations, estimated arrival times and other important information regarding transit vehicles.
+stage_in_development: Completed
+license: Apache 2.0 License
+version: '1'
+updated: '2016-08-26'
+recorded: '2017-06-15'
+verified: true
+publisher: Google
+publisher_reputation: Google
+consumers: Widespread use by transit agencies globally
+apps: Many apps such as Google Maps, Apple Maps, Transit, OneBusAway, CityMapper, OpenTripPlanner, and Bing Maps rely on GTFS Realtime feeds
+links:
+  website: https://developers.google.com/transit/gtfs-realtime/reference
+  documentation: https://github.com/google/transit/tree/master/gtfs-realtime/spec/en
+  example: http://realtime.mbta.com/developer/api/v2/predictionsbystop?api_key=wX9NwuHnZU2ToO7GmGR9uw&stop=place-sstat&format=json
+  contact: https://github.com/google/transit/tree/master/gtfs-realtime/
+open: true
+metrics:
+  transferability:
+    value: true
+    rationale: If a transit agency has the technology (Bus tracking by GPS) GTFS Realtime is transferable, with only several required variables.
+  stakeholder_participation:
+    value: true
+    rationale: It was developed by Google, a software developer, in partnership with transit agencies and developers
+  consensus_government:
+    value: true
+    rationale: Contributions can be made to the GTFS Realtime project on the GitHub page, but all contributions are subject to a strict voting and discussion protocol, and contributors must sign a license agreement
+  machine_readable:
+    value: true
+    rationale: The data is hosted over HTTP and consists of protocol buffers. Google's protocol buffers are used for data serialization and work as an alternative to XML. The data structure is stored in a gtfs realtime.proto file. The file produces source code to read and write the structured data and then retrieves it to and from a data stream using a variety of programming languages. Unique IDs such as VehicleID and StopID are compatible with static GTFS values
+  human_readable:
+    value: true
+    rationale: Many agencies have APIs in addition to protocol buffers that have responses in XML, JSON, and JSONP formats
+  requires_realtime:
+    value: true
+    rationale: Every protocol buffer has an [optional] timestamp in the header indicating when the content of the feed was created.
+  metadata:
+    value: true
+    rationale: Protocol Buffer structure
+  extensions:
+    value: true
+    indicators: Third-party developers can define additional fields for GTFS Realtime but must contact the GTFS Realtime discussion Google group to be assigned an extension id so that they can use a unique protocol buffer
+providers:
+  - Anchorage, AK
+  - Arlington, VA
+  - Atlanta, GA
+  - Auckland, New Zealand
+  - Austin, TX
+  - Barrie, ON
+  - Boston, MA
+  - Brisbane QLD
+  - Cairns QLD
+  - Calgary, AB
+  - Chicago, IL
+  - Cincinnati, OH
+  - Columbus, OH
+  - Connecticut
+  - Daytona Beach, FL
+  - Denver, CO
+  - Edmonton, AB
+  - Eugene, OR
+  - Halifax, NS
+  - Kingston, ON
+  - Lansing, MI
+  - Louisville, KY
+  - Luxembourg
+  - Madison, WI
+  - Maryland
+  - Mississauga, ON
+  - Monterey, CA
+  - Montreal, QC
+  - Nashville, TN
+  - Nassau, NY
+  - New Jersey
+  - New York, NY
+  - Oakland, CA
+  - Olympia, WA
+  - Orange County, CA
+  - Phoenix, AZ
+  - Pierce County, WA
+  - Portland, OR
+  - Providence, RI
+  - Saint Louis, MO
+  - San Antonio, TX
+  - San Francisco, CA
+  - Santa Monica, CA
+  - Saskatoon, SK
+  - Seattle, WA
+  - St Petersburg, Russia
+  - Tampa, FL
+  - The Netherlands
+  - Thunder Bay, ON
+  - Vancouver, BC
+  - Virginia
+  - Waterloo, ON
+  - York, Toronto, ON

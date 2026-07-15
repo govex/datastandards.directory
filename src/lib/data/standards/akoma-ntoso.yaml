@@ -1,0 +1,70 @@
+name: Akoma Ntoso
+slug: akoma-ntoso
+category: Legislature
+subcategory:
+  - Legislature
+  - Metadata
+description: Akoma Ntoso (Architecture for Knowledge-Oriented Management of African Normative Texts using Open Standards and Ontologies) introduces common structures and ontologies for parliamentary, legislative and judiciary documents. These include parliamentary debates, committee briefs, and the entire life-cycle of a piece of legislation
+stage_in_development: Completed
+license: GNU General Public License 3.0
+version: '3'
+updated: '2017-03-30'
+recorded: '2017-06-27'
+verified: true
+publisher: OASIS
+publisher_reputation: OASIS (Organization for the Advancement of Structured Information Standards) is a nonprofit organization that develops and promotes the use of standards in the a wide range of fields. Akoma Ntoso is part of the Africa i-Parliaments Plan, implemented by a UN committee, which seeks to increase transparency in African democracies. Akoma Ntoso means linked hearts in the Akan language
+consumers: 'Detailed List: http://www.akomantoso.org/akoma-ntoso-in-detail/use-cases/'
+links:
+  website: http://www.akomantoso.org/
+  documentation: http://docs.oasis-open.org/legaldocml/akn-core/v1.0/csprd02/part2-specs/akn-core-v1.0-csprd02-part2-specs.html
+  example: http://www.legislation.gov.uk/ukpga/1998/29/data.akn
+  contact: https://github.com/oasis-open/legaldocml-akomantoso
+open: false
+metrics:
+  transferability:
+    value: true
+    rationale: The standard is designed to be general and applicable to all governments with parliamentary, legislative, and judiciary procedures
+  stakeholder_participation:
+    value: true
+    rationale: Technical committee headed by a legal studies professor and computer science professor from University of Bologna, as well as an employee of the Uruguayan parliament
+  consensus_government:
+    value: true
+    rationale: Akoma Ntoso working group exists on Google Groups. Guidelines for contributions are also specified in the GitHub Repository
+  machine_readable:
+    value: true
+    rationale: XML schema
+  human_readable:
+    value: false
+    rationale: Sections of text normally expressed as paragraphs are split up by line in the XML. Legal docs are visually better represented as PDFs
+  requires_realtime:
+    value: true
+    rationale: Akoma Ntoso items are static, referring to a document or legislative proceeding
+  metadata:
+    value: true
+    rationale: All Akoma Ntoso items are mapped to specific Dublin Core or FOAF properties
+  extensions:
+    value: true
+    indicators: Akoma Ntoso website has a page on How to customize Akoma Ntoso
+providers:
+  - Argentina Chamber of Deputies
+  - Brazil Senate
+  - California
+  - Chile Chamber of Deputies
+  - Chile Library of Congress
+  - Code4SouthAfrica
+  - European Commission
+  - European Parliament
+  - Hong Kong
+  - Italy Chamber of Deputies
+  - Italy High Court of Cassation
+  - Italy Senate
+  - Kenya Law Report
+  - Nicaragua Judicial Digest
+  - OpenNorth
+  - Southern African Legal Information Institute
+  - Switzerland Federal Chancellery
+  - UK The National Archives Legislation portal
+  - University College Cork
+  - University of Turin (EuCase Project)
+  - Uruguay Parliament
+  - US House of Representatives

@@ -1,0 +1,44 @@
+name: OpenTrails
+slug: opentrails
+category: Geospatial
+subcategory:
+  - Environment
+description: The Open Trail System Specification (OpenTrails) defines a simple, common format for public trails and associated geographic information. OpenTrails allows public land agencies to publish their trail data and developers to write applications that consume that data in an interoperable way.
+stage_in_development: Completed
+license: MIT
+version: '1.1'
+updated: '2015-05-08'
+recorded: '2017-12-18'
+verified: true
+publisher: Code for America, The Trust for Public Land, GreenInfo Network, Trailhead Labs
+publisher_reputation: Code for America is a non-profit that promotes the use of technology to improve local government and public services
+apps: OpenTrails Importer, OpenTrails.js, OpenTrailsEmbed, Trails Mobile, To the Trails, Transit & Trails, Trail Editor, PDX Trails
+links:
+  website: http://www.opentraildata.org/
+  documentation: https://docs.google.com/document/d/1KF8KAio-SqGHhh9oFY_KjfwIi3PePOHg7KfTSPh27fc/edit
+  example: https://github.com/codeforamerica/OpenTrails/tree/master/dummy-data
+open: true
+metrics:
+  transferability:
+    value: true
+    rationale: Trail geographic data can be serialized regardless of jurisdiction
+  stakeholder_participation:
+    value: true
+    rationale: Several public and private organizations participated in the creation of this standard
+  consensus_government:
+    value: true
+    rationale: Comments are welcome on the standard's working draft (Google Doc) and changes can be discussed
+  machine_readable:
+    value: true
+    rationale: csv and geojson files have standardized headers
+  human_readable:
+    value: true
+    rationale: All fields except lat-lon coordinates are readable
+  requires_realtime:
+    value: false
+  metadata:
+    value: true
+    rationale: Some files in the OpenTrails data model serve as metadata for other datasets
+  extensions:
+    value: true
+    indicators: Several “extension profiles” with specific key-value pairs are outlined in an appendix to the working draft. These include extensions for accessibility, winter use, automotive use, mountain biking, and jurisidiction boundaries

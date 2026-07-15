@@ -1,0 +1,59 @@
+name: Service Interface for Real-Time Information (SIRI)
+slug: service-interface-for-real-time-information-siri
+category: Transportation
+subcategory:
+  - Real-Time Transit
+description: SIRI is a data format that enables the server to exchange real-time information about public transit schedules and arrival times. SIRI is now interoperable with GTFS-Realtime services
+stage_in_development: Completed
+license: The SIRI schema is available for use free of charge and without warranty under public Licence. Copyright is retained by the respective national organisations that developed SIRI. The CEN standard documentation must be purchased
+version: '2'
+updated: '2013-05-19'
+recorded: '2017-08-10'
+verified: true
+publisher: European Committee for Standardization (CEN)
+publisher_reputation: CEN is an association that brings together over 30 European national standardization bodies. CEN is recognized by the EU and the European Free Trade Association
+consumers: By CEN regulation, members have to adopt the SIRI standard for real-time data exchange. Since its inception, many agencies that provided SIRI formatted APIs have begun additionally providing data in GTFS-realtime format or dropping their SIRI API
+apps: Trafikanten application, OneBusAway, SIRIRestClient, Moovit
+links:
+  website: http://user47094.vs.easily.co.uk/siri/
+  documentation: http://www.normes-donnees-tc.org/wp-content/uploads/2015/04/SIRI-part1.pdf
+  example: http://user47094.vs.easily.co.uk/siri/schema/1.4/examples/exv_vehicleMonitoring_response.xml
+  contact: http://user47094.vs.easily.co.uk/siri/overview.htm
+open: true
+metrics:
+  transferability:
+    value: true
+    rationale: Facilitation of adoption across jurisdiction is unclear because the protocol is intended to exchange information at the operator to operator level. However, SIRI's modularisation permits users to pick and choose the services they wish to implement. SIRI can be used with GTFS static data, referring to the same unique stopIDs
+  stakeholder_participation:
+    value: true
+    rationale: Primary stakeholders of the SIRI protocol are defined as the purchasers and suppliers/product developers of public information transport systems. Contributors to the standard included equipment suppliers, transport authorities, transport operators, transport consultants from countries in the EU, public transit agencies in Germany, France, and the UK, and the EU Trident project
+  consensus_government:
+    value: false
+    rationale: CEN Working Group manages the standard's governance. The group decides on changes made to the standard
+  machine_readable:
+    value: true
+    rationale: Siri uses XML to define messages using real-time public transport vehicle or journey time data. The schema is encoded as a W3C .xsd. Has reusable sub schemas and  type packages. Schema uses the SOAP protocol to exchange messages between servers.
+  human_readable:
+    value: true
+    rationale: Standard utilizes universally understood tags and semantics. Clear documentation of field IDs as a reference
+  requires_realtime:
+    value: true
+    rationale: The protocol is able to handle real time transit schedule data
+  metadata:
+    value: true
+    rationale: There is a metadata section to the XML schema
+  extensions:
+    value: true
+    indicators: Official documentation cites that SIRI is an extensible standard. Publishers expect additional services will be added to the standard in the future
+providers:
+  - Berlin
+  - Copenhagen
+  - Czech Republic
+  - Dublin
+  - Hamburg
+  - Israel
+  - New York City MTA Buses
+  - Norway
+  - Paris
+  - Utah Transit Authority
+  - West Yorkshire

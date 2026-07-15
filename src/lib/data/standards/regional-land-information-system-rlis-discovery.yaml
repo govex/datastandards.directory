@@ -1,0 +1,48 @@
+name: Regional Land Information System (RLIS) Discovery
+slug: regional-land-information-system-rlis-discovery
+category: Geospatial
+subcategory:
+  - Zoning
+description: This standard indicates boundaries for zoning
+stage_in_development: Completed
+license: Open Commons Open Database LIcense and Content License
+version: 2.9.5
+updated: '2015-03-17'
+recorded: '2016-08-01'
+verified: true
+publisher: Metro Data Resource Center
+publisher_reputation: RLIS is a government body that gathers and publishes geographic data for the Portland metropolitan area
+consumers: Greater Portland Region, Oregon
+apps: 'Apps that better represent zoning data: Zoner (NYC), Second City Zoning (Chicago), Zonability (Cities in TX)'
+links:
+  website: http://rlisdiscovery.oregonmetro.gov/?resourceID=3
+  documentation: http://gis.oregonmetro.gov/rlisapi2/#apimeta
+  example: http://gis.oregonmetro.gov/rlisapi2/#jsapi
+  contact: https://groups.google.com/forum/#!topic/ospt-ecosystem/1GUkwcTjBBE
+open: true
+metrics:
+  transferability:
+    value: false
+    rationale: Zoning laws are riddled with localized idiosyncrasies. As a result, devising a standard that spans jurisdictions has proven to be difficult
+  stakeholder_participation:
+    value: false
+    rationale: Metro regional government is the only contributor to the standard's development
+  consensus_government:
+    value: false
+    rationale: Standard has no mailing list or way to offer advice/file issues with publishers
+  machine_readable:
+    value: true
+    rationale: Shapefile with attribute data stored in a data table
+  human_readable:
+    value: true
+    rationale: Data can be opened and read in GIS platforms such as ArcGIS and QGIS
+  requires_realtime:
+    value: false
+    rationale: Zoning is updated only when data is received from local city and county jurisdictions - city data override county data (when they overlap)
+  metadata:
+    value: true
+    rationale: Metadata required  in XML and HTML formats
+  extensions:
+    value: false
+providers:
+  - Greater Portland, OR

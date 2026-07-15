@@ -1,0 +1,74 @@
+name: Open311 GeoReport API
+slug: open311-georeport-api
+category: Public Facilities
+subcategory:
+  - Service Requests
+description: API standardizes service requests, eases coordination, and encourages accountability between the government and the public
+stage_in_development: Completed
+version: '2'
+updated: '2017-04-11'
+recorded: '2017-07-12'
+verified: true
+publisher: OpenPlans
+publisher_reputation: OpenPlans is a non-profit, technology based organization that aims to open up government data and improve public transportation systems
+consumers: 'Cities: Toronto, ON, GieBen, Deutschland, Bonn, Deutschland,Helsinki, Suomi, Lamia, Ellada, Baltimore, MD, Bloomington,IN, Boston, MA, Brookline, MA, Chicago, IL, Columbus, IN, Grand Rapids, MI, Peoria, IL, San Francisco, CA, Washington D.C.. Development Stage: Quebec, QC, Surrey, BC, Zurich, Schweiz, Zaragoza, Spain, Lisbon, Portugal,Philadelphia, USA'
+apps: GeoReporter, ConnectedBIts, Mark-a-Spot, SeeClickFix, Love Clean Streets, Fix 311 iPhone Fix 311 Android Website
+links:
+  website: http://www.open311.org/
+  documentation: http://wiki.open311.org/GeoReport_v2/
+  example: https://secure.toronto.ca/webwizard/ws/services.xml?jurisdiction_id=toronto.ca
+  contact: http://www.open311.org/contact/
+open: true
+metrics:
+  transferability:
+    value: true
+    rationale: GeoReport API has been adopted in various jurisdictions across the US. The OPEN311 does not specify the codes, making it possible for the API to be applied to whatever civic services specifically offered in that city
+  stakeholder_participation:
+    value: true
+    rationale: Collaboration between developers, government, and nonprofit organizations
+  consensus_government:
+    value: true
+    rationale: The public can contribute to the standard's 'issue tracker' on GitHub
+  machine_readable:
+    value: true
+    rationale: 'API retrieves the data in XML format and supports JSON format when indicated by the API. The content of the API manages two main resources consisting of services and service requests. Requests are handled over HTTP to retrieve data in XML format, and in JSON when denoted by service discovery. Jurisdiction_ID will be globally unique variable in order to clarify the city implementing the API (required only when entire interface serves more than one jurisdiction). The API employs 7 API methods for services and service requests. These methods include: GET service list, GET service definition, POST Service Request, GET request_id from a token, GET service request(s). The GET service method handles what services are available to the client user based on the unique service_code. The POST service request handles requests posted by the client to the government body.  Open311 requires a location when requesting a service. GET service request(s) provides records of service requests based on date thresholds, service codes, service request IDs, and status'
+  human_readable:
+    value: true
+    rationale: Open311 follows the REST schema and uses human readable identifiers to label the data
+  requires_realtime:
+    value: true
+    rationale: The API Gets and Posts service requests in real time
+  metadata:
+    value: true
+    rationale: There is a required resource for specifying metadata. The GET service definition method of the API provide description for the service being requested by adding metadata=yes to it response
+  extensions:
+    value: true
+    indicators: 'MySociety has proposed an extension to better update clients about status changes of requests to better serve citizens with platforms such as fixmystreet (in the UK).  The extension allows for more communication from the government body to the client. This extension proposes the methods POST/GET Service Updates. See extension''s proposal here: https://www.mysociety.org/2013/02/20/open311-extended/'
+providers:
+  - Baltimore
+  - Bloomington, IN
+  - Bonn
+  - Boston
+  - Brookline, MA
+  - Bruhl
+  - Chicago
+  - Cologne
+  - Columbus, IN
+  - Giessen
+  - Grand Rapids
+  - Greenwich, UK
+  - Helsinki
+  - Lamia
+  - Lisbon
+  - Ottawa
+  - Peoria, IL
+  - Philadelphia
+  - Quebec City
+  - Rostock
+  - San Francisco
+  - Siegburg
+  - Surrey, BC
+  - Toronto
+  - Washington, DC
+  - Zaragoza
+  - Zurich

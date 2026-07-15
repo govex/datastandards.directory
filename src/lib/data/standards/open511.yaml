@@ -1,0 +1,51 @@
+name: Open511
+slug: open511
+category: Public Facilities
+subcategory:
+  - Road Construction
+description: Open511 intends to make road event data lightweight and accessible to the public. The specification intends to facilitate communication among transportation agencies and other government bodies. Open511 format provides a level of transparency, interoperability, and simplicity that exceeds current intelligent transportation systems. The API retrieves the data in XML format
+stage_in_development: Completed
+license: Open Government License
+version: '1'
+updated: '2016-09-03'
+recorded: '2017-07-12'
+verified: true
+publisher: Open North
+publisher_reputation: Open North, a Canadian non profit organization, aims to creates online tools that encourage civil society to engage more openly and actively with their government. For the Open511 specification, Open North teamed up with transportation bodies in British Columbia and the San Francisco Bay Area
+consumers: Level of adoption is low. Demos of the versions have been implemented but are incomplete. DriveBC provides Open511 API
+links:
+  website: http://www.open511.org/
+  documentation: http://www.open511.org/documentation/1.0/
+  example: http://api.open511.gov.bc.ca/events?limit=100
+  contact: https://github.com/open511/open511API
+open: true
+metrics:
+  transferability:
+    value: true
+    rationale: Open North is working with Open511 to develop an open source software to ease implementation of the API
+  stakeholder_participation:
+    value: true
+    rationale: Stakeholders can communicate and collaborate with Open North
+  consensus_government:
+    value: true
+    rationale: The standard provides a mailing list and 'issue tracker' on GitHub to contribute to the development of the API. It also mixes authoritative government data with crowdsourced verification
+  machine_readable:
+    value: true
+    rationale: Retrieves the data in XML (supports JSON  when indicated by API)
+  human_readable:
+    value: true
+    rationale: Easily readable for users
+  requires_realtime:
+    value: true
+    rationale: Standard can be conducted over the web feed. Data is updated in the XML feed in real time
+  metadata:
+    value: true
+    rationale: Jurisdiction resource acts as a form of metadata and links to the description of the government entity that is publishing the data.
+  extensions:
+    value: true
+    indicators: Open511 uses a map based interface filter for the data.
+providers:
+  - British Columbia Highways
+  - Quebec Highways
+  - Repentigny, QC
+  - Surrey, BC

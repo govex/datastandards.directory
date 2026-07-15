@@ -1,0 +1,62 @@
+name: Operating Budget Schema
+slug: operating-budget-schema
+category: Finance
+subcategory:
+  - Annual Budget
+description: Socrata Open Budget application requires  Operating Expense and Operating Revenue datasets to match the Operating Data Schema
+stage_in_development: Completed
+license: Creative Commons Attribution-NonCommercial-ShareAlike 3.0
+version: '2'
+updated: '2015-04-07'
+recorded: '2017-06-26'
+verified: true
+publisher: Socrata
+publisher_reputation: Partnership among state actors and the Socrata company. Socrata offers technological services for opening up government data. Socrata company consists of software engineers, designers, open government advocates, and business professionals
+consumers: Many governments that are customers of Socrata have adopted the standard. These include Michigan, Massachusetts, Los Angeles, and Seattle
+apps: Socrata Open Budget product
+links:
+  website: https://support.socrata.com/hc/en-us/articles/206148457-Operating-Data-Schema-Expense-and-Revenue-
+  documentation: https://docs.google.com/document/d/1KWPMeUzWJv8hmG6LBvHRXlm4hnxFYNxm_bNpetBvTeI/edit#
+  example: http://evergreen.budget.finance.socrata.com/#!/year/default
+  contact: https://support.socrata.com/hc/en-us/articles/206148457-Operating-Data-Schema-Expense-and-Revenue-
+open: true
+metrics:
+  transferability:
+    value: true
+    rationale: The schema's documentation is publicly available. Video tutorials and web articles discuss how municipalities can adopt the schema and update their datasets so that Socrata's Open Budget product works
+  stakeholder_participation:
+    value: false
+    rationale: Socrata developed the standard privately
+  consensus_government:
+    value: false
+    rationale: No way for public and interested parties to contribute to the development of the schema
+  machine_readable:
+    value: true
+    rationale: Two separate datasets (Operating Expenses and Operating Revenues) have to be organized into flat-files. Some fields for the data are required and some are optional. The data is not normalized.
+  human_readable:
+    value: true
+    rationale: Specification uses metadata, field identifiers and semantics
+  requires_realtime:
+    value: true
+    rationale: The standard dictates that the data should be updated every year
+  metadata:
+    value: true
+    rationale: Socrata recommends to include a column in the datasets to describe the data, but it is not required.
+  extensions:
+    value: false
+providers:
+  - SOCRATA
+tags:
+  dataType:
+    - schema
+    - static
+  language:
+    - English
+  providerType:
+    - public
+  subject:
+    - annual budget
+    - expenditure
+  keyword:
+    - open government
+    - transparency

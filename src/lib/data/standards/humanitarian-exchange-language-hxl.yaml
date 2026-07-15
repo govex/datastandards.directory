@@ -1,0 +1,69 @@
+name: Humanitarian Exchange Language (HXL)
+slug: humanitarian-exchange-language-hxl
+category: Services
+subcategory:
+  - Metadata
+  - Emergency
+description: Simple, hashtag-based standard to improve data sharing during humanitarian crises. Tags are added to a spreadsheet as a second row underneath headers, providing a standardized classification of the column's contents. Maintained by UN OCHA, with participation from a group of agencies, NGOs, and donors.
+stage_in_development: Completed
+license: GNU General Public License 2.0
+version: '1'
+updated: '2016-03-18'
+recorded: '2017-11-27'
+verified: true
+publisher: UN Office for the Coordination of Humanitarian Affairs
+publisher_reputation: The UN Office for the Coordination of Humanitarian Affairs (OCHA) coordinates effective and principled humanitarian action after major disasters. OCHA promotes disaster preparedness and prevention and facilitates sustainable solutions
+apps: HXL Proxy, HDX Tools, KoBo mobile tool (supports standard), IFRC Go
+links:
+  website: http://hxlstandard.org
+  documentation: http://hxlstandard.org/standard/
+  example: https://github.com/OCHA-DAP/hxl-example
+open: true
+metrics:
+  transferability:
+    value: true
+    rationale: Can be applied to any humanitarian spreadsheet data
+  stakeholder_participation:
+    value: true
+    rationale: This standard is published by a working group that includes representatives from the Humanitarian Innovation Fund, IOM, OCHA, Save the Children, UNHCR, UNICEF, USAID, the World Bank, and the World Food Program
+  consensus_government:
+    value: true
+  machine_readable:
+    value: true
+    rationale: HXL hashtags and attributes improve automation and interoperability for spreadsheet-style data.
+  human_readable:
+    value: true
+    rationale: Most aid data lives in spreadsheets, not databases or mobile apps.
+  requires_realtime:
+    value: false
+    rationale: HXL supports all types of data, including real-time reporting, information about the past, and forecasts for the future.
+  metadata:
+    value: true
+    rationale: HXL encourages the addition of date, source, and similar metadata to each row, but because it is a retrofit standard (for use on top of existing spreadsheets and templates), it does not *require* that metadata.
+  extensions:
+    value: true
+    indicators: It is impossible for the working group to anticipate the needs of every sector, cluster, and organisation, so there is a well-defined mechanism for creating extension hashtags and attributes.
+providers:
+  - Action Contre la Faim
+  - BRC Maps Team
+  - Burkina Open Data Initiative
+  - Cellule de la Coordination Nationale Contre Ebola
+  - Global Healthsites Mapping Project
+  - Global Shelter Cluster
+  - HDX
+  - IFRC
+  - Insecurity Insight
+  - InterAction
+  - International NGO Safety Organisation (INSO)
+  - International Organization for Migration (IOM)
+  - IPC Cluster Guinea
+  - Nepal Assessment Unit
+  - OCHA
+  - OurAirports
+  - Redhum Ecuador
+  - Somalia NGO Consortium
+  - Standby Task Force
+  - Surveillance West Africa
+  - UNHCR
+  - United Nations Office on Drugs and Crime
+  - WFP

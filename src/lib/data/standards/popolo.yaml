@@ -1,0 +1,43 @@
+name: Popolo
+slug: popolo
+category: Legislature
+subcategory:
+  - Ontology
+description: Ontology for government votes, actions, and structures. The scope of this standard includes persons, organizations, membership (to a party), government posts, legislative motions, speeches and more. The standard was designed as a simple and transferable  vocabulary for sharing international government open data
+stage_in_development: Draft
+license: Creative Commons Attribution 4.0 International
+updated: '2017-05-27'
+recorded: '2017-11-22'
+verified: true
+publisher: James McKinney
+publisher_reputation: James McKinney has contributed to and authored many open data standards. He is prominent in the field of open government data
+consumers: Users include Granicus, mySociety, OpenNorth, Poplus.org, Open Civic Data, and Sunlight Foundation
+links:
+  website: http://www.popoloproject.com/
+  documentation: http://www.popoloproject.com/specs/
+  example: http://www.popoloproject.com/appendices/examples.html
+open: true
+metrics:
+  transferability:
+    value: true
+    rationale: Popolo supports the development of reusable open source components that implement the specifications, making it easier for civic developers to create civic software. Popolo also supports multilingual response with a header specifying languages
+  stakeholder_participation:
+    value: false
+    rationale: James McKinney is the only named author of Popolo
+  consensus_government:
+    value: true
+    rationale: The standard's specification is improved through a consensus process in line with IETF definition
+  machine_readable:
+    value: true
+    rationale: JSON output documents must validate against provided JSON or JSON-LD schema
+  human_readable:
+    value: true
+    rationale: Different options for serialization, including JSON and XML, have readable attribute names
+  requires_realtime:
+    value: false
+  metadata:
+    value: true
+    rationale: Metadata headers required in RDF or JSON-LD document. Reuses DCMI metadata terms, as well as ontologies from W3C, IETF, ISA, GeoNames, OSCA, Bibliographic Framerwork Initiative, and Open Data Institute
+  extensions:
+    value: true
+    indicators: Allows for use of terms outside the specification only where the specification's terms are insufficient

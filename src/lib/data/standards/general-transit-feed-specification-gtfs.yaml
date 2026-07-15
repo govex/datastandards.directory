@@ -1,0 +1,537 @@
+name: General Transit Feed Specification (GTFS)
+slug: general-transit-feed-specification-gtfs
+category: Transportation
+subcategory:
+  - Transit Schedules
+description: Standard format for handling public transportation and geographic data. Developed by Google and the TriMet public transportation agency
+stage_in_development: Completed
+license: Creative Commons Attribution 3.0 License
+updated: '2016-07-26'
+recorded: '2017-07-12'
+verified: true
+publisher: Google
+publisher_reputation: Partnership among the private and public sectors. Municipal transit data is combined with Google's technological input to create the specification
+consumers: By 2013, the standard format had been applied to hundreds of transit systems' data around the world
+apps: 'There are many. Please see following list for non-google apps built from the GTFS schema: https://code.google.com/p/googletransitdatafeed/wiki/OtherGTFSTools'
+links:
+  website: https://developers.google.com/transit/gtfs/
+  documentation: https://developers.google.com/transit/gtfs/reference/
+  example: https://developers.google.com/transit/gtfs/examples/
+  contact: https://developers.google.com/transit/gtfs/#getting-help
+open: true
+metrics:
+  transferability:
+    value: true
+    rationale: Zip file containing CSV files with information about routes, stops, and agencies (saved as .txt)
+  stakeholder_participation:
+    value: true
+    rationale: GTFS is a collaboration between private and public sectors. Google and public transit agencies as partners - some government bodies initially hesitant to hand over the data to Google
+  consensus_government:
+    value: false
+    rationale: No opportunity to be included in decisions made about the standard's evolution. Technical committee not open to the public
+  machine_readable:
+    value: true
+    rationale: CSVs saved as text files stored in a zip file.
+  human_readable:
+    value: true
+    rationale: Standard aims to be easily readable and use description, universally understood vocabulary
+  requires_realtime:
+    value: true
+    rationale: GTFS-RT handles real time transit data in a feed over HTTP
+  metadata:
+    value: false
+  extensions:
+    value: true
+    indicators: 'GTFS - Real Time: protocol buffers (as an alternative to XML) hosted over HTTP and gtfs realtime.proto produces source code to read and write the structured data and then retrieves it to and from a data stream using a variety of programming languages'
+providers:
+  - Aachen, Germany
+  - Addison County, VT
+  - Adelaide SA
+  - Airlie Beach QLD
+  - Alabama
+  - Albany, NY
+  - Albany, OR
+  - Albuquerque, NM
+  - Alexandria, VA
+  - Alice Springs NT
+  - Allegany, MD
+  - Allentown, PA
+  - Amador County, CA
+  - Anaheim, CA
+  - Anchorage, AK
+  - Andalusia, Spain
+  - Ann Arbor, MI
+  - Annapolis, MD
+  - Arlington, VA
+  - Asheville, NC
+  - Astoria, OR
+  - Athens, Greece
+  - Athens, OH
+  - Atlanta, GA
+  - Attleboro, MA
+  - Auckland, New Zealand
+  - Austin, TX
+  - Bagé, RS, Brazil
+  - Bakersfield, CA
+  - Baltimore, MD
+  - Bari, Italy
+  - Barrie, ON
+  - Beaumont, CA
+  - Belgium
+  - Belo Horizonte, Belo Horizonte - State of Minas Gerais, Brazil
+  - Beloit, WI
+  - Bend, OR
+  - Bennington, VT
+  - Benton County, OR
+  - Berkshire, MA
+  - Berlin, Germany
+  - Big Bear, CA
+  - Bilbao, Biscay, Spain
+  - Birmingham, AL
+  - Bishop, CA
+  - Blacksburg, VA
+  - Bloomington, IL
+  - Bloomington, IN
+  - Bogor, Bogor City, West Java, Indonesia
+  - Boston, MA
+  - Bowen QLD
+  - Bozeman, MT
+  - Bradenton, FL
+  - Brampton, ON
+  - Brecksville, OH
+  - Bremerton, WA
+  - Brest, France
+  - Brisbane QLD
+  - British Columbia
+  - Brockton, MA
+  - Bronx, NY
+  - Brookings, OR
+  - Brooklyn, NY
+  - Brooksville, FL
+  - Brussels, Belgium
+  - Budapest, Hungary
+  - Buenos Aires, Autonomous City of Buenos Aires, Argentina
+  - Buffalo, NY
+  - Bullhead City, AZ
+  - Bundaberg QLD
+  - Burlington, ON
+  - Burnie TAS
+  - Butte, MT
+  - Byron Bay NSW
+  - Cabarrus County, NC
+  - Cairns QLD
+  - Calgary, AB
+  - Canberra ACT
+  - Canby, OR
+  - Cape Cod, MA
+  - Carroll County, MD
+  - Cary, NC
+  - Cecil County, MD
+  - Champaign, IL
+  - Chapel Hill, NC
+  - Charleston, SC
+  - Charlottetown, PE
+  - Chattanooga, TN
+  - Chesterton, IN
+  - Chiang Mai, Mueang Chiang Mai District, Chiang Mai, Thailand
+  - Chicago, IL
+  - Chittenden County, VT
+  - Christchurch, New Zealand
+  - Cincinnati, OH
+  - Citrus County, FL
+  - Clackamas County, OR
+  - Clemson, SC
+  - Cleveland, OH
+  - Cobb County, GA
+  - Cologne, Germany
+  - Colorado
+  - Colorado Springs, CO
+  - Columbia County, OR
+  - Columbus, OH
+  - Concord, CA
+  - Connecticut
+  - Coos County, OR
+  - Córdoba, Cordoba, Argentina
+  - Corona, CA
+  - Corpus Christi, TX
+  - Corvallis, OR
+  - Cottage Grove, OR
+  - Cottonwood, AZ
+  - Crescent City, CA
+  - Cumberland County, ME
+  - Cuneo CN, Italy
+  - Dallas County, TX
+  - Dallas, TX
+  - Darwin NT
+  - Davis, CA
+  - Daytona Beach, FL
+  - Delaware
+  - Denmark
+  - Denver, CO
+  - Des Moines, IA
+  - Detroit, MI
+  - Druskininkai, Lithuania
+  - Duarte, CA
+  - Dublin, Ireland
+  - Duluth, MN
+  - Durham, NC
+  - Durham, ON
+  - Eagle County, CO
+  - Edmonton, AB
+  - El Dorado County, CA
+  - El Paso, TX
+  - Emeryville, CA
+  - Escalon, CA
+  - Estonia
+  - Eugene, OR
+  - Europe
+  - Everett, WA
+  - Fairbanks, AK
+  - Fairfax, VA
+  - Fairfield, CA
+  - Fargo, ND
+  - Farmington, NM
+  - Finland
+  - Flagstaff, AZ
+  - Flanders, Belgium
+  - Florence, Italy
+  - Florence, OR
+  - Fort Collins, CO
+  - Fort Lauderdale, FL
+  - Fort Wayne, IN
+  - Fort Worth, TX
+  - Fort Wright, KY
+  - Franklin, MA
+  - FresNo, CA
+  - Gainesville, FL
+  - Gatineau, QC
+  - Germany
+  - Gladstone QLD
+  - Glendale, CA
+  - Grand Forks, ND
+  - Grand Rapids, MI
+  - Grant County, OR
+  - Greensboro, NC
+  - Grenoble, France
+  - Guelph, ON
+  - Gwinnett County, GA
+  - Gympie QLD
+  - Halifax, NS
+  - Hamilton, ON
+  - Hampton, VA
+  - Harford County, MD
+  - Harrisonburg, VA
+  - Hartford, CT
+  - Hartford, VT
+  - Helsinki, Finland
+  - Hesperia, CA
+  - Hobart TAS
+  - Honolulu, HI
+  - Hood River County, OR
+  - Houston, TX
+  - Humboldt County, CA
+  - Huntsville, AL
+  - Indianapolis, IN
+  - Innisfail QLD
+  - Israel
+  - Jackson, MS
+  - Jacksonville, FL
+  - Janesville, WI
+  - Jefferson County, MO
+  - Jersey City, NJ
+  - Joensuu, Finland
+  - Johnson County, KS
+  - Josephine County, OR
+  - Juneau, AK
+  - Jyväskylä, Finland
+  - Kakegawa, Shizuoka Prefecture, Japan
+  - Kansas City, MO
+  - Kaunas, Lithuania
+  - Ketchikan, AK
+  - Ketchum, ID
+  - Kilcoy QLD
+  - Kingston, ON
+  - Klaipėda, Lithuania
+  - Klamath Falls, OR
+  - Kuopio, Finland
+  - La Grande, OR
+  - Laguna Beach, CA
+  - Lansing, MI
+  - Las Vegas, NV
+  - Launceston TAS
+  - Laurel, MD
+  - Laval, QC
+  - Lecce, Province of Lecce, Italy
+  - Lexington, KY
+  - Lincoln County, OR
+  - Lincoln, NE
+  - Linn County, OR
+  - Little Rock, AR
+  - Livermore, CA
+  - Lodi, CA
+  - Lombardy, Italy
+  - London, ON
+  - Long Beach, CA
+  - Long Island, New York
+  - Longueuil, QC
+  - Longview, WA
+  - Los Angeles, CA
+  - Louisville, KY
+  - Lowell, MA
+  - Lower Lake, CA
+  - Luxembourg
+  - Lynchburg, VA
+  - Mackay QLD
+  - Madera, CA
+  - Madison, WI
+  - Madrid, Spain
+  - Magnetic Island, Queensland
+  - Maleny QLD
+  - Malheur County, OR
+  - Manatee County, FL
+  - Manchester, UK
+  - Mannheim, Germany
+  - Marche, Italy
+  - Marin County, CA
+  - Maryborough QLD
+  - Maryland
+  - Mason County, WA
+  - Massachusetts
+  - Medford, OR
+  - Melbourne VIC
+  - Melbourne, FL
+  - Mendocino County, CA
+  - MendociNo, CA
+  - Merced, CA
+  - Meriden, CT
+  - Metz, France
+  - Mexico City, Federal District, Mexico
+  - Miami, FL
+  - Middlesex County, CT
+  - Milan, Italy
+  - Milton-Freewater, OR
+  - Milwaukee, WI
+  - Minneapolis, MN
+  - Miskolc, Hungary
+  - Mississauga, ON
+  - Missoula, MT
+  - Modesto, CA
+  - Modoc County, CA
+  - Molfetta BA, Italy
+  - Moncton, NB
+  - Monroe County, PA
+  - Monterey Park, CA
+  - Monterey, CA
+  - Montgomery, AL
+  - Montgomery, MD
+  - Montreal, QC
+  - Mornington Peninsula, VIC
+  - Mountain View, CA
+  - Mugello, Borgo San Lorenzo FI, Italy
+  - Nairobi, Kenya
+  - Nancy, France
+  - Nantes, France
+  - Nantucket, MA
+  - Nashville, TN
+  - Nassau, NY
+  - Nevada County, CA
+  - New Britain, CT
+  - New Haven, CT
+  - New Jersey
+  - New Orleans, LA
+  - New South Wales
+  - New York
+  - New York, NY
+  - New Zealand
+  - Newport, OR
+  - Niagara Regional Municipality, ON
+  - Nice, France
+  - North Karelia, Finland
+  - Norwalk, CA
+  - Norway
+  - Oakland, CA
+  - Oakridge, OR
+  - Oakville, ON
+  - Ocala, FL
+  - Ocean City, MD
+  - Okaloosa County, FL
+  - Oklahoma City, OK
+  - Olympia, WA
+  - Omaezaki, Shizuoka Prefecture, Japan
+  - Ontario, OR
+  - Orange County, CA
+  - Orange County, VT
+  - Orlando, FL
+  - Oshkosh, WI
+  - Oslo, Norway
+  - Ottawa, ON
+  - Oulu, Finland
+  - Oxnard, CA
+  - Pacific County, WA
+  - Painesville Township, OH
+  - Palermo, Italy
+  - Palo Verde Valley, California
+  - Palos Verdes Peninsula, CA
+  - Pamplona, Navarre, Spain
+  - Panama City, FL
+  - Panevėžys, Lithuania
+  - Paris, France
+  - Pécs, Hungary
+  - Pendleton, OR
+  - Pensacola, FL
+  - Peoria, IL
+  - Perth WA
+  - Petaluma, CA
+  - Philadelphia, PA
+  - Philippines
+  - Phoenix, AZ
+  - Pierce County, WA
+  - Pinellas, FL
+  - Pinole, CA
+  - Pittsburgh, PA
+  - Placer County, CA
+  - Plumas County, CA
+  - Pompano Beach, FL
+  - Portland, OR
+  - Porto Alegre - RS, Brazil
+  - Prague, Czechia
+  - Providence, RI
+  - Pulaski, VA
+  - Quebec City, QC
+  - Queen Anne's County, MD
+  - Queens, NY
+  - Racine, WI
+  - Radford, VA
+  - Raleigh, NC
+  - Redding, CA
+  - Redmond, OR
+  - Regina, SK
+  - ReNo, NV
+  - Rīga, Latvia
+  - Rio Vista, CA
+  - Riverside, CA
+  - Roanoke, VA
+  - Rochester, MN
+  - Rochester, NY
+  - Rockhampton QLD
+  - Rocky Mount, NC
+  - Rogaland, Norway
+  - Rome, Italy
+  - Roseburg, OR
+  - Royan, France
+  - Rutland, VT
+  - Sacramento, CA
+  - Saint Albert, AB
+  - Saint Louis, MO
+  - Salem, OR
+  - Salt Lake City, UT
+  - San Andreas, CA
+  - San Antonio, TX
+  - San Benito County, CA
+  - San BernardiNo, CA
+  - San Diego, CA
+  - San Francisco, CA
+  - San Gabriel Valley, Avocado Heights, CA
+  - San Jose, CA
+  - San Luis Obispo, CA
+  - San Sebastián, Gipuzkoa, Spain
+  - Sandy, OR
+  - Santa Cruz, CA
+  - Santa Maria, CA
+  - Santa Monica, CA
+  - Sarasota, FL
+  - Saskatoon, SK
+  - Seattle, WA
+  - Sedona, AZ
+  - Sherbrooke, QC
+  - Shizuoka Prefecture, Japan
+  - Sioux Falls, SD
+  - Siskiyou County, CA
+  - Sitka, AK
+  - Skamania County, WA
+  - Solano County, CA
+  - Sonoma County, CA
+  - Spokane, WA
+  - Springfield, IL
+  - St Augustine, FL
+  - St Petersburg, Russia
+  - St. John's, NL
+  - Stamford, CT
+  - Stanford, CA
+  - Stanislaus County, CA
+  - State College, PA
+  - Staten Island, NY
+  - Stockton, CA
+  - Sudbury, ON
+  - Susanville, CA
+  - SusoNo, Shizuoka Prefecture, Japan
+  - Sweden
+  - Switzerland
+  - Szczecin, Poland
+  - Szeged, Hungary
+  - Tampa, FL
+  - Tampere, Finland
+  - Tehama County, CA
+  - Terre Haute, IN
+  - The Netherlands
+  - Thousand Oaks, CA
+  - Thousand Palms, CA
+  - Thunder Bay, ON
+  - Tillamook, OR
+  - Toowoomba QLD
+  - Toronto, ON
+  - Torrance, CA
+  - Toulouse, France
+  - Town of Rockingham, VT
+  - Townsville QLD
+  - Trento, Italy
+  - Trinity County, CA
+  - Tucson, AZ
+  - Tulsa, OK
+  - Turin, Italy
+  - Turku, Finland
+  - Ulm, Germany
+  - United Kingdom
+  - Utah
+  - Valencia, Spain
+  - Vancouver, BC
+  - Vancouver, WA
+  - Varese VA, Italy
+  - Venice, Italy
+  - Ventura County, CA
+  - Vermont
+  - Vilnius, Lithuania
+  - Virginia
+  - Vitoria-Gasteiz, Álava, Spain
+  - Walloon Region, Belgium
+  - Wallowa County, OR
+  - Waltham, MA
+  - Warsaw, Poland
+  - Warwick QLD
+  - Washington, DC
+  - Waterbury, CT
+  - Waterloo, ON
+  - Waukesha, WI
+  - Wellington, New Zealand
+  - Wenatchee, WA
+  - West Palm Beach, FL
+  - Westchester County, NY
+  - Wichita, KS
+  - Wilmington, NC
+  - Wilmington, VT
+  - Wilsonville, OR
+  - Windsor, ON
+  - Winnipeg, MB
+  - Woodbridge, VA
+  - Woodburn, OR
+  - Worcester, MA
+  - Wrocław, Poland
+  - Yakima, WA
+  - Yamanashi Prefecture, Japan
+  - Yamhill County, OR
+  - Yeppoon QLD
+  - York, PA
+  - York, Toronto, ON
+  - Yosemite Valley, CA
+  - Yuba City, CA
+  - Yuma, AZ

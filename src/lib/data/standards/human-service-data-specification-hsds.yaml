@@ -1,0 +1,46 @@
+name: Human Service Data Specification (HSDS)
+slug: human-service-data-specification-hsds
+category: Services
+subcategory:
+  - Social Services
+description: HSDS is a format for exchanging data regarding health, human, and social services.  Its purpose is to facilitate the exchange of resource directory data across many information channels, in order to make it easier to share, find, and use information about the resources available to people in need.
+stage_in_development: Completed
+license: Creative Commons Attribution License 4.0 International
+version: '1.1'
+updated: '2017-03-01'
+recorded: '2017-06-23'
+verified: true
+publisher: Open Referral
+publisher_reputation: Open Referral is an independent community of practice of people working to improve the flow of information about resources available for people in need.
+consumers: Used primarily by nonprofit organizations and their technology vendors, with some initial adoption by governments and a considerable amount of political support from governments.
+apps: Link-SF Ohana Helpsteps Friendly
+links:
+  website: http://www.openreferral.org/
+  documentation: https://openreferral.readthedocs.io/en/latest/reference/
+  example: https://github.com/openreferral/sample-data/tree/master/simple
+  contact: mailto:info@openreferral.org
+open: true
+metrics:
+  transferability:
+    value: true
+    rationale: Open Referral emerged in the US but addresses a nearly-universal problem, with several implementations in other countries already underway.
+  stakeholder_participation:
+    value: true
+  consensus_government:
+    value: true
+  machine_readable:
+    value: true
+    rationale: JSON datapackage, plus emerging API spec
+  human_readable:
+    value: true
+    rationale: Readable JSON
+  requires_realtime:
+    value: true
+    rationale: This is a core design requirement for the specification to ensure accuracy of data.
+  metadata:
+    value: false
+  extensions:
+    value: true
+    indicators: Extensions are encouraged for information that is particularly relevant for specific subdomains (such as legal services)
+providers:
+  - San Mateo County

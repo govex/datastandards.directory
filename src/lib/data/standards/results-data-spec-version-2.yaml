@@ -1,0 +1,44 @@
+name: Results Data Spec Version 2
+slug: results-data-spec-version-2
+category: Elections
+subcategory:
+  - Election Results
+description: Specification standardizes US election data at the state level
+stage_in_development: Completed
+version: '2'
+updated: '2013-05-29'
+recorded: '2017-07-09'
+verified: true
+publisher: OpenElections
+publisher_reputation: OpenElection's objective is to make a standardized, comprehensive, and linked set of election data in the USA at both the federal and state levels. OpenElection is supported by the John S. and James L. Knight Foundation's Knight News Challenge
+consumers: Oregon, USA
+links:
+  website: http://docs.openelections.net/
+  documentation: https://github.com/openelections/specs/wiki/Elections-Data-Spec-Version-2
+  example: https://gist.github.com/dwillis/5646908
+  contact: http://docs.openelections.net/
+open: true
+metrics:
+  transferability:
+    value: false
+    rationale: Standard is limited to the USA at the state and county levels currently
+  stakeholder_participation:
+    value: false
+    rationale: OpenElections is the sole authority of the standard's development. Publishers accept source code and official results contributions from volunteers from the public
+  consensus_government:
+    value: true
+    rationale: The specification utilizes Google Groups to discuss the development of the specification. It also hosts an issue tracker on GitHub
+  machine_readable:
+    value: true
+    rationale: Standard supports JSON and CSV formats. Specification's content is broken up into election data and election results
+  human_readable:
+    value: true
+    rationale: Standard has field identifiers
+  requires_realtime:
+    value: false
+    rationale: OpenElections does not have the infrastructure or funding to handle real time data for election results
+  metadata:
+    value: true
+    rationale: OpenElections is working on an Metadata API to compliment the specification.
+  extensions:
+    value: false

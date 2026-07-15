@@ -1,0 +1,68 @@
+name: Checkbook NYC
+slug: checkbook-nyc
+category: Finance
+subcategory:
+  - Expenditure
+  - Procurement Contracts
+  - Annual Budget
+description: This application is highly detailed and allows you to customize the data yourself in order to visualize NYC budget, expenditure, revenue, and contract data. The application has information about W/MBE (Women/Minority Business Enterprise). It was based on the USASpending.gov model (for federal budget and expense information). Can export the raw data through API's controllers
+stage_in_development: Completed
+license: GNU Affero General Public License, version 3.0
+version: '2'
+updated: '2017-08-08'
+recorded: '2016-08-01'
+verified: true
+publisher: REI Systems, NYC Comptroller's Office
+publisher_reputation: REI Systems have contributed to building open source government websites. REI teamed up with state workers at the NYC Comptroller's office to create Checkbook NYC
+consumers: Limited to NYC
+apps: Checkbook NYC web application  open source software posted to GitHub. The API allows for third parties to pull the raw data for their own use
+links:
+  website: http://www.checkbooknyc.com/spending_landing/yeartype/B/year/118
+  documentation: https://github.com/NYCComptroller/Checkbook
+  example: http://checkbooknyc.com/spending_landing/yeartype/B/year/116
+  contact: http://www.checkbooknyc.com/ask-a-question
+open: true
+metrics:
+  transferability:
+    value: true
+    rationale: Adapted from the city's central Financial Management System (FMS) software. Hope to develop a web-based application to 'create something that other cities might be willing to share the cost of maintaining and improving'
+  stakeholder_participation:
+    value: false
+    rationale: NYC Comptroller office leads in the implementation and development of the standard
+  consensus_government:
+    value: true
+    rationale: Application source code is posted to GitHub. Have the option to pull requests and post issues. API open source software is posted to GitHub. Anyone can participate by pulling requests and contributing to the issue tracker on GitHub
+  machine_readable:
+    value: true
+    rationale: API displays the financial data in a web-based dashboard
+  human_readable:
+    value: true
+    rationale: Dashboard embedded in HTML web page. HTML code includes metadata and resource identifiers
+  requires_realtime:
+    value: true
+    rationale: Up to date by yearly quarter
+  metadata:
+    value: false
+    rationale: HTML web page that hosts the API includes metadata
+  extensions:
+    value: true
+    indicators: API extended to include a featured dashboard. Dashboard provides highly detailed information about contract/spending data
+providers:
+  - New York City
+tags:
+  dataType:
+    - CSV
+  language:
+    - English
+  providerType:
+    - public
+  subject:
+    - annual budget
+    - expenditure
+    - procurement contracts
+  keyword:
+    - API
+    - GitHub
+    - open government
+    - software
+    - transparency

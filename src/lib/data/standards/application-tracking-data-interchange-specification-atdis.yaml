@@ -1,0 +1,100 @@
+name: Application Tracking Data Interchange Specification (ATDIS)
+slug: application-tracking-data-interchange-specification-atdis
+category: Buildings
+subcategory:
+  - Building Permits
+description: ATDIS includes a schema for describing planning applications. An API format is also specified for feeds of the database of planning applications
+stage_in_development: Completed
+license: MIT
+version: 1.0.2
+updated: '2014-03-21'
+recorded: '2017-06-19'
+verified: true
+publisher: OpenAustralia Foundation
+publisher_reputation: The OpenAustralia Foundation is a charity whose goal is improving democracy and transparency in Australia. They do so by creating technology to allow Australians to understand and participate in government activity
+consumers: Used by all councils in New South Wales, expanding to the rest of Australia
+apps: Many private software companies create portals for municipal councils to publish development applications and similar data
+links:
+  website: https://www.openaustraliafoundation.org.au/projects/planningalerts/
+  documentation: https://www.planningalerts.org.au/atdis/specification
+  example: https://www.planningalerts.org.au/atdis/feed/5/atdis/1.0/applications.json
+  contact: https://github.com/openaustralia/atdis
+open: true
+metrics:
+  transferability:
+    value: true
+    rationale: Although designed for use in Australian municipalities, structure and element names are globally transferable
+  stakeholder_participation:
+    value: true
+    rationale: Partnership between Open Australia Foundation and government of New South Wales
+  consensus_government:
+    value: true
+    rationale: Changes are welcome through commits on their GitHub page
+  machine_readable:
+    value: true
+    rationale: REST feeds are either in JSON or XML format
+  human_readable:
+    value: true
+    rationale: JSON format is the default for the REST API
+  requires_realtime:
+    value: true
+    rationale: Feed includes the most up to date entries in the database
+  metadata:
+    value: false
+  extensions:
+    value: true
+    indicators: The specification for the feed structure includes a block for optional extended record types
+providers:
+  - ACT Planning and Land Authority
+  - Adelaide, SA
+  - Ballarat, VIC
+  - Banyule, VIC
+  - Boroondara, VIC
+  - Brisbane, QLD
+  - Burnside, SA
+  - Cairns, QLD
+  - Cardinia, VIC
+  - Casey, VIC
+  - Charles Sturt, SA
+  - Charters Towers, QLD
+  - Clarence, TAS
+  - Cockburn, WA
+  - Darebin, VIC
+  - Fremantle, WA
+  - Glen Eira, VIC
+  - Gold Coast, QLD
+  - Gosnells, WA
+  - Greater Geelong, VIC
+  - Hobart, TAS
+  - Huon Valley, TAS
+  - Ipswich, QLD
+  - Kingston, VIC
+  - Knox, VIC
+  - Launceston, TAS
+  - Logan City, QLD
+  - Mackay, QLD
+  - Marion, SA
+  - Melbourne, VIC
+  - Monash, VIC
+  - Moreland, VIC
+  - Moreton Bay, QLD
+  - Mornington Peninsula, VIC
+  - Nillumbik, VIC
+  - Noosa, QLD
+  - NSW (All City Councils)
+  - NT Lands Group
+  - Onkaparinga, SA
+  - Port Adelaide Enfield, SA
+  - Redland, QLD
+  - Salisbury, SA
+  - Scenic Rim, QLD
+  - South Gippsland, VIC
+  - Stonnington, VIC
+  - Sunshine Coast, QLD
+  - Swan, WA
+  - Toowoomba, QLD
+  - Townsville, QLD
+  - Unley, SA
+  - Wyndham, VIC
+  - Yarra Ranges, VIC
+  - Yarra, VIC

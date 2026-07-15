@@ -1,0 +1,45 @@
+name: SPOTCrime Open Crime Standard (SOCS)
+slug: spotcrime-open-crime-standard-socs
+category: Crime
+subcategory:
+  - Crime Statistics
+description: SOCS is a standard for police agencies to publish public crime data uniformly. It requires fields such as date and time (in ISO format), locale, and incident type
+stage_in_development: Completed
+updated: '2014-03-17'
+recorded: '2017-06-26'
+verified: true
+publisher: Colin Drane
+publisher_reputation: SPOTCrime is an independent publishing company that plots the locations of various crimes on a Google Map. The company is supported through ad revenue
+consumers: Cities that have adopted SOCS include Philadelphia, Denver, San Fransisco, Chicago, Albuquerque (all in USA)
+apps: SPOTCrime Crime Map
+links:
+  website: http://blog.spotcrime.com/2014/03/the-spotcrime-open-crime-data-standard.html
+  documentation: https://github.com/spotcrimebrit/SpotCrime-Open-Crime-Data-Standard/blob/master/dataspecification.md
+  example: http://www.civicdata.com/dataset/2014-crime-incidents/resource/0d11e47d-083d-4591-81a0-8c3d34978151
+  contact: https://github.com/spotcrimebrit/SpotCrime-Open-Crime-Data-Standard
+open: true
+metrics:
+  transferability:
+    value: true
+    rationale: Catapult is a complimentary, open source software that stores the data in CSV files and makes it easier for smaller police departments with less resources to publish the data
+  stakeholder_participation:
+    value: false
+    rationale: Created privately by a citizen developer
+  consensus_government:
+    value: false
+    rationale: Comments can be made on SOCS GitHub page, but specification appears to be maintained by one entity
+  machine_readable:
+    value: true
+    rationale: Acceptable formats according to the SPOTCRIME standard are XML, RSS feed, CSV, RDF, JSON, TXT, XLS(X), and KML
+  human_readable:
+    value: true
+    rationale: Standard utilizes identifiers and organizes data by type of crime
+  requires_realtime:
+    value: true
+    rationale: Standard dictates data be updated on a daily basis
+  metadata:
+    value: false
+    rationale: Standard doesn't explicitly require metadata. However, many examples of SOCS implementation include a zip file containing metadata
+  extensions:
+    value: true
+    indicators: SOCS specifies a list of required fields, but most users of SOCS include additional fields and descriptions

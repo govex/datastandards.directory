@@ -1,0 +1,46 @@
+name: Open Water Rate Specification (OWRS)
+slug: open-water-rate-specification-owrs
+category: Environment
+subcategory:
+  - Water
+description: OWRS is a machine-readable format for specifying and sharing water rate information. OWRS is designed for analysts, economists, and software developers interested in analyzing water rates. OWRS attempts to fully encode a water utility's rate structure and pricing schedules in a form that is easy to store, share, modify and apply programmatically.
+stage_in_development: Completed
+license: GNU Affero General Public License v3.0
+updated: '2017-03-04'
+recorded: '2017-06-14'
+verified: true
+publisher: California Data Collaborative
+publisher_reputation: The California Data Collaborative or CaDC is a voluntary, collaborative project where local cities, water retailers and land planning agencies have come together to build new data infrastructure to ensure California has reliable water today and into the future.  The CaDC has pioneered a new 501c3 data infrastructure non-profit and provides analytical tools and dashboards that are developed using freely available open source tools.
+consumers: All examples shown by CaDC are within California
+apps: CaDC has built several tools available on their GitHub page that work with the rate bills. RateParser is an R package that has the ability to interpret OWRS files and calculate water bills. The package is designed to simplify the work of analysts and economists interested in calculating water bills under a variety of rate structures. RateComparison is a software program that compares the revenue, equity, and demand implications of different water rate structures.
+links:
+  website: http://californiadatacollaborative.org/
+  documentation: https://github.com/California-Data-Collaborative/Open-Water-Rate-Specification
+  example: https://github.com/California-Data-Collaborative/Open-Water-Rate-Specification/blob/master/full_utility_rates/California/San%20Francisco%20Public%20Utilities%20Commission%20-%20385/sfc-2016-07-01.owrs
+  contact: https://github.com/California-Data-Collaborative
+open: true
+metrics:
+  transferability:
+    value: true
+    rationale: OWRS is a general structure that supports many different types of water rates (e.g. tiered versus budget-based) with no regionally specific attributes
+  stakeholder_participation:
+    value: true
+    rationale: The CaDC is made up of stakeholders from California utilities sector
+  consensus_government:
+    value: true
+    rationale: Contributions can be made to the OWRS and other CaDC project on their GitHub page
+  machine_readable:
+    value: true
+    rationale: YAML key-value pair structure
+  human_readable:
+    value: true
+    rationale: YAML structure is even easier to parse than regular markup languages or JSON
+  requires_realtime:
+    value: true
+    rationale: effective date is a required element for a bill, and municipalities will release the rate bills at regular intervals
+  metadata:
+    value: true
+    rationale: Metadata includes fields such as agency or utility name, date, and bill frequency
+  extensions:
+    value: true
+    indicators: Extensions only permissible in the metadata, where agency information is located.  Rate structure is inclusive but non-extensible

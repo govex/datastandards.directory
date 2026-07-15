@@ -1,0 +1,46 @@
+name: Election Results
+slug: election-results
+category: Elections
+subcategory:
+  - Election Results
+description: A standard for publishing local results of English elections, including Parish, District/Borough, County, and Parliamentary elections and by-elections. Mayoral and European Parliament elections are not supported in the current version of the schema.
+stage_in_development: Completed
+license: Data providers are encouraged to publish under the Open Government Licence. While the LGA maintains a copyright to the documentation, the standard does not appear to be licensed
+version: '1.02'
+updated: '2017-08-07'
+recorded: '2017-08-17'
+verified: true
+publisher: Local Government Association (LGA)
+publisher_reputation: The Local Government Association represents the interests of English and Welsh municipal councils in national government. The LGA also promotes communication between local government authorities and develops best practices.  LGA standards have been developed in response to the UK's Local Government Transparency Code, which encourages the publication of government data in standardized machine-readable formats.
+consumers: 373 District and County Councils are members of the LGA
+apps: LG Inform Plus API. The LGA website also has a CSV data validator for all of their published schema
+links:
+  website: https://github.com/esd-org-uk/schemas/tree/master/ElectionResults
+  documentation: https://github.com/esd-org-uk/schemas/blob/master/ElectionResults/ESD04039p%20-%20Elections%20results%20schema%20guidance%20official%20first%20release%20v1.02.pdf
+  example: https://github.com/esd-org-uk/schemas/blob/master/ElectionResults/Election%20results.json
+  contact: https://github.com/esd-org-uk
+open: true
+metrics:
+  transferability:
+    value: false
+    rationale: Designed for local elections in England and Wales. Likely transferable
+  stakeholder_participation:
+    value: true
+    rationale: The Local Government Association consists of local government officials who collaborate to develop best practices for local authorities, the would-be stakeholders.
+  consensus_government:
+    value: false
+    rationale: Although schemas and documentation are held on GitHub, changes can only be decided by the LGA
+  machine_readable:
+    value: true
+    rationale: CSV format required
+  human_readable:
+    value: true
+    rationale: CSV template has readable headers
+  requires_realtime:
+    value: false
+    rationale: Election results are only published after elections
+  metadata:
+    value: false
+  extensions:
+    value: false
+    indicators: The schema contains many optional fields, but additional fields are not supported. The LGA plans on extending the schema to include more election-data fields

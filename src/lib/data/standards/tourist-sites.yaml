@@ -1,0 +1,42 @@
+name: Tourist Sites
+slug: tourist-sites
+category: Services
+subcategory:
+  - Ontology
+description: Vocabulario para la representación de lugares, zonas e itinerarios de interés turístico is an ontology for representing tourist attractions and accessibility. This includes classes such as access mode, type of institution, and maintenance cost
+stage_in_development: Draft
+license: Creative Commons Attribution License 4.0 International
+version: '0.1'
+updated: '2015-03-13'
+recorded: '2017-08-30'
+verified: true
+publisher: The Ontology Engineering Group
+publisher_reputation: The Ontology Engineering Group is based at the Computer Science School at Universidad Politécnica de Madrid. It is widely recognised in Europe in the areas of Ontology Engineering, Semantic Infrastructure, Linked Data, and Data Integration. Oscar Corcho has collaborated with members of Spanish city councils and other Spanish organizations to draft vocabularies for linked open data
+links:
+  website: http://www.minetad.gob.es/es-ES/Paginas/index.aspx
+  documentation: http://vocab.linkeddata.es/datosabiertos/def/turismo/lugar-content/0.1/index.html
+  contact: mailto:ocorcho@fi.upm.es
+open: true
+metrics:
+  transferability:
+    value: false
+    rationale: This vocabulary is intended to be used by municipalities across Spain, but could be transferable. Data class and property names are in Spanish
+  stakeholder_participation:
+    value: true
+    rationale: The contributors to this vocabulary include members of both state and city governments, and officials from the Ministry of Industry, Energy, and Tourism
+  consensus_government:
+    value: false
+    rationale: No way for the public and interested parties to contribute to the development of vocabularies
+  machine_readable:
+    value: true
+    rationale: An OWL schema is provided
+  human_readable:
+    value: true
+    rationale: An HTML documentation page makes the ontology schema human-readable
+  requires_realtime:
+    value: false
+  metadata:
+    value: true
+    rationale: Namespaces used are declared in section 1.1 of the documentation. This vocabulary extends schema.org, GeoNames and FuncacionCTIC ontologies
+  extensions:
+    value: false

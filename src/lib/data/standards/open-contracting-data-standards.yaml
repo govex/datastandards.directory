@@ -1,0 +1,76 @@
+name: Open Contracting Data Standards
+slug: open-contracting-data-standards
+category: Finance
+subcategory:
+  - Procurement Contracts
+description: International standard to make data about government contracts more transparent to the public
+stage_in_development: Completed
+license: Creative Commons Attribution 4.0 International license
+version: '1.1'
+updated: '2017-05-31'
+recorded: '2017-12-18'
+verified: true
+publisher: Open Contracting Partnership (OCP)
+publisher_reputation: The Open Contracting Partnership advocates for open data in government contracting to save governments time and money, and improve transparency and services for citizens
+consumers: Over 15 national governments publish in this standard, along with many non-governmental organizations.
+apps: Budeshi, Pro-Veedor, Open Procurement, ProZorro Explorer, Open Opps, OCDS Tools, Open Contracting Monitoring & Evaluation Dashboard, OCDSearch
+links:
+  website: https://github.com/open-contracting/standard
+  documentation: http://standard.open-contracting.org/
+  contact: http://standard.open-contracting.org/latest/en/
+open: true
+metrics:
+  transferability:
+    value: true
+    rationale: Goal of project is to develop a standard that can be adopted across national borders
+  stakeholder_participation:
+    value: true
+    rationale: Publishers actively engage communities and businesses interested in adopting the standard. Publishers collaborated with stakeholders in order to develop the 'OCDS Demand-side Assessment'. This assessment is meant to address real world needs of publishers and users of public contracting data
+  consensus_government:
+    value: true
+    rationale: 'The OCP is committed to the Open Stand principles for standards development. The standard is developed with: Due process, broad consensus, transparency, balance, and openness. Governance of the standard may soon begin to follow formal standards processes (such as an OASIS standard) in its upcoming release'
+  machine_readable:
+    value: true
+    rationale: The Open Contracting ID (OCID) is a globally unique identifier. OCDS is based on a JSON schema
+  human_readable:
+    value: true
+    rationale: Standard states an objective of being easily understandable. Provides key terms and background on the procurement contracting process
+  requires_realtime:
+    value: false
+  metadata:
+    value: true
+    rationale: Standard has a .json metadata package. As a globally unique identifier to identify the data package
+  extensions:
+    value: true
+    indicators: This standard has a sector specific extension
+providers:
+  - Canada
+  - Columbia
+  - Mexico
+  - Mexico City
+  - Montreal
+  - New South Wales
+  - Nigeria
+  - Paraguay
+  - Taiwan
+  - UK
+  - Ukraine
+  - Vietnam
+tags:
+  dataType:
+    - JSON
+    - schema
+  language:
+    - English
+    - French
+    - Spanish
+  providerType:
+    - public
+  subject:
+    - procurement contracts
+  keyword:
+    - API
+    - GitHub
+    - open government
+    - template
+    - transparency

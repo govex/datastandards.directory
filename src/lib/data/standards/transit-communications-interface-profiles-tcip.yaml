@@ -1,0 +1,56 @@
+name: Transit Communications Interface Profiles (TCIP)
+slug: transit-communications-interface-profiles-tcip
+category: Transportation
+subcategory:
+  - Real-Time Transit
+  - Hardware
+description: Cities use TCIP to structure their real-time public transit data
+stage_in_development: Completed
+version: 5.0.1
+updated: '2016-03-01'
+recorded: '2017-08-30'
+verified: true
+publisher: American Public Transportation Association (APTA)
+publisher_reputation: APTA is a non-profit organization that supports improvements in public transportation throughout the USA. APTA has published several standards for public transportation over the years
+consumers: City of Montreal and several cities within the USA have adopted TCIP. There is not formal list of all cities that have adopted this standard. As of 2013, vendors are the main users of TCIP
+apps: APTA Provides TIRCE (TCIP Implementation, Requirements and Capabilities Editor) for use on PCs
+links:
+  website: http://www.gti.gatech.edu/sites/default/files/u51/REED-THESIS-2013.pdf
+  documentation: http://www.aptatcip.com/Documents.htm
+  example: http://www.aptatcip.com/Pilots.htm
+  contact: http://www.aptatcip.com/Index.htm
+open: false
+metrics:
+  transferability:
+    value: true
+    rationale: National Transit Institute provides the 'Transit Communications Inteface Profiles (TCIP) Standard Development Program.' This TCIP training provides classes to help ease the adoption of TCIP. APTA also provides the downloadable 'TCIP Implementation, Requirements and Capabilities Editor (TIRCE)'
+  stakeholder_participation:
+    value: true
+    rationale: Technical working groups composed of transit agency staff and representatives from vendors were the ones to develop TCIP (Reed 2013)
+  consensus_government:
+    value: true
+    rationale: APTA allows users of the standard to add comments
+  machine_readable:
+    value: true
+    rationale: Data is stored in zipped MS Word document files (.doc), which are not machine readable, but data can be also stored in XML
+  human_readable:
+    value: true
+    rationale: Lots of documentation regarding the standard, including definitions
+  requires_realtime:
+    value: true
+    rationale: As the specification is primarily for real-time public transit data, it requires the data to be real-time
+  metadata:
+    value: true
+    rationale: 'TCIP data is organized into the following building blocks: Dialog Patterns, Dialogs, Messages, Frames, Elements, File Transfers). The Messages block allows for metadata. Also, there is a metadata field for TCIP artifacts'
+  extensions:
+    value: true
+    indicators: Cities have the availability to modify parts of the standard to meet their needs. For example, the New York City MTA modified TCIP's specifications (Reed 2013)
+providers:
+  - Chicago
+  - Dallas
+  - Houston
+  - Montreal
+  - New York City
+  - Orlando
+  - Seattle
+  - Toronto

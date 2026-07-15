@@ -1,0 +1,58 @@
+name: Building & Land Development Specification (BLDS)
+slug: building-land-development-specification-blds
+category: Buildings
+subcategory:
+  - Building Permits
+description: A specification for building and construction permit data. Comprises of basic required fields and optional dataset fields. Data about building permits are a good proxy for economic activity. Therefore, more accessible data about permits informs data users about the well-being (or lack of well-being) of a community. In addition, opening up this information helps establish trust between governing bodies and the public
+stage_in_development: Draft
+version: '1.2'
+updated: '2016-08-04'
+recorded: '2017-06-26'
+verified: true
+publisher: Accela, BuildFax, Buildingeye, Civic Insight, DR-i-VE Decisions, SiteCompli, Socrata, Zillow
+publisher_reputation: Standard brings together publishers from the private sector and civic government. Collective process between stakeholders within the Housing and Real Estate field of the Open Data Network
+consumers: The cities that have adopted BLDS in draft stage include Alameda, CA, Bernalillo, NM, Omaha, NE,  Deschutes, OR, Charlotte, FL, San Diego, CA, ReNo, NV, Framingham, MA, Seattle, WA, Boston, MA, Fort Worth, TX, Tampa, FL, Chattanooga, TN
+apps: Accela CivicData
+links:
+  website: http://permitdata.org/
+  documentation: https://github.com/open-data-standards/permitdata.org/wiki/Core-Permits-dataset-Requirements
+  example: http://www.civicdata.com/dataset/permit_standard_permits_xml_10306/resource/f51d567c-07f7-41d4-842d-c2b165722b4b
+  contact: http://permitdata.org/
+open: true
+metrics:
+  transferability:
+    value: true
+    rationale: The fields for the specification are intentionally few and broad so that the standard may be applied across jurisdictions more easily. Creators of the standard struggled with compromising between granular level data (good for consumers) and more universal data the could applied over a wider range of jurisdictions. Meant to be adopted by large and small cities across the east and west coasts
+  stakeholder_participation:
+    value: true
+    rationale: Collaborative effort by tech. companies, government, and stakeholder groups
+  consensus_government:
+    value: true
+    rationale: Standard includes an Issue tracker on the GitHub repository. It is also possible to contribute sample datasets, to 'pull requests' on GitHub, to post thoughts and advice in a provided discussion forum, and access their mailing list
+  machine_readable:
+    value: true
+    rationale: 'Standard consists of CSV files saved as basic, separated .txt files. These are NOT variables in a program language or database engine. However, they still adhere to database normalization assuming data will be fed into RDSM. This multi-file database structure ought to be normalized. CSV file names are as follows: publication_info.csv, permits.csv, permits_history.csv, contractors.csv, permit_contractopr.csv, inspections.csv. Fields for each dataset are either required, recommended, or optional'
+  human_readable:
+    value: true
+    rationale: Specification uses metadata, field identifiers and semantics
+  requires_realtime:
+    value: false
+    rationale: Standard employs an optional permit status change dataset to track permit data over time
+  metadata:
+    value: true
+    rationale: Standard requires publication_info.csv file. This acts as a source of information about the data publisher, version of standard, data being published... etc
+  extensions:
+    value: false
+providers:
+  - Alameda, CA
+  - Albequerque, NM
+  - Bend, OR
+  - Boston, MA
+  - Boulder, CO
+  - Chattanooga, TN
+  - Fort Worth, TX
+  - Omaha, NE
+  - Raleigh, NC
+  - San Diego, CA
+  - Seattle, WA
+  - Tampa, FL

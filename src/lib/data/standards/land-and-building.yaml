@@ -1,0 +1,46 @@
+name: Land and Building
+slug: land-and-building
+category: Public Facilities
+subcategory:
+  - Buildings
+description: The Local Government Transparency Code requires that local authorities publish details of all their fixed (land and building) assets. This includes all properties owned or used by local government, including those where contractual work takes place, public parking facilities, and social housing.
+stage_in_development: Completed
+license: Data providers are encouraged to publish under the Open Government Licence. While the LGA maintains a copyright to the documentation, the standard does not appear to be licensed
+version: '1.4'
+updated: '2015-06-05'
+recorded: '2017-08-20'
+verified: true
+publisher: Local Government Association (LGA)
+publisher_reputation: The Local Government Association represents the interests of English and Welsh municipal councils in national government. The LGA also promotes communication between local government authorities and develops best practices.  LGA standards have been developed in response to the UK's Local Government Transparency Code, which encourages the publication of government data in standardized machine-readable formats.
+consumers: 374 District and County Councils are members of the LGA
+apps: LG Inform Plus API. The LGA website also has a CSV data validator for all of their published schema
+links:
+  website: https://github.com/esd-org-uk/schemas/tree/master/LandAssets
+  documentation: https://github.com/esd-org-uk/schemas/blob/master/LandAssets/Transparency%20guidance%20-%20land%20assets%20parking%202015.pdf
+  example: https://github.com/esd-org-uk/schemas/blob/master/LandAssets/Land%20and%20building.json
+  contact: https://github.com/esd-org-uk
+open: true
+metrics:
+  transferability:
+    value: false
+    rationale: Fields require unique codes specific to British property ownership
+  stakeholder_participation:
+    value: true
+    rationale: The Local Government Association consists of local government officials who collaborate to develop best practices for local authorities, the would-be stakeholders.
+  consensus_government:
+    value: false
+    rationale: Although schemas and documentation are held on GitHub, changes can only be decided by the LGA
+  machine_readable:
+    value: true
+    rationale: CSV format required
+  human_readable:
+    value: true
+    rationale: CSV template has readable headers
+  requires_realtime:
+    value: false
+    rationale: Asset reporting typically happens annually
+  metadata:
+    value: false
+  extensions:
+    value: false
+    indicators: The schema contains many optional fields, but additional fields are not supported.

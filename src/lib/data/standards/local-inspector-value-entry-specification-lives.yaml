@@ -1,0 +1,66 @@
+name: Local Inspector Value-entry Specification (LIVES)
+slug: local-inspector-value-entry-specification-lives
+category: Services
+subcategory:
+  - Commercial
+description: Cities use LIVES to publish food inspection information about any restaurant listed on Yelp or any website that has restaurant listings
+stage_in_development: Completed
+version: '2'
+updated: '2015-08-10'
+recorded: '2016-08-01'
+verified: true
+publisher: Yelp
+publisher_reputation: Yelp is a multinational company that hosts crowdsourced information about local businesses online. Yelp contributed data and collaborated with municipal bodies in order to develop LIVES
+consumers: Chicago and Boston have plans to roll out the standard soon. The city of Ottawa also used the LIVES specification for their Public Health Inspection data
+links:
+  website: https://www.yelp.ca/healthscores
+  documentation: http://www.yelp.com/healthscores
+  example: http://data.ottawa.ca/dataset/public-health-inspection-data
+  contact: https://www.yelp.ca/healthscores
+open: true
+metrics:
+  transferability:
+    value: true
+    rationale: Standards aims to be used widely in cities across America. Can be applied easily across municipalities
+  stakeholder_participation:
+    value: true
+    rationale: Partnership between public and private sector
+  consensus_government:
+    value: false
+    rationale: Doesn't utilize a mailing list or host an issue tracker so that the public can contribute to the standard's development
+  machine_readable:
+    value: true
+    rationale: Standard dictates that data should be stored in tabular form. According to this standard, data is stored in  CSVs condensed in a zip file. Business and Inspections CSV files are required. Violations, Feed Info, and Legend CSV files are optional. Business CSV contains information about the business while the Inspections CSV file contains information about inspection history for that establishment. Both required field of business id as unique identifiers
+  human_readable:
+    value: true
+    rationale: Standard utilizes human readable identifiers for the data
+  requires_realtime:
+    value: true
+    rationale: Standard requires data of health inspection within the inspections file
+  metadata:
+    value: true
+    rationale: Feed information' and 'score legend' CSV files act as a form of metadata
+  extensions:
+    value: false
+providers:
+  - Anchorage
+  - Boston
+  - Boulder
+  - Charlotte
+  - Chicago
+  - Evanston
+  - Fayetteville, NC
+  - Florida
+  - Fort Worth
+  - Lewisville, TX
+  - Lexington, KY
+  - Los Angeles County
+  - Louisville, KY
+  - Orange County, NC
+  - Ottawa
+  - Raleigh
+  - Riverside County, CA
+  - Sacramento County
+  - San Bernardino County
+  - San Francisco
+  - York, ON

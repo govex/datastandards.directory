@@ -1,0 +1,48 @@
+name: House Facts
+slug: house-facts
+category: Buildings
+subcategory:
+  - Building Inspections
+description: The House Facts data standard is a uniform format for reporting government data on the operation, safety, and performance of residential buildings.
+stage_in_development: Completed
+license: Creative Commons Attribution-NonCommercial-NoDerivaives 4.0 International License
+version: 0.2.3
+updated: '2014-07-15'
+recorded: '2017-06-05'
+verified: true
+publisher: Dr. Rajiv Bhatia
+publisher_reputation: Rajiv Bhatia is a physician of social and preventative medicine and the former Director of Environmental Health for City of San Francisco. His company, The Civic Engine, maintains the standard along with Accela, Code For America, Civic Insight, and Socrata.
+consumers: San Francisco and Kansas City
+apps: None
+links:
+  website: https://sites.google.com/site/housefactsdatastandard/home
+  documentation: https://sites.google.com/site/housefactsdatastandard/home/specification
+  example: https://odn.demo.socrata.com/Housing/Housefacts-Kansas-City/acmj-4g7g
+  contact: https://github.com/codeforamerica/housefacts_spec
+open: true
+metrics:
+  transferability:
+    value: true
+    rationale: The House Facts Standard was created by the City of San Francisco with the goal of it becoming a standard for use in other jurisdictions.
+  stakeholder_participation:
+    value: true
+    rationale: Technical working group on Google platform composed of several agencies including The Civic Engine, Code for America, and Socrata
+  consensus_government:
+    value: false
+    rationale: An old version of the specification is posted on GitHub. Unclear whether changes made there are relevant
+  machine_readable:
+    value: true
+    rationale: CSV files with standard names and headers are saved in a .zip file
+  human_readable:
+    value: true
+    rationale: CSV headers are sensibly named, and descriptive documentation is provided
+  requires_realtime:
+    value: true
+    rationale: Specifies the date of most recent inspection
+  metadata:
+    value: false
+  extensions:
+    value: false
+providers:
+  - Kansas City
+  - San Francisco

@@ -1,0 +1,60 @@
+name: eXtensible Business Reporting Language (xBRL)
+slug: extensible-business-reporting-language-xbrl
+category: Finance
+subcategory:
+  - Business
+  - Metadata
+description: xBRL consists of formats for different kinds of business documents, such as financial statements, performance reports, or compliance reports. The standard formats allow the documents to be transmitted and parsed between entities easily
+stage_in_development: Completed
+license: Copyright XBRL International
+version: '2.1'
+updated: '2013-02-20'
+recorded: '2017-06-19'
+verified: true
+publisher: XBRL
+publisher_reputation: XBRL International is a non-profit consortium committed to improving business reporting in the public interest by maintaining a standard format for exchanging reports
+consumers: Used by national and international financial agencies such as the FDIC. Also used by many international corporations
+apps: Many, including npm packages and GitHub applications
+links:
+  website: https://www.xbrl.org/the-standard/
+  documentation: http://www.xbrl.org/Specification/XBRL-2.1/REC-2003-12-31/XBRL-2.1-REC-2003-12-31+corrected-errata-2013-02-20.html
+  example: http://xbrl.squarespace.com/journal/2008/12/18/hello-world-xbrl-example.html
+  contact: https://www.xbrl.org/the-consortium/
+open: false
+metrics:
+  transferability:
+    value: true
+    rationale: xBRL was created to be used by businesses worldwide
+  stakeholder_participation:
+    value: true
+    rationale: The XBRL Consortium has a portal for contributing to the standard and otherwise getting involved in XBRL work
+  consensus_government:
+    value: true
+    rationale: Many large working groups contribute to different aspects of the standard and its extensions
+  machine_readable:
+    value: true
+    rationale: XML schema
+  human_readable:
+    value: false
+    rationale: Data values are often coded
+  requires_realtime:
+    value: false
+    rationale: Reports are encoded and transmitted case-by-case
+  metadata:
+    value: true
+    rationale: Includes reference to xbrl.org instance and w3.org instance
+  extensions:
+    value: true
+    indicators: Extensibility is included as a design principle. A Link Role Registry exists for users to share additional roles for reuse
+tags:
+  dataType:
+    - schema
+    - XML
+  providerType:
+    - private
+  subject:
+    - business
+    - metadata
+  keyword:
+    - data exchange
+    - file format
