@@ -1,0 +1,110 @@
+/* ============================================================
+   Design tokens — brand identity carried from the legacy site
+   (public/stylesheets/variables.sass) used as ACCENTS over a
+   cleaner, modern neutral base per the "modern refresh" brief.
+   ============================================================ */
+:root {
+	/* Brand accents (legacy palette) */
+	--brand-plum: #2b1f2a; /* header/footer banner */
+	--brand-teal: #499aa0; /* primary action / links */
+	--brand-teal-dark: #39787d;
+	--brand-gold: #e8c047; /* secondary accent */
+	--brand-beta: #fb6140; /* beta / warning note */
+
+	/* Metric semantic colors (must be preserved) */
+	--metric-yes: #619e81;
+	--metric-no: #990033;
+	--metric-unknown: #6b6f76;
+
+	/* Modern neutral base */
+	--bg: #fbfaf6; /* near the legacy off-white #FFFeF7, slightly warmer paper */
+	--surface: #ffffff;
+	--surface-2: #f3f1ea;
+	--border: #e2ddd2;
+	--text: #24232a;
+	--text-muted: #5c5b66;
+
+	/* Typography */
+	--font-heading: 'PT Sans Narrow', system-ui, sans-serif;
+	--font-body: 'Lato', system-ui, -apple-system, sans-serif;
+
+	/* Scale / layout */
+	--container: 1100px;
+	--radius: 10px;
+	--radius-sm: 6px;
+	--shadow-sm: 0 1px 2px rgba(36, 35, 42, 0.06), 0 1px 3px rgba(36, 35, 42, 0.08);
+	--shadow-md: 0 4px 12px rgba(36, 35, 42, 0.1);
+	--space: 1rem;
+}
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+html {
+	-webkit-text-size-adjust: 100%;
+}
+
+body {
+	margin: 0;
+	background: var(--bg);
+	color: var(--text);
+	font-family: var(--font-body);
+	font-size: 1rem;
+	line-height: 1.6;
+	-webkit-font-smoothing: antialiased;
+}
+
+h1,
+h2,
+h3,
+h4 {
+	font-family: var(--font-heading);
+	line-height: 1.15;
+	margin: 0 0 0.5em;
+	letter-spacing: 0.01em;
+}
+
+h1 {
+	font-size: clamp(1.9rem, 1.2rem + 2.4vw, 2.8rem);
+}
+h2 {
+	font-size: clamp(1.5rem, 1.1rem + 1.4vw, 2rem);
+}
+
+a {
+	color: var(--brand-teal-dark);
+	text-decoration: none;
+}
+a:hover {
+	text-decoration: underline;
+}
+
+img {
+	max-width: 100%;
+	height: auto;
+}
+
+.container {
+	width: min(100% - 2rem, var(--container));
+	margin-inline: auto;
+}
+
+:focus-visible {
+	outline: 3px solid var(--brand-teal);
+	outline-offset: 2px;
+}
+
+.visually-hidden {
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	padding: 0;
+	margin: -1px;
+	overflow: hidden;
+	clip: rect(0, 0, 0, 0);
+	white-space: nowrap;
+	border: 0;
+}

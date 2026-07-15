@@ -1,0 +1,24 @@
+node_modules/
+.DS_Store
+
+# SvelteKit / Vite
+.svelte-kit/
+build/
+.vite/
+
+# Env / secrets
+.env
+.env.*
+!.env.example
+
+# Legacy Express build/data artifacts (not part of the static site)
+latest.dump
+
+# Abandoned prior Jekyll migration attempt (ignored per project decision)
+jekyll-site/
+
+# Raw DB export kept only as CSV convenience; JSON is the committed source
+standards-export.csv
+
+# Editor
+*.log
