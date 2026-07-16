@@ -1,11 +1,22 @@
-# Open Data Standards Directory
+# Open Data Standards Directory — legacy application (archived)
 
-The Open Data Standards Directory is an iniative to provide an inventory of information regarding open data standards. This site is operated by the Center for Government Excellence at Johns Hopkins University, in partnership with Geothink, McGill University and members of the open data community.
+This branch (`legacy-heroku`, formerly `master`) preserves the original
+**Node.js / Express + PostgreSQL** application that powered
+https://datastandards.directory until its 2026 migration. It rendered
+Jade/Pug templates server-side and was deployed on **Heroku**.
 
-# Installation
+> ⚠️ **Archived — no longer deployed.** The live site is now a static
+> [SvelteKit](https://svelte.dev/docs/kit) build served from **GitHub Pages**
+> on the [`main`](../../tree/main) branch. This branch is kept for historical
+> reference only; do not deploy from it. The Heroku app and its database can be
+> decommissioned.
 
-1) Clone the repo locally
-2) In package.json change the 'start' from 'node' to 'supervisor'. Make sure to revert from supervisor back to node when pushing the code back to the repo
-3) In terminal or the command line, enter the directory and then enter 'npm start'
-4) Open a browser and enter 'localhost:3000', the site should then load
+## What lived here
 
+- `app.js`, `bin/www`, `routes/`, `queries.js` — Express server + PostgreSQL access
+- `views/*.jade` — server-rendered templates
+- `public/` — client JavaScript (jQuery) and SASS styles
+
+The catalog data was migrated to per-standard **YAML** files under
+`src/lib/data/standards/` on `main`. See `DEPLOY.md` on `main` for the current
+architecture and deployment.
