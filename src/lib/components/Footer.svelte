@@ -1,24 +1,15 @@
-<script lang="ts">
-	import { REPO } from '$lib/nav';
-</script>
-
 <footer class="site-footer">
 	<div class="container inner">
 		<div class="partners">
 			<a href="https://govex.jhu.edu" target="_blank" rel="noopener">
-				<img src="/images/govex.png" alt="GovEx — Center for Government Excellence" height="42" />
+				<img src="/images/govex.png" alt="GovEx — Bloomberg Center for Government Excellence" height="26" />
 			</a>
 			<a href="https://geothink.ca" target="_blank" rel="noopener">
-				<img src="/images/geothink.png" alt="Geothink" height="42" />
+				<img src="/images/geothink.png" alt="Geothink" height="26" />
 			</a>
 		</div>
-		<nav class="links" aria-label="Footer">
-			<a href="/about">About</a>
-			<a href="/glossary">Glossary</a>
-			<a href={REPO} target="_blank" rel="noopener">GitHub</a>
-		</nav>
 		<p class="colophon">
-			A project of the Center for Government Excellence at Johns Hopkins University, with
+			A project of the Bloomberg Center for Government Excellence at Johns Hopkins University, with
 			Geothink / McGill University and the open data community.
 		</p>
 	</div>
@@ -40,23 +31,16 @@
 	}
 	.partners {
 		display: flex;
-		gap: 1.5rem;
+		gap: 1.1rem;
 		align-items: center;
 		background: var(--bg);
-		padding: 0.6rem 1rem;
+		padding: 0.45rem 0.8rem;
 		border-radius: var(--radius);
 	}
-	.links {
-		display: flex;
-		gap: 1.25rem;
-		flex-wrap: wrap;
-		justify-content: center;
-	}
-	.links a {
-		color: var(--brand-gold);
-		font-family: var(--font-heading);
-		font-weight: 700;
-		letter-spacing: 0.02em;
+	.partners img {
+		display: block;
+		height: 26px;
+		width: auto;
 	}
 	.colophon {
 		margin: 0;

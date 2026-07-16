@@ -6,7 +6,7 @@
 	<title>About — Open Data Standards Directory</title>
 	<meta
 		name="description"
-		content="About the Open Data Standards Directory — a project of the Center for Government Excellence at Johns Hopkins University with Geothink / McGill University." />
+		content="About the Open Data Standards Directory — a project of the Bloomberg Center for Government Excellence at Johns Hopkins University with Geothink / McGill University." />
 </svelte:head>
 
 <div class="container page">
@@ -16,8 +16,8 @@
 		<h2>Acknowledgements</h2>
 		<p>
 			The Open Data Standards Directory is a project of the
-			<a href="https://govex.jhu.edu" target="_blank" rel="noopener">Center for Government
-				Excellence (GovEx)</a>
+			<a href="https://govex.jhu.edu" target="_blank" rel="noopener">Bloomberg Center for
+				Government Excellence (GovEx)</a>
 			at Johns Hopkins University, in partnership with
 			<a href="https://geothink.ca" target="_blank" rel="noopener">Geothink</a> at McGill University
 			and members of the open data community.

@@ -141,7 +141,7 @@ export function categoryTree(): CategoryNode[] {
 				.map(([n, c]) => ({ name: n, count: c }))
 				.sort((a, b) => a.name.localeCompare(b.name))
 		}))
-		.sort((a, b) => b.count - a.count || a.name.localeCompare(b.name));
+		.sort((a, b) => a.name.localeCompare(b.name));
 }
 
 /** Lower-cased haystack for substring search over the key fields. */

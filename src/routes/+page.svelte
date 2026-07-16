@@ -8,7 +8,7 @@
 	<title>Open Data Standards Directory</title>
 	<meta
 		name="description"
-		content="An inventory of open data standards — browse {standards.length} standards by category, publisher, and assessment. A project of the Center for Government Excellence at Johns Hopkins University." />
+		content="An inventory of open data standards — browse {standards.length} standards by category, publisher, and assessment. A project of the Bloomberg Center for Government Excellence at Johns Hopkins University." />
 </svelte:head>
 
 <section class="hero">
