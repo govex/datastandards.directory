@@ -4,9 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## What this is
 
-The Open Data Standards Directory — an inventory of ~69 open data standards, operated by the Center for Government Excellence at Johns Hopkins University (with Geothink / McGill). This `svelte-migration` branch is a **static SvelteKit site** (fully prerendered, deployed to GitHub Pages) that replaces the legacy Node/Express + PostgreSQL app. The Express app still lives on `master`.
-
-> ⚠️ **`master` auto-deploys to Heroku production (no staging).** Do all work on `svelte-migration`; never merge to `master` until the DNS cutover is done and Heroku auto-deploy is disabled. See `DEPLOY.md`.
+The Open Data Standards Directory — an inventory of ~69 open data standards, operated by the Bloomberg Center for Government Excellence at Johns Hopkins University (with Geothink / McGill). This `main` branch is a **static SvelteKit site** (fully prerendered, deployed to GitHub Pages at `datastandards.directory`) that replaced the legacy Node/Express + PostgreSQL app. The retired Express app is preserved on the **`legacy-heroku`** branch (formerly `master`, once auto-deployed to Heroku) — it is no longer deployed.
 
 ## Commands
 
@@ -39,4 +37,4 @@ No backend: Add/Update/Contact are **GitHub Issue Forms** (`.github/ISSUE_TEMPLA
 
 ## Deployment
 
-Static build → GitHub Pages via `.github/workflows/deploy.yml` (triggers on `svelte-migration` only). Custom domain served from the apex, so `paths.base` is empty. The `CNAME` is staged at `deploy/CNAME` and only moved into `static/` at cutover — see `DEPLOY.md` for the full ordered checklist.
+Static build → GitHub Pages via `.github/workflows/deploy.yml` (triggers on `main` only). Custom domain served from the apex, so `paths.base` is empty. The `CNAME` is staged at `deploy/CNAME` and only moved into `static/` at cutover — see `DEPLOY.md` for the full ordered checklist.

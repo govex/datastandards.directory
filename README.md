@@ -39,6 +39,6 @@ YAML edits.
 
 ## Deployment
 
-Static build deployed to GitHub Pages via GitHub Actions. See [`DEPLOY.md`](./DEPLOY.md)
-— note that `master` still auto-deploys the legacy app to Heroku, so migration work
-stays on the `svelte-migration` branch until cutover.
+Static build deployed to GitHub Pages via GitHub Actions on every push to `main`.
+See [`DEPLOY.md`](./DEPLOY.md). The retired legacy Express app is preserved on the
+`legacy-heroku` branch and is no longer deployed.

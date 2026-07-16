@@ -1,10 +1,9 @@
 name: Deploy to GitHub Pages
 
-# Triggers on the migration branch ONLY. `master` is wired to Heroku's
-# auto-deploy (production) — never build Pages from it.
+# Deploys the static site on every push to the default branch.
 on:
   push:
-    branches: [svelte-migration]
+    branches: [main]
   workflow_dispatch:
 
 permissions:
