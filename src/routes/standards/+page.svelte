@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { page } from '$app/state';
 	import { browser } from '$app/environment';
-	import { replaceState } from '$app/navigation';
+	import { goto } from '$app/navigation';
 	import { standards, searchText } from '$lib/data/standards';
 	import { METRICS, metricValue } from '$lib/metrics';
 	import StandardCard from '$lib/components/StandardCard.svelte';
@@ -28,7 +28,13 @@
 		if (value) sp.set(key, value);
 		else sp.delete(key);
 		const qs = sp.toString();
-		replaceState(qs ? `?${qs}` : page.url.pathname, {});
+		// goto (not replaceState) so the reactive page.url updates and the
+		// derived filters/results recompute; no reload since there's no load fn.
+		goto(qs ? `?${qs}` : page.url.pathname, {
+			replaceState: true,
+			keepFocus: true,
+			noScroll: true
+		});
 	}
 
 	function toggleMetric(key: string) {
@@ -39,7 +45,7 @@
 	}
 
 	function clearAll() {
-		replaceState(page.url.pathname, {});
+		goto(page.url.pathname, { replaceState: true, keepFocus: true, noScroll: true });
 	}
 
 	const results = $derived.by(() => {
